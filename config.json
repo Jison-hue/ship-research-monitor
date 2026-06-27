@@ -1,0 +1,41 @@
+{
+  "project": {
+    "name": "船舶研究动态监测",
+    "description": "每日自动采集船舶/海洋工程领域最新研究论文",
+    "update_time": "08:00"
+  },
+  "sources": {
+    "arxiv": {
+      "enabled": true,
+      "categories": ["cs.RO", "cs.AI", "cs.LG", "cs.SY", "eess.SY", "math.OC", "physics.flu-dyn", "physics.ao-ph", "physics.ins-det", "cs.CE", "eess.IV"],
+      "max_results": 80
+    },
+    "semantic_scholar": {
+      "enabled": true,
+      "limit": 30,
+      "fields_of_study": ["Engineering", "Computer Science", "Physics", "Mathematics"]
+    }
+  },
+  "search_queries": [
+    "ship hydrodynamics",
+    "maritime autonomous surface ship",
+    "vessel collision avoidance",
+    "marine propeller cavitation",
+    "ship resistance prediction",
+    "deep learning ship",
+    "autonomous underwater vehicle",
+    "unmanned surface vehicle",
+    "marine structure fatigue",
+    "ship energy efficiency",
+    "offshore wind turbine foundation",
+    "port automation",
+    "underwater acoustic communication",
+    "ocean engineering machine learning",
+    "ship maneuvering and control",
+    "computational fluid dynamics ship",
+    "marine renewable energy wave",
+    "ship structural health monitoring",
+    "vessel trajectory prediction",
+    "underwater robotics navigation"
+  ]
+}

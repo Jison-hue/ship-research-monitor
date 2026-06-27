@@ -99,3 +99,21 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
 .cbar{height:100%;transition:width 0.5s}
 .cbar.cn{background:#5B8FA8}
 .cbar.intl{background:#C98B7A}
+
+/* ─── 关键词热度 ─── */
+.kw-section{background:var(--card);border-radius:var(--r);padding:14px 16px;border:1px solid var(--bd);margin-bottom:14px}
+.kw-section h2{font-size:.88rem;font-weight:600;margin-bottom:10px}
+.kw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px}
+.kw-item{border:1px solid #eef0f2;border-radius:6px;padding:8px 10px}
+.kw-name{font-size:.82rem;font-weight:600;color:var(--text);margin-bottom:4px}
+.kw-count{font-size:.72rem;color:var(--accent);margin-bottom:6px}
+.kw-trend{display:flex;flex-direction:column;gap:2px}
+.kw-bar{display:flex;align-items:center;gap:4px;font-size:.65rem}
+.kw-y{color:var(--muted);min-width:28px}
+.kw-fill-w{flex:1;height:8px;background:#eef0f2;border-radius:4px;overflow:hidden}
+.kw-fill{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.kw-c{color:var(--muted);min-width:16px;text-align:right}
+
+/* Topic keywords */
+.tks{font-size:.7rem;color:var(--muted);max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sk{font-size:.65rem;color:var(--accent);background:#e8f0f5;padding:0 5px;border-radius:3px}

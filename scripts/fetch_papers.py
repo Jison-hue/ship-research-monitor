@@ -94,6 +94,77 @@ TOPICS = {
     ],
 }
 
+
+# ─── 细粒度关键词（每个方向下的研究热点） ────────
+SUB_KEYWORDS = {
+    "船舶水动力学": {
+        "阻力预测": ["resistance prediction","drag prediction","resistance estimat","ship drag"],
+        "螺旋桨设计": ["propeller design","propeller optimization","propeller performance","marine propeller"],
+        "兴波阻力": ["wave resistance","wave-making","wave making","wave pattern"],
+        "粘性流": ["viscous","turbulence model","boundary layer","RANS","wake field"],
+        "CFD模拟": ["CFD","computational fluid","numerical simulation","RANS","LES","DES"],
+        "船型优化": ["hull form optim","hull optimization","ship hull design","parametric hull"],
+        "耐波性": ["seakeeping","sea keeping","ship motion","wave load","response amplitude"],
+        "操纵性": ["maneuvering","maneuver","course keeping","turning circle","zigzag"],
+    },
+    "船舶结构力学与安全": {
+        "船体强度": ["hull strength","hull girder","ship strength","ultimate strength"],
+        "疲劳分析": ["fatigue life","fatigue assessment","fatigue crack","S-N curve"],
+        "碰撞与搁浅": ["ship collision","ship grounding","crashworthiness","impact"],
+        "振动分析": ["ship vibration","hull vibration","vibration control","modal analysis"],
+        "结构优化": ["structural optimization","weight optimization","topology optimization"],
+        "损伤检测": ["damage detection","crack detection","SHM","structural health"],
+    },
+    "船舶推进与节能": {
+        "节能装置": ["energy saving","energy-saving","fuel saving","EEDI"],
+        "替代燃料": ["alternative fuel","LNG","hydrogen","ammonia","methanol"],
+        "排放控制": ["emission control","carbon emission","SOx","NOx","decarboni"],
+        "混合动力": ["hybrid propulsion","hybrid power","battery","electric propulsion"],
+        "余热回收": ["waste heat","heat recovery","exhaust gas"],
+    },
+    "海洋工程结构物": {
+        "平台设计": ["platform design","FPSO","semi-submersible","spar","TLP"],
+        "立管与锚泊": ["riser","mooring","anchor","tendon","catenary"],
+        "海底管道": ["subsea pipeline","pipeline","flowline","riser"],
+        "深水技术": ["deepwater","deep water","ultra-deep","deep sea structure"],
+        "基础与地基": ["foundation","pile","jacket","gravity base","suction caisson"],
+    },
+    "自主船舶与智能航行": {
+        "路径规划": ["path planning","route planning","trajectory planning"],
+        "避碰": ["collision avoidance","COLREG","obstacle avoidance"],
+        "自主决策": ["autonomous decision","situation awareness","decision support"],
+        "智能感知": ["object detection","perception","sensor fusion","target detection"],
+        "运动控制": ["motion control","tracking control","guidance","autopilot"],
+    },
+    "水下航行器与海洋机器人": {
+        "路径规划": ["path planning","AUV path","mission planning"],
+        "导航定位": ["navigation","localization","SLAM","positioning","INS","DVL"],
+        "水下抓取": ["underwater manipulation","grasping","intervention","dexterous"],
+        "目标识别": ["underwater detection","object recognition","target identification","sonar image"],
+        "编队控制": ["formation","cooperative","multi-AUV","swarm"],
+        "能量管理": ["energy management","battery","wireless charging","energy harves"],
+    },
+    "船舶与海洋工程数值方法": {
+        "CFD方法": ["RANS","DES","LES","DNS","CFD method"],
+        "有限元": ["FEM","finite element","finite element analysis"],
+        "SPH": ["SPH","smoothed particle","meshless","particle method"],
+        "势流方法": ["potential flow","panel method","boundary element"],
+        "流固耦合": ["FSI","fluid structure","fluid-structure","coupled analysis"],
+    },
+}
+
+
+def classify_sub(title, abstract, topic):
+    """返回论文在指定方向下匹配的细粒度关键词"""
+    text = (title + " " + abstract).lower()
+    sub_kws = SUB_KEYWORDS.get(topic, {})
+    matched = []
+    for sw_name, kws in sub_kws.items():
+        if any(kw.lower() in text for kw in kws):
+            matched.append(sw_name)
+    return matched
+
+
 def classify(title, abstract):
     text = (title + " " + abstract).lower()
     domain_q = ["ship","marine","vessel","ocean","maritime","naval","sea","hull",
@@ -119,7 +190,8 @@ def classify(title, abstract):
             if m >= 1:
                 scores[t] = m
     best = max(scores, key=scores.get) if scores else None
-    return (best, scores[best]) if best else ("其他", 0)
+    sub_kws = classify_sub(title, abstract, best) if best != "其他" else []
+    return (best, scores[best], sub_kws) if best else ("其他", 0, [])
 
 def get_journal_rank(journal, config):
     if not journal: return ("", "")
@@ -177,10 +249,10 @@ def fetch_arxiv(config):
                 pub = e.find("atom:published",ns).text[:10]
                 au = [a.find("atom:name",ns).text for a in e.findall("atom:author",ns) if a.find("atom:name",ns) is not None]
                 aid = extract_arxiv_id(pid)
-                tp,ts = classify(ttl, abs_)
+                tp,ts,sk = classify(ttl, abs_)
                 all_p[pid] = dict(id=aid or pid, title=ttl, abstract=abs_[:500], authors=au[:5],
                     published=pub, year=pub[:4], source="arXiv", url=pid, pdf_url="",
-                    doi=extract_doi(ttl,abs_,aid), topic=tp, topic_score=ts,
+                    doi=extract_doi(ttl,abs_,aid), topic=tp, topic_score=ts, sub_kws=sk,
                     journal="arXiv Preprint", journal_rank="预印本", cited_by=0,
                     institutions=[], concepts=[], fetched=datetime.now().strftime("%Y-%m-%d %H:%M"))
             time.sleep(3)
@@ -254,10 +326,10 @@ def fetch_openalex(config):
                 else:
                     abstract = ""
                 concepts = [c.get("display_name","") for c in (w.get("concepts") or [])[:5]]
-                tp,ts = classify(ttl, abstract)
+                tp,ts,sk = classify(ttl, abstract)
                 all_p[wid] = dict(id=wid, title=ttl, abstract=abstract, authors=[a["name"] for a in au_info[:5]],
                     published=pub, year=year, source="OpenAlex", url=f"https://doi.org/{doi}" if doi else wid,
-                    pdf_url="", doi=doi, topic=tp, topic_score=ts, journal=jour[:40] if jour else ws_type,
+                    pdf_url="", doi=doi, topic=tp, topic_score=ts, sub_kws=sk, journal=jour[:40] if jour else ws_type,
                     journal_rank=jrank, cited_by=cited,
                     institutions=list(insts_set)[:3], concepts=concepts,
                     fetched=datetime.now().strftime("%Y-%m-%d %H:%M"))
@@ -296,14 +368,14 @@ def fetch_semantic(config):
                 doi = ext.get("DOI","")
                 arx = ext.get("ArXiv","")
                 au = [a.get("name","") for a in (w.get("authors") or [])[:5]]
-                tp,ts = classify(ttl, abs_)
+                tp,ts,sk = classify(ttl, abs_)
                 ranks = config.get("journal_rankings",{})
                 jrank = "一区/顶刊" if any(n in jour.lower() for n in ranks.get("一区/顶刊",[])) else \
                         "二区/重要" if any(n in jour.lower() for n in ranks.get("二区/重要",[])) else "核心期刊"
                 all_p.append(dict(id=pid, title=ttl, abstract=abs_[:500], authors=au,
                     published=pub[:10], year=str(year), source="Semantic Scholar",
                     url=w.get("url",f"https://www.semanticscholar.org/paper/{pid}"), pdf_url="",
-                    doi=doi or extract_doi(ttl,abs_,arx), topic=tp, topic_score=ts,
+                    doi=doi or extract_doi(ttl,abs_,arx), topic=tp, topic_score=ts, sub_kws=sk,
                     journal=jour[:40] if jour else "", journal_rank=jrank,
                     cited_by=cited, institutions=[], concepts=[],
                     fetched=datetime.now().strftime("%Y-%m-%d %H:%M")))
@@ -362,6 +434,8 @@ def compute_stats(papers):
     topic_authors = defaultdict(Counter)
     topic_insts = defaultdict(Counter)
     country_counter = {}
+    kw_counter = Counter()
+    kw_year_counter = defaultdict(lambda: Counter())
     
     for p in papers:
         t = p.get("topic","其他"); tc[t] += 1; tp[t].append(p)
@@ -389,8 +463,22 @@ def compute_stats(papers):
                     country_counter[country] = {"papers":0, "institutions":set()}
                 country_counter[country]["papers"] += 1
                 country_counter[country]["institutions"].add(short)
+        for skw in p.get("sub_kws",[]):
+            kw_counter[skw] += 1
+            y = p.get("year","")
+            if y.isdigit():
+                kw_year_counter[skw][y] += 1
     
     years = sorted(yc); yr = f"{min(years)}-{max(years)}" if years else "—"
+    
+    # 每个方向的细粒度关键词统计
+    keyword_topic = {}
+    for t, ps in tp.items():
+        kw_t = Counter()
+        for p in ps:
+            for sk in p.get("sub_kws",[]):
+                kw_t[sk] += 1
+        keyword_topic[t] = [{"name":k,"count":v} for k,v in kw_t.most_common(15)]
     
     # 每个方向论文的平均引用
     topic_impact = {}
@@ -421,6 +509,9 @@ def compute_stats(papers):
         total_topics=len(tc), year_range=yr,
         hot_papers=hot,
         topic_year={t: Counter(p.get("year","") for p in ps) for t,ps in tp.items()},
+        keyword_trends={kw: dict(sorted(yrs.items())) for kw, yrs in kw_year_counter.items()} if kw_year_counter else {},
+        keyword_hot=[{"name":k,"count":v} for k,v in kw_counter.most_common(30)],
+        keyword_topic=keyword_topic,
         # 新增：作者与机构
         top_authors=top_n(author_counter, 15),
         top_institutions=top_n(inst_counter, 20),
@@ -541,7 +632,24 @@ def gen_html(data, config):
     topic_impact = stats["topic_impact"]
     hot_papers = stats["hot_papers"]
     
-    # ── 地域分析 ──
+
+    # ── 热度关键词 ──
+    hot_kws = stats.get("keyword_hot",[])[:20]
+    kw_trends = stats.get("keyword_trends",{})
+    kw_html = ""
+    for kw in hot_kws:
+        n = kw["name"]
+        trend = kw_trends.get(n, {})
+        # Show yearly counts as a simple bar
+        years_sorted = sorted(trend.keys())
+        counts = [trend[y] for y in years_sorted]
+        max_c = max(counts) if counts else 1
+        bars = ""
+        for i, y in enumerate(years_sorted):
+            pct = int(counts[i] / max_c * 100)
+            bars += '<div class="kw-bar"><span class="kw-y">' + y + '</span><div class="kw-fill-w"><div class="kw-fill" style="width:' + str(pct) + '%"></div></div><span class="kw-c">' + str(counts[i]) + '</span></div>'
+        kw_html += '<div class="kw-item"><div class="kw-name">' + n + '</div><div class="kw-count">' + str(kw["count"]) + '</div><div class="kw-trend">' + bars + '</div></div>'
+        # ── 地域分析 ──
     cn_count = stats.get("country_stats",{}).get("🇨🇳 国内",{}).get("papers",0)
     intl_count = stats.get("country_stats",{}).get("🌍 国外",{}).get("papers",0)
     cn_ratio = stats.get("country_ratio",{}).get("🇨🇳 国内",50)
@@ -624,6 +732,7 @@ def gen_html(data, config):
     # ── 各方向 ──
     topics = ""
     for i,t in enumerate(tl):
+        t_kws = stats.get("keyword_topic",{}).get(t,[])[:4]
         ps = sorted(stats["topic_papers"].get(t,[]), key=lambda x: x.get("cited_by",0), reverse=True)
         imp = topic_impact[t]; col = tcols[t]
         items = ""
@@ -635,9 +744,11 @@ def gen_html(data, config):
             inst_h = '<span class="inst">🏛️ ' + insts[0][:35] + '</span>' if insts else ""
             ci_h = '<span class="ci">📊'+str(ci)+'</span>' if ci else ""
             au_h = '<span>'+au[:40]+'</span>' if au else ""
+            sk_pi = p.get("sub_kws",[])
+            sk_h = '<span class="sk">#' + '#'.join(sk_pi[:3]) + '</span>' if sk_pi else ""
             items += ('<div class="pi">'
                 '<div class="pi-t"><a href="' + p.get("url","#") + '" target="_blank">' + p["title"][:80] + '</a></div>'
-                '<div class="pi-m"><span>' + p.get("published","")[:10] + '</span>' + au_h + ci_h + inst_h + doi_h + '</div></div>')
+                '<div class="pi-m"><span>' + p.get("published","")[:10] + '</span>' + au_h + sk_h + ci_h + inst_h + doi_h + '</div></div>')
         more = stats["topic_counts"][t] - 6
         if more > 0:
             more_h = '<p class="m">…还有' + str(more) + '篇</p>'
@@ -663,6 +774,7 @@ def gen_html(data, config):
     html += '<div class="cc"><h2>📈 发文趋势</h2><div class="cw"><canvas id="c2"></canvas></div></div>\n'
     html += '<div class="cc"><h2>🏆 期刊等级</h2><div class="cw"><canvas id="c3"></canvas></div></div>\n</div>\n'
     html += '<section class="hot"><h2>🔥 热点论文 · 综合排名</h2><p class="hint">引用+时效加权</p>' + hot_items + '</section>\n'
+    html += '<section class="kw-section"><h2>🔍 研究热度关键词 Top 20</h2><div class="kw-grid">' + kw_html + '</div></section>\n'
     html += '<section class="country-s"><h2>🌏 地域分布 · 国内 vs 国外</h2>' + country_html + '</section>\n'
     html += '<section class="ai-s"><h2>🏫 高产机构 Top 15</h2><div class="ai-l">' + inst_html + '</div></section>\n'
     html += '<section class="ai-s"><h2>👨‍🔬 活跃作者 Top 12</h2><div class="ai-l">' + auth_html + '</div></section>\n'

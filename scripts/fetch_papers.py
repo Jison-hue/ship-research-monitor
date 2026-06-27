@@ -765,6 +765,16 @@ def gen_html(data, config):
     html += '<div class="cc"><h2>🏆 期刊等级</h2><div class="cw"><canvas id="c3"></canvas></div></div>\n</div>\n'
     html += '<section class="hot"><h2>🔥 热点论文 · 综合排名</h2><p class="hint">引用+时效加权</p>' + hot_items + '</section>\n'
     html += '<section class="kw-section"><h2>🔍 研究热度关键词 Top 20</h2><div class="kw-grid">' + kw_html + '</div></section>\n'
+    hl = ""
+    if hot_papers:
+        tp = hot_papers[0]
+        doi = tp.get("doi","")
+        dh = '<a href="https://doi.org/'+doi+'">'+doi[:30]+'</a>' if doi else ""
+        au = ", ".join(tp.get("authors",[])[:2])
+        jour = tp.get("journal","")[:20]
+        top = tp.get("topic","")
+        hl = '<div class="hl"><span class="hl-badge">🔥 本期亮点</span><span class="hl-txt"><b>' + tp["title"][:80] + '</b> 由 ' + au + ' 等人完成，发表在 <b>' + jour + '</b>，属于<b>' + top + '</b>方向。已被引用 ' + str(tp.get("cited_by",0)) + ' 次。</span></div>'
+    html += hl + '\n'
     html += '<section class="country-s"><h2>🌏 地域分布 · 国内 vs 国外</h2>' + country_html + '</section>\n'
     html += '<section class="ai-s"><h2>🏫 高产机构 Top 15</h2><div class="ai-l">' + inst_html + '</div></section>\n'
     html += '<section class="ai-s"><h2>👨‍🔬 活跃作者 Top 12</h2><div class="ai-l">' + auth_html + '</div></section>\n'

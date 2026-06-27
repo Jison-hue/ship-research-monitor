@@ -117,3 +117,9 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
 /* Topic keywords */
 .tks{font-size:.7rem;color:var(--muted);max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .sk{font-size:.65rem;color:var(--accent);background:#e8f0f5;padding:0 5px;border-radius:3px}
+
+/* ─── 方向筛选 ─── */
+.df{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.df-btn{font-size:.75rem;padding:4px 12px;border:1px solid var(--bd);border-radius:16px;background:var(--card);cursor:pointer;color:var(--text);transition:all .15s;border-left:3px solid #ccc;white-space:nowrap}
+.df-btn:hover{background:#eef0f2}
+.df-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}

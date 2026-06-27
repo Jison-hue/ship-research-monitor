@@ -764,6 +764,15 @@ def gen_html(data, config):
     html += '<section class="ai-s"><h2>🏫 高产机构 Top 15</h2><div class="ai-l">' + inst_html + '</div></section>\n'
     html += '<section class="ai-s"><h2>👨‍🔬 活跃作者 Top 12</h2><div class="ai-l">' + auth_html + '</div></section>\n'
     html += '<section class="detail"><h2>📋 研究方向详情</h2>\n'
+    # Direction filter tabs
+    filter_tabs = '<div class="df">'
+    filter_tabs += '<button class="df-btn active" data-dir="all" onclick="filterDir(\'all\')">📌 全部</button>'
+    for t in tl:
+        col = tcols[t]
+        esc_t = t.replace("&","&amp;").replace("'","")
+        filter_tabs += '<button class="df-btn" data-dir="' + esc_t + '" onclick="filterDir(this.getAttribute(\'data-dir\'))" style="border-left:3px solid ' + col + '">' + esc_t + '</button>'
+    filter_tabs += '</div>'
+    html += filter_tabs + '\n'
     html += '<div class="tf"><input type="text" id="ts" placeholder="🔍 搜研究方向..." oninput="ft()"></div>\n'
     html += topics + '</section>\n</main>\n'
     html += '<footer><p>每3天08:00自动更新 · <a href="https://github.com/Jison-hue/ship-research-monitor">GitHub</a></p></footer>\n'

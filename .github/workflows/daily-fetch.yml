@@ -2,26 +2,17 @@ name: 🚢 船舶研究动态 - 每日采集
 
 on:
   schedule:
-    # 每天 UTC 00:00 = 北京时间 08:00（夏令时）或 08:00（冬令时）
+    # 每天 UTC 00:00 = 北京时间 08:00
     - cron: '0 0 * * *'
-  workflow_dispatch:  # 支持手动触发
+  workflow_dispatch:
   push:
     branches: [ main ]
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  contents: write
 
 jobs:
   fetch-and-deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: 📥 检出代码
@@ -37,11 +28,9 @@ jobs:
           python scripts/fetch_papers.py
         timeout-minutes: 10
 
-      - name: 📤 上传 Pages 产物
-        uses: actions/upload-pages-artifact@v3
+      - name: 🚀 部署到 gh-pages 分支
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: ./docs
-
-      - name: 🚀 部署到 GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          force_orphan: true

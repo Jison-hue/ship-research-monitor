@@ -441,6 +441,91 @@ COLORS = ["#5B8FA8","#7BA9A0","#B5A88D","#C98B7A","#A88BAB",
           "#8FAB8F","#C9A88D","#7FA8C9","#B58F8F","#8FA8A8"]
 RANK_COLORS = {"一区/顶刊":"#C0392B","二区/重要":"#E67E22","核心期刊":"#2980B9","预印本":"#7F8C8D","其他":"#95A5A6"}
 
+
+# ─── BibTeX 生成 ──────────────────────────────────────────
+def bibtex_entry(p, key_prefix="ship"):
+    """为单篇论文生成 BibTeX"""
+    au = p.get("authors",[])
+    authors = " and ".join(au[:6])
+    if len(au) > 6: authors += " and others"
+    title = p.get("title","").strip().rstrip(".")
+    journal = p.get("journal","") or "unknown"
+    year = p.get("year","") or "2024"
+    doi = p.get("doi","")
+    url = p.get("url","")
+    
+    # 生成唯一key
+    first_au = au[0].split(",")[0].split()[-1] if au else "Unknown"
+    first_au = first_au.replace(" ","").replace(".","")
+    key = f"{key_prefix}_{first_au}{year}"
+    
+    b = f"@article{{{key},\n"
+    b += f"  author = {{{authors}}},\n"
+    b += f"  title = {{{title}}},\n"
+    b += f"  journal = {{{journal}}},\n"
+    b += f"  year = {{{year}}},\n"
+    if doi: b += f"  doi = {{{doi}}},\n"
+    if url: b += f"  url = {{{url}}},\n"
+    b += "}"
+    return b, key
+
+
+def generate_weekly_report(data, config):
+    """生成周报摘要页面"""
+    papers = data.get("papers",[])
+    history = data.get("history",[])
+    
+    # 按中国周（周一开始）聚合
+    from datetime import date, timedelta
+    today = date.today()
+    # 本周一
+    this_monday = today - timedelta(days=today.weekday())
+    last_monday = this_monday - timedelta(days=7)
+    two_mondays = this_monday - timedelta(days=14)
+    
+    # 按周分组统计
+    def week_group(week_start):
+        ws = week_start.strftime("%Y-%m-%d")
+        we = (week_start + timedelta(days=6)).strftime("%Y-%m-%d")
+        weekly_papers = [p for p in papers if ws <= p.get("published","")[:10] <= we]
+        return ws, we, weekly_papers
+    
+    this_ws, this_we, this_week = week_group(this_monday)
+    last_ws, last_we, last_week = week_group(last_monday)
+    
+    # 本周统计
+    topics_this = Counter(p.get("topic","其他") for p in this_week)
+    hot_this = sorted(this_week, key=lambda p: p.get("cited_by",0), reverse=True)[:5]
+    
+    # 比上周变化
+    topics_last = Counter(p.get("topic","其他") for p in last_week)
+    changes = {}
+    for t in set(list(topics_this.keys()) + list(topics_last.keys())):
+        c = topics_this.get(t,0) - topics_last.get(t,0)
+        if c != 0: changes[t] = c
+    
+    # 本周机构/作者
+    insts = Counter()
+    for p in this_week:
+        for i in p.get("institutions",[]):
+            if i: insts[i.split(",")[0].strip()[:50]] += 1
+    
+    # 中文周数
+    week_num = today.isocalendar()[1]
+    year = today.year
+    
+    return dict(
+        week_num=week_num, year=year,
+        date_range=f"{this_ws} ~ {this_we}",
+        total_this=len(this_week),
+        total_last=len(last_week),
+        topics_this=dict(topics_this.most_common()),
+        changes=changes,
+        hot_papers=hot_this,
+        new_institutions=insts.most_common(10),
+    )
+
+
 def gen_html(data, config):
     papers = data.get("papers",[])
     stats = compute_stats(papers)
@@ -571,7 +656,7 @@ def gen_html(data, config):
     html += '<script src="' + CHART_CDN + '"></script>\n</head>\n<body>\n'
     html += '<header>\n<h1>🚢 船舶与海洋工程研究动态监测</h1>\n'
     html += '<p class="sub">多源数据分析 · 每3天自动更新 · ' + stats["year_range"] + '</p>\n'
-    html += '<p class="meta">🕐 ' + updated + ' | arXiv + OpenAlex + Semantic Scholar</p>\n</header>\n<main>\n'
+    html += '<p class="meta">🕐 ' + updated + ' | arXiv + OpenAlex + Semantic Scholar</p>\n<p style="text-align:center;font-size:.78rem;margin-top:6px"><a href="weekly.html">📋 \u67e5\u770b\u5b8c\u6574\u5468\u62a5 \u2192</a></p>\n</header>\n<main>\n'
     html += cards + '\n'
     html += '<div class="charts-row">\n'
     html += '<div class="cc"><h2>📊 研究方向分布</h2><div class="cw"><canvas id="c1"></canvas></div></div>\n'
@@ -595,6 +680,8 @@ def gen_html(data, config):
     os.makedirs(DOCS_DIR, exist_ok=True)
     with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
         f.write(html)
+
+
 def main():
     print("="*50); print(f"🚢 船舶研究动态监测 v2"); print(f"⏰ {datetime.now().strftime('%Y-%m-%d %H:%M')}"); print("="*50)
     config = load_config(); existing = load_existing(DATA_PATH); all_new = []

@@ -9,14 +9,32 @@
         "George Drakoulas"
       ],
       "published": "2026-06-13",
+      "year": "2026",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2606.15356v1",
       "pdf_url": "https://arxiv.org/pdf/2606.15356v1",
-      "categories": [
-        "physics.flu-dyn",
-        "cs.LG"
+      "doi": "10.48550/arXiv.2606.15356",
+      "topic": "船舶水动力学",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
+    },
+    {
+      "id": "1809.09876",
+      "title": "Underwater Caging and Capture for Autonomous Underwater Vehicles",
+      "abstract": "In this paper, we consider the problem of caging and eventual capture of an underwater entity using multiple Autonomous Underwater Vehicles (AUVs) in a 3D water volume We solve this problem both with and without taking bathymetry into account. Our proposed algorithm for range-limited sensing in 3D environments captures a finite-speed entity based on sparse and irregular observations. After an isolated initial sighting of the entity, the uncertainty of its whereabouts grows while deployment of th",
+      "authors": [
+        "Özer Özkahraman",
+        "Petter Ögren"
       ],
-      "fetched": "2026-06-27 19:50"
+      "published": "2018-09-26",
+      "year": "2018",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/1809.09876v3",
+      "pdf_url": "https://arxiv.org/pdf/1809.09876v3",
+      "doi": "10.48550/arXiv.1809.09876",
+      "topic": "水下机器人",
+      "topic_score": 3,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2405.15133",
@@ -30,34 +48,14 @@
         "Rajeev Jaiman"
       ],
       "published": "2024-05-24",
+      "year": "2024",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2405.15133v1",
       "pdf_url": "https://arxiv.org/pdf/2405.15133v1",
-      "categories": [
-        "physics.flu-dyn"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "2111.10581",
-      "title": "CDMA for Underwater Acoustic Communication",
-      "abstract": "This paper provides an overview of how and why acoustic waves are important for underwater communication when compared with radio and optical waves, underwater acoustic channel, it's characteristics and model. Also about the underwater sensor architecture, challenges faced by sensor nodes in the network and Media Acess Control(MAC) protocol solutions for them. This paper also describes about the various communication approaches including channel coding in underwater and their performance analysi",
-      "authors": [
-        "Lokesh Bommisetty",
-        "Samskruthi Gaddam",
-        "Nomula Prakash Reddy",
-        "Shaik Basharath",
-        "Bharath Are"
-      ],
-      "published": "2021-11-20",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2111.10581v1",
-      "pdf_url": "https://arxiv.org/pdf/2111.10581v1",
-      "categories": [
-        "eess.SP",
-        "cs.IT"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2405.15133",
+      "topic": "船舶水动力学",
+      "topic_score": 3,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2504.01393",
@@ -67,32 +65,14 @@
         "Hany M. Arnaoot"
       ],
       "published": "2025-04-02",
+      "year": "2025",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2504.01393v1",
       "pdf_url": "https://arxiv.org/pdf/2504.01393v1",
-      "categories": [
-        "eess.SY"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "1809.09876",
-      "title": "Underwater Caging and Capture for Autonomous Underwater Vehicles",
-      "abstract": "In this paper, we consider the problem of caging and eventual capture of an underwater entity using multiple Autonomous Underwater Vehicles (AUVs) in a 3D water volume We solve this problem both with and without taking bathymetry into account. Our proposed algorithm for range-limited sensing in 3D environments captures a finite-speed entity based on sparse and irregular observations. After an isolated initial sighting of the entity, the uncertainty of its whereabouts grows while deployment of th",
-      "authors": [
-        "Özer Özkahraman",
-        "Petter Ögren"
-      ],
-      "published": "2018-09-26",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/1809.09876v3",
-      "pdf_url": "https://arxiv.org/pdf/1809.09876v3",
-      "categories": [
-        "cs.RO",
-        "cs.AI",
-        "cs.MA"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2504.01393",
+      "topic": "自主航行与避碰",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2408.15765",
@@ -106,13 +86,14 @@
         "Shinji Mitani"
       ],
       "published": "2024-08-28",
+      "year": "2024",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2408.15765v1",
       "pdf_url": "https://arxiv.org/pdf/2408.15765v1",
-      "categories": [
-        "cs.RO"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2408.15765",
+      "topic": "水下机器人",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2510.16316",
@@ -126,14 +107,14 @@
         "Konstantinos Anyfantis"
       ],
       "published": "2025-10-18",
+      "year": "2025",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2510.16316v1",
       "pdf_url": "https://arxiv.org/pdf/2510.16316v1",
-      "categories": [
-        "stat.AP",
-        "cs.CE"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2510.16316",
+      "topic": "船舶结构安全",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2509.15959",
@@ -144,15 +125,14 @@
         "Haitong Xu"
       ],
       "published": "2025-09-19",
+      "year": "2025",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2509.15959v1",
       "pdf_url": "https://arxiv.org/pdf/2509.15959v1",
-      "categories": [
-        "cs.HC",
-        "cs.AI",
-        "cs.CY"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2509.15959",
+      "topic": "自主航行与避碰",
+      "topic_score": 5,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "1710.02932",
@@ -166,14 +146,106 @@
         "Robin Murphy"
       ],
       "published": "2017-10-09",
+      "year": "2017",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/1710.02932v1",
       "pdf_url": "https://arxiv.org/pdf/1710.02932v1",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
+      "doi": "10.48550/arXiv.1710.02932",
+      "topic": "自主航行与避碰",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
+    },
+    {
+      "id": "2109.05574",
+      "title": "Machine Learning for Naval Architecture, Ocean and Marine Engineering",
+      "abstract": "Machine Learning (ML) based algorithms have found significant impact in many fields of engineering and sciences, where datasets are available from experiments and high fidelity numerical simulations. Those datasets are generally utilized in a machine learning model to extract information about the underlying physics and derive functional relationships mapping input variables to target quantities of interest. Commonplace machine learning algorithms utilized in Scientific Machine Learning (SciML) ",
+      "authors": [
+        "J P Panda"
       ],
-      "fetched": "2026-06-27 19:50"
+      "published": "2021-09-01",
+      "year": "2021",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2109.05574v1",
+      "pdf_url": "https://arxiv.org/pdf/2109.05574v1",
+      "doi": "10.48550/arXiv.2109.05574",
+      "topic": "机器学习与AI",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
+    },
+    {
+      "id": "2310.05567",
+      "title": "Collision Avoidance for Autonomous Surface Vessels using Novel Artificial Potential Fields",
+      "abstract": "As the demand for transportation through waterways continues to rise, the number of vessels plying the waters has correspondingly increased. This has resulted in a greater number of accidents and collisions between ships, some of which lead to significant loss of life and financial losses. Research has shown that human error is a major factor responsible for such incidents. The maritime industry is constantly exploring newer approaches to autonomy to mitigate this issue. This study presents the ",
+      "authors": [
+        "Aditya Kailas Jadhav",
+        "Anantha Raj Pandi",
+        "Abhilash Somayajula"
+      ],
+      "published": "2023-10-09",
+      "year": "2023",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2310.05567v1",
+      "pdf_url": "https://arxiv.org/pdf/2310.05567v1",
+      "doi": "10.48550/arXiv.2310.05567",
+      "topic": "自主航行与避碰",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
+    },
+    {
+      "id": "2009.01284",
+      "title": "Proposed Efficient Design for Unmanned Surface Vehicles",
+      "abstract": "Recently worldwide interest is growing toward commercial, military or scientific Unmanned Surface Vehicle (USV) and hence there is required to develop their guidance, navigation, and control (GNC) systems. Real USVs are a relatively new advent, so the drawbacks of each model will be modified during the time. The proposition of an environmentally friendly as well as high efficient USV's design are the main purposes of this paper to guide future researches. Power management between renewable sourc",
+      "authors": [
+        "Pouyan Asgharian",
+        "Zati Hakim Azizul"
+      ],
+      "published": "2020-09-02",
+      "year": "2020",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2009.01284v1",
+      "pdf_url": "https://arxiv.org/pdf/2009.01284v1",
+      "doi": "10.48550/arXiv.2009.01284",
+      "topic": "自主航行与避碰",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
+    },
+    {
+      "id": "2511.06578",
+      "title": "Underactuated Biomimetic Autonomous Underwater Vehicle for Ecosystem Monitoring",
+      "abstract": "In this paper, we present an underactuated biomimetic underwater robot that is suitable for ecosystem monitoring in both marine and freshwater environments. We present an updated mechanical design for a fish-like robot and propose minimal actuation behaviors learned using reinforcement learning techniques. We present our preliminary mechanical design of the tail oscillation mechanism and illustrate the swimming behaviors on FishGym simulator, where the reinforcement learning techniques will be t",
+      "authors": [
+        "Kaustubh Singh",
+        "Shivam Kumar",
+        "Shashikant Pawar",
+        "Sandeep Manjanna"
+      ],
+      "published": "2025-11-09",
+      "year": "2025",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2511.06578v1",
+      "pdf_url": "https://arxiv.org/pdf/2511.06578v1",
+      "doi": "10.48550/arXiv.2511.06578",
+      "topic": "水下机器人",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
+    },
+    {
+      "id": "1702.04940",
+      "title": "Supervisory Switching Control of an Unmanned Surface Vehicle",
+      "abstract": "A novel method to determine the switching of controllers to increase the performance of a system is presented. Three controllers are utilized to capture three behaviors representative of unmanned surface vehicles (USVs). An underactuated nonlinear controller is derived to transit the vehicle between locations; a fully-actuated nonlinear controller is given to station-keep the vehicle at a setpoint; and a linear anti-windup controller is presented for the reversing mode of operation. Given a traj",
+      "authors": [
+        "Ivan R. Bertaska",
+        "Karl D. von Ellenrieder"
+      ],
+      "published": "2017-02-16",
+      "year": "2017",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/1702.04940v1",
+      "pdf_url": "https://arxiv.org/pdf/1702.04940v1",
+      "doi": "10.48550/arXiv.1702.04940",
+      "topic": "自主航行与避碰",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2310.19495",
@@ -183,15 +255,34 @@
         "M. Sunbeam"
       ],
       "published": "2023-10-30",
+      "year": "2023",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2310.19495v1",
       "pdf_url": "https://arxiv.org/pdf/2310.19495v1",
-      "categories": [
-        "cs.RO",
-        "cs.CV",
-        "cs.LG"
+      "doi": "10.48550/arXiv.2310.19495",
+      "topic": "机器学习与AI",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
+    },
+    {
+      "id": "1809.06179",
+      "title": "Learning of Multi-Context Models for Autonomous Underwater Vehicles",
+      "abstract": "Multi-context model learning is crucial for marine robotics where several factors can cause disturbances to the system's dynamics. This work addresses the problem of identifying multiple contexts of an AUV model. We build a simulation model of the robot from experimental data, and use it to fill in the missing data and generate different model contexts. We implement an architecture based on long-short-term-memory (LSTM) networks to learn the different contexts directly from the data. We show tha",
+      "authors": [
+        "Bilal Wehbe",
+        "Octavio Arriaga",
+        "Mario Michael Krell",
+        "Frank Kirchner"
       ],
-      "fetched": "2026-06-27 19:50"
+      "published": "2018-09-17",
+      "year": "2018",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/1809.06179v1",
+      "pdf_url": "https://arxiv.org/pdf/1809.06179v1",
+      "doi": "10.48550/arXiv.1809.06179",
+      "topic": "水下机器人",
+      "topic_score": 3,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2303.13064",
@@ -202,13 +293,14 @@
         "Sarvat Mushtaq Ahmad"
       ],
       "published": "2023-03-23",
+      "year": "2023",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2303.13064v1",
       "pdf_url": "https://arxiv.org/pdf/2303.13064v1",
-      "categories": [
-        "eess.SY"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2303.13064",
+      "topic": "自主航行与避碰",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2509.19522",
@@ -222,68 +314,34 @@
         "Ramon R. Costa"
       ],
       "published": "2025-09-23",
+      "year": "2025",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2509.19522v1",
       "pdf_url": "https://arxiv.org/pdf/2509.19522v1",
-      "categories": [
-        "cs.RO"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2509.19522",
+      "topic": "自主航行与避碰",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
     },
     {
-      "id": "2109.05574",
-      "title": "Machine Learning for Naval Architecture, Ocean and Marine Engineering",
-      "abstract": "Machine Learning (ML) based algorithms have found significant impact in many fields of engineering and sciences, where datasets are available from experiments and high fidelity numerical simulations. Those datasets are generally utilized in a machine learning model to extract information about the underlying physics and derive functional relationships mapping input variables to target quantities of interest. Commonplace machine learning algorithms utilized in Scientific Machine Learning (SciML) ",
+      "id": "2505.00168",
+      "title": "Guidance and Control of Unmanned Surface Vehicles via HEOL",
+      "abstract": "This work presents a new approach to the guidance and control of marine craft via HEOL, i.e., a new way of combining flatness-based and model-free controllers. Its goal is to develop a general regulator for Unmanned Surface Vehicles (USV). To do so, the well-known USV maneuvering model is simplified into a nominal Hovercraft model which is flat. A flatness-based controller is derived for the simplified USV model and the loop is closed via an intelligent proportional-derivative (iPD) regulator. W",
       "authors": [
-        "J P Panda"
+        "Loïck Degorre",
+        "Emmanuel Delaleau",
+        "Cédric Join",
+        "Michel Fliess"
       ],
-      "published": "2021-09-01",
+      "published": "2025-04-30",
+      "year": "2025",
       "source": "arXiv",
-      "url": "https://arxiv.org/abs/2109.05574v1",
-      "pdf_url": "https://arxiv.org/pdf/2109.05574v1",
-      "categories": [
-        "cs.LG",
-        "physics.ao-ph",
-        "physics.data-an"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "http://arxiv.org/abs/cs/0601064v1",
-      "title": "Robotics Vision-based Heuristic Reasoning for Underwater Target Tracking and Navigation",
-      "abstract": "This paper presents a robotics vision-based heuristic reasoning system for underwater target tracking and navigation. This system is introduced to improve the level of automation of underwater Remote Operated Vehicles (ROVs) operations. A prototype which combines computer vision with an underwater robotics system is successfully designed and developed to perform target tracking and intelligent navigation. ...",
-      "authors": [
-        "Chua Kia",
-        "Mohd Rizal Arshad"
-      ],
-      "published": "2006-01-14",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/cs/0601064v1",
-      "pdf_url": "https://arxiv.org/pdf/cs/0601064v1",
-      "categories": [
-        "cs.RO"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "2011.06768",
-      "title": "Underwater Acoustic Multiplexing Communication by Pentamode Metasurface",
-      "abstract": "As the dominant information carrier in water, acoustic wave is widely used for underwater detection, communication and imaging. Even though underwater acoustic communication has been greatly improved in the past decades, it still suffers from the slow transmission speed and low information capacity. The recently developed acoustic orbital angular momentum (OAM) multiplexing communication promises a high efficiency, large capacity and fast transmission speed for acoustic communication. However, t",
-      "authors": [
-        "Zhaoyong Sun",
-        "Yu Shi",
-        "Xuecong Sun",
-        "Han Jia",
-        "Zhongkun Jin"
-      ],
-      "published": "2020-11-13",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2011.06768v3",
-      "pdf_url": "https://arxiv.org/pdf/2011.06768v3",
-      "categories": [
-        "physics.app-ph"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "url": "https://arxiv.org/abs/2505.00168v1",
+      "pdf_url": "https://arxiv.org/pdf/2505.00168v1",
+      "doi": "10.48550/arXiv.2505.00168",
+      "topic": "自主航行与避碰",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2605.04672",
@@ -297,333 +355,32 @@
         "Jeryes Danial"
       ],
       "published": "2026-05-06",
+      "year": "2026",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2605.04672v1",
       "pdf_url": "https://arxiv.org/pdf/2605.04672v1",
-      "categories": [
-        "cs.RO"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2605.04672",
+      "topic": "水下机器人",
+      "topic_score": 5,
+      "fetched": "2026-06-27 20:56"
     },
     {
-      "id": "2312.11354",
-      "title": "Target detection using underwater acoustic communication links",
-      "abstract": "Underwater monitoring and surveillance systems are essential for underwater target detection, localization and classification. The aim of this work is to investigate the possibility of target detection by using data transmission between communication nodes in an underwater acoustic (UWA) network, i.e, re-using acoustic communication signals for target detection. A new target detection method based on estimation of the time-varying channel impulse response between the communication transmitter(s)",
+      "id": "1310.0063",
+      "title": "Online Approximate Optimal Station Keeping of an Autonomous Underwater Vehicle",
+      "abstract": "Online approximation of an optimal station keeping strategy for a fully actuated six degrees-of-freedom autonomous underwater vehicle is considered. The developed controller is an approximation of the solution to a two player zero-sum game where the controller is the minimizing player and an external disturbance is the maximizing player. The solution is approximated using a reinforcement learning-based actor-critic framework. The result guarantees uniformly ultimately bounded (UUB) convergence o",
       "authors": [
-        "Lu Shen",
-        "Yuriy Zakharov",
-        "Benjamin Henson",
-        "Nils Morozs",
-        "Benoît Parrein"
+        "Patrick Walters",
+        "Warren E. Dixon"
       ],
-      "published": "2023-12-18",
+      "published": "2013-09-30",
+      "year": "2013",
       "source": "arXiv",
-      "url": "https://arxiv.org/abs/2312.11354v1",
-      "pdf_url": "https://arxiv.org/pdf/2312.11354v1",
-      "categories": [
-        "eess.SP"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "2009.01284",
-      "title": "Proposed Efficient Design for Unmanned Surface Vehicles",
-      "abstract": "Recently worldwide interest is growing toward commercial, military or scientific Unmanned Surface Vehicle (USV) and hence there is required to develop their guidance, navigation, and control (GNC) systems. Real USVs are a relatively new advent, so the drawbacks of each model will be modified during the time. The proposition of an environmentally friendly as well as high efficient USV's design are the main purposes of this paper to guide future researches. Power management between renewable sourc",
-      "authors": [
-        "Pouyan Asgharian",
-        "Zati Hakim Azizul"
-      ],
-      "published": "2020-09-02",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2009.01284v1",
-      "pdf_url": "https://arxiv.org/pdf/2009.01284v1",
-      "categories": [
-        "cs.RO",
-        "eess.SY"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "2511.06578",
-      "title": "Underactuated Biomimetic Autonomous Underwater Vehicle for Ecosystem Monitoring",
-      "abstract": "In this paper, we present an underactuated biomimetic underwater robot that is suitable for ecosystem monitoring in both marine and freshwater environments. We present an updated mechanical design for a fish-like robot and propose minimal actuation behaviors learned using reinforcement learning techniques. We present our preliminary mechanical design of the tail oscillation mechanism and illustrate the swimming behaviors on FishGym simulator, where the reinforcement learning techniques will be t",
-      "authors": [
-        "Kaustubh Singh",
-        "Shivam Kumar",
-        "Shashikant Pawar",
-        "Sandeep Manjanna"
-      ],
-      "published": "2025-11-09",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2511.06578v1",
-      "pdf_url": "https://arxiv.org/pdf/2511.06578v1",
-      "categories": [
-        "cs.RO",
-        "eess.SY"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "1702.04940",
-      "title": "Supervisory Switching Control of an Unmanned Surface Vehicle",
-      "abstract": "A novel method to determine the switching of controllers to increase the performance of a system is presented. Three controllers are utilized to capture three behaviors representative of unmanned surface vehicles (USVs). An underactuated nonlinear controller is derived to transit the vehicle between locations; a fully-actuated nonlinear controller is given to station-keep the vehicle at a setpoint; and a linear anti-windup controller is presented for the reversing mode of operation. Given a traj",
-      "authors": [
-        "Ivan R. Bertaska",
-        "Karl D. von Ellenrieder"
-      ],
-      "published": "2017-02-16",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/1702.04940v1",
-      "pdf_url": "https://arxiv.org/pdf/1702.04940v1",
-      "categories": [
-        "eess.SY",
-        "cs.RO"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "1702.08107",
-      "title": "Guidance of an Autonomous Underwater Vehicle in Special Situations",
-      "abstract": "This article describes a guidance system of the autonomous underwater vehicle \"DeepC\" [1] in Special situations. A special situation occurs when one or more objects interfere with the planned route of a mission. The possible reactions are evasion or identification of the objects. The paper presents these two tasks in overview. The special demands challenges of the underwater environment, computer parameters, sensors and the maneuverability of the vehicle are considered in the selection and devel",
-      "authors": [
-        "Mike Eichhorn"
-      ],
-      "published": "2017-02-26",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/1702.08107v1",
-      "pdf_url": "https://arxiv.org/pdf/1702.08107v1",
-      "categories": [
-        "cs.RO"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "2007.13712",
-      "title": "The Unsupervised Method of Vessel Movement Trajectory Prediction",
-      "abstract": "In real-world application scenarios, it is crucial for marine navigators and security analysts to predict vessel movement trajectories at sea based on the Automated Identification System (AIS) data in a given time span. This article presents an unsupervised method of ship movement trajectory prediction which represents the data in a three-dimensional space which consists of time difference between points, the scaled error distance between the tested and its predicted forward and backward locatio",
-      "authors": [
-        "Chih-Wei Chen",
-        "Charles Harrison",
-        "Hsin-Hsiung Huang"
-      ],
-      "published": "2020-07-27",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2007.13712v3",
-      "pdf_url": "https://arxiv.org/pdf/2007.13712v3",
-      "categories": [
-        "cs.CV",
-        "stat.AP"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "0804.3885",
-      "title": "Heading Lock Maneuver Testing of Autonomous Underwater Vehicle",
-      "abstract": "In recent years, Autonomous Underwater Vehicle (UAV) research and development at Bandung Institute of Technology in Indonesia has achieved the testing stage in the field. This testing was still being classified as the early testing, since some of the preliminary tests were carried out in the scale of the laboratory. The paper would discuss the laboratory test and several tests that were done in the field. Discussions were stressed in the procedure and the aim that will be achieved, along with se",
-      "authors": [
-        "K. Muljowidodo",
-        "N. Sapto Adi"
-      ],
-      "published": "2008-04-24",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/0804.3885v1",
-      "pdf_url": "https://arxiv.org/pdf/0804.3885v1",
-      "categories": [
-        "cs.RO"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "1911.04072",
-      "title": "Compressed Underwater Acoustic Communications for Dynamic Interaction with Underwater Vehicles",
-      "abstract": "Underwater vehicles are utilized in various applications including underwater data-collection missions. The tethered connection constrains the mission both in distance traveled and number of vehicles that can run in the same area, while the addition of acoustic communications onto the vehicles grants them several functionalities. However, due to the low bandwidth of the underwater acoustic channel-which leads to low data rates-and the time overhead imposed by both the channel propagation delay a",
-      "authors": [
-        "Mehdi Rahmati",
-        "Archana Arjula",
-        "Dario Pompili"
-      ],
-      "published": "2019-11-11",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/1911.04072v1",
-      "pdf_url": "https://arxiv.org/pdf/1911.04072v1",
-      "categories": [
-        "eess.SP",
-        "cs.NI",
-        "eess.SY"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "2505.00599",
-      "title": "Visual Trajectory Prediction of Vessels for Inland Navigation",
-      "abstract": "The future of inland navigation increasingly relies on autonomous systems and remote operations, emphasizing the need for accurate vessel trajectory prediction. This study addresses the challenges of video-based vessel tracking and prediction by integrating advanced object detection methods, Kalman filters, and spline-based interpolation. However, existing detection systems often misclassify objects in inland waterways due to complex surroundings. A comparative evaluation of tracking algorithms,",
-      "authors": [
-        "Alexander Puzicha",
-        "Konstantin Wüstefeld",
-        "Kathrin Wilms",
-        "Frank Weichert"
-      ],
-      "published": "2025-05-01",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2505.00599v1",
-      "pdf_url": "https://arxiv.org/pdf/2505.00599v1",
-      "categories": [
-        "cs.CV"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "2003.01988",
-      "title": "Adaptive Multiuser MCDM for Underwater Acoustic Communications",
-      "abstract": "Chirp signals have been exploited extensively in radar and underwater acoustic (UW-A) communication systems for their robustness to multipath and superior correlation properties. We present a multiuser multicarrier chirp-division multiplexing (MU-MCDM) system which orthogonal chirp spread spectrum are utilized in frequency subcarriers for multiuser applications. Furthermore, orthogonal chirp transform (OCT) and discrete orthogonal chirp transform (DOCT) are developed for continuous and discrete ",
-      "authors": [
-        "Song-Wen Huang",
-        "Dimitris A. Pados"
-      ],
-      "published": "2020-03-04",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2003.01988v1",
-      "pdf_url": "https://arxiv.org/pdf/2003.01988v1",
-      "categories": [
-        "eess.SP"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "2102.13397",
-      "title": "Underwater Acoustic Communication Receiver Using Deep Belief Network",
-      "abstract": "Underwater environments create a challenging channel for communications. In this paper, we design a novel receiver system by exploring the machine learning technique--Deep Belief Network (DBN)-- to combat the signal distortion caused by the Doppler effect and multi-path propagation. We evaluate the performance of the proposed receiver system in both simulation experiments and sea trials. Our proposed receiver system comprises of DBN based de-noising and classification of the received signal. Fir",
-      "authors": [
-        "Abigail Lee-Leon",
-        "Chau Yuen",
-        "Dorien Herremans"
-      ],
-      "published": "2021-02-26",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2102.13397v1",
-      "pdf_url": "https://arxiv.org/pdf/2102.13397v1",
-      "categories": [
-        "eess.AS",
-        "cs.LG",
-        "cs.SD",
-        "eess.SP"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "2201.10056",
-      "title": "Underwater Acoustic Communication Channel Modeling using Deep Learning",
-      "abstract": "With the recent increase in the number of underwater activities, having effective underwater communication systems has become increasingly important. Underwater acoustic communication has been widely used but greatly impaired due to the complicated nature of the underwater environment. In a bid to better understand the underwater acoustic channel so as to help in the design and improvement of underwater communication systems, attempts have been made to model the underwater acoustic channel using",
-      "authors": [
-        "Oluwaseyi Onasami",
-        "Damilola Adesina",
-        "Lijun Qian"
-      ],
-      "published": "2022-01-25",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2201.10056v1",
-      "pdf_url": "https://arxiv.org/pdf/2201.10056v1",
-      "categories": [
-        "eess.SP"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "2310.05567",
-      "title": "Collision Avoidance for Autonomous Surface Vessels using Novel Artificial Potential Fields",
-      "abstract": "As the demand for transportation through waterways continues to rise, the number of vessels plying the waters has correspondingly increased. This has resulted in a greater number of accidents and collisions between ships, some of which lead to significant loss of life and financial losses. Research has shown that human error is a major factor responsible for such incidents. The maritime industry is constantly exploring newer approaches to autonomy to mitigate this issue. This study presents the ",
-      "authors": [
-        "Aditya Kailas Jadhav",
-        "Anantha Raj Pandi",
-        "Abhilash Somayajula"
-      ],
-      "published": "2023-10-09",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2310.05567v1",
-      "pdf_url": "https://arxiv.org/pdf/2310.05567v1",
-      "categories": [
-        "cs.RO",
-        "cs.CE",
-        "eess.SY"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "1902.10196",
-      "title": "Transmission of Video Image in Underwater Acoustic Communication",
-      "abstract": "Acoustic communication is currently considered as the best way to transmit information over long distances under water, since acoustic waves have lower attenuation in water than the other information transmission media. However, current information transmission rates of the underwater acoustic communication is usually limited by low-frequency bandwidth due to the large attenuation which characterized in high-frequency sound waves in water. Spiral acoustic beams with helical wavefront dislocation",
-      "authors": [
-        "Han Zhang",
-        "Jun Yang"
-      ],
-      "published": "2019-02-26",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/1902.10196v1",
-      "pdf_url": "https://arxiv.org/pdf/1902.10196v1",
-      "categories": [
-        "eess.SP",
-        "physics.app-ph"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "2205.14856",
-      "title": "Underwater Acoustic Communication Channel Modeling using Reservoir Computing",
-      "abstract": "Underwater acoustic (UWA) communications have been widely used but greatly impaired due to the complicated nature of the underwater environment. In order to improve UWA communications, modeling and understanding the UWA channel is indispensable. However, there exist many challenges due to the high uncertainties of the underwater environment and the lack of real-world measurement data. In this work, the capability of reservoir computing and deep learning has been explored for modeling the UWA com",
-      "authors": [
-        "Oluwaseyi Onasami",
-        "Ming Feng",
-        "Hao Xu",
-        "Mulugeta Haile",
-        "Lijun Qian"
-      ],
-      "published": "2022-05-30",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2205.14856v1",
-      "pdf_url": "https://arxiv.org/pdf/2205.14856v1",
-      "categories": [
-        "eess.SP"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "2307.16240",
-      "title": "Robust Unmanned Surface Vehicle Navigation with Distributional Reinforcement Learning",
-      "abstract": "Autonomous navigation of Unmanned Surface Vehicles (USV) in marine environments with current flows is challenging, and few prior works have addressed the sensorbased navigation problem in such environments under no prior knowledge of the current flow and obstacles. We propose a Distributional Reinforcement Learning (RL) based local path planner that learns return distributions which capture the uncertainty of action outcomes, and an adaptive algorithm that automatically tunes the level of sensit",
-      "authors": [
-        "Xi Lin",
-        "John McConnell",
-        "Brendan Englot"
-      ],
-      "published": "2023-07-30",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2307.16240v1",
-      "pdf_url": "https://arxiv.org/pdf/2307.16240v1",
-      "categories": [
-        "cs.RO"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "1707.04444",
-      "title": "Monocular Visual Odometry for an Unmanned Sea-Surface Vehicle",
-      "abstract": "We tackle the problem of localizing an autonomous sea-surface vehicle in river estuarine areas using monocular camera and angular velocity input from an inertial sensor. Our method is challenged by two prominent drawbacks associated with the environment, which are typically not present in standard visual simultaneous localization and mapping (SLAM) applications on land (or air): a) Scene depth varies significantly (from a few meters to several kilometers) and, b) In conjunction to the latter, th",
-      "authors": [
-        "George Terzakis",
-        "Riccardo Polvara",
-        "Sanjay Sharma",
-        "Phil Culverhouse",
-        "Robert Sutton"
-      ],
-      "published": "2017-07-14",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/1707.04444v2",
-      "pdf_url": "https://arxiv.org/pdf/1707.04444v2",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "url": "https://arxiv.org/abs/1310.0063v2",
+      "pdf_url": "https://arxiv.org/pdf/1310.0063v2",
+      "doi": "10.48550/arXiv.1310.0063",
+      "topic": "水下机器人",
+      "topic_score": 1,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2102.10709",
@@ -637,14 +394,222 @@
         "Joaquin Carrasco"
       ],
       "published": "2021-02-21",
+      "year": "2021",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2102.10709v2",
       "pdf_url": "https://arxiv.org/pdf/2102.10709v2",
-      "categories": [
-        "cs.RO",
-        "eess.SY"
+      "doi": "10.48550/arXiv.2102.10709",
+      "topic": "自主航行与避碰",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
+    },
+    {
+      "id": "1702.08107",
+      "title": "Guidance of an Autonomous Underwater Vehicle in Special Situations",
+      "abstract": "This article describes a guidance system of the autonomous underwater vehicle \"DeepC\" [1] in Special situations. A special situation occurs when one or more objects interfere with the planned route of a mission. The possible reactions are evasion or identification of the objects. The paper presents these two tasks in overview. The special demands challenges of the underwater environment, computer parameters, sensors and the maneuverability of the vehicle are considered in the selection and devel",
+      "authors": [
+        "Mike Eichhorn"
       ],
-      "fetched": "2026-06-27 19:50"
+      "published": "2017-02-26",
+      "year": "2017",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/1702.08107v1",
+      "pdf_url": "https://arxiv.org/pdf/1702.08107v1",
+      "doi": "10.48550/arXiv.1702.08107",
+      "topic": "水下机器人",
+      "topic_score": 1,
+      "fetched": "2026-06-27 20:56"
+    },
+    {
+      "id": "2509.01836",
+      "title": "Multi-vessel Interaction-Aware Trajectory Prediction and Collision Risk Assessment",
+      "abstract": "Accurate vessel trajectory prediction is essential for enhancing situational awareness and preventing collisions. Still, existing data-driven models are constrained mainly to single-vessel forecasting, overlooking vessel interactions, navigation rules, and explicit collision risk assessment. We present a transformer-based framework for multi-vessel trajectory prediction with integrated collision risk analysis. For a given target vessel, the framework identifies nearby vessels. It jointly predict",
+      "authors": [
+        "Md Mahbub Alam",
+        "Jose F. Rodrigues-Jr",
+        "Gabriel Spadon"
+      ],
+      "published": "2025-09-01",
+      "year": "2025",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2509.01836v1",
+      "pdf_url": "https://arxiv.org/pdf/2509.01836v1",
+      "doi": "10.48550/arXiv.2509.01836",
+      "topic": "自主航行与避碰",
+      "topic_score": 1,
+      "fetched": "2026-06-27 20:56"
+    },
+    {
+      "id": "0804.3885",
+      "title": "Heading Lock Maneuver Testing of Autonomous Underwater Vehicle",
+      "abstract": "In recent years, Autonomous Underwater Vehicle (UAV) research and development at Bandung Institute of Technology in Indonesia has achieved the testing stage in the field. This testing was still being classified as the early testing, since some of the preliminary tests were carried out in the scale of the laboratory. The paper would discuss the laboratory test and several tests that were done in the field. Discussions were stressed in the procedure and the aim that will be achieved, along with se",
+      "authors": [
+        "K. Muljowidodo",
+        "N. Sapto Adi"
+      ],
+      "published": "2008-04-24",
+      "year": "2008",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/0804.3885v1",
+      "pdf_url": "https://arxiv.org/pdf/0804.3885v1",
+      "doi": "10.48550/arXiv.0804.3885",
+      "topic": "水下机器人",
+      "topic_score": 1,
+      "fetched": "2026-06-27 20:56"
+    },
+    {
+      "id": "1911.04072",
+      "title": "Compressed Underwater Acoustic Communications for Dynamic Interaction with Underwater Vehicles",
+      "abstract": "Underwater vehicles are utilized in various applications including underwater data-collection missions. The tethered connection constrains the mission both in distance traveled and number of vehicles that can run in the same area, while the addition of acoustic communications onto the vehicles grants them several functionalities. However, due to the low bandwidth of the underwater acoustic channel-which leads to low data rates-and the time overhead imposed by both the channel propagation delay a",
+      "authors": [
+        "Mehdi Rahmati",
+        "Archana Arjula",
+        "Dario Pompili"
+      ],
+      "published": "2019-11-11",
+      "year": "2019",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/1911.04072v1",
+      "pdf_url": "https://arxiv.org/pdf/1911.04072v1",
+      "doi": "10.48550/arXiv.1911.04072",
+      "topic": "水下机器人",
+      "topic_score": 1,
+      "fetched": "2026-06-27 20:56"
+    },
+    {
+      "id": "http://arxiv.org/abs/cs/0601064v1",
+      "title": "Robotics Vision-based Heuristic Reasoning for Underwater Target Tracking and Navigation",
+      "abstract": "This paper presents a robotics vision-based heuristic reasoning system for underwater target tracking and navigation. This system is introduced to improve the level of automation of underwater Remote Operated Vehicles (ROVs) operations. A prototype which combines computer vision with an underwater robotics system is successfully designed and developed to perform target tracking and intelligent navigation. ...",
+      "authors": [
+        "Chua Kia",
+        "Mohd Rizal Arshad"
+      ],
+      "published": "2006-01-14",
+      "year": "2006",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/cs/0601064v1",
+      "pdf_url": "https://arxiv.org/pdf/cs/0601064v1",
+      "doi": "",
+      "topic": "水下机器人",
+      "topic_score": 3,
+      "fetched": "2026-06-27 20:56"
+    },
+    {
+      "id": "1706.04189",
+      "title": "Autonomous Reactive Mission Scheduling and Task-Path Planning Architecture for Autonomous Underwater Vehicle",
+      "abstract": "An Autonomous Underwater Vehicle (AUV) should carry out complex tasks in a limited time interval. Since existing AUVs have limited battery capacity and restricted endurance, they should autonomously manage mission time and the resources to perform effective persistent deployment in longer missions. Task assignment requires making decisions subject to resource constraints, while tasks are assigned with costs and/or values that are budgeted in advance. Tasks are distributed in a particular operati",
+      "authors": [
+        "Somaiyeh Mahmoud. Zadeh"
+      ],
+      "published": "2017-06-13",
+      "year": "2017",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/1706.04189v1",
+      "pdf_url": "https://arxiv.org/pdf/1706.04189v1",
+      "doi": "10.48550/arXiv.1706.04189",
+      "topic": "水下机器人",
+      "topic_score": 5,
+      "fetched": "2026-06-27 20:56"
+    },
+    {
+      "id": "2001.03359",
+      "title": "Deep Interactive Reinforcement Learning for Path Following of Autonomous Underwater Vehicle",
+      "abstract": "Autonomous underwater vehicle (AUV) plays an increasingly important role in ocean exploration. Existing AUVs are usually not fully autonomous and generally limited to pre-planning or pre-programming tasks. Reinforcement learning (RL) and deep reinforcement learning have been introduced into the AUV design and research to improve its autonomy. However, these methods are still difficult to apply directly to the actual AUV system because of the sparse rewards and low learning efficiency. In this pa",
+      "authors": [
+        "Qilei Zhang",
+        "Jinying Lin",
+        "Qixin Sha",
+        "Bo He",
+        "Guangliang Li"
+      ],
+      "published": "2020-01-10",
+      "year": "2020",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2001.03359v1",
+      "pdf_url": "https://arxiv.org/pdf/2001.03359v1",
+      "doi": "10.48550/arXiv.2001.03359",
+      "topic": "水下机器人",
+      "topic_score": 5,
+      "fetched": "2026-06-27 20:56"
+    },
+    {
+      "id": "2102.13397",
+      "title": "Underwater Acoustic Communication Receiver Using Deep Belief Network",
+      "abstract": "Underwater environments create a challenging channel for communications. In this paper, we design a novel receiver system by exploring the machine learning technique--Deep Belief Network (DBN)-- to combat the signal distortion caused by the Doppler effect and multi-path propagation. We evaluate the performance of the proposed receiver system in both simulation experiments and sea trials. Our proposed receiver system comprises of DBN based de-noising and classification of the received signal. Fir",
+      "authors": [
+        "Abigail Lee-Leon",
+        "Chau Yuen",
+        "Dorien Herremans"
+      ],
+      "published": "2021-02-26",
+      "year": "2021",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2102.13397v1",
+      "pdf_url": "https://arxiv.org/pdf/2102.13397v1",
+      "doi": "10.48550/arXiv.2102.13397",
+      "topic": "水下机器人",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
+    },
+    {
+      "id": "1702.05314",
+      "title": "Control of an Unmanned Surface Vehicle with Uncertain Displacement and Drag",
+      "abstract": "Experimental testing of an unmanned surface vehicle (USV) has been performed to evaluate the performance of two low-level controllers when displacement and drag properties are time-varying and uncertain. The USV is a 4.3 meter long, 150 kilogram wave adaptive modular vessel (WAM-V) with an inflatable twin hull configuration and waterjet propulsion. Open loop maneuvering tests were conducted to characterize the dynamics of the vehicle. The hydrodynamic coefficients of the vehicle were determined ",
+      "authors": [
+        "Wilhelm B. Klinger",
+        "Ivan R. Bertaska",
+        "Karl D. von Ellenrieder",
+        "Manhar R. Dhanak"
+      ],
+      "published": "2017-02-17",
+      "year": "2017",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/1702.05314v1",
+      "pdf_url": "https://arxiv.org/pdf/1702.05314v1",
+      "doi": "10.48550/arXiv.1702.05314",
+      "topic": "船舶水动力学",
+      "topic_score": 3,
+      "fetched": "2026-06-27 20:56"
+    },
+    {
+      "id": "2307.16240",
+      "title": "Robust Unmanned Surface Vehicle Navigation with Distributional Reinforcement Learning",
+      "abstract": "Autonomous navigation of Unmanned Surface Vehicles (USV) in marine environments with current flows is challenging, and few prior works have addressed the sensorbased navigation problem in such environments under no prior knowledge of the current flow and obstacles. We propose a Distributional Reinforcement Learning (RL) based local path planner that learns return distributions which capture the uncertainty of action outcomes, and an adaptive algorithm that automatically tunes the level of sensit",
+      "authors": [
+        "Xi Lin",
+        "John McConnell",
+        "Brendan Englot"
+      ],
+      "published": "2023-07-30",
+      "year": "2023",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2307.16240v1",
+      "pdf_url": "https://arxiv.org/pdf/2307.16240v1",
+      "doi": "10.48550/arXiv.2307.16240",
+      "topic": "自主航行与避碰",
+      "topic_score": 3,
+      "fetched": "2026-06-27 20:56"
+    },
+    {
+      "id": "1707.04444",
+      "title": "Monocular Visual Odometry for an Unmanned Sea-Surface Vehicle",
+      "abstract": "We tackle the problem of localizing an autonomous sea-surface vehicle in river estuarine areas using monocular camera and angular velocity input from an inertial sensor. Our method is challenged by two prominent drawbacks associated with the environment, which are typically not present in standard visual simultaneous localization and mapping (SLAM) applications on land (or air): a) Scene depth varies significantly (from a few meters to several kilometers) and, b) In conjunction to the latter, th",
+      "authors": [
+        "George Terzakis",
+        "Riccardo Polvara",
+        "Sanjay Sharma",
+        "Phil Culverhouse",
+        "Robert Sutton"
+      ],
+      "published": "2017-07-14",
+      "year": "2017",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/1707.04444v2",
+      "pdf_url": "https://arxiv.org/pdf/1707.04444v2",
+      "doi": "10.48550/arXiv.1707.04444",
+      "topic": "水下机器人",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2511.14265",
@@ -658,29 +623,54 @@
         "Bolong Zheng"
       ],
       "published": "2025-11-18",
+      "year": "2025",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2511.14265v1",
       "pdf_url": "https://arxiv.org/pdf/2511.14265v1",
-      "categories": [
-        "cs.LG"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2511.14265",
+      "topic": "水下机器人",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
     },
     {
-      "id": "2409.10194",
-      "title": "Underwater robot guidance, navigation and control in fish net pens",
-      "abstract": "Aquaculture robotics is receiving increased attention and is subject to unique challenges and opportunities for research and development. Guidance, navigation and control are all important aspects for realizing aquaculture robotics solutions that can greatly benefit the industry in the future. Sensor technologies, navigation methods, motion planners and state control all have a role to play, and this paper introduces some technologies and methods that are currently being applied in research and ",
+      "id": "2508.14198",
+      "title": "Reliability comparison of vessel trajectory prediction models via Probability of Detection",
+      "abstract": "This contribution addresses vessel trajectory prediction (VTP), focusing on the evaluation of different deep learning-based approaches. The objective is to assess model performance in diverse traffic complexities and compare the reliability of the approaches. While previous VTP models overlook the specific traffic situation complexity and lack reliability assessments, this research uses a probability of detection analysis to quantify model reliability in varying traffic scenarios, thus going bey",
       "authors": [
-        "Sveinung Johan Ohrem"
+        "Zahra Rastin",
+        "Kathrin Donandt",
+        "Dirk Söffker"
       ],
-      "published": "2024-09-16",
+      "published": "2025-08-19",
+      "year": "2025",
       "source": "arXiv",
-      "url": "https://arxiv.org/abs/2409.10194v1",
-      "pdf_url": "https://arxiv.org/pdf/2409.10194v1",
-      "categories": [
-        "cs.RO"
+      "url": "https://arxiv.org/abs/2508.14198v1",
+      "pdf_url": "https://arxiv.org/pdf/2508.14198v1",
+      "doi": "10.48550/arXiv.2508.14198",
+      "topic": "水下机器人",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
+    },
+    {
+      "id": "2109.05208",
+      "title": "Autonomous Underwater Vehicle-Manipulator Systems Path Planning with RRTAUVMS Algorithm",
+      "abstract": "Autonomous Underwater Vehicle-Manipulator systems (AUVMS) is a new tool for ocean exploration, the AUVMS path planning problem is addressed in this paper. AUVMS is a high dimension system with a large difference in inertia distribution, also it works in a complex environment with obstacles. By integrating the rapidly-exploring random tree(RRT) algorithm with the AUVMS kinematics model, the proposed RRTAUVMS algorithm could randomly sample in the configuration space(C-Space), and also grow the tr",
+      "authors": [
+        "Xiaoxu Cao",
+        "Linyi Gu",
+        "JunChen Mu",
+        "Qian Zhang",
+        "Qi Song"
       ],
-      "fetched": "2026-06-27 19:50"
+      "published": "2021-09-11",
+      "year": "2021",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2109.05208v1",
+      "pdf_url": "https://arxiv.org/pdf/2109.05208v1",
+      "doi": "10.48550/arXiv.2109.05208",
+      "topic": "水下机器人",
+      "topic_score": 5,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2309.16052",
@@ -693,13 +683,33 @@
         "Fumin Zhang"
       ],
       "published": "2023-09-27",
+      "year": "2023",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2309.16052v1",
       "pdf_url": "https://arxiv.org/pdf/2309.16052v1",
-      "categories": [
-        "cs.RO"
+      "doi": "10.48550/arXiv.2309.16052",
+      "topic": "水下机器人",
+      "topic_score": 5,
+      "fetched": "2026-06-27 20:56"
+    },
+    {
+      "id": "1909.03472",
+      "title": "Autonomous Underwater Vehicle: Electronics and Software Implementation of the Proton AUV",
+      "abstract": "The paper deals with the software and the electronics unit for an autonomous underwater vehicle. The implementation in the electronics unit is the connection and communication between SBC, pixhawk controller and other sensory hardware and actuators. The major implementation of the software unit is the algorithm for object detection based on Convolutional Neural Network (CNN) and its models. The Hyperparameters were tuned according to Odroid Xu4 for various models. The maneuvering algorithm uses ",
+      "authors": [
+        "Vivek Mange",
+        "Priyam Shah",
+        "Vishal Kothari"
       ],
-      "fetched": "2026-06-27 19:50"
+      "published": "2019-09-08",
+      "year": "2019",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/1909.03472v1",
+      "pdf_url": "https://arxiv.org/pdf/1909.03472v1",
+      "doi": "10.48550/arXiv.1909.03472",
+      "topic": "水下机器人",
+      "topic_score": 3,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2112.03685",
@@ -713,53 +723,51 @@
         "Olivier Masset"
       ],
       "published": "2021-12-07",
+      "year": "2021",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2112.03685v1",
       "pdf_url": "https://arxiv.org/pdf/2112.03685v1",
-      "categories": [
-        "cs.RO"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2112.03685",
+      "topic": "自主航行与避碰",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
     },
     {
-      "id": "1809.06179",
-      "title": "Learning of Multi-Context Models for Autonomous Underwater Vehicles",
-      "abstract": "Multi-context model learning is crucial for marine robotics where several factors can cause disturbances to the system's dynamics. This work addresses the problem of identifying multiple contexts of an AUV model. We build a simulation model of the robot from experimental data, and use it to fill in the missing data and generate different model contexts. We implement an architecture based on long-short-term-memory (LSTM) networks to learn the different contexts directly from the data. We show tha",
+      "id": "2103.06085",
+      "title": "On the Dual Implementation of Collision-Avoidance Constraints in Path-Following MPC for Underactuated Surface Vessels",
+      "abstract": "A path-following collision-avoidance model predictive control (MPC) method is proposed which approximates obstacle shapes as convex polygons. Collision-avoidance is ensured by means of the signed distance function which is calculated efficiently as part of the MPC problem by making use of a dual formulation. The overall MPC problem can be solved by standard nonlinear programming (NLP) solvers. The dual signed distance formulation yields, besides the (dual) collision-avoidance constraints, norm, ",
       "authors": [
-        "Bilal Wehbe",
-        "Octavio Arriaga",
-        "Mario Michael Krell",
-        "Frank Kirchner"
+        "Simon Helling",
+        "Christian Roduner",
+        "Thomas Meurer"
       ],
-      "published": "2018-09-17",
+      "published": "2021-03-10",
+      "year": "2021",
       "source": "arXiv",
-      "url": "https://arxiv.org/abs/1809.06179v1",
-      "pdf_url": "https://arxiv.org/pdf/1809.06179v1",
-      "categories": [
-        "cs.RO",
-        "cs.LG",
-        "eess.SY"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "url": "https://arxiv.org/abs/2103.06085v2",
+      "pdf_url": "https://arxiv.org/pdf/2103.06085v2",
+      "doi": "10.48550/arXiv.2103.06085",
+      "topic": "其他",
+      "topic_score": 0,
+      "fetched": "2026-06-27 20:56"
     },
     {
-      "id": "2309.10617",
-      "title": "Intelligent Debris Mass Estimation Model for Autonomous Underwater Vehicle",
-      "abstract": "Marine debris poses a significant threat to the survival of marine wildlife, often leading to entanglement and starvation, ultimately resulting in death. Therefore, removing debris from the ocean is crucial to restore the natural balance and allow marine life to thrive. Instance segmentation is an advanced form of object detection that identifies objects and precisely locates and separates them, making it an essential tool for autonomous underwater vehicles (AUVs) to navigate and interact with t",
+      "id": "2411.08605",
+      "title": "Lo-MARVE: A Low Cost Autonomous Underwater Vehicle for Marine Exploration",
+      "abstract": "This paper presents Low-cost Marine Autonomous Robotic Vehicle Explorer (Lo-MARVE), a novel autonomous underwater vehicle (AUV) designed to provide a low cost solution for underwater exploration and environmental monitoring in shallow water environments. Lo-MARVE offers a cost-effective alternative to existing AUVs, featuring a modular design, low-cost sensors, and wireless communication capabilities. The total cost of Lo-MARVE is approximately EUR 500. Lo-MARVE is developed using the Raspberry ",
       "authors": [
-        "Mohana Sri S",
-        "Swethaa S",
-        "Aouthithiye Barathwaj SR Y",
-        "Sai Ganesh CS"
+        "Karl Mason",
+        "Daniel Kelly"
       ],
-      "published": "2023-09-19",
+      "published": "2024-11-13",
+      "year": "2024",
       "source": "arXiv",
-      "url": "https://arxiv.org/abs/2309.10617v3",
-      "pdf_url": "https://arxiv.org/pdf/2309.10617v3",
-      "categories": [
-        "cs.CV"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "url": "https://arxiv.org/abs/2411.08605v1",
+      "pdf_url": "https://arxiv.org/pdf/2411.08605v1",
+      "doi": "10.48550/arXiv.2411.08605",
+      "topic": "水下机器人",
+      "topic_score": 6,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2606.19711",
@@ -772,15 +780,14 @@
         "Lizhu Hao"
       ],
       "published": "2026-06-18",
+      "year": "2026",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2606.19711v1",
       "pdf_url": "https://arxiv.org/pdf/2606.19711v1",
-      "categories": [
-        "cs.RO",
-        "cs.LG",
-        "eess.SY"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2606.19711",
+      "topic": "水下机器人",
+      "topic_score": 5,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2606.15240",
@@ -794,13 +801,14 @@
         "Hao Wang"
       ],
       "published": "2026-06-13",
+      "year": "2026",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2606.15240v1",
       "pdf_url": "https://arxiv.org/pdf/2606.15240v1",
-      "categories": [
-        "cs.LG"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2606.15240",
+      "topic": "水下机器人",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2606.12349",
@@ -810,14 +818,14 @@
         "Paria Rezayan"
       ],
       "published": "2026-06-10",
+      "year": "2026",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2606.12349v2",
       "pdf_url": "https://arxiv.org/pdf/2606.12349v2",
-      "categories": [
-        "cs.RO",
-        "eess.SY"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2606.12349",
+      "topic": "自主航行与避碰",
+      "topic_score": 3,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2606.08513",
@@ -828,15 +836,14 @@
         "Oren Gal"
       ],
       "published": "2026-06-07",
+      "year": "2026",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2606.08513v1",
       "pdf_url": "https://arxiv.org/pdf/2606.08513v1",
-      "categories": [
-        "cs.RO",
-        "cs.LG",
-        "eess.SY"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2606.08513",
+      "topic": "水下机器人",
+      "topic_score": 3,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2606.06351",
@@ -848,14 +855,14 @@
         "Heeyoung Kim"
       ],
       "published": "2026-06-04",
+      "year": "2026",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2606.06351v1",
       "pdf_url": "https://arxiv.org/pdf/2606.06351v1",
-      "categories": [
-        "stat.ML",
-        "cs.LG"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2606.06351",
+      "topic": "自主航行与避碰",
+      "topic_score": 1,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2606.06311",
@@ -867,13 +874,14 @@
         "Heeyoung Kim"
       ],
       "published": "2026-06-04",
+      "year": "2026",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2606.06311v1",
       "pdf_url": "https://arxiv.org/pdf/2606.06311v1",
-      "categories": [
-        "cs.AI"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2606.06311",
+      "topic": "自主航行与避碰",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2606.04518",
@@ -887,13 +895,14 @@
         "Qingrui Zhang"
       ],
       "published": "2026-06-03",
+      "year": "2026",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2606.04518v1",
       "pdf_url": "https://arxiv.org/pdf/2606.04518v1",
-      "categories": [
-        "cs.RO"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2606.04518",
+      "topic": "自主航行与避碰",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2605.26524",
@@ -907,34 +916,14 @@
         "Congcong Zhao"
       ],
       "published": "2026-05-26",
+      "year": "2026",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2605.26524v1",
       "pdf_url": "https://arxiv.org/pdf/2605.26524v1",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "2605.23553",
-      "title": "Sea Trial Validation of the ROS-DESERT Middleware with Autonomous Underwater Vehicles",
-      "abstract": "This paper presents a modular software architecture that enables environmental-aware coordination of heterogeneous Autonomous Underwater Vehicles (AUVs) to improve underwater acoustic connectivity. The architecture combines a Robot Operating System 2 application layer with the DESERT Underwater communication framework through the rmw_desert middleware, and integrates a Robot Operating System 1 bridge to ensure interoperability with legacy vehicle front-seat controllers. This design enables fine-",
-      "authors": [
-        "Davide Cosimo",
-        "Davide Costa",
-        "Riccardo Costanzi",
-        "Filippo Campagnaro",
-        "Andrea Caiti"
-      ],
-      "published": "2026-05-22",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2605.23553v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.23553v1",
-      "categories": [
-        "cs.NI"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2605.26524",
+      "topic": "水下机器人",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2605.16442",
@@ -947,33 +936,14 @@
         "Clinton Fookes"
       ],
       "published": "2026-05-15",
+      "year": "2026",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2605.16442v1",
       "pdf_url": "https://arxiv.org/pdf/2605.16442v1",
-      "categories": [
-        "cs.RO",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "2605.14919",
-      "title": "Transmit Beamforming for High-Rate Underwater Acoustic Communications",
-      "abstract": "Transmit beamforming for underwater acoustic communication is challenging because it requires perfect knowledge of the channel to the receiver in advance. In practice, channel estimates must be learned through feedback and are often noisy or outdated because of feedback delay and channel variation. In this paper, we investigate angle-based beamforming strategies for a single-user link that reduce dependence on full channel knowledge by exploiting stable components of the geometric structure in t",
-      "authors": [
-        "Diego A. Cuji",
-        "Andrew C. Singer",
-        "Milica Stojanovic"
-      ],
-      "published": "2026-05-14",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2605.14919v1",
-      "pdf_url": "https://arxiv.org/pdf/2605.14919v1",
-      "categories": [
-        "eess.SP"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2605.16442",
+      "topic": "自主航行与避碰",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2605.13123",
@@ -986,13 +956,14 @@
         "Jaime Valls Miro"
       ],
       "published": "2026-05-13",
+      "year": "2026",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2605.13123v1",
       "pdf_url": "https://arxiv.org/pdf/2605.13123v1",
-      "categories": [
-        "cs.RO"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2605.13123",
+      "topic": "自主航行与避碰",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2605.09494",
@@ -1005,14 +976,14 @@
         "Yu Liu"
       ],
       "published": "2026-05-10",
+      "year": "2026",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2605.09494v1",
       "pdf_url": "https://arxiv.org/pdf/2605.09494v1",
-      "categories": [
-        "cs.RO",
-        "cs.AI"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2605.09494",
+      "topic": "水下机器人",
+      "topic_score": 1,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2603.22667",
@@ -1026,13 +997,14 @@
         "Brendan Englot"
       ],
       "published": "2026-03-24",
+      "year": "2026",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2603.22667v1",
       "pdf_url": "https://arxiv.org/pdf/2603.22667v1",
-      "categories": [
-        "cs.RO"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2603.22667",
+      "topic": "自主航行与避碰",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2603.04472",
@@ -1045,33 +1017,14 @@
         "Kathrin Donandt"
       ],
       "published": "2026-03-04",
+      "year": "2026",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2603.04472v1",
       "pdf_url": "https://arxiv.org/pdf/2603.04472v1",
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "2602.20105",
-      "title": "Adaptive Underwater Acoustic Communications with Limited Feedback: An AoI-Aware Hierarchical Bandit Approach",
-      "abstract": "Underwater Acoustic (UWA) networks are vital for remote sensing and ocean exploration but face inherent challenges such as limited bandwidth, long propagation delays, and highly dynamic channels. These constraints hinder real-time communication and degrade overall system performance. To address these challenges, this paper proposes a bilevel Multi-Armed Bandit (MAB) framework. At the fast inner level, a Contextual Delayed MAB (CD-MAB) jointly optimizes adaptive modulation and transmission power ",
-      "authors": [
-        "Fabio Busacca",
-        "Andrea Panebianco",
-        "Yin Sun"
-      ],
-      "published": "2026-02-23",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2602.20105v1",
-      "pdf_url": "https://arxiv.org/pdf/2602.20105v1",
-      "categories": [
-        "cs.NI",
-        "eess.SP"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2603.04472",
+      "topic": "水下机器人",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2602.19062",
@@ -1083,13 +1036,14 @@
         "Jiangcheng Su"
       ],
       "published": "2026-02-22",
+      "year": "2026",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2602.19062v1",
       "pdf_url": "https://arxiv.org/pdf/2602.19062v1",
-      "categories": [
-        "cs.RO"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2602.19062",
+      "topic": "自主航行与避碰",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2601.18537",
@@ -1103,34 +1057,14 @@
         "Jianhua Z. Huang"
       ],
       "published": "2026-01-26",
+      "year": "2026",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2601.18537v3",
       "pdf_url": "https://arxiv.org/pdf/2601.18537v3",
-      "categories": [
-        "cs.RO",
-        "cs.AI"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "2601.03218",
-      "title": "Enhancing Safety in Automated Ports: A Virtual Reality Study of Pedestrian-Autonomous Vehicle Interactions under Time Pressure, Visual Constraints, and Varying Vehicle Size",
-      "abstract": "Autonomous driving improves traffic efficiency but presents safety challenges in complex port environments. This study investigates how environmental factors, traffic factors, and pedestrian characteristics influence interaction safety between autonomous vehicles and pedestrians in ports. Using virtual reality (VR) simulations of typical port scenarios, 33 participants completed pedestrian crossing tasks under varying visibility, vehicle sizes, and time pressure conditions. Results indicate that",
-      "authors": [
-        "Yuan Che",
-        "Mun On Wong",
-        "Xiaowei Gao",
-        "Haoyang Liang",
-        "Yun Ye"
-      ],
-      "published": "2026-01-06",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2601.03218v1",
-      "pdf_url": "https://arxiv.org/pdf/2601.03218v1",
-      "categories": [
-        "cs.HC"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2601.18537",
+      "topic": "自主航行与避碰",
+      "topic_score": 1,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2601.01302",
@@ -1140,53 +1074,14 @@
         "Pouria Sarhadi"
       ],
       "published": "2026-01-03",
+      "year": "2026",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2601.01302v2",
       "pdf_url": "https://arxiv.org/pdf/2601.01302v2",
-      "categories": [
-        "eess.SY"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "2512.16470",
-      "title": "Acoustic RIS for Massive Spatial Multiplexing: Unleashing Degrees of Freedom and Capacity in Underwater Communications",
-      "abstract": "Underwater acoustic (UWA) communications are essential for high-speed marine data transmission but remain severely constrained by limited bandwidth, significant propagation loss, and sparse multipath structures. Conventional underwater acoustic multiple-input multiple-output (MIMO) systems primarily utilize spatial diversity but suffer from limited array resolution, causing angular ambiguity and insufficient spatial degrees of freedom (DoFs). This paper addresses these limitations through acoust",
-      "authors": [
-        "Longfei Zhao",
-        "Jingbo Tan",
-        "Jintao Wang",
-        "Ian F Akyildiz",
-        "Zhi Sun"
-      ],
-      "published": "2025-12-18",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2512.16470v1",
-      "pdf_url": "https://arxiv.org/pdf/2512.16470v1",
-      "categories": [
-        "cs.NI"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "2511.18561",
-      "title": "The Evaluation for Usability Methods of Unmanned Surface Vehicles: Are Current Usability Methods Viable for Unmanned Surface Vehicles? Insights from a Multiple Case Study Approach to Human-Robot Interaction",
-      "abstract": "Unmanned Surface Vehicles (USVs) are increasingly utilised for diverse applications, ranging from environmental monitoring to security patrols. While USV technology is progressing, it remains clear that full autonomy is not achievable in all scenarios, and remote human intervention is still crucial, particularly in dynamic or complex environments. This continued reliance on human intervention highlights a range of Human-Robot Interaction (HRI) challenges that remain unresolved. Compared to the e",
-      "authors": [
-        "Zitian Peng",
-        "Shiyao Zhang",
-        "Shanliang Yao",
-        "Xiaohui Zhu",
-        "Mengjie Huang"
-      ],
-      "published": "2025-11-23",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2511.18561v1",
-      "pdf_url": "https://arxiv.org/pdf/2511.18561v1",
-      "categories": [
-        "cs.HC"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2601.01302",
+      "topic": "水下机器人",
+      "topic_score": 5,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2510.26347",
@@ -1198,14 +1093,14 @@
         "Narada D. Warakagoda"
       ],
       "published": "2025-10-30",
+      "year": "2025",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2510.26347v1",
       "pdf_url": "https://arxiv.org/pdf/2510.26347v1",
-      "categories": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2510.26347",
+      "topic": "水下机器人",
+      "topic_score": 3,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2510.25309",
@@ -1219,13 +1114,14 @@
         "Paal Engelstad"
       ],
       "published": "2025-10-29",
+      "year": "2025",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2510.25309v3",
       "pdf_url": "https://arxiv.org/pdf/2510.25309v3",
-      "categories": [
-        "eess.SY"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2510.25309",
+      "topic": "水下机器人",
+      "topic_score": 3,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2510.23994",
@@ -1238,13 +1134,14 @@
         "Cade Wagner"
       ],
       "published": "2025-10-28",
+      "year": "2025",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2510.23994v1",
       "pdf_url": "https://arxiv.org/pdf/2510.23994v1",
-      "categories": [
-        "cs.LG"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2510.23994",
+      "topic": "水下机器人",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2509.20593",
@@ -1257,13 +1154,14 @@
         "Yuanchang Liu"
       ],
       "published": "2025-09-24",
+      "year": "2025",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2509.20593v2",
       "pdf_url": "https://arxiv.org/pdf/2509.20593v2",
-      "categories": [
-        "cs.RO"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2509.20593",
+      "topic": "自主航行与避碰",
+      "topic_score": 3,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2509.25226",
@@ -1275,94 +1173,14 @@
         "Wenqi Liu"
       ],
       "published": "2025-09-24",
+      "year": "2025",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2509.25226v1",
       "pdf_url": "https://arxiv.org/pdf/2509.25226v1",
-      "categories": [
-        "cs.LG",
-        "math.OC"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "2509.01836",
-      "title": "Multi-vessel Interaction-Aware Trajectory Prediction and Collision Risk Assessment",
-      "abstract": "Accurate vessel trajectory prediction is essential for enhancing situational awareness and preventing collisions. Still, existing data-driven models are constrained mainly to single-vessel forecasting, overlooking vessel interactions, navigation rules, and explicit collision risk assessment. We present a transformer-based framework for multi-vessel trajectory prediction with integrated collision risk analysis. For a given target vessel, the framework identifies nearby vessels. It jointly predict",
-      "authors": [
-        "Md Mahbub Alam",
-        "Jose F. Rodrigues-Jr",
-        "Gabriel Spadon"
-      ],
-      "published": "2025-09-01",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2509.01836v1",
-      "pdf_url": "https://arxiv.org/pdf/2509.01836v1",
-      "categories": [
-        "cs.RO",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "2508.14198",
-      "title": "Reliability comparison of vessel trajectory prediction models via Probability of Detection",
-      "abstract": "This contribution addresses vessel trajectory prediction (VTP), focusing on the evaluation of different deep learning-based approaches. The objective is to assess model performance in diverse traffic complexities and compare the reliability of the approaches. While previous VTP models overlook the specific traffic situation complexity and lack reliability assessments, this research uses a probability of detection analysis to quantify model reliability in varying traffic scenarios, thus going bey",
-      "authors": [
-        "Zahra Rastin",
-        "Kathrin Donandt",
-        "Dirk Söffker"
-      ],
-      "published": "2025-08-19",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2508.14198v1",
-      "pdf_url": "https://arxiv.org/pdf/2508.14198v1",
-      "categories": [
-        "cs.LG",
-        "cs.CE",
-        "eess.SY"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "2508.07578",
-      "title": "Achieving Fair-Effective Communications and Robustness in Underwater Acoustic Sensor Networks: A Semi-Cooperative Approach",
-      "abstract": "This paper investigates the fair-effective communication and robustness in imperfect and energy-constrained underwater acoustic sensor networks (IC-UASNs). Specifically, we investigate the impact of unexpected node malfunctions on the network performance under the time-varying acoustic channels. Each node is expected to satisfy Quality of Service (QoS) requirements. However, achieving individual QoS requirements may interfere with other concurrent communications. Underwater nodes rely excessivel",
-      "authors": [
-        "Yu Gou",
-        "Tong Zhang",
-        "Jun Liu",
-        "Tingting Yang",
-        "Shanshan Song"
-      ],
-      "published": "2025-08-11",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2508.07578v1",
-      "pdf_url": "https://arxiv.org/pdf/2508.07578v1",
-      "categories": [
-        "cs.NI"
-      ],
-      "fetched": "2026-06-27 19:50"
-    },
-    {
-      "id": "2506.23557",
-      "title": "Data-Driven Modulation Optimization with LMMSE Equalization for Reliability Enhancement in Underwater Acoustic Communications",
-      "abstract": "Ultra-reliable underwater acoustic (UWA) communications serve as one of the key enabling technologies for future space-air-ground-underwater integrated networks. However, the reliability of current UWA transmission is still insufficient since severe performance degradation occurs for conventional multicarrier systems in UWA channels with severe delay-scale spread. To solve this problem, we exploit learning-inspired approaches to optimize the modulation scheme under the assumption of linear minim",
-      "authors": [
-        "Xuehan Wang",
-        "Hengyu Zhang",
-        "Jintao Wang",
-        "Zhi Sun",
-        "Bo Ai"
-      ],
-      "published": "2025-06-30",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2506.23557v1",
-      "pdf_url": "https://arxiv.org/pdf/2506.23557v1",
-      "categories": [
-        "eess.SP"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2509.25226",
+      "topic": "海洋可再生能源",
+      "topic_score": 3,
+      "fetched": "2026-06-27 20:56"
     },
     {
       "id": "2506.18024",
@@ -1376,105 +1194,161 @@
         "Toan Luu"
       ],
       "published": "2025-06-22",
+      "year": "2025",
       "source": "arXiv",
       "url": "https://arxiv.org/abs/2506.18024v1",
       "pdf_url": "https://arxiv.org/pdf/2506.18024v1",
-      "categories": [
-        "cs.DC",
-        "cs.RO"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "doi": "10.48550/arXiv.2506.18024",
+      "topic": "自主航行与避碰",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
     },
     {
-      "id": "2506.13008",
-      "title": "Joint Spectrum Sensing and Resource Allocation for OFDMA-based Underwater Acoustic Communications",
-      "abstract": "Underwater acoustic (UWA) communications generally rely on cognitive radio (CR)-based ad-hoc networks due to challenges such as long propagation delay, limited channel resources, and high attenuation. To address the constraints of limited frequency resources, UWA communications have recently incorporated orthogonal frequency division multiple access (OFDMA), significantly enhancing spectral efficiency (SE) through multiplexing gains. Still, {the} low propagation speed of UWA signals, combined wi",
+      "id": "2506.12029",
+      "title": "Physics-Informed Neural Networks for Vessel Trajectory Prediction: Learning Time-Discretized Kinematic Dynamics via Finite Differences",
+      "abstract": "Accurate vessel trajectory prediction is crucial for navigational safety, route optimization, traffic management, search and rescue operations, and autonomous navigation. Traditional data-driven models lack real-world physical constraints, leading to forecasts that disobey vessel motion dynamics, such as in scenarios with limited or noisy data where sudden course changes or speed variations occur due to external factors. To address this limitation, we propose a Physics-Informed Neural Network (P",
       "authors": [
-        "Minwoo Kim",
-        "Youngchol Choi",
-        "Yeongjun Kim",
-        "Eojin Seo",
-        "Hyun Jong Yang"
+        "Md Mahbub Alam",
+        "Amilcar Soares",
+        "José F. Rodrigues-Jr",
+        "Gabriel Spadon"
       ],
-      "published": "2025-06-16",
+      "published": "2025-05-22",
+      "year": "2025",
       "source": "arXiv",
-      "url": "https://arxiv.org/abs/2506.13008v1",
-      "pdf_url": "https://arxiv.org/pdf/2506.13008v1",
-      "categories": [
-        "eess.SP"
-      ],
-      "fetched": "2026-06-27 19:50"
+      "url": "https://arxiv.org/abs/2506.12029v1",
+      "pdf_url": "https://arxiv.org/pdf/2506.12029v1",
+      "doi": "10.48550/arXiv.2506.12029",
+      "topic": "自主航行与避碰",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
     },
     {
-      "id": "52da0e98cc59c2c6668836699bdb4682858d3cbd",
-      "title": "Assessment of Fully Eulerian Phase-Field Framework for Ship Hydrodynamics With Ice Interaction",
-      "abstract": "\n The harsh and dynamic environment of the Arctic poses significant challenges for ship design, particularly concerning the interaction between ship hull/propeller system and ice. The development of efficient and robust ice-going ships that can navigate ice fields with minimal resistance and local load on the hull, is an emerging application of fluid-structure interaction. Traditional methods of modeling ship-ice interaction often fail to capture the complex dynamics involved. High-fidelity nume",
+      "id": "2505.08222",
+      "title": "Scaling Multi Agent Reinforcement Learning for Underwater Acoustic Tracking via Autonomous Vehicles",
+      "abstract": "Autonomous vehicles (AVs) offer a cost-effective solution for scientific missions such as underwater tracking. Reinforcement learning (RL) has emerged as a powerful method for controlling AVs, but scaling to fleets (essential for multi-target tracking or rapidly moving targets) is challenging. Multi-Agent RL (MARL) is notoriously sample-inefficient, and while high-fidelity simulators like Gazebo's LRAUV provide up to 100x faster-than-real-time single-robot simulations, they offer little speedup ",
       "authors": [
-        "S. Bhuiyan",
-        "B. Rath",
-        "X. Mao",
-        "R. Jaiman"
+        "Matteo Gallici",
+        "Ivan Masmitja",
+        "Mario Martín"
       ],
-      "published": "2025-06-22",
-      "source": "Semantic Scholar",
-      "url": "https://www.semanticscholar.org/paper/52da0e98cc59c2c6668836699bdb4682858d3cbd",
-      "pdf_url": "",
-      "categories": [
-        "Volume 4: CFD, FSI and AI"
-      ],
-      "arxiv_id": "",
-      "fetched": "2026-06-27 19:50"
+      "published": "2025-05-13",
+      "year": "2025",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2505.08222v3",
+      "pdf_url": "https://arxiv.org/pdf/2505.08222v3",
+      "doi": "10.48550/arXiv.2505.08222",
+      "topic": "水下机器人",
+      "topic_score": 4,
+      "fetched": "2026-06-27 20:56"
     },
     {
-      "id": "ee9f4b32778757c9ed671e7a3fec6e77d36ca956",
-      "title": "Coupled Ship Simulation in Hydrodynamics and Structural Dynamics Induced by Wave Loads: A Systematic Literature Review",
-      "abstract": "Coupled ship simulation in hydrodynamics and structural dynamics provides a comprehensive approach to understanding the dynamic behavior of ships under wave-induced loads. Improvements in computer power have made it much easier to create coupled simulation methods that combine structural and hydrodynamics analyses. A literature review based on PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) 2020 is used to look at future trends in this literature review. We have filte",
+      "id": "2505.07484",
+      "title": "Integrated Localization and Path Planning for an Ocean Exploring Team of Autonomous Underwater Vehicles with Consensus Graph Model Predictive Control",
+      "abstract": "Navigation of a team of autonomous underwater vehicles (AUVs) coordinated by an unmanned surface vehicle (USV) is efficient and reliable for deep ocean exploration. AUVs depart from and return to the USV after collaborative navigation, data collection, and ocean exploration missions. Efficient path planning and accurate localization are essential, the latter of which is critical due to the lack of global localization signals and poor radio frequency (RF) communication in deep waters. Inertial na",
       "authors": [
-        "O. Mursid",
-        "Erkan Oterkus",
-        "S. Oterkus"
+        "Mohsen Eskandari",
+        "Andrey V. Savkin",
+        "Mohammad Deghat"
       ],
-      "published": "2025-02-26",
-      "source": "Semantic Scholar",
-      "url": "https://www.semanticscholar.org/paper/ee9f4b32778757c9ed671e7a3fec6e77d36ca956",
-      "pdf_url": "",
-      "categories": [
-        "Journal of Marine Science and Engineering"
-      ],
-      "arxiv_id": "",
-      "fetched": "2026-06-27 19:50"
+      "published": "2025-05-12",
+      "year": "2025",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2505.07484v1",
+      "pdf_url": "https://arxiv.org/pdf/2505.07484v1",
+      "doi": "10.48550/arXiv.2505.07484",
+      "topic": "水下机器人",
+      "topic_score": 5,
+      "fetched": "2026-06-27 20:56"
     },
     {
-      "id": "7495a7edc5d367473db7bb9c6f69cca74010b84f",
-      "title": "Ship Manoeuvring Research 2010–2025: From Hydrodynamics and Control to Digital Twins, AI and MASS",
-      "abstract": "Over the past fifteen years, ship manoeuvring has evolved from a highly specialised branch of marine hydrodynamics into a key enabler within multidisciplinary research, integrating seakeeping and intact stability, and paving the way for digital twins and autonomous maritime systems. The scope of this review is to examine the existing literature in a way that paves the way forward for integration with robotics, aerial and surface drones, digital-twin (DT) ecosystems, and other interconnected auto",
+      "id": "2504.02005",
+      "title": "System Identification and Adaptive Input Estimation on the Jaiabot Micro Autonomous Underwater Vehicle",
+      "abstract": "This paper reports an attempt to model the system dynamics and estimate both the unknown internal control input and the state of a recently developed marine autonomous vehicle, the Jaiabot. Although the Jaiabot has shown promise in many applications, process and sensor noise necessitates state estimation and noise filtering. In this work, we present the first surge and heading linear dynamical model for Jaiabots derived from real data collected during field testing. An adaptive input estimation ",
       "authors": [
-        "Mina Tadros",
-        "M. Aung",
-        "Panagiotis Louvros",
-        "Christos Pollalis",
-        "Amin Nazemian"
+        "Ioannis Faros",
+        "Herbert G. Tanner"
       ],
-      "published": "2025-12-07",
-      "source": "Semantic Scholar",
-      "url": "https://www.semanticscholar.org/paper/7495a7edc5d367473db7bb9c6f69cca74010b84f",
-      "pdf_url": "",
-      "categories": [
-        "Journal of Marine Science and Engineering"
+      "published": "2025-04-01",
+      "year": "2025",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2504.02005v1",
+      "pdf_url": "https://arxiv.org/pdf/2504.02005v1",
+      "doi": "10.48550/arXiv.2504.02005",
+      "topic": "水下机器人",
+      "topic_score": 1,
+      "fetched": "2026-06-27 20:56"
+    },
+    {
+      "id": "2503.21834",
+      "title": "A Multi-Modal Knowledge-Enhanced Framework for Vessel Trajectory Prediction",
+      "abstract": "Accurate vessel trajectory prediction facilitates improved navigational safety, routing, and environmental protection. However, existing prediction methods are challenged by the irregular sampling time intervals of the vessel tracking data from the global AIS system and the complexity of vessel movement. These aspects render model learning and generalization difficult. To address these challenges and improve vessel trajectory prediction, we propose the multi-modal knowledge-enhanced framework (M",
+      "authors": [
+        "Haomin Yu",
+        "Tianyi Li",
+        "Kristian Torp",
+        "Christian S. Jensen"
       ],
-      "arxiv_id": "",
-      "fetched": "2026-06-27 19:50"
+      "published": "2025-03-27",
+      "year": "2025",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2503.21834v1",
+      "pdf_url": "https://arxiv.org/pdf/2503.21834v1",
+      "doi": "10.48550/arXiv.2503.21834",
+      "topic": "水下机器人",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
+    },
+    {
+      "id": "2503.11906",
+      "title": "A Survey on SAR ship classification using Deep Learning",
+      "abstract": "Deep learning (DL) has emerged as a powerful tool for Synthetic Aperture Radar (SAR) ship classification. This survey comprehensively analyzes the diverse DL techniques employed in this domain. We identify critical trends and challenges, highlighting the importance of integrating handcrafted features, utilizing public datasets, data augmentation, fine-tuning, explainability techniques, and fostering interdisciplinary collaborations to improve DL model performance. This survey establishes a first",
+      "authors": [
+        "Ch Muhammad Awais",
+        "Marco Reggiannini",
+        "Davide Moroni",
+        "Emanuele Salerno"
+      ],
+      "published": "2025-03-14",
+      "year": "2025",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2503.11906v2",
+      "pdf_url": "https://arxiv.org/pdf/2503.11906v2",
+      "doi": "10.48550/arXiv.2503.11906",
+      "topic": "水下机器人",
+      "topic_score": 2,
+      "fetched": "2026-06-27 20:56"
+    },
+    {
+      "id": "2503.10928",
+      "title": "Design and Development of the MeCO Open-Source Autonomous Underwater Vehicle",
+      "abstract": "We present MeCO, the Medium Cost Open-source autonomous underwater vehicle (AUV), a versatile autonomous vehicle designed to support research and development in underwater human-robot interaction (UHRI) and marine robotics in general. An inexpensive platform to build compared to similarly-capable AUVs, the MeCO design and software are released under open-source licenses, making it a cost effective, extensible, and open platform. It is equipped with UHRI-focused systems, such as front and side fa",
+      "authors": [
+        "David Widhalm",
+        "Cory Ohnsted",
+        "Corey Knutson",
+        "Demetrious Kutzke",
+        "Sakshi Singh"
+      ],
+      "published": "2025-03-13",
+      "year": "2025",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2503.10928v1",
+      "pdf_url": "https://arxiv.org/pdf/2503.10928v1",
+      "doi": "10.48550/arXiv.2503.10928",
+      "topic": "水下机器人",
+      "topic_score": 3,
+      "fetched": "2026-06-27 20:56"
     }
   ],
-  "updated": "2026-06-27 19:50",
-  "last_updated": null,
-  "today_new": 76,
-  "total": 76,
+  "updated": "2026-06-27 20:56",
+  "today_new": 69,
+  "total": 69,
   "history": [
     {
       "date": "2026-06-27",
-      "new_count": 76,
-      "total": 76
+      "new_count": 69,
+      "total": 69
     }
   ]
 }

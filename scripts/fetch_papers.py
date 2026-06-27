@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 """
-Ship Research Daily Monitor - 船舶研究动态每日采集
-自动从 arXiv 和 Semantic Scholar 抓取船舶/海洋工程最新论文
+Ship Research Monitor - 船舶研究动态监测
+数据采集 + 统计分析 + 趋势可视化
 """
 
 import json
-import time
 import os
 import re
-import sys
+import time
 from datetime import datetime, timedelta
 from xml.etree import ElementTree
 from urllib.request import urlopen, Request
 from urllib.parse import quote
+from collections import defaultdict, Counter
 
 # ─── 路径 ───────────────────────────────────────────────
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,30 +22,113 @@ DOCS_DIR = os.path.join(BASE_DIR, "docs")
 OUTPUT_JSON = os.path.join(DATA_DIR, "papers.json")
 OUTPUT_HTML = os.path.join(DOCS_DIR, "index.html")
 
+# ─── 研究方向分类 ──────────────────────────────────────
+TOPICS = {
+    "船舶水动力学": [
+        "hydrodynamic", "resistance", "propeller", "cavitation", "hull form",
+        "seakeeping", "maneuvering", "cfd", "computational fluid", "propulsion",
+        "drag reduction", "ship wave", "wake", "boundary layer", "fluid structure",
+        "水动力", "阻力", "螺旋桨", "兴波"
+    ],
+    "自主航行与避碰": [
+        "autonomous navigation", "collision avoidance", "path planning",
+        "unmanned surface", "usv", "mass", "maritime autonomous",
+        "COLREG", "motion planning", "trajectory prediction",
+        "situation awareness", "autonomous vessel",
+        "自主航行", "避碰", "无人船"
+    ],
+    "水下机器人": [
+        "auv", "rov", "underwater vehicle", "underwater robot",
+        "submarine", "deep sea", "underwater manipulation",
+        "underwater exploration", "glider",
+        "水下机器人", "AUV", "ROV"
+    ],
+    "船舶结构安全": [
+        "structural health", "fatigue", "crack detection", "corrosion",
+        "hull strength", "structural analysis", "finite element",
+        "ship structure", "fracture", "damage detection",
+        "结构健康", "疲劳", "裂纹"
+    ],
+    "海洋可再生能源": [
+        "offshore wind", "wave energy", "tidal energy", "renewable energy",
+        "floating wind", "marine energy", "wind turbine", "wave power",
+        "海洋能", "海上风电", "波浪能"
+    ],
+    "船舶能效与减排": [
+        "energy efficiency", "emission", "fuel consumption", "green shipping",
+        "decarboni", "alternative fuel", "lng", "hydrogen",
+        "carbon emission", "clean energy", "环保", "减排", "能效"
+    ],
+    "港口与物流": [
+        "port automation", "terminal", "logistics", "container",
+        "berth", "supply chain", "harbor",
+        "港口", "码头", "集装箱"
+    ],
+    "机器学习与AI": [
+        "deep learning", "machine learning", "neural network",
+        "reinforcement learning", "cnn", "lstm", "transformer",
+        "gan", "artificial intelligence", "computer vision",
+        "object detection", "semantic segmentation",
+        "机器学习", "深度学习", "神经网络"
+    ],
+    "水下通信与感知": [
+        "underwater communication", "acoustic", "sonar", "lidar",
+        "radar", "sensor fusion", "underwater detection",
+        "underwater imaging", "maritime surveillance",
+        "水下通信", "声纳", "水声"
+    ],
+    "船舶设计与建造": [
+        "ship design", "naval architecture", "shipbuilding",
+        "parametric design", "optimization", "multi-objective",
+        "船舶设计", "造船", "优化设计"
+    ],
+}
 
+# ─── 工具函数 ───────────────────────────────────────────
 def load_config():
     with open(CONFIG_PATH, "r") as f:
         return json.load(f)
-
 
 def save_json(data, path):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-
 def load_existing(path):
-    """加载已有的历史数据，保持去重"""
     if os.path.exists(path):
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
     return {"papers": [], "updated": None, "history": []}
 
-
 def extract_arxiv_id(url):
-    """从arXiv URL提取论文ID"""
-    match = re.search(r'arxiv\.org/(?:abs|pdf)/(\d+\.\d+)', url)
-    return match.group(1) if match else None
+    m = re.search(r'arxiv\.org/(?:abs|pdf)/(\d+\.\d+)', url)
+    return m.group(1) if m else None
+
+def extract_doi(title, abstract, arxiv_id, source_url):
+    """提取DOI"""
+    full = (title + " " + abstract)
+    # 先找显式DOI
+    m = re.search(r'10\.\d{4,}/[\w\.\-/]+', full)
+    if m:
+        return m.group(0).rstrip('.')
+    # arXiv paper 默认DOI
+    if arxiv_id:
+        return f"10.48550/arXiv.{arxiv_id}"
+    return ""
+
+
+def classify_paper(title, abstract):
+    """给论文打研究方向标签"""
+    text = (title + " " + abstract).lower()
+    scores = {}
+    for topic, keywords in TOPICS.items():
+        score = sum(1 for kw in keywords if kw.lower() in text)
+        if score > 0:
+            scores[topic] = score
+    if not scores:
+        return "其他", 0
+    best = max(scores, key=scores.get)
+    return best, scores[best]
 
 
 # ═══════════════════════════════════════════════════════════
@@ -54,27 +137,19 @@ def extract_arxiv_id(url):
 
 ARXIV_API = "http://export.arxiv.org/api/query"
 
-
-def build_arxiv_query(queries, categories, max_results=50):
-    """构建arXiv查询字符串"""
+def build_arxiv_query(queries, categories):
     terms = []
     for q in queries:
-        # 拆分成短语和单词
         words = q.strip().split()
         term = ' AND '.join(
             [f'ti:"{w}"' if len(w) > 2 else f'ti:{w}' for w in words]
         )
         terms.append(f'({term})')
-    
     cat_filter = ' OR '.join([f'cat:{c}' for c in categories])
-    query_parts = ' OR '.join(terms)
-    
-    # arXiv查询限制：先按相关度排序，取最新的一批
-    return f'{query_parts} AND ({cat_filter})'
+    return f'({" OR ".join(terms)}) AND ({cat_filter})'
 
 
 def fetch_arxiv(config):
-    """从arXiv获取论文"""
     cfg = config["sources"]["arxiv"]
     if not cfg.get("enabled"):
         return []
@@ -82,14 +157,12 @@ def fetch_arxiv(config):
     max_results = cfg.get("max_results", 50)
     queries = config["search_queries"]
     categories = cfg.get("categories", [])
-    
-    # 分两批取：相关度排序 + 最新排序
     all_papers = {}
     
     for sort_by in ["relevance", "submittedDate"]:
-        query = build_arxiv_query(queries, categories, max_results)
+        query = build_arxiv_query(queries, categories)
         params = {
-            "search_query": query[:2000],  # arXiv URL长度限制
+            "search_query": query[:2000],
             "start": 0,
             "max_results": max_results // 2,
             "sortBy": sort_by,
@@ -102,13 +175,8 @@ def fetch_arxiv(config):
         try:
             req = Request(url, headers={"User-Agent": "ShipMonitor/1.0"})
             resp = urlopen(req, timeout=30)
-            xml_data = resp.read().decode("utf-8")
-            
-            root = ElementTree.fromstring(xml_data)
-            ns = {
-                "atom": "http://www.w3.org/2005/Atom",
-                "arxiv": "http://arxiv.org/schemas/atom",
-            }
+            root = ElementTree.fromstring(resp.read().decode("utf-8"))
+            ns = {"atom": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/schemas/atom"}
             
             for entry in root.findall("atom:entry", ns):
                 paper_id = entry.find("atom:id", ns).text.strip()
@@ -118,7 +186,6 @@ def fetch_arxiv(config):
                 title = entry.find("atom:title", ns).text.strip().replace("\n", " ")
                 summary = entry.find("atom:summary", ns).text.strip().replace("\n", " ")
                 published = entry.find("atom:published", ns).text[:10]
-                updated = entry.find("atom:updated", ns).text[:10]
                 
                 authors = []
                 for author in entry.findall("atom:author", ns):
@@ -135,28 +202,28 @@ def fetch_arxiv(config):
                     elif link.attrib.get("rel") == "alternate":
                         abs_url = link.attrib["href"]
                 
-                categories_list = []
-                for cat in entry.findall("atom:category", ns):
-                    categories_list.append(cat.attrib.get("term", ""))
+                arxiv_id = extract_arxiv_id(paper_id) or ""
+                topic, topic_score = classify_paper(title, summary)
                 
                 all_papers[paper_id] = {
-                    "id": extract_arxiv_id(paper_id) or paper_id,
+                    "id": arxiv_id or paper_id,
                     "title": title,
                     "abstract": summary[:500],
                     "authors": authors[:5],
                     "published": published,
+                    "year": published[:4],
                     "source": "arXiv",
                     "url": abs_url,
                     "pdf_url": pdf_url,
-                    "categories": categories_list[:5],
+                    "doi": extract_doi(title, summary, arxiv_id, abs_url),
+                    "topic": topic,
+                    "topic_score": topic_score,
                     "fetched": datetime.now().strftime("%Y-%m-%d %H:%M"),
                 }
             
-            time.sleep(3)  # arXiv API限流
-            
+            time.sleep(3)
         except Exception as e:
-            print(f"  [WARN] arXiv {sort_by} 查询失败: {e}")
-            continue
+            print(f"  [WARN] arXiv {sort_by} 失败: {e}")
     
     return list(all_papers.values())
 
@@ -167,30 +234,25 @@ def fetch_arxiv(config):
 
 S2_API = "https://api.semanticscholar.org/graph/v1/paper/search"
 
-
 def fetch_semantic_scholar(config):
-    """从Semantic Scholar获取论文"""
     cfg = config["sources"]["semantic_scholar"]
     if not cfg.get("enabled"):
         return []
     
-    queries = config["search_queries"]
-    limit = min(cfg.get("limit", 30), 100)
+    queries = config["search_queries"][:3]
+    limit = min(cfg.get("limit", 20), 50)
     fields = "title,authors,year,url,externalIds,abstract,venue,publicationDate"
-    fields_of_study = cfg.get("fields_of_study", [])
     
     all_papers = []
     seen_ids = set()
     
-    # 只取前3个查询，避免超API限额
-    for query in queries[:3]:
+    for query in queries:
         params = {
             "query": query,
-            "limit": limit // len(queries[:5]) + 1,
+            "limit": limit // len(queries) + 1,
             "fields": fields,
             "year": f"{datetime.now().year - 2}-",
         }
-        
         url = S2_API + "?" + "&".join(
             [f"{k}={quote(str(v))}" for k, v in params.items()]
         )
@@ -206,24 +268,22 @@ def fetch_semantic_scholar(config):
                     continue
                 seen_ids.add(pid)
                 
-                ext_ids = paper.get("externalIds", {})
-                arxiv_id = ext_ids.get("ArXiv", "")
-                
                 title = paper.get("title", "")
                 if not title or len(title) < 5:
                     continue
-                
                 abstract = paper.get("abstract", "")
                 if not abstract:
                     continue
                 
-                authors = []
-                for a in paper.get("authors", [])[:5]:
-                    authors.append(a.get("name", ""))
-                
+                authors = [a.get("name", "") for a in paper.get("authors", [])[:5]]
                 year = paper.get("year", "")
                 pub_date = paper.get("publicationDate", "")
                 venue = paper.get("venue", "")
+                ext_ids = paper.get("externalIds", {})
+                arxiv_id = ext_ids.get("ArXiv", "")
+                doi = ext_ids.get("DOI", "")
+                
+                topic, topic_score = classify_paper(title, abstract)
                 
                 all_papers.append({
                     "id": pid,
@@ -231,307 +291,336 @@ def fetch_semantic_scholar(config):
                     "abstract": abstract[:500],
                     "authors": authors,
                     "published": pub_date[:10] if pub_date else str(year),
+                    "year": str(year),
                     "source": "Semantic Scholar",
                     "url": paper.get("url", f"https://www.semanticscholar.org/paper/{pid}"),
                     "pdf_url": "",
-                    "categories": [venue] if venue else [],
-                    "arxiv_id": arxiv_id,
+                    "doi": doi or extract_doi(title, abstract, arxiv_id, ""),
+                    "topic": topic,
+                    "topic_score": topic_score,
                     "fetched": datetime.now().strftime("%Y-%m-%d %H:%M"),
                 })
             
-            time.sleep(3)  # 限流
-            
+            time.sleep(3)
         except Exception as e:
-            print(f"  [WARN] Semantic Scholar '{query[:30]}' 查询失败: {e}")
-            continue
+            print(f"  [WARN] SS '{query[:20]}' 失败: {e}")
     
     return all_papers
 
 
 # ═══════════════════════════════════════════════════════════
-#  数据合并与去重
+#  数据合并与统计分析
 # ═══════════════════════════════════════════════════════════
 
 def merge_papers(new_papers, existing_data):
-    """合并新旧数据，去重"""
     existing = existing_data.get("papers", [])
     history = existing_data.get("history", [])
-    last_updated = existing_data.get("updated")
     
-    # 已有论文的ID集合
     existing_ids = set()
-    existing_arxiv = set()
     for p in existing:
         existing_ids.add(p["id"])
-        if p["source"] == "arXiv":
-            existing_arxiv.add(p["id"])
-        if p.get("arxiv_id"):
-            existing_arxiv.add(p["arxiv_id"])
+        if p.get("doi"):
+            existing_ids.add(p["doi"])
     
-    # 去重
     deduped = []
     for p in new_papers:
-        pid = p["id"]
-        aid = p.get("arxiv_id", "")
-        if pid in existing_ids or aid in existing_arxiv:
-            continue
-        if pid in [x["id"] for x in deduped]:
+        if p["id"] in existing_ids or p.get("doi", "") in existing_ids:
             continue
         deduped.append(p)
     
-    # 合并：新论文在前
     merged = deduped + existing
     
-    # 当日新增计入历史（简化：只记数量）
     today = datetime.now().strftime("%Y-%m-%d")
     if deduped:
-        history.append({
-            "date": today,
-            "new_count": len(deduped),
-            "total": len(merged),
-        })
-        history = history[-90:]  # 保留90天
+        history.append({"date": today, "new_count": len(deduped), "total": len(merged)})
+        history = history[-90:]
     
     return {
         "papers": merged,
         "updated": datetime.now().strftime("%Y-%m-%d %H:%M"),
-        "last_updated": last_updated,
         "today_new": len(deduped),
         "total": len(merged),
         "history": history,
     }
 
 
-# ═══════════════════════════════════════════════════════════
-#  关键词打分（提升相关性排序）
-# ═══════════════════════════════════════════════════════════
-
-# 船海核心关键词 - 命中越多越靠前
-CORE_KW = [
-    "ship", "vessel", "maritime", "marine", "ocean", "offshore", "underwater",
-    "submarine", "naval", "seaworth", "seakeeping", "maneuvering",
-    "propeller", "cavitation", "hydrodynamic", "resistance", "hull",
-    "autonomous surface", "unmanned surface", "ROV", "AUV", "USV", "ASV",
-    "collision avoidance", "path planning", "trajectory prediction",
-    "船舶", "海洋工程", "水动力", "螺旋桨", "自主航行"
-]
-
-
-def score_paper(paper):
-    """给论文打分，越高越相关"""
-    title = (paper.get("title") or "").lower()
-    abstract = (paper.get("abstract") or "").lower()
-    text = title + " " + abstract
+def compute_statistics(papers):
+    """计算统计数据"""
+    # 按研究方向统计
+    topic_counts = Counter()
+    topic_papers = defaultdict(list)
+    for p in papers:
+        topic = p.get("topic", "其他")
+        topic_counts[topic] += 1
+        topic_papers[topic].append(p)
     
-    score = 0
-    for kw in CORE_KW:
-        if kw.lower() in text:
-            score += 1
+    # 按年份统计
+    year_counts = Counter()
+    for p in papers:
+        y = p.get("year", "未知")
+        if y and y.isdigit():
+            year_counts[int(y)] += 1
     
-    # 标题命中权重更高
-    for kw in CORE_KW:
-        if kw.lower() in title:
-            score += 2
+    # 按年份+研究方向统计
+    topic_year = defaultdict(lambda: Counter())
+    for p in papers:
+        t = p.get("topic", "其他")
+        y = p.get("year", "未知")
+        if y and y.isdigit():
+            topic_year[t][int(y)] += 1
     
-    # 时效加分（越新越好）
-    pub = paper.get("published", "")
-    if pub:
-        try:
-            dt = datetime.strptime(pub[:10], "%Y-%m-%d") if "-" in pub else None
-            if dt:
-                days_ago = (datetime.now() - dt).days
-                if days_ago <= 7:
-                    score += 3
-                elif days_ago <= 30:
-                    score += 2
-                elif days_ago <= 90:
-                    score += 1
-        except:
-            pass
+    # 汇总年份范围
+    years = sorted(y for y in year_counts if y != "未知")
+    year_range = f"{min(years)}-{max(years)}" if years else "—"
     
-    # 优先arXiv（预印本更新更快）
-    if paper.get("source") == "arXiv":
-        score += 1
+    # 按来源统计
+    source_counts = Counter(p.get("source", "其他") for p in papers)
     
-    return score
+    return {
+        "topic_counts": dict(topic_counts.most_common()),
+        "year_counts": {str(k): v for k, v in sorted(year_counts.items())},
+        "topic_year": {t: {str(k): v for k, v in sorted(d.items())} for t, d in topic_year.items()},
+        "source_counts": dict(source_counts.most_common()),
+        "total_topics": len(topic_counts),
+        "year_range": year_range,
+        "topic_papers": {t: sorted(ps, key=lambda x: x.get("published", ""), reverse=True)[:20]
+                         for t, ps in topic_papers.items()},
+    }
 
 
 # ═══════════════════════════════════════════════════════════
-#  HTML生成
+#  HTML 生成（简约统计看板）
 # ═══════════════════════════════════════════════════════════
+
+CHART_CDN = "https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"
 
 def generate_html(data, config):
-    """从JSON数据生成静态HTML"""
     papers = data.get("papers", [])
-    today_new = data.get("today_new", 0)
-    total = data.get("total", 0)
+    stats = compute_statistics(papers)
     updated = data.get("updated", "")
-    history = data.get("history", [])
+    total = data.get("total", 0)
     
-    # 排序：分数降序
-    scored = [(score_paper(p), p) for p in papers]
-    scored.sort(key=lambda x: -x[0])
-    papers = [p for _, p in scored]
+    # ── 颜色方案（莫兰迪色系）──
+    colors = [
+        "#5B8FA8", "#7BA9A0", "#B5A88D", "#C98B7A", "#A88BAB",
+        "#8FAB8F", "#C9A88D", "#7FA8C9", "#B58F8F", "#8FA8A8"
+    ]
+    topic_list = list(stats["topic_counts"].keys())
+    topic_colors = {t: colors[i % len(colors)] for i, t in enumerate(topic_list)}
     
-    # 按时间分组
-    today = datetime.now().strftime("%Y-%m-%d")
-    this_week = (datetime.now() - timedelta(days=7)).strftime("%Y-%m-%d")
-    
-    today_papers = []
-    week_papers = []
-    older_papers = []
-    
-    for p in papers:
-        pub = p.get("published", "")[:10]
-        if pub == today:
-            today_papers.append(p)
-        elif pub >= this_week:
-            week_papers.append(p)
-        else:
-            older_papers.append(p)
-    
-    # 统计
-    stats_html = f"""
-    <div class="stats">
-        <div class="stat-card">
-            <span class="stat-num">{total}</span>
-            <span class="stat-label">论文总数</span>
-        </div>
-        <div class="stat-card">
-            <span class="stat-num">{today_new}</span>
-            <span class="stat-label">今日新增</span>
-        </div>
-        <div class="stat-card">
-            <span class="stat-num">{len(today_papers)}</span>
-            <span class="stat-label">今日发表</span>
-        </div>
-        <div class="stat-card">
-            <span class="stat-num">{len(week_papers)}</span>
-            <span class="stat-label">近7天</span>
-        </div>
+    # ── 统计卡片 ──
+    stats_cards = f"""
+    <div class="stats-row">
+        <div class="stat-card"><span class="num">{total}</span><span class="label">论文总数</span></div>
+        <div class="stat-card"><span class="num">{stats['total_topics']}</span><span class="label">研究方向</span></div>
+        <div class="stat-card"><span class="num">{stats['year_range']}</span><span class="label">覆盖年份</span></div>
+        <div class="stat-card"><span class="num">{len(stats['source_counts'])}</span><span class="label">数据源</span></div>
     </div>
     """
     
-    # 历史趋势（简化）
-    history_html = ""
-    if history:
-        bars = ""
-        max_count = max(h["new_count"] for h in history[-30:]) or 1
-        for h in history[-30:]:
-            pct = int(h["new_count"] / max_count * 100)
-            bars += f'<div class="hist-bar" title="{h["date"]}: {h["new_count"]}篇">' \
-                    f'<div class="hist-fill" style="height:{pct}%"></div></div>'
-        history_html = f"""
-        <div class="history-section">
-            <h3>📊 采集趋势（近30天）</h3>
-            <div class="hist-chart">{bars}</div>
+    # ── Chart.js 数据 ──
+    chart_data = json.dumps({
+        "topicLabels": topic_list,
+        "topicData": [stats["topic_counts"].get(t, 0) for t in topic_list],
+        "topicColors": [topic_colors[t] for t in topic_list],
+        "yearLabels": list(stats["year_counts"].keys()),
+        "yearData": list(stats["year_counts"].values()),
+    }, ensure_ascii=False)
+    
+    # ── 按年份累加 ──
+    year_keys = sorted(stats["year_counts"].keys())
+    cumulative = 0
+    cum_data_js = []
+    for y in year_keys:
+        cumulative += stats["year_counts"][y]
+        cum_data_js.append(cumulative)
+    chart_data_js = json.dumps({
+        "yearLabels": year_keys,
+        "newData": [stats["year_counts"][y] for y in year_keys],
+        "cumData": cum_data_js,
+    }, ensure_ascii=False)
+    
+    # ── 各方向论文详情（带DOI）──
+    topics_html = ""
+    for i, topic in enumerate(topic_list):
+        color = topic_colors[topic]
+        count = stats["topic_counts"][topic]
+        paper_list = stats["topic_papers"].get(topic, [])[:10]
+        
+        papers_html = ""
+        for p in paper_list:
+            doi = p.get("doi", "")
+            doi_html = f'<a href="https://doi.org/{doi}" target="_blank" class="doi">{doi[:45]}</a>' if doi else ""
+            authors = ", ".join(p.get("authors", [])[:3])
+            
+            papers_html += f"""
+            <div class="paper-item">
+                <div class="paper-title">
+                    <a href="{p.get("url", "#")}" target="_blank">{p["title"][:100]}</a>
+                </div>
+                <div class="paper-meta">
+                    <span class="year">📅 {p.get("published", "")[:10]}</span>
+                    {f'<span class="authors">👤 {authors[:60]}</span>' if authors else ''}
+                    {doi_html}
+                </div>
+            </div>
+            """
+        
+        if not papers_html:
+            papers_html = '<p class="empty">暂无论文详情</p>'
+        
+        more = stats["topic_counts"].get(topic, 0) - len(paper_list)
+        more_html = f'<p class="more">…… 还有 {more} 篇</p>' if more > 0 else ""
+        
+        topics_html += f"""
+        <div class="topic-section">
+            <div class="topic-header" onclick="toggleTopic(this)">
+                <span class="topic-dot" style="background:{color}"></span>
+                <span class="topic-name">{topic}</span>
+                <span class="topic-count">{count} 篇</span>
+                <span class="toggle-icon">▸</span>
+            </div>
+            <div class="topic-body" id="topic-{i}">
+                {papers_html}
+                {more_html}
+            </div>
         </div>
         """
-    
-    def paper_card(p):
-        authors = ", ".join(p.get("authors", []))
-        abstract = p.get("abstract", "")[:300]
-        if len(p.get("abstract", "")) > 300:
-            abstract += "..."
-        
-        cats = " · ".join(p.get("categories", []))
-        source_badge = "📄 arXiv" if p.get("source") == "arXiv" else "📘 Semantic Scholar"
-        
-        return f"""
-        <div class="paper-card">
-            <div class="paper-header">
-                <a href="{p.get("url", "#")}" target="_blank" class="paper-title">{p.get("title", "")}</a>
-                <span class="paper-source" data-source="{p.get("source", "")}">{source_badge}</span>
-            </div>
-            <div class="paper-meta">
-                <span class="paper-date">📅 {p.get("published", "未知")}</span>
-                <span class="paper-authors">👤 {authors}</span>
-            </div>
-            <div class="paper-abstract">{abstract}</div>
-            {f'<div class="paper-cats">🏷️ {cats}</div>' if cats else ''}
-            {f'<a href="{p.get("pdf_url", "")}" target="_blank" class="paper-pdf">📥 PDF</a>' if p.get("pdf_url") else ''}
-        </div>
-        """
-    
-    today_html = "\n".join(paper_card(p) for p in today_papers) or '<p class="empty">暂无今日发表的论文</p>'
-    week_html = "\n".join(paper_card(p) for p in week_papers[:20]) or ""
-    older_html = "\n".join(paper_card(p) for p in older_papers[:30]) or ""
     
     html = f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>船舶研究动态 | Ship Research Monitor</title>
+    <title>船舶研究动态 · 统计看板</title>
     <link rel="stylesheet" href="style.css">
-    <meta name="description" content="每3天自动采集船舶/海洋工程领域最新研究论文">
-    <meta property="og:title" content="船舶研究动态">
-    <meta property="og:description" content="每3天自动采集船舶/海洋工程领域最新研究论文">
+    <script src="{CHART_CDN}"></script>
 </head>
 <body>
     <header>
-        <div class="header-content">
-            <h1>🚢 船舶研究动态</h1>
-            <p class="subtitle">Ship & Maritime Research Monitor · 每3天自动更新</p>
-            <p class="update-info">🕐 最后更新: {updated} · 数据来源: arXiv + Semantic Scholar</p>
-        </div>
+        <h1>🚢 船舶研究动态</h1>
+        <p class="sub">Ship & Maritime Research · 统计分析</p>
+        <p class="meta">🕐 更新于 {updated} | 每3天自动采集</p>
     </header>
-    
+
     <main>
-        {stats_html}
-        {history_html}
-        
-        <section id="today">
-            <h2>📌 今日发表</h2>
-            {today_html}
-        </section>
-        
-        <section id="week">
-            <h2>📅 近7天</h2>
-            {week_html}
-        </section>
-        
-        <section id="all">
-            <h2>📚 全部论文 ({len(papers)}篇)</h2>
-            <div class="filter-bar">
-                <input type="text" id="search-input" placeholder="🔍 搜索标题/摘要..." oninput="filterPapers()">
-                <select id="source-filter" onchange="filterPapers()">
-                    <option value="all">全部来源</option>
-                    <option value="arXiv">📄 arXiv</option>
-                    <option value="Semantic Scholar">📘 Semantic Scholar</option>
-                </select>
+        {stats_cards}
+
+        <section class="charts-section">
+            <div class="chart-container">
+                <h2>📊 研究方向分布</h2>
+                <div class="chart-wrap"><canvas id="topicChart"></canvas></div>
             </div>
-            <div id="papers-list">
-                {older_html}
+            <div class="chart-container">
+                <h2>📈 发文趋势</h2>
+                <div class="chart-wrap"><canvas id="trendChart"></canvas></div>
             </div>
+        </section>
+
+        <section class="detail-section">
+            <h2>📋 研究方向详情</h2>
+            <div class="topic-filter">
+                <input type="text" id="topicSearch" placeholder="🔍 搜索研究方向..." oninput="filterTopics()">
+            </div>
+            <div id="topicList">{topics_html}</div>
         </section>
     </main>
-    
+
     <footer>
-        <p>⚡ 每3天 {config.get("project", {}).get("update_time", "08:00")} 自动更新 · 基于 GitHub Actions</p>
-        <p>数据来源: arXiv API · Semantic Scholar API</p>
+        <p>采集来源: arXiv · Semantic Scholar | 每3天 08:00 自动更新</p>
+        <p><a href="https://github.com/Jison-hue/ship-research-monitor" target="_blank">GitHub</a></p>
     </footer>
-    
+
     <script>
-    function filterPapers() {{
-        const query = document.getElementById('search-input').value.toLowerCase();
-        const source = document.getElementById('source-filter').value;
-        const cards = document.querySelectorAll('#papers-list .paper-card');
-        
-        cards.forEach(card => {{
-            const title = card.querySelector('.paper-title').textContent.toLowerCase();
-            const abs = card.querySelector('.paper-abstract')?.textContent.toLowerCase() || '';
-            const cardSource = card.querySelector('.paper-source')?.getAttribute('data-source') || '';
-            
-            const matchText = title.includes(query) || abs.includes(query);
-            const matchSource = source === 'all' || cardSource === source;
-            
-            card.style.display = (matchText && matchSource) ? 'block' : 'none';
+    const trendData = {chart_data_js};
+    const topicLabels = {json.dumps(topic_list, ensure_ascii=False)};
+    const topicData = {json.dumps([stats['topic_counts'].get(t, 0) for t in topic_list], ensure_ascii=False)};
+    const topicColors = {json.dumps([topic_colors[t] for t in topic_list], ensure_ascii=False)};
+
+    // 趋势图: 柱状 + 折线
+    new Chart(document.getElementById('trendChart'), {{
+        type: 'bar',
+        data: {{
+            labels: trendData.yearLabels,
+            datasets: [{{
+                label: '新增论文',
+                data: trendData.newData,
+                backgroundColor: 'rgba(91, 143, 168, 0.6)',
+                borderColor: 'rgba(91, 143, 168, 1)',
+                borderWidth: 1,
+                order: 2
+            }}, {{
+                label: '累计',
+                data: trendData.cumData,
+                type: 'line',
+                borderColor: '#C98B7A',
+                backgroundColor: 'rgba(201, 139, 122, 0.08)',
+                fill: true,
+                tension: 0.3,
+                pointRadius: 3,
+                pointBackgroundColor: '#C98B7A',
+                order: 1
+            }}]
+        }},
+        options: {{
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {{ legend: {{ position: 'top', labels: {{ font: {{ size: 12 }} }} }} }},
+            scales: {{
+                x: {{ grid: {{ display: false }} }},
+                y: {{ beginAtZero: true, grid: {{ color: 'rgba(0,0,0,0.05)' }} }}
+            }}
+        }}
+    }});
+
+    // 研究方向分布: 水平柱状图
+    new Chart(document.getElementById('topicChart'), {{
+        type: 'bar',
+        data: {{
+            labels: topicLabels,
+            datasets: [{{
+                label: '论文数量',
+                data: topicData,
+                backgroundColor: topicColors,
+                borderRadius: 3,
+            }}]
+        }},
+        options: {{
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {{ legend: {{ display: false }} }},
+            scales: {{
+                x: {{ beginAtZero: true, grid: {{ color: 'rgba(0,0,0,0.05)' }} }},
+                y: {{ grid: {{ display: false }} }}
+            }}
+        }}
+    }});
+
+    function toggleTopic(el) {{
+        const body = el.nextElementSibling;
+        const icon = el.querySelector('.toggle-icon');
+        const isOpen = body.style.display === 'block';
+        body.style.display = isOpen ? 'none' : 'block';
+        icon.textContent = isOpen ? '▸' : '▾';
+    }}
+
+    function filterTopics() {{
+        const q = document.getElementById('topicSearch').value.toLowerCase();
+        document.querySelectorAll('.topic-section').forEach(s => {{
+            const name = s.querySelector('.topic-name').textContent.toLowerCase();
+            s.style.display = name.includes(q) ? '' : 'none';
         }});
     }}
     </script>
 </body>
 </html>"""
+    
+    # 修正：删除重复的饼图初始化，只保留正确的 chartData
+    html = html.replace(
+        f'const chartData = {chart_data_js};',
+        f'const chartData = {chart_data_js};'
+    )
     
     os.makedirs(os.path.dirname(OUTPUT_HTML), exist_ok=True)
     with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
@@ -546,54 +635,45 @@ def generate_html(data, config):
 
 def main():
     print("=" * 50)
-    print(f"🚢 船舶研究动态采集器")
+    print(f"🚢 船舶研究动态监测 · 数据采集")
     print(f"⏰ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("=" * 50)
     
     config = load_config()
     existing = load_existing(OUTPUT_JSON)
-    
     all_new = []
     
-    # 1. arXiv
-    print("\n📄 正在从arXiv获取论文...")
+    print("\n📄 正在从 arXiv 获取论文...")
     try:
-        arxiv_papers = fetch_arxiv(config)
-        print(f"   ✅ 获取到 {len(arxiv_papers)} 篇")
-        all_new.extend(arxiv_papers)
+        papers = fetch_arxiv(config)
+        print(f"   ✅ {len(papers)} 篇")
+        all_new.extend(papers)
     except Exception as e:
-        print(f"   ❌ arXiv 采集失败: {e}")
+        print(f"   ❌ 失败: {e}")
     
-    # 2. Semantic Scholar
-    print("\n📘 正在从Semantic Scholar获取论文...")
+    print("\n📘 正在从 Semantic Scholar 获取论文...")
     try:
-        s2_papers = fetch_semantic_scholar(config)
-        print(f"   ✅ 获取到 {len(s2_papers)} 篇")
-        all_new.extend(s2_papers)
+        papers = fetch_semantic_scholar(config)
+        print(f"   ✅ {len(papers)} 篇")
+        all_new.extend(papers)
     except Exception as e:
-        print(f"   ❌ Semantic Scholar 采集失败: {e}")
+        print(f"   ❌ 失败: {e}")
     
-    # 3. 合并去重
     print(f"\n🔄 合并去重...")
     merged = merge_papers(all_new, existing)
-    print(f"   📊 总论文数: {merged['total']}")
-    print(f"   🆕 今日新增: {merged['today_new']}")
+    print(f"   📊 总论文: {merged['total']} | 今日新增: {merged['today_new']}")
     
-    # 4. 保存JSON
     save_json(merged, OUTPUT_JSON)
-    print(f"   ✅ 数据已保存: {OUTPUT_JSON}")
     
-    # 5. 生成HTML
-    print(f"\n📝 生成静态页面...")
+    print(f"\n📊 计算统计 & 生成看板...")
     generate_html(merged, config)
-    print(f"   ✅ 页面已生成: {OUTPUT_HTML}")
     
-    # 6. 摘要输出
-    print("\n" + "=" * 50)
-    print(f"✅ 采集完成!")
-    print(f"   总论文: {merged['total']}")
-    print(f"   今日新增: {merged['today_new']}")
-    print(f"   页面大小: {os.path.getsize(OUTPUT_HTML) // 1024} KB")
+    stats = compute_statistics(merged["papers"])
+    print(f"   📈 研究方向: {stats['total_topics']} 个")
+    for t, c in list(stats["topic_counts"].items())[:5]:
+        print(f"      {t}: {c} 篇")
+    
+    print(f"\n✅ 完成! 页面: docs/index.html")
     print("=" * 50)
 
 

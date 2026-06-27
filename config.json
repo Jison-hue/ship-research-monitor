@@ -14,6 +14,10 @@
       "enabled": true,
       "limit": 30,
       "fields_of_study": ["Engineering", "Computer Science", "Physics", "Mathematics"]
+    },
+    "openalex": {
+      "enabled": true,
+      "max_results": 100
     }
   },
   "search_queries": [
@@ -37,5 +41,9 @@
     "ship structural health monitoring",
     "vessel trajectory prediction",
     "underwater robotics navigation"
-  ]
+  ],
+  "journal_rankings": {
+    "一区/顶刊": ["ocean engineering", "marine structures", "journal of ship research", "ieee journal of oceanic engineering", "journal of fluid mechanics", "physics of fluids", "renewable energy", "energy", "mechanical systems and signal processing"],
+    "二区/重要": ["applied ocean research", "ships and offshore structures", "china ocean engineering", "ocean modelling", "journal of marine science and technology", "journal of offshore mechanics and arctic engineering", "marine pollution bulletin", "international journal of naval architecture and ocean engineering", "coastal engineering", "ocean & coastal management", "engineering structures", "computers and structures"]
+  }
 }

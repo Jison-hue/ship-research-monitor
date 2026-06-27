@@ -271,7 +271,7 @@ def compute_stats(papers):
 # ═══════════════════════════════════════════════════════════
 #  HTML生成
 # ═══════════════════════════════════════════════════════════
-CHART_CDN = "https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"
+CHART_CDN = "chart.min.js"  # 本地加载，无需外网CDN
 
 COLORS = ["#5B8FA8","#7BA9A0","#B5A88D","#C98B7A","#A88BAB",
           "#8FAB8F","#C9A88D","#7FA8C9","#B58F8F","#8FA8A8"]

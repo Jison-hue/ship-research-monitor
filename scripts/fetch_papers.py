@@ -784,7 +784,8 @@ def gen_html(data, config):
         au = ", ".join(tp.get("authors",[])[:2])
         jour = tp.get("journal","")[:20]
         top = tp.get("topic","")
-        hl = '<div class="hl"><span class="hl-badge">🔥 本期亮点</span><span class="hl-txt"><b>' + tp["title"][:80] + '</b> 由 ' + au + ' 等人完成，发表在 <b>' + jour + '</b>，属于<b>' + top + '</b>方向。已被引用 ' + str(tp.get("cited_by",0)) + ' 次。</span></div>'
+        url = tp.get("url","#")
+        hl = '<div class="hl"><span class="hl-badge">🔥 本期亮点</span><span class="hl-txt"><b><a href="' + url + '" target="_blank">' + tp["title"][:80] + '</a></b> 由 ' + au + ' 等人完成，发表在 <b>' + jour + '</b>，属于<b>' + top + '</b>方向。已被引用 ' + str(tp.get("cited_by",0)) + ' 次。' + dh + '</span></div>'
     html += hl + '\n'
     html += '<section class="country-s"><h2>🌏 地域分布 · 国内 vs 国外</h2>' + country_html + '</section>\n'
     html += '<section class="ai-s"><h2>🏫 高产机构 Top 15</h2><div class="ai-l">' + inst_html + '</div></section>\n'

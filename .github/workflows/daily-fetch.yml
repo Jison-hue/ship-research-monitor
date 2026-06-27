@@ -29,22 +29,34 @@ jobs:
           python scripts/fetch_papers.py
         timeout-minutes: 10
 
-      - name: 📤 上传 Pages 产物
-        uses: actions/upload-pages-artifact@v3
+      - name: 🚀 推送到 gh-pages 分支
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: ./docs
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          force_orphan: true
 
-      - name: 🔧 启用 GitHub Pages
+      - name: 🔧 自动配置 GitHub Pages
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # 通过 API 启用 Pages（使用 Actions 的内置 Token）
-          curl -s -X POST \
+          echo "尝试配置 GitHub Pages..."
+          # 先用 POST 创建 Pages 配置
+          RESP=$(curl -s -w "\n%{http_code}" -X POST \
             -H "Authorization: token $GH_TOKEN" \
             -H "Accept: application/vnd.github+json" \
-            https://api.github.com/repos/${{ github.repository }}/pages \
-            -d '{"build_type":"workflow"}' || echo "Pages 已启用"
-
-      - name: 🚀 部署到 GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+            "https://api.github.com/repos/${{ github.repository }}/pages" \
+            -d '{"source":{"branch":"gh-pages","path":"/"}}' 2>&1)
+          HTTP_CODE=$(echo "$RESP" | tail -1)
+          echo "HTTP 状态码: $HTTP_CODE"
+          
+          # 如果创建失败（比如已存在），则更新
+          if [ "$HTTP_CODE" != "201" ] && [ "$HTTP_CODE" != "204" ]; then
+            echo "尝试更新 Pages 配置..."
+            curl -s -X PUT \
+              -H "Authorization: token $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${{ github.repository }}/pages" \
+              -d '{"source":{"branch":"gh-pages","path":"/"}}'
+          fi
+          echo "✅ Pages 配置完成（如无报错）"

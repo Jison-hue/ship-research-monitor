@@ -692,9 +692,14 @@ def gen_html(data, config):
         '</div>')
     
     # ── Chart.js 数据 ──
-    yl = sorted(stats["year_counts"])
-    yd = [stats["year_counts"][y] for y in yl]
-    cum = [sum(yd[:i+1]) for i in range(len(yd))]
+    # Force years 2021-2026 for consistent axis
+    yl = [str(y) for y in range(2021, 2027)]
+    yd = [stats["year_counts"].get(y, 0) for y in yl]
+    cum = []
+    running = 0
+    for v in yd:
+        running += v
+        cum.append(running)
     
     tl_j = json.dumps(tl, ensure_ascii=False)
     td_j = json.dumps([stats["topic_counts"][t] for t in tl], ensure_ascii=False)
@@ -751,7 +756,7 @@ def gen_html(data, config):
     html += '<title>船舶研究动态 · 统计看板</title>\n<link rel="stylesheet" href="style.css">\n'
     html += '<script src="' + CHART_CDN + '"></script>\n</head>\n<body>\n'
     html += '<header>\n<h1>🚢 船舶与海洋工程研究动态监测</h1>\n'
-    html += '<p class="sub">多源数据分析 · 每3天自动更新 · ' + stats["year_range"] + '</p>\n'
+    html += '<p class="sub">多源数据分析 · 每3天自动更新 · 2021-2026</p>\n'
     html += '<p class="meta">🕐 ' + updated + ' | arXiv + OpenAlex + Semantic Scholar</p>\n<p style="text-align:center;font-size:.78rem;margin-top:6px"><a href="weekly.html">📋 \u67e5\u770b\u5b8c\u6574\u5468\u62a5 \u2192</a></p>\n</header>\n<main>\n'
     html += cards + '\n'
     html += '<div class="charts-row">\n'

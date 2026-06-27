@@ -329,6 +329,31 @@ def merge_papers(new_p, existing):
     return {"papers":merged, "updated":datetime.now().strftime("%Y-%m-%d %H:%M"),
             "today_new":len(dedup), "total":len(merged), "history":hist}
 
+
+def classify_country(inst_name):
+    """判断机构属于国内还是国外"""
+    if not inst_name: return "未知"
+    # 包含中文 → 国内
+    for ch in inst_name:
+        if ord(ch) > 0x4E00:
+            return "🇨🇳 国内"
+    # 中文相关关键词
+    cn_kw = ["China","Chinese","Beijing","Shanghai","Tianjin","Nanjing","Wuhan",
+             "Harbin","Dalian","Guangzhou","Hong Kong","Taiwan","Macau",
+             "Ocean University","Maritime University","科技大学",
+             "Huangpu","Jiangnan","COSCO","CSSC","中国"]
+    for kw in cn_kw:
+        if kw.lower() in inst_name.lower():
+            return "🇨🇳 国内"
+    # 常见国际机构
+    intl_kw = ["University of","Institute of","Centre for","Center for",
+               "Laboratory","College","School of","Department of",
+               "University of"]
+    for kw in intl_kw:
+        if kw.lower() in inst_name.lower():
+            return "🌍 国外"
+    return "🌍 国外"
+
 def compute_stats(papers):
     tc = Counter(); yc = Counter(); sc = Counter(); jc = Counter()
     tp = defaultdict(list)
@@ -336,6 +361,7 @@ def compute_stats(papers):
     inst_counter = Counter()
     topic_authors = defaultdict(Counter)
     topic_insts = defaultdict(Counter)
+    country_counter = {}
     
     for p in papers:
         t = p.get("topic","其他"); tc[t] += 1; tp[t].append(p)
@@ -354,10 +380,15 @@ def compute_stats(papers):
         for inst in p.get("institutions",[]):
             inst_name = inst.strip()
             if inst_name and len(inst_name) > 3:
-                # 简化机构名（取主机构部分）
                 short = inst_name.split(",")[0].split(";")[0].strip()[:60]
                 inst_counter[short] += 1
                 topic_insts[t][short] += 1
+                # 地域统计
+                country = classify_country(short)
+                if country not in country_counter:
+                    country_counter[country] = {"papers":0, "institutions":set()}
+                country_counter[country]["papers"] += 1
+                country_counter[country]["institutions"].add(short)
     
     years = sorted(yc); yr = f"{min(years)}-{max(years)}" if years else "—"
     
@@ -397,6 +428,8 @@ def compute_stats(papers):
         topic_top_institutions={t: top_n(ci, 8) for t,ci in topic_insts.items()},
         total_authors=len(author_counter),
         total_institutions=len(inst_counter),
+        country_stats={k:{"papers":v["papers"],"institutions":len(v["institutions"])} for k,v in country_counter.items()},
+        country_ratio={k: round(v["papers"]/max(v["papers"] for v in country_counter.values())*100,1) for k,v in country_counter.items()} if country_counter else {},
     )
 
 # ═══════════════════════════════════════════════════════════
@@ -423,6 +456,39 @@ def gen_html(data, config):
     topic_impact = stats["topic_impact"]
     hot_papers = stats["hot_papers"]
     
+    # ── 地域分析 ──
+    cn_count = stats.get("country_stats",{}).get("🇨🇳 国内",{}).get("papers",0)
+    intl_count = stats.get("country_stats",{}).get("🌍 国外",{}).get("papers",0)
+    cn_ratio = stats.get("country_ratio",{}).get("🇨🇳 国内",50)
+    intl_ratio = stats.get("country_ratio",{}).get("🌍 国外",50)
+    cn_insts = stats.get("country_stats",{}).get("🇨🇳 国内",{}).get("institutions",0)
+    intl_insts = stats.get("country_stats",{}).get("🌍 国外",{}).get("institutions",0)
+    
+    # 按论文-机构出现次数排名
+    cn_order = cn_count >= intl_count
+    bar_top = '<div class="cbar cn" style="width:' + str(cn_ratio) + '%"></div>'
+    bar_bot = '<div class="cbar intl" style="width:' + str(intl_ratio) + '%"></div>'
+    if not cn_order:
+        bar_top, bar_bot = bar_bot, bar_top
+        
+    country_html = (
+        '<div class="country-grid">'
+        '<div class="cg-item ' + ('cn' if cn_order else 'intl') + '">'
+        '<span class="cg-flag">' + ('🇨🇳' if cn_order else '🌍') + '</span>'
+        '<span class="cg-name">' + ('国内' if cn_order else '国外') + '</span>'
+        '<span class="cg-count">' + str(cn_count if cn_order else intl_count) + '篇</span>'
+        '<span class="cg-insts">' + str(cn_insts if cn_order else intl_insts) + '个机构</span>'
+        '</div>'
+        '<div class="country-bar-inner">' + bar_top + bar_bot + '</div>'
+        '<div class="cg-item ' + ('intl' if cn_order else 'cn') + '">'
+        '<span class="cg-flag">' + ('🌍' if cn_order else '🇨🇳') + '</span>'
+        '<span class="cg-name">' + ('国外' if cn_order else '国内') + '</span>'
+        '<span class="cg-count">' + str(intl_count if cn_order else cn_count) + '篇</span>'
+        '<span class="cg-insts">' + str(intl_insts if cn_order else cn_insts) + '个机构</span>'
+        '</div>'
+        '</div>'
+    )
+
     # ── 机构列表 ──
     inst_html = ""
     for inst in stats["top_institutions"][:15]:
@@ -512,6 +578,7 @@ def gen_html(data, config):
     html += '<div class="cc"><h2>📈 发文趋势</h2><div class="cw"><canvas id="c2"></canvas></div></div>\n'
     html += '<div class="cc"><h2>🏆 期刊等级</h2><div class="cw"><canvas id="c3"></canvas></div></div>\n</div>\n'
     html += '<section class="hot"><h2>🔥 热点论文 · 综合排名</h2><p class="hint">引用+时效加权</p>' + hot_items + '</section>\n'
+    html += '<section class="country-s"><h2>🌏 地域分布 · 国内 vs 国外</h2>' + country_html + '</section>\n'
     html += '<section class="ai-s"><h2>🏫 高产机构 Top 15</h2><div class="ai-l">' + inst_html + '</div></section>\n'
     html += '<section class="ai-s"><h2>👨‍🔬 活跃作者 Top 12</h2><div class="ai-l">' + auth_html + '</div></section>\n'
     html += '<section class="detail"><h2>📋 研究方向详情</h2>\n'

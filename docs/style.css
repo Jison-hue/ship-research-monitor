@@ -83,3 +83,19 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
 .ai-name{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--text)}
 .ai-count{font-weight:600;color:var(--accent);min-width:24px;text-align:right}
 @media(max-width:640px){.ai-l{grid-template-columns:1fr}}
+
+/* ─── 地域分布 ─── */
+.country-s{background:var(--card);border-radius:var(--r);padding:14px 16px;border:1px solid var(--bd);margin-bottom:14px}
+.country-s h2{font-size:.88rem;font-weight:600;margin-bottom:10px}
+.country-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:center}
+.cg-item{display:flex;align-items:center;gap:6px;font-size:.82rem;padding:6px 10px;border-radius:6px}
+.cg-item.cn{background:#e8f0f5}
+.cg-item.intl{background:#f5ebe8}
+.cg-flag{font-size:1.1rem}
+.cg-name{font-weight:600;min-width:28px}
+.cg-count{color:var(--accent);font-weight:700;min-width:40px;text-align:right}
+.cg-insts{color:var(--muted);font-size:.72rem}
+.country-bar-inner{grid-column:1/-1;height:20px;background:#eef0f2;border-radius:10px;overflow:hidden;display:flex}
+.cbar{height:100%;transition:width 0.5s}
+.cbar.cn{background:#5B8FA8}
+.cbar.intl{background:#C98B7A}

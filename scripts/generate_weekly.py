@@ -39,6 +39,33 @@ def generate():
         if c != 0: changes[t] = c
     
     hot = sorted(week_papers, key=lambda p: p.get("cited_by",0), reverse=True)[:5]
+    # ── 本周亮点 ──
+    highlight = None
+    highlight_score = 0
+    for p in week_papers:
+        jrk = p.get("journal_rank","")
+        rank_bonus = {"一区/顶刊": 3, "二区/重要": 2, "核心期刊": 1}.get(jrk, 0)
+        score = p.get("cited_by", 0) * 0.3 + rank_bonus * 20
+        if score > highlight_score:
+            highlight_score = score
+            highlight = p
+    
+    hl_html = ""
+    if highlight:
+        doi = highlight.get("doi","")
+        dh = '<a href="https://doi.org/'+doi+'" class="doi">'+doi[:30]+'</a>' if doi else ""
+        au = ", ".join(highlight.get("authors",[])[:2])
+        jour = highlight.get("journal","")
+        tp = highlight.get("topic","")
+        rk = highlight.get("journal_rank","")
+        hl_html = '''<div class="hl">
+            <div class="hl-badge">🔥 本周亮点</div>
+            <div class="hl-title">''' + esc(highlight["title"][:100]) + '''</div>
+            <div class="hl-meta">''' + au + ''' | ''' + jour[:30] + ''' | ''' + rk + ''' | 已被引用''' + str(highlight.get("cited_by",0)) + '''次</div>
+            <div class="hl-desc">💡 建议关注：本周''' + tp + '''方向的重点文献，发表在''' + esc(jour[:20]) + '''，由''' + au + '''等人完成，是该方向值得关注的新进展。</div>
+            <div class="hl-doi">''' + dh + '''</div>
+        </div>'''
+    
     insts = Counter()
     for p in week_papers:
         for i in p.get("institutions",[]):

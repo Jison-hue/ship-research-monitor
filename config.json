@@ -1,49 +1,66 @@
 {
   "project": {
-    "name": "船舶研究动态监测",
-    "description": "每3天自动采集船舶/海洋工程领域最新研究论文",
+    "name": "船舶与海洋工程研究动态监测",
+    "description": "每3天自动采集船舶与海洋工程领域最新研究进展",
     "update_time": "08:00"
   },
   "sources": {
     "arxiv": {
       "enabled": true,
-      "categories": ["cs.RO", "cs.AI", "cs.LG", "cs.SY", "eess.SY", "math.OC", "physics.flu-dyn", "physics.ao-ph", "physics.ins-det", "cs.CE", "eess.IV"],
+      "categories": ["physics.flu-dyn", "physics.ao-ph", "physics.ins-det", "math.NA", "cs.CE", "cs.RO", "cs.SY", "eess.SY", "eess.SP"],
       "max_results": 80
     },
     "semantic_scholar": {
       "enabled": true,
-      "limit": 30,
-      "fields_of_study": ["Engineering", "Computer Science", "Physics", "Mathematics"]
+      "limit": 40,
+      "fields_of_study": ["Engineering", "Physics", "Mathematics", "Computer Science"]
     },
     "openalex": {
       "enabled": true,
-      "max_results": 100
+      "max_results": 150
     }
   },
   "search_queries": [
-    "ship hydrodynamics",
-    "maritime autonomous surface ship",
-    "vessel collision avoidance",
-    "marine propeller cavitation",
-    "ship resistance prediction",
-    "deep learning ship",
-    "autonomous underwater vehicle",
-    "unmanned surface vehicle",
-    "marine structure fatigue",
-    "ship energy efficiency",
-    "offshore wind turbine foundation",
-    "port automation",
-    "underwater acoustic communication",
-    "ocean engineering machine learning",
-    "ship maneuvering and control",
-    "computational fluid dynamics ship",
-    "marine renewable energy wave",
-    "ship structural health monitoring",
-    "vessel trajectory prediction",
-    "underwater robotics navigation"
+    "ship hydrodynamics resistance propulsion",
+    "hull form optimization CFD ship",
+    "propeller cavitation marine propulsion",
+    "ship seakeeping maneuvering performance",
+    "ship structural strength fatigue",
+    "offshore platform floating structure",
+    "marine renewable energy wave offshore wind",
+    "autonomous ship collision avoidance navigation",
+    "shipbuilding digital twin smart manufacturing",
+    "ship vibration noise underwater acoustic",
+    "ship design optimization naval architecture",
+    "marine riser mooring system deepwater",
+    "ship energy efficiency emission reduction",
+    "ship CFD numerical simulation fluid dynamics",
+    "ship ice navigation polar",
+    "ship structural health monitoring damage",
+    "underwater vehicle AUV ROV marine robot",
+    "marine composite sandwich plate shell",
+    "ship welding joining manufacturing",
+    "ship corrosion protection coating"
   ],
   "journal_rankings": {
-    "一区/顶刊": ["ocean engineering", "marine structures", "journal of ship research", "ieee journal of oceanic engineering", "journal of fluid mechanics", "physics of fluids", "renewable energy", "energy", "mechanical systems and signal processing"],
-    "二区/重要": ["applied ocean research", "ships and offshore structures", "china ocean engineering", "ocean modelling", "journal of marine science and technology", "journal of offshore mechanics and arctic engineering", "marine pollution bulletin", "international journal of naval architecture and ocean engineering", "coastal engineering", "ocean & coastal management", "engineering structures", "computers and structures"]
+    "一区/顶刊": [
+      "ocean engineering", "marine structures", "journal of ship research",
+      "ieee journal of oceanic engineering", "journal of fluid mechanics",
+      "physics of fluids", "renewable energy", "energy",
+      "mechanical systems and signal processing", "journal of offshore mechanics and arctic engineering",
+      "coastal engineering", "engineering structures", "computers and structures",
+      "journal of computational physics", "international journal of naval architecture and ocean engineering",
+      "ships and offshore structures", "applied ocean research"
+    ],
+    "二区/重要": [
+      "china ocean engineering", "ocean modelling", "marine pollution bulletin",
+      "journal of marine science and technology", "ocean & coastal management",
+      "marine technology society journal", "ship technology research",
+      "journal of ship production and design", "marine structures",
+      "journal of marine engineering and technology", "brodogradnja",
+      "transactions of the royal institution of naval architects",
+      "international shipbuilding progress", "shipbuilding of china",
+      "journal of ship mechanics"
+    ]
   }
 }

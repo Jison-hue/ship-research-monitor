@@ -21,23 +21,105 @@ OUTPUT_HTML = os.path.join(DOCS_DIR, "index.html")
 
 # ─── 研究方向分类 ──────────────────────────────────────
 TOPICS = {
-    "船舶水动力学":   ["hydrodynamic","resistance","propeller","cavitation","hull form","seakeeping","maneuvering","cfd","computational fluid","propulsion","drag reduction","ship wave","wake","boundary layer","fluid structure","水动力","阻力","螺旋桨","兴波"],
-    "自主航行与避碰": ["autonomous navigation","collision avoidance","path planning","unmanned surface","usv","mass","maritime autonomous","COLREG","motion planning","trajectory prediction","situation awareness","autonomous vessel","自主航行","避碰","无人船"],
-    "水下机器人":     ["auv","rov","underwater vehicle","underwater robot","submarine","deep sea","underwater manipulation","underwater exploration","glider","水下机器人"],
-    "船舶结构安全":   ["structural health","fatigue","crack detection","corrosion","hull strength","structural analysis","finite element","ship structure","fracture","damage detection","结构健康","疲劳","裂纹"],
-    "海洋可再生能源": ["offshore wind","wave energy","tidal energy","renewable energy","floating wind","marine energy","wind turbine","wave power","海洋能","海上风电","波浪能"],
-    "船舶能效与减排": ["energy efficiency","emission","fuel consumption","green shipping","decarboni","alternative fuel","lng","hydrogen","carbon emission","clean energy","环保","减排","能效"],
-    "港口与物流":     ["port automation","terminal","logistics","container","berth","supply chain","harbor","港口","码头","集装箱"],
-    "机器学习与AI":   ["deep learning","machine learning","neural network","reinforcement learning","cnn","lstm","transformer","gan","artificial intelligence","computer vision","object detection","semantic segmentation","机器学习","深度学习","神经网络"],
-    "水下通信与感知": ["underwater communication","acoustic","sonar","lidar","radar","sensor fusion","underwater detection","underwater imaging","maritime surveillance","水下通信","声纳","水声"],
-    "船舶设计与建造": ["ship design","naval architecture","shipbuilding","parametric design","optimization","multi-objective","船舶设计","造船","优化设计"],
+    "船舶水动力学": [
+        "hydrodynam", "resistance", "propeller", "cavitation", "seakeeping",
+        "maneuvering", "hull form", "ship wave", "ship wake", "slamming",
+        "added resistance", "propulsion", "drag reduction", "air lubrication",
+        "propulsor", "bow shape", "stern", "ship flow", "wetted surface",
+        "ship squat", "marine propeller", "ship speed loss"
+    ],
+    "船舶结构力学与安全": [
+        "ship structural", "hull strength", "girder", "ship fatigue",
+        "ultimate strength", "ship collision", "ship grounding",
+        "buckling ship", "ship fracture", "structural health monit",
+        "hull vibration", "ship vibration", "ship stress", "FEM ship",
+        "stiffened panel", "crack propagation", "ship damage",
+        "hull integrity", "fatigue life"
+    ],
+    "船舶推进与节能": [
+        "ship propulsion", "marine engine", "fuel consumption",
+        "waste heat", "emission reduction", "LNG fuel", "alternative fuel marine",
+        "ship decarboni", "shaft generator", "ship power",
+        "energy saving ship", "EEDI", "ship efficiency",
+        "ship electrical", "hybrid propulsion", "SCR"
+    ],
+    "海洋工程结构物": [
+        "offshore platform", "floating production", "FPSO", "semi-submersible",
+        "jack-up", "riser", "mooring", "subsea pipeline", "deepwater structure",
+        "jacket platform", "floating offshore", "TLP platform", "spar platform",
+        "subsea system", "marine pipeline", "offshore structure",
+        "compliant tower", "gravity base"
+    ],
+    "船舶设计与优化": [
+        "ship design", "hull form optimization", "parametric design",
+        "multi-objective optimization", "conceptual design", "ship layout",
+        "ship CAD", "ship CAM", "multidisciplinary optimization",
+        "naval architecture", "ship lines", "ship lofting"
+    ],
+    "船舶智能制造": [
+        "shipbuilding", "digital twin", "smart manufacturing",
+        "ship welding", "block assembly", "shipyard", "production planning",
+        "ship outfitting", "panel line", "ship painting", "modular ship",
+        "ship assembly", "steel cutting"
+    ],
+    "海洋可再生能源": [
+        "wave energy", "tidal current", "offshore wind turbine",
+        "floating wind", "marine current", "ocean thermal",
+        "oscillating water column", "point absorber", "tidal stream",
+        "wave power", "wave converter"
+    ],
+    "船舶噪声与水下辐射": [
+        "ship noise", "underwater radiated noise", "ship acoustic",
+        "propeller noise", "vibration noise", "acoustic signature",
+        "hydroacoustic", "noise reduction", "flow noise",
+        "underwater noise emission"
+    ],
+    "自主船舶与智能航行": [
+        "autonomous ship", "unmanned surface", "MASS", "collision avoidance",
+        "intelligent navigation", "path planning", "COLREG",
+        "situational awareness", "vessel traffic", "smart ship",
+        "decision support ship", "autonomous navigation ship"
+    ],
+    "水下航行器与海洋机器人": [
+        "autonomous underwater", "AUV", "ROV", "underwater glider",
+        "marine robot", "underwater manipulation", "underwater vehicle",
+        "unmanned underwater", "deep sea vehicle", "subsea vehicle",
+        "underwater drone"
+    ],
+    "船舶与海洋工程数值方法": [
+        "CFD", "panel method", "boundary element", "SPH",
+        "smoothed particle", "lattice Boltzmann", "RANS", "DES ship",
+        "LES marine", "numerical simulation", "fluid structure inter",
+        "FSI ship", "potential flow", "vortex method"
+    ],
 }
 
 def classify(title, abstract):
     text = (title + " " + abstract).lower()
-    scores = {t: sum(1 for kw in kws if kw.lower() in text) for t, kws in TOPICS.items()}
-    best = max(scores, key=scores.get)
-    return (best, scores[best]) if scores[best] > 0 else ("其他", 0)
+    domain_q = ["ship","marine","vessel","ocean","maritime","naval","sea","hull",
+                "offshore","underwater","aquatic","seaworth","ferry","submarine",
+                "port","harbor","船舶","海洋","水动力","watercraft"]
+    domain_score = sum(1 for d in domain_q if d in text)
+    scores = {}
+    for t, kws in TOPICS.items():
+        matches = sum(1 for kw in kws if kw.lower() in text)
+        if matches >= 2:
+            scores[t] = matches * 2 + domain_score
+        elif matches == 1 and domain_score >= 2:
+            scores[t] = matches + domain_score
+        elif matches == 1 and any(kw.lower() in text for kw in kws):
+            # Single keyword match, but only count if domain-specific enough
+            kw_matched = [kw for kw in kws if kw.lower() in text][0]
+            if len(kw_matched) > 6 or any(d in text for d in domain_q[:5]):
+                scores[t] = 1 + (domain_score // 2)
+    if not scores:
+        # Fallback: check if any paper at all relates to domain
+        for t, kws in TOPICS.items():
+            m = sum(1 for kw in kws if kw.lower() in text)
+            if m >= 1:
+                scores[t] = m
+    best = max(scores, key=scores.get) if scores else None
+    return (best, scores[best]) if best else ("其他", 0)
 
 def get_journal_rank(journal, config):
     if not journal: return ("", "")
@@ -159,8 +241,19 @@ def fetch_openalex(config):
                     for i_ in insts[:2]:
                         if i_: insts_set.add(i_)
                     au_info.append({"name":name, "institutions":insts[:2]})
+                # 解析 OpenAlex 的倒排索引摘要格式
+                inv_idx = w.get("abstract_inverted_index") or {}
+                if inv_idx:
+                    # 重建摘要文本
+                    word_positions = []
+                    for word, positions in inv_idx.items():
+                        for pos in positions:
+                            word_positions.append((pos, word))
+                    word_positions.sort(key=lambda x: x[0])
+                    abstract = " ".join(w for _, w in word_positions)[:800]
+                else:
+                    abstract = ""
                 concepts = [c.get("display_name","") for c in (w.get("concepts") or [])[:5]]
-                abstract = ""
                 tp,ts = classify(ttl, abstract)
                 all_p[wid] = dict(id=wid, title=ttl, abstract=abstract, authors=[a["name"] for a in au_info[:5]],
                     published=pub, year=year, source="OpenAlex", url=f"https://doi.org/{doi}" if doi else wid,

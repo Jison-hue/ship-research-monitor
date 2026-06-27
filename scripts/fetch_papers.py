@@ -284,7 +284,7 @@ def fetch_openalex(config):
             try:
                 params = dict(search=q, per_page=per_q, sort="cited_by_count:desc",
                     filter="from_publication_date:2021-01-01",
-                    select="id,doi,title,authorships,primary_location,cited_by_count,publication_date,type")
+                    select="id,doi,title,abstract_inverted_index,authorships,primary_location,cited_by_count,publication_date,type")
                 url = OA_API + "?" + "&".join(f"{k}={quote(str(v))}" for k,v in params.items()) + "&" + polite
                 data = json.load(urlopen(Request(url, headers={"User-Agent": ua}), timeout=20))
                 for w in data.get("results",[]):
@@ -311,8 +311,19 @@ def fetch_openalex(config):
                         for i_ in insts[:2]:
                             if i_: insts_set.add(i_)
                         au_info.append({"name":name, "institutions":insts[:2]})
-                    tp, ts, sk = classify(ttl, "")
-                    all_p[wid] = dict(id=wid, title=ttl, abstract="",
+                    # Reconstruct abstract from inverted index
+                    inv_idx = w.get("abstract_inverted_index") or {}
+                    if inv_idx:
+                        word_positions = []
+                        for word, positions in inv_idx.items():
+                            for pos in positions:
+                                word_positions.append((pos, word))
+                        word_positions.sort(key=lambda x: x[0])
+                        abstract_text = " ".join(w for _, w in word_positions)[:800]
+                    else:
+                        abstract_text = ""
+                    tp, ts, sk = classify(ttl, abstract_text)
+                    all_p[wid] = dict(id=wid, title=ttl, abstract=abstract_text,
                         authors=[a["name"] for a in au_info[:5]],
                         published=pub, year=year, source="OpenAlex",
                         url=f"https://doi.org/{doi}" if doi else wid, pdf_url="",

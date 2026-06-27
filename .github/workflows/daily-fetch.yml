@@ -36,27 +36,27 @@ jobs:
           publish_dir: ./docs
           force_orphan: true
 
-      - name: 🔧 自动配置 GitHub Pages
+      - name: 🔧 配置 GitHub Pages
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "尝试配置 GitHub Pages..."
-          # 先用 POST 创建 Pages 配置
-          RESP=$(curl -s -w "\n%{http_code}" -X POST \
-            -H "Authorization: token $GH_TOKEN" \
-            -H "Accept: application/vnd.github+json" \
-            "https://api.github.com/repos/${{ github.repository }}/pages" \
-            -d '{"source":{"branch":"gh-pages","path":"/"}}' 2>&1)
-          HTTP_CODE=$(echo "$RESP" | tail -1)
-          echo "HTTP 状态码: $HTTP_CODE"
+          echo "🔄 检查 Pages 状态..."
+          gh api repos/${{ github.repository }}/pages --jq '.status' 2>/dev/null || echo "Pages 未启用"
           
-          # 如果创建失败（比如已存在），则更新
-          if [ "$HTTP_CODE" != "201" ] && [ "$HTTP_CODE" != "204" ]; then
-            echo "尝试更新 Pages 配置..."
-            curl -s -X PUT \
-              -H "Authorization: token $GH_TOKEN" \
-              -H "Accept: application/vnd.github+json" \
-              "https://api.github.com/repos/${{ github.repository }}/pages" \
-              -d '{"source":{"branch":"gh-pages","path":"/"}}'
-          fi
-          echo "✅ Pages 配置完成（如无报错）"
+          echo "🔄 创建/更新 Pages 配置..."
+          gh api \
+            --method POST \
+            repos/${{ github.repository }}/pages \
+            -f source[branch]=gh-pages \
+            -f source[path]="/" \
+            2>/dev/null || \
+          gh api \
+            --method PUT \
+            repos/${{ github.repository }}/pages \
+            -f source[branch]=gh-pages \
+            -f source[path]="/" \
+            2>/dev/null || \
+          echo "⚠️ API 配置失败，可能需要手动设置"
+          
+          echo "🔄 验证 Pages..."
+          gh api repos/${{ github.repository }}/pages --jq '{status, html_url}' 2>/dev/null

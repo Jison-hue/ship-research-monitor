@@ -209,7 +209,7 @@ def fetch_openalex(config):
         params = dict(
             search=q, per_page=per_q,
             sort="cited_by_count:desc",
-            filter="from_publication_date:2023-01-01",
+            filter="from_publication_date:2021-01-01",
             select="id,doi,title,abstract_inverted_index,authorships,primary_location,cited_by_count,publication_date,concepts,type,keywords"
         )
         url = OA_API + "?" + "&".join(f"{k}={quote(str(v))}" for k,v in params.items())
@@ -278,7 +278,7 @@ def fetch_semantic(config):
     fields = "title,authors,year,url,externalIds,abstract,venue,citationCount,publicationDate,journal"
     all_p = []; seen = set()
     for q in queries:
-        url = S2_API+f"?query={quote(q)}&limit={limit//len(queries)+1}&fields={fields}&year=2023-"
+        url = S2_API+f"?query={quote(q)}&limit={limit//len(queries)+1}&fields={fields}&year=2021-"
         try:
             data = json.load(urlopen(Request(url,headers={"User-Agent":"ShipMonitor/2.0"}),timeout=15))
             for w in data.get("data",[]):

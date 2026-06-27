@@ -9,10 +9,19 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   fetch-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: 📥 检出代码
@@ -23,19 +32,16 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: 📦 安装依赖
-        run: |
-          python -m pip install --upgrade pip
-          # 只需要 requests（标准库）
-
       - name: 🔍 执行论文采集
         run: |
           python scripts/fetch_papers.py
         timeout-minutes: 10
 
-      - name: 🚀 部署到 GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: 📤 上传 Pages 产物
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
-          force_orphan: true
+          path: ./docs
+
+      - name: 🚀 部署到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

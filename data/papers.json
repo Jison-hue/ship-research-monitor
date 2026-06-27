@@ -31,7 +31,7 @@
         "Microplastics",
         "Environmental science"
       ],
-      "fetched": "2026-06-27 21:29"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4376597726",
@@ -64,7 +64,7 @@
         "Maritime industry",
         "Emerging technologies"
       ],
-      "fetched": "2026-06-27 21:29"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4323316782",
@@ -98,7 +98,7 @@
         "Mechanical engineering",
         "Noise (video)"
       ],
-      "fetched": "2026-06-27 21:29"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4378472283",
@@ -132,7 +132,7 @@
         "Marine engineering",
         "Key (lock)"
       ],
-      "fetched": "2026-06-27 21:29"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4396596868",
@@ -157,9 +157,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 118,
       "institutions": [
-        "University of Twente",
+        "University of Minnesota System",
         "Poznań University of Technology",
-        "Karlsruhe Institute of Technology"
+        "TU Bergakademie Freiberg"
       ],
       "concepts": [
         "Combustion",
@@ -168,7 +168,7 @@
         "Ammonia",
         "NOx"
       ],
-      "fetched": "2026-06-27 21:29"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4366751322",
@@ -191,8 +191,8 @@
       "journal_rank": "核心期刊",
       "cited_by": 110,
       "institutions": [
-        "Politecnico di Torino",
-        "National University of Ireland, Maynooth"
+        "National University of Ireland, Maynooth",
+        "Politecnico di Torino"
       ],
       "concepts": [
         "Software deployment",
@@ -201,7 +201,7 @@
         "Wave power",
         "Energy security"
       ],
-      "fetched": "2026-06-27 21:29"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4386069664",
@@ -234,7 +234,7 @@
         "Variety (cybernetics)",
         "Propulsion"
       ],
-      "fetched": "2026-06-27 21:29"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4393033207",
@@ -260,7 +260,7 @@
       "cited_by": 85,
       "institutions": [
         "American International University-Bangladesh",
-        "Chittagong University of Engineering & Technology",
+        "University of Vaasa",
         "Swinburne University of Technology"
       ],
       "concepts": [
@@ -270,7 +270,7 @@
         "Computer science",
         "Control (management)"
       ],
-      "fetched": "2026-06-27 21:29"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4378084683",
@@ -301,7 +301,7 @@
         "Climate change",
         "Contingency plan"
       ],
-      "fetched": "2026-06-27 21:29"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4399506379",
@@ -335,7 +335,7 @@
         "Renewable energy",
         "Internet of Things"
       ],
-      "fetched": "2026-06-27 21:29"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4391295733",
@@ -360,8 +360,8 @@
       "journal_rank": "核心期刊",
       "cited_by": 65,
       "institutions": [
-        "Chemnitz University of Technology",
-        "University of Kaiserslautern",
+        "ETH Zurich",
+        "Hamburg University of Technology",
         "Technische Universität Dresden"
       ],
       "concepts": [
@@ -371,7 +371,7 @@
         "Systems engineering",
         "Software engineering"
       ],
-      "fetched": "2026-06-27 21:29"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4319294495",
@@ -402,7 +402,7 @@
         "Drag",
         "Mechanism (biology)"
       ],
-      "fetched": "2026-06-27 21:29"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4321479449",
@@ -434,7 +434,7 @@
         "Manufacturing engineering",
         "Computer science"
       ],
-      "fetched": "2026-06-27 21:29"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4400493457",
@@ -459,9 +459,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 61,
       "institutions": [
+        "INTI International University",
         "University of Szczecin",
-        "Maritime University of Szczecin",
-        "INTI International University"
+        "Maritime University of Szczecin"
       ],
       "concepts": [
         "Greenhouse gas",
@@ -470,7 +470,7 @@
         "Business",
         "Efficient energy use"
       ],
-      "fetched": "2026-06-27 21:29"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4385079588",
@@ -495,9 +495,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 58,
       "institutions": [
-        "HUTECH University",
-        "Gdynia Maritime University",
-        "Delhi Skill and Entrepreneurship University"
+        "Ho Chi Minh City University of Technology",
+        "Gdańsk University of Technology",
+        "Ho Chi Minh City University of Transport"
       ],
       "concepts": [
         "Fuel efficiency",
@@ -506,7 +506,7 @@
         "Consumption (sociology)",
         "Benchmark (surveying)"
       ],
-      "fetched": "2026-06-27 21:29"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4367292510",
@@ -530,9 +530,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 55,
       "institutions": [
+        "Nazarbayev University",
         "University of California, Berkeley",
-        "University of Strathclyde",
-        "Nazarbayev University"
+        "University of Strathclyde"
       ],
       "concepts": [
         "Computer science",
@@ -541,7 +541,7 @@
         "Generator (circuit theory)",
         "Representation (politics)"
       ],
-      "fetched": "2026-06-27 21:29"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4321375357",
@@ -573,7 +573,7 @@
         "Powertrain",
         "Fuel cells"
       ],
-      "fetched": "2026-06-27 21:29"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4394986761",
@@ -598,9 +598,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 54,
       "institutions": [
+        "Centre National de la Recherche Scientifique",
         "Université de Bretagne Sud",
-        "Ifremer",
-        "Centre National de la Recherche Scientifique"
+        "Ifremer"
       ],
       "concepts": [
         "Thermosetting polymer",
@@ -609,7 +609,7 @@
         "Life-cycle assessment",
         "Aerospace"
       ],
-      "fetched": "2026-06-27 21:29"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4390442169",
@@ -634,9 +634,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 52,
       "institutions": [
-        "University of Vaasa",
+        "Åbo Akademi University",
         "University of Agder",
-        "Åbo Akademi University"
+        "University of Vaasa"
       ],
       "concepts": [
         "Greenhouse gas",
@@ -645,7 +645,7 @@
         "Natural resource economics",
         "Environmental economics"
       ],
-      "fetched": "2026-06-27 21:29"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4319459237",
@@ -679,7 +679,7 @@
         "Powertrain",
         "Rotor (electric)"
       ],
-      "fetched": "2026-06-27 21:29"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4367625586",
@@ -704,8 +704,8 @@
       "cited_by": 433,
       "institutions": [
         "Edith Cowan University",
-        "Shanghai University of Electric Power",
-        "The University of Melbourne"
+        "The University of Melbourne",
+        "Shanghai University of Electric Power"
       ],
       "concepts": [
         "Process (computing)",
@@ -714,7 +714,7 @@
         "Fusion",
         "Porosity"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4385824748",
@@ -739,9 +739,9 @@
       "journal_rank": "一区/顶刊",
       "cited_by": 150,
       "institutions": [
-        "Kyushu University",
-        "Dalian University of Technology",
-        "Tsinghua–Berkeley Shenzhen Institute"
+        "University of Plymouth",
+        "Tsinghua–Berkeley Shenzhen Institute",
+        "Kyushu University"
       ],
       "concepts": [
         "Photovoltaic system",
@@ -750,7 +750,7 @@
         "Engineering",
         "Environmental science"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4390839314",
@@ -781,7 +781,7 @@
         "Field (mathematics)",
         "Artificial intelligence"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4318994912",
@@ -806,8 +806,8 @@
       "journal_rank": "核心期刊",
       "cited_by": 116,
       "institutions": [
+        "University of Glasgow",
         "Queen Mary University of London",
-        "Southern Methodist University",
         "Ferdowsi University of Mashhad"
       ],
       "concepts": [
@@ -817,7 +817,7 @@
         "Process engineering",
         "Nanotechnology"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4387101134",
@@ -850,7 +850,7 @@
         "Process engineering",
         "Ignition system"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4394976071",
@@ -875,8 +875,8 @@
       "journal_rank": "一区/顶刊",
       "cited_by": 97,
       "institutions": [
-        "University of Strathclyde",
-        "Norwegian University of Science and Technology"
+        "Norwegian University of Science and Technology",
+        "University of Strathclyde"
       ],
       "concepts": [
         "Offshore wind power",
@@ -885,7 +885,7 @@
         "Wind power",
         "Submarine pipeline"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4383553809",
@@ -910,8 +910,8 @@
       "journal_rank": "核心期刊",
       "cited_by": 94,
       "institutions": [
-        "Shanghai Jiao Tong University",
-        "Jiangsu University of Science and Technology"
+        "Jiangsu University of Science and Technology",
+        "Shanghai Jiao Tong University"
       ],
       "concepts": [
         "Propulsion",
@@ -920,7 +920,7 @@
         "Test data",
         "Artificial intelligence"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4399561622",
@@ -953,7 +953,7 @@
         "Turbine",
         "Submarine pipeline"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4391344408",
@@ -977,9 +977,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 72,
       "institutions": [
+        "Jining University",
         "Hoseo University",
-        "Ludong University",
-        "Jining University"
+        "Ludong University"
       ],
       "concepts": [
         "Fuel cells",
@@ -988,7 +988,7 @@
         "Hydrogen",
         "Hydrogen economy"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4380682203",
@@ -1019,7 +1019,7 @@
         "Nanotechnology",
         "Coating"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4391252433",
@@ -1044,8 +1044,8 @@
       "journal_rank": "核心期刊",
       "cited_by": 69,
       "institutions": [
-        "Neapolis University Pafos",
-        "University of Western Macedonia"
+        "University of Western Macedonia",
+        "Neapolis University Pafos"
       ],
       "concepts": [
         "Renewable energy",
@@ -1054,7 +1054,7 @@
         "Environmental economics",
         "Adaptability"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4385659399",
@@ -1085,7 +1085,7 @@
         "Pressure drop",
         "Multiphase flow"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4392309208",
@@ -1119,7 +1119,7 @@
         "Aerospace engineering",
         "Automotive engineering"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4382138923",
@@ -1153,7 +1153,7 @@
         "Artificial intelligence",
         "Object detection"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4378741311",
@@ -1178,9 +1178,9 @@
       "journal_rank": "一区/顶刊",
       "cited_by": 48,
       "institutions": [
-        "Hohai University",
         "Eindhoven University of Technology",
-        "China Agricultural University"
+        "China Agricultural University",
+        "Hohai University"
       ],
       "concepts": [
         "Stall (fluid mechanics)",
@@ -1189,7 +1189,7 @@
         "Centrifugal pump",
         "Internal flow"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4313640952",
@@ -1223,7 +1223,7 @@
         "Diesel engine",
         "Diesel exhaust"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4391032236",
@@ -1256,7 +1256,7 @@
         "Engineering",
         "Term (time)"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4391343960",
@@ -1279,8 +1279,8 @@
       "journal_rank": "核心期刊",
       "cited_by": 39,
       "institutions": [
-        "Jilin University",
-        "University of Gloucestershire"
+        "University of Gloucestershire",
+        "Jilin University"
       ],
       "concepts": [
         "Biomimetics",
@@ -1289,7 +1289,7 @@
         "Propulsion",
         "Engineering"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4366088890",
@@ -1322,7 +1322,7 @@
         "Energy consumption",
         "Computer science"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4313592748",
@@ -1345,8 +1345,8 @@
       "journal_rank": "一区/顶刊",
       "cited_by": 39,
       "institutions": [
-        "Wärtsilä (Netherlands)",
         "Delft University of Technology",
+        "Wärtsilä (Netherlands)",
         "Otto-von-Guericke-Universität Magdeburg"
       ],
       "concepts": [
@@ -1356,7 +1356,7 @@
         "Propeller",
         "Cavitation erosion"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4378078277",
@@ -1392,7 +1392,7 @@
         "Propulsion",
         "Systems engineering"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4385838336",
@@ -1413,8 +1413,8 @@
       "journal_rank": "一区/顶刊",
       "cited_by": 37,
       "institutions": [
-        "Institute of Marine Engineering",
-        "National Research Council"
+        "National Research Council",
+        "Institute of Marine Engineering"
       ],
       "concepts": [
         "Vortex",
@@ -1423,7 +1423,7 @@
         "Propeller",
         "Mechanics"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4388519749",
@@ -1455,7 +1455,7 @@
         "Specific speed",
         "Mechanical engineering"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4396821088",
@@ -1478,9 +1478,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 35,
       "institutions": [
-        "Institute of Marine Engineering",
         "University of Rome Tor Vergata",
-        "Maritime Research Institute Netherlands"
+        "Maritime Research Institute Netherlands",
+        "National Research Council"
       ],
       "concepts": [
         "Robustness (evolution)",
@@ -1489,7 +1489,7 @@
         "Computer science",
         "Robust optimization"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4324055470",
@@ -1514,8 +1514,8 @@
       "journal_rank": "核心期刊",
       "cited_by": 28,
       "institutions": [
-        "Harbin Engineering University",
-        "Chalmers University of Technology"
+        "Chalmers University of Technology",
+        "Harbin Engineering University"
       ],
       "concepts": [
         "Inlet",
@@ -1524,7 +1524,7 @@
         "Flow (mathematics)",
         "Propulsion"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4387310116",
@@ -1559,7 +1559,7 @@
         "Physics",
         "Reynolds number"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4316039483",
@@ -1584,8 +1584,8 @@
       "journal_rank": "核心期刊",
       "cited_by": 25,
       "institutions": [
-        "Guangzhou Academy of Special Equipment Inspection and Testing",
-        "Wuhan University of Technology"
+        "Wuhan University of Technology",
+        "Guangzhou Academy of Special Equipment Inspection and Testing"
       ],
       "concepts": [
         "Response surface methodology",
@@ -1594,7 +1594,7 @@
         "Computational fluid dynamics",
         "Rake"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4405479543",
@@ -1619,8 +1619,8 @@
       "journal_rank": "核心期刊",
       "cited_by": 24,
       "institutions": [
-        "Yunnan University",
-        "Southeast University"
+        "Southeast University",
+        "Yunnan University"
       ],
       "concepts": [
         "Bridge (graph theory)",
@@ -1629,7 +1629,7 @@
         "Artificial intelligence",
         "Sonar"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4367316620",
@@ -1663,7 +1663,7 @@
         "Sustainable development",
         "Submarine pipeline"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4386856124",
@@ -1697,7 +1697,7 @@
         "Sequence (biology)",
         "Recurrent neural network"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4387616583",
@@ -1723,8 +1723,8 @@
       "cited_by": 32,
       "institutions": [
         "Tokyo University of Marine Science and Technology",
-        "Norwegian University of Science and Technology",
-        "National Maritime Research Institute"
+        "National Maritime Research Institute",
+        "DNV (Norway)"
       ],
       "concepts": [
         "Buoy",
@@ -1733,7 +1733,7 @@
         "Electromagnetic spectrum",
         "Point (geometry)"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4378555434",
@@ -1769,7 +1769,7 @@
         "Work (physics)",
         "Computer science"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4398769278",
@@ -1805,7 +1805,7 @@
         "Suite",
         "Arc routing"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4379524179",
@@ -1833,7 +1833,7 @@
         "RADIUS",
         "Mathematics"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4390033791",
@@ -1865,7 +1865,7 @@
         "Hybrid power",
         "Power (physics)"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4389947138",
@@ -1890,8 +1890,8 @@
       "journal_rank": "核心期刊",
       "cited_by": 16,
       "institutions": [
-        "Dalian Maritime University",
         "Dalian University of Technology",
+        "Dalian Maritime University",
         "Norwegian University of Science and Technology"
       ],
       "concepts": [
@@ -1901,7 +1901,7 @@
         "Software",
         "Bayesian network"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4316876941",
@@ -1934,7 +1934,7 @@
         "Scale (ratio)",
         "Full scale"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4402522716",
@@ -1970,7 +1970,7 @@
         "Marine engineering",
         "Parametric statistics"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4406992072",
@@ -2004,7 +2004,7 @@
         "Oceanography",
         "Engineering"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4387060532",
@@ -2029,9 +2029,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 14,
       "institutions": [
-        "Institute of Acoustics",
+        "Jiangsu University",
         "Chinese Academy of Sciences",
-        "Jiangsu University"
+        "Institute of Acoustics"
       ],
       "concepts": [
         "Computational fluid dynamics",
@@ -2040,7 +2040,7 @@
         "Propulsion",
         "Computer science"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4386285801",
@@ -2073,7 +2073,7 @@
         "Volume of fluid method",
         "Turbulence"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4394989189",
@@ -2098,8 +2098,8 @@
       "journal_rank": "核心期刊",
       "cited_by": 13,
       "institutions": [
-        "Shenyang Institute of Automation",
         "Chinese Academy of Sciences",
+        "Shenyang Institute of Automation",
         "Shenyang Ligong University"
       ],
       "concepts": [
@@ -2109,7 +2109,7 @@
         "Active vibration control",
         "Vibration control"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4324142431",
@@ -2132,8 +2132,8 @@
       "journal_rank": "一区/顶刊",
       "cited_by": 12,
       "institutions": [
-        "University of Strathclyde",
-        "Jiangsu University of Science and Technology"
+        "Jiangsu University of Science and Technology",
+        "University of Strathclyde"
       ],
       "concepts": [
         "Upstream (networking)",
@@ -2142,7 +2142,7 @@
         "Mechanics",
         "Euler's formula"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4400187969",
@@ -2173,7 +2173,7 @@
         "Optimization problem",
         "Mathematical optimization"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4389415947",
@@ -2201,7 +2201,7 @@
         "Propeller",
         "Scale model"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4321099465",
@@ -2232,7 +2232,7 @@
         "Context (archaeology)",
         "Analytics"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4391098453",
@@ -2255,8 +2255,8 @@
       "journal_rank": "核心期刊",
       "cited_by": 351,
       "institutions": [
-        "Fırat University",
-        "Eskişehir City Hospital"
+        "Eskişehir City Hospital",
+        "Fırat University"
       ],
       "concepts": [
         "Computer science",
@@ -2265,7 +2265,7 @@
         "Adaptability",
         "Analytics"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4390844037",
@@ -2298,7 +2298,7 @@
         "Coating",
         "Nanocomposite"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4318619700",
@@ -2326,7 +2326,7 @@
         "Mineral resource classification",
         "Government (linguistics)"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4322753659",
@@ -2362,7 +2362,7 @@
         "Cell biology",
         "Metabolism"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4386765478",
@@ -2388,8 +2388,8 @@
       "cited_by": 278,
       "institutions": [
         "The University of Melbourne",
-        "Greater Manchester Mental Health NHS Foundation Trust",
-        "Aarhus University"
+        "Aarhus University",
+        "The University of Queensland"
       ],
       "concepts": [
         "Medicine",
@@ -2398,7 +2398,7 @@
         "Major depressive disorder",
         "Psychiatry"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4389428089",
@@ -2422,8 +2422,8 @@
       "journal_rank": "核心期刊",
       "cited_by": 269,
       "institutions": [
-        "Tampere University",
-        "Universidade de Vigo"
+        "Universidade de Vigo",
+        "Tampere University"
       ],
       "concepts": [
         "Computer science",
@@ -2432,7 +2432,7 @@
         "Manufacturing engineering",
         "Quality (philosophy)"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4324018044",
@@ -2457,9 +2457,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 258,
       "institutions": [
-        "University of Palermo",
-        "Spaarne Ziekenhuis",
-        "Spaarne Gasthuis"
+        "Medical University of Silesia",
+        "KU Leuven",
+        "Spaarne Ziekenhuis"
       ],
       "concepts": [
         "Job satisfaction",
@@ -2468,7 +2468,7 @@
         "Health care",
         "Globe"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4408167357",
@@ -2494,8 +2494,8 @@
       "cited_by": 221,
       "institutions": [
         "University of Exeter",
-        "Prince Sultan University",
-        "Silesian University of Technology"
+        "Silesian University of Technology",
+        "Prince Sultan University"
       ],
       "concepts": [
         "Hydrogen storage",
@@ -2504,7 +2504,7 @@
         "Hydrogen",
         "Organic chemistry"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4404830451",
@@ -2529,8 +2529,8 @@
       "journal_rank": "核心期刊",
       "cited_by": 208,
       "institutions": [
+        "University of Jyväskylä",
         "Western Sydney University",
-        "University of Wollongong",
         "University of Southern Queensland"
       ],
       "concepts": [
@@ -2540,7 +2540,7 @@
         "Mediation",
         "Psychological intervention"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4378086556",
@@ -2573,7 +2573,7 @@
         "Systems engineering",
         "Warning system"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4391360623",
@@ -2605,7 +2605,7 @@
         "Robot",
         "Computer science"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4406805725",
@@ -2640,7 +2640,7 @@
         "Thermal",
         "Fiber"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4382501312",
@@ -2666,8 +2666,8 @@
       "cited_by": 170,
       "institutions": [
         "University of Utah",
-        "San Diego State University",
-        "University of California, Los Angeles"
+        "UC San Diego Health System",
+        "Human Longevity (United States)"
       ],
       "concepts": [
         "Public relations",
@@ -2676,7 +2676,7 @@
         "Autonomy",
         "Safeguarding"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4381537435",
@@ -2709,7 +2709,7 @@
         "Manufacturing engineering",
         "Manufacturing process"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4367280922",
@@ -2734,8 +2734,8 @@
       "journal_rank": "核心期刊",
       "cited_by": 165,
       "institutions": [
-        "Dominion (United States)",
         "Operation PAR",
+        "Dominion (United States)",
         "Clemson University"
       ],
       "concepts": [
@@ -2745,7 +2745,7 @@
         "Battery electric vehicle",
         "Electric vehicle"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4313640274",
@@ -2779,7 +2779,7 @@
         "Dynamism",
         "Interpersonal communication"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4383742778",
@@ -2810,7 +2810,7 @@
         "Cognitive science",
         "Enactivism"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4392915480",
@@ -2843,7 +2843,7 @@
         "Fabrication",
         "3D printing"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4366482848",
@@ -2868,9 +2868,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 463,
       "institutions": [
-        "Alfred-Wegener-Institut Helmholtz-Zentrum für Polar- und Meeresforschung",
-        "Natural Environment Research Council",
-        "Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services"
+        "University of the Witwatersrand",
+        "Kyushu University",
+        "Friedrich-Alexander-Universität Erlangen-Nürnberg"
       ],
       "concepts": [
         "Biodiversity",
@@ -2879,7 +2879,7 @@
         "Climate change",
         "Environmental planning"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4318827691",
@@ -2903,8 +2903,8 @@
       "journal_rank": "核心期刊",
       "cited_by": 370,
       "institutions": [
-        "University of Vaasa",
         "Southeast University",
+        "University of Vaasa",
         "Shiraz University of Technology"
       ],
       "concepts": [
@@ -2914,7 +2914,7 @@
         "Data science",
         "Systems engineering"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4382135822",
@@ -2948,7 +2948,7 @@
         "Flexibility (engineering)",
         "Drone"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4321253950",
@@ -2975,7 +2975,7 @@
       "institutions": [
         "Curtin University",
         "Australian Institute of Marine Science",
-        "University of Western Australia"
+        "Lundbeck Foundation"
       ],
       "concepts": [
         "Biomonitoring",
@@ -2984,7 +2984,7 @@
         "Ecology",
         "Environmental science"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4400362459",
@@ -3019,7 +3019,7 @@
         "Power to gas",
         "Renewable energy"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4319997690",
@@ -3044,8 +3044,8 @@
       "journal_rank": "核心期刊",
       "cited_by": 288,
       "institutions": [
-        "International Monetary Fund",
-        "Institute of Semitic Studies"
+        "Institute of Semitic Studies",
+        "International Monetary Fund"
       ],
       "concepts": [
         "Multilateralism",
@@ -3054,7 +3054,7 @@
         "International trade",
         "Business"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4324032847",
@@ -3087,7 +3087,7 @@
         "Field (mathematics)",
         "Manufacturing engineering"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4381951285",
@@ -3121,7 +3121,7 @@
         "Virtual representation",
         "Manufacturing engineering"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4386498635",
@@ -3156,7 +3156,7 @@
         "Sustainability",
         "Hydrogen production"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4389751770",
@@ -3181,9 +3181,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 245,
       "institutions": [
-        "Kobe University",
-        "Xi’an Jiaotong-Liverpool University",
-        "Assiut University"
+        "Assiut University",
+        "City University of Hong Kong",
+        "Xi’an Jiaotong-Liverpool University"
       ],
       "concepts": [
         "Renewable energy",
@@ -3192,7 +3192,7 @@
         "Subsidy",
         "Energy engineering"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4394688113",
@@ -3216,15 +3216,15 @@
       "journal_rank": "核心期刊",
       "cited_by": 239,
       "institutions": [
-        "Crystal Technology and Industries (United States)",
-        "University of Ulster"
+        "University of Ulster",
+        "Crystal Technology and Industries (United States)"
       ],
       "concepts": [
         "Engineering ethics",
         "Psychology",
         "Engineering"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4382361476",
@@ -3258,7 +3258,7 @@
         "Submarine pipeline",
         "Turbine"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4390741838",
@@ -3283,9 +3283,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 235,
       "institutions": [
-        "Texas A&M University",
-        "Georgia Institute of Technology",
-        "Massachusetts Institute of Technology"
+        "Massachusetts Institute of Technology",
+        "Center For Policy Research",
+        "Georgia Institute of Technology"
       ],
       "concepts": [
         "Renewable energy",
@@ -3294,7 +3294,7 @@
         "Climate change",
         "Environmental science"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4319983517",
@@ -3316,8 +3316,8 @@
       "journal_rank": "核心期刊",
       "cited_by": 234,
       "institutions": [
-        "National Ilan University",
-        "Jadavpur University"
+        "Jadavpur University",
+        "National Ilan University"
       ],
       "concepts": [
         "Automotive industry",
@@ -3326,7 +3326,7 @@
         "Computer security",
         "Blockchain"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4403971390",
@@ -3355,7 +3355,7 @@
         "Computer science",
         "Environmental science"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4386096356",
@@ -3390,7 +3390,7 @@
         "Environmental resource management",
         "Deforestation (computer science)"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4390675710",
@@ -3415,9 +3415,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 219,
       "institutions": [
-        "Nanyang Technological University",
-        "Khalifa University of Science and Technology",
-        "University of Nottingham Malaysia Campus"
+        "University of Nottingham Malaysia Campus",
+        "Wenzhou University",
+        "Khalifa University of Science and Technology"
       ],
       "concepts": [
         "Renewable energy",
@@ -3426,7 +3426,7 @@
         "Energy engineering",
         "Intermittent energy source"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4382310424",
@@ -3449,9 +3449,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 216,
       "institutions": [
-        "MEF University",
         "Universidade Federal Fluminense",
-        "Ondokuz Mayıs University"
+        "Ondokuz Mayıs University",
+        "MEF University"
       ],
       "concepts": [
         "Weighting",
@@ -3460,7 +3460,7 @@
         "Ranking (information retrieval)",
         "Realm"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4383982525",
@@ -3486,8 +3486,8 @@
       "cited_by": 215,
       "institutions": [
         "University of Massachusetts Amherst",
-        "University of Florence",
-        "Sandia National Laboratories"
+        "University of Colorado Boulder",
+        "National Laboratory of the Rockies"
       ],
       "concepts": [
         "Turbine",
@@ -3496,7 +3496,7 @@
         "Engineering",
         "Environmental science"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4382238330",
@@ -3521,9 +3521,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 172,
       "institutions": [
-        "The Football Association",
-        "Interdisciplinary Center for Aquaculture Research",
-        "Manx National Heritage"
+        "Nofima",
+        "University of Washington",
+        "IVL Swedish Environmental Research Institute"
       ],
       "concepts": [
         "Aquaculture",
@@ -3532,7 +3532,7 @@
         "Context (archaeology)",
         "Environmental resource management"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4360612111",
@@ -3557,9 +3557,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 613,
       "institutions": [
-        "Kobe University",
-        "Stranmillis University College",
-        "Assiut University"
+        "Assiut University",
+        "Xi’an Jiaotong-Liverpool University",
+        "Chongqing University"
       ],
       "concepts": [
         "Renewable energy",
@@ -3568,7 +3568,7 @@
         "Energy engineering",
         "Energy consumption"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4385168292",
@@ -3596,7 +3596,7 @@
         "Mathematics",
         "Physics"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4318823140",
@@ -3621,9 +3621,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 551,
       "institutions": [
-        "Minia University",
+        "University of Sharjah",
         "Mansoura University",
-        "University of Sharjah"
+        "Minia University"
       ],
       "concepts": [
         "Renewable energy",
@@ -3632,7 +3632,7 @@
         "Environmental science",
         "Intermittent energy source"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4379882595",
@@ -3660,7 +3660,7 @@
         "Surface water",
         "Water resources"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4317434526",
@@ -3685,9 +3685,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 453,
       "institutions": [
-        "Delft University of Technology",
         "Massachusetts Institute of Technology",
-        "University of Cambridge"
+        "University of Cambridge",
+        "University of Edinburgh"
       ],
       "concepts": [
         "Environmental science",
@@ -3696,7 +3696,7 @@
         "Scale (ratio)",
         "Global warming"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4323531449",
@@ -3721,9 +3721,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 397,
       "institutions": [
-        "Walk Free Foundation",
-        "University of California, Riverside",
-        "Minderoo Foundation"
+        "Stockholm Resilience Centre",
+        "Stockholm University",
+        "Walk Free Foundation"
       ],
       "concepts": [
         "Plastic pollution",
@@ -3732,7 +3732,7 @@
         "Globe",
         "Oceanography"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4324291204",
@@ -3756,9 +3756,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 289,
       "institutions": [
-        "Aalborg University",
-        "Zhejiang University",
-        "San Sebastián University"
+        "San Sebastián University",
+        "National Taiwan University",
+        "Zhejiang University"
       ],
       "concepts": [
         "Power electronics",
@@ -3767,7 +3767,7 @@
         "Energy storage",
         "Wind power"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4376139793",
@@ -3792,9 +3792,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 273,
       "institutions": [
+        "Myanmar Oxford Clinical Research Unit",
         "Universidad de Los Lagos",
-        "Wageningen University & Research",
-        "Technical University of Denmark"
+        "Wageningen University & Research"
       ],
       "concepts": [
         "Aquaculture",
@@ -3803,7 +3803,7 @@
         "Fishery",
         "Natural resource economics"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4385431515",
@@ -3828,9 +3828,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 268,
       "institutions": [
-        "City University of Hong Kong",
+        "Shandong Academy of Sciences",
         "Qilu University of Technology",
-        "Shandong Academy of Sciences"
+        "City University of Hong Kong"
       ],
       "concepts": [
         "Bearing (navigation)",
@@ -3839,7 +3839,7 @@
         "Lubrication",
         "Service life"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4403530914",
@@ -3864,9 +3864,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 247,
       "institutions": [
-        "University of Dundee",
         "Qatar Foundation",
-        "University of East London"
+        "University of Dundee",
+        "Virginia Tech"
       ],
       "concepts": [
         "Environmental monitoring",
@@ -3875,7 +3875,7 @@
         "Environmental resource management",
         "Environmental science"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4392016358",
@@ -3901,8 +3901,8 @@
       "cited_by": 245,
       "institutions": [
         "Pennsylvania State University",
-        "University of Szczecin",
-        "Université Bourgogne Franche-Comté"
+        "Silesian University of Technology",
+        "University of Szczecin"
       ],
       "concepts": [
         "Energy (signal processing)",
@@ -3911,7 +3911,7 @@
         "Environmental economics",
         "Environmental science"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W2988060416",
@@ -3940,7 +3940,7 @@
         "Climatology",
         "Computer science"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4390347341",
@@ -3973,7 +3973,7 @@
         "Hydrogen storage",
         "Renewable energy"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4381661790",
@@ -3998,9 +3998,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 171,
       "institutions": [
-        "Mewar University",
         "Tianjin University",
-        "Jouf University"
+        "Jouf University",
+        "Mewar University"
       ],
       "concepts": [
         "Smart city",
@@ -4009,7 +4009,7 @@
         "Advanced Traffic Management System",
         "Computer science"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4362663195",
@@ -4043,7 +4043,7 @@
         "Computer science",
         "Applications of artificial intelligence"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4316506832",
@@ -4068,9 +4068,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 927,
       "institutions": [
-        "Sejong University",
+        "Hamdard University",
         "Zhejiang Ocean University",
-        "Guilin University of Technology"
+        "Sejong University"
       ],
       "concepts": [
         "Drone",
@@ -4079,7 +4079,7 @@
         "Operability",
         "Risk analysis (engineering)"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4327662982",
@@ -4115,7 +4115,7 @@
         "Simultaneous localization and mapping",
         "Computer vision"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4385900995",
@@ -4150,7 +4150,7 @@
         "Drone",
         "Computer science"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4320493621",
@@ -4181,7 +4181,7 @@
         "Construction engineering",
         "Engineering"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4324061701",
@@ -4216,7 +4216,7 @@
         "Multidisciplinary approach",
         "Automation"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4376139506",
@@ -4247,7 +4247,7 @@
         "Computer science",
         "Robot"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4399300226",
@@ -4279,7 +4279,7 @@
         "Motion planning",
         "Computer science"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4391286450",
@@ -4304,8 +4304,8 @@
       "journal_rank": "核心期刊",
       "cited_by": 112,
       "institutions": [
-        "Tsinghua University",
         "Shanghai Maritime University",
+        "Tsinghua University",
         "Chalmers University of Technology"
       ],
       "concepts": [
@@ -4315,7 +4315,7 @@
         "Machine learning",
         "Automatic Identification System"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4403041123",
@@ -4351,7 +4351,7 @@
         "Sustainability",
         "Environmental science"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4385248025",
@@ -4376,8 +4376,8 @@
       "journal_rank": "核心期刊",
       "cited_by": 101,
       "institutions": [
-        "Delft University of Technology",
-        "Aalto University"
+        "Aalto University",
+        "Delft University of Technology"
       ],
       "concepts": [
         "Reliability (semiconductor)",
@@ -4386,7 +4386,7 @@
         "Poison control",
         "Human factors and ergonomics"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4315474734",
@@ -4417,7 +4417,7 @@
         "Collision",
         "Path (computing)"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4321015392",
@@ -4441,8 +4441,8 @@
       "cited_by": 100,
       "institutions": [
         "Shenyang Aerospace University",
-        "Beihang University",
-        "Peng Cheng Laboratory"
+        "Peng Cheng Laboratory",
+        "Beihang University"
       ],
       "concepts": [
         "Swarm behaviour",
@@ -4451,7 +4451,7 @@
         "Swarm intelligence",
         "Collective behavior"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4388602068",
@@ -4476,8 +4476,8 @@
       "journal_rank": "一区/顶刊",
       "cited_by": 99,
       "institutions": [
-        "Shanghai Maritime University",
-        "Wuhan University of Technology"
+        "Wuhan University of Technology",
+        "Shanghai Maritime University"
       ],
       "concepts": [
         "Trajectory",
@@ -4486,7 +4486,7 @@
         "Graph",
         "Artificial intelligence"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4382402823",
@@ -4517,7 +4517,7 @@
         "Mobile robot",
         "Computer science"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4382236847",
@@ -4550,7 +4550,7 @@
         "Work (physics)",
         "Computer science"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4319449803",
@@ -4575,9 +4575,9 @@
       "journal_rank": "一区/顶刊",
       "cited_by": 94,
       "institutions": [
+        "Wuhan University of Technology",
         "University College London",
-        "Harbin Engineering University",
-        "Wuhan University of Technology"
+        "Harbin Engineering University"
       ],
       "concepts": [
         "Underactuation",
@@ -4586,7 +4586,7 @@
         "Controller (irrigation)",
         "Lyapunov function"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4380986480",
@@ -4620,7 +4620,7 @@
         "Motion planning",
         "Obstacle"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     },
     {
       "id": "https://openalex.org/W4392208039",
@@ -4645,9 +4645,9 @@
       "journal_rank": "核心期刊",
       "cited_by": 91,
       "institutions": [
-        "Case Western Reserve University",
         "Shandong University",
-        "Beijing Institute of Technology"
+        "City University of Hong Kong",
+        "Case Western Reserve University"
       ],
       "concepts": [
         "Leverage (statistics)",
@@ -4656,10 +4656,10 @@
         "Telecommunications",
         "Smart city"
       ],
-      "fetched": "2026-06-27 21:30"
+      "fetched": "2026-06-27 21:39"
     }
   ],
-  "updated": "2026-06-27 21:30",
+  "updated": "2026-06-27 21:39",
   "today_new": 137,
   "total": 137,
   "history": [

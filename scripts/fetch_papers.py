@@ -332,19 +332,43 @@ def merge_papers(new_p, existing):
 def compute_stats(papers):
     tc = Counter(); yc = Counter(); sc = Counter(); jc = Counter()
     tp = defaultdict(list)
+    author_counter = Counter()
+    inst_counter = Counter()
+    topic_authors = defaultdict(Counter)
+    topic_insts = defaultdict(Counter)
+    
     for p in papers:
         t = p.get("topic","其他"); tc[t] += 1; tp[t].append(p)
         y = p.get("year",""); yc[int(y)] += 1 if y.isdigit() else 0
         sc[p.get("source","")] += 1
         j = p.get("journal_rank",""); jc[j] += 1 if j else 0
+        
+        # 作者统计
+        for au in p.get("authors",[]):
+            au_name = au.strip()
+            if au_name and len(au_name) > 1:
+                author_counter[au_name] += 1
+                topic_authors[t][au_name] += 1
+        
+        # 机构统计
+        for inst in p.get("institutions",[]):
+            inst_name = inst.strip()
+            if inst_name and len(inst_name) > 3:
+                # 简化机构名（取主机构部分）
+                short = inst_name.split(",")[0].split(";")[0].strip()[:60]
+                inst_counter[short] += 1
+                topic_insts[t][short] += 1
+    
     years = sorted(yc); yr = f"{min(years)}-{max(years)}" if years else "—"
-    # 关键词热度: 统计每个方向论文的平均引用
+    
+    # 每个方向论文的平均引用
     topic_impact = {}
     for t, ps in tp.items():
         c = [p.get("cited_by",0) for p in ps]
         topic_impact[t] = {"count":len(ps), "avg_cited":round(sum(c)/len(c),1) if c else 0,
                            "max_cited":max(c) if c else 0}
-    # 热点论文: top 20 按引用+时效加权排序
+    
+    # 热点论文
     now = datetime.now()
     def hot_score(p):
         cited = p.get("cited_by",0)
@@ -352,14 +376,28 @@ def compute_stats(papers):
         except: d = 365
         return cited * 0.6 + max(0, 365 - d) * 0.4
     hot = sorted(papers, key=lambda p: hot_score(p), reverse=True)[:20]
-    return dict(topic_counts=dict(tc.most_common()),
-                year_counts={str(k):yc[k] for k in years},
-                source_counts=dict(sc.most_common()),
-                journal_rank_counts=dict(jc.most_common()),
-                topic_impact=topic_impact, topic_papers={t:tp[t] for t in tp},
-                total_topics=len(tc), year_range=yr,
-                hot_papers=hot,
-                topic_year={t: Counter(p.get("year","") for p in ps) for t,ps in tp.items()})
+    
+    # 作者/机构整理
+    def top_n(counter, n=10):
+        return [{"name":k, "count":v} for k,v in counter.most_common(n)]
+    
+    return dict(
+        topic_counts=dict(tc.most_common()),
+        year_counts={str(k):yc[k] for k in years},
+        source_counts=dict(sc.most_common()),
+        journal_rank_counts=dict(jc.most_common()),
+        topic_impact=topic_impact, topic_papers={t:tp[t] for t in tp},
+        total_topics=len(tc), year_range=yr,
+        hot_papers=hot,
+        topic_year={t: Counter(p.get("year","") for p in ps) for t,ps in tp.items()},
+        # 新增：作者与机构
+        top_authors=top_n(author_counter, 15),
+        top_institutions=top_n(inst_counter, 20),
+        topic_top_authors={t: top_n(ca, 5) for t,ca in topic_authors.items()},
+        topic_top_institutions={t: top_n(ci, 8) for t,ci in topic_insts.items()},
+        total_authors=len(author_counter),
+        total_institutions=len(inst_counter),
+    )
 
 # ═══════════════════════════════════════════════════════════
 #  HTML生成
@@ -378,182 +416,118 @@ def gen_html(data, config):
 
     tl = list(stats["topic_counts"].keys())
     tcols = {t:COLORS[i%len(COLORS)] for i,t in enumerate(tl)}
-
-    # ── 统计卡片 ──
+    
     jrc = stats["journal_rank_counts"]
     top_j = sum(v for k,v in jrc.items() if k in ("一区/顶刊","二区/重要"))
-    cards = f"""
-    <div class="stats-row">
-        <div class="sc"><span class="n">{total}</span><span class="l">论文总数</span></div>
-        <div class="sc"><span class="n">{stats['total_topics']}</span><span class="l">研究方向</span></div>
-        <div class="sc"><span class="n">{stats['year_range']}</span><span class="l">覆盖年份</span></div>
-        <div class="sc"><span class="n">{top_j}</span><span class="l">顶刊/重要期刊</span></div>
-        <div class="sc"><span class="n">{len(stats['source_counts'])}</span><span class="l">数据源</span></div>
-    </div>"""
-
-    # ── 数据（给Chart.js）──
+    
     topic_impact = stats["topic_impact"]
-    impact_data = {t: topic_impact[t] for t in tl}
     hot_papers = stats["hot_papers"]
-    topic_labels_j = json.dumps(tl, ensure_ascii=False)
-    topic_data_j = json.dumps([stats["topic_counts"][t] for t in tl], ensure_ascii=False)
-    topic_avg_j = json.dumps([topic_impact[t]["avg_cited"] for t in tl], ensure_ascii=False)
-    topic_colors_j = json.dumps([tcols[t] for t in tl], ensure_ascii=False)
-    year_labels = sorted(stats["year_counts"])
-    year_data = [stats["year_counts"][y] for y in year_labels]
-    cum = [sum(year_data[:i+1]) for i in range(len(year_data))]
-    yl_j = json.dumps(year_labels)
-    yd_j = json.dumps(year_data)
-    cum_j = json.dumps(cum)
-
+    
+    # ── 机构列表 ──
+    inst_html = ""
+    for inst in stats["top_institutions"][:15]:
+        n = inst["name"].replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
+        inst_html += '<div class="ai-item"><span class="ai-name">' + n + '</span><span class="ai-count">' + str(inst["count"]) + '</span></div>\n'
+    
+    auth_html = ""
+    for au in stats["top_authors"][:12]:
+        n = au["name"].replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
+        auth_html += '<div class="ai-item"><span class="ai-name">' + n + '</span><span class="ai-count">' + str(au["count"]) + '</span></div>\n'
+    
+    cards = ('<div class="stats-row">'
+        '<div class="sc"><span class="n">' + str(total) + '</span><span class="l">论文总数</span></div>'
+        '<div class="sc"><span class="n">' + str(stats["total_topics"]) + '</span><span class="l">研究方向</span></div>'
+        '<div class="sc"><span class="n">' + str(stats["total_authors"]) + '</span><span class="l">作者</span></div>'
+        '<div class="sc"><span class="n">' + str(stats["total_institutions"]) + '</span><span class="l">机构</span></div>'
+        '<div class="sc"><span class="n">' + str(top_j) + '</span><span class="l">顶刊/重要</span></div>'
+        '<div class="sc"><span class="n">' + str(len(stats["source_counts"])) + '</span><span class="l">数据源</span></div>'
+        '</div>')
+    
+    # ── Chart.js 数据 ──
+    yl = sorted(stats["year_counts"])
+    yd = [stats["year_counts"][y] for y in yl]
+    cum = [sum(yd[:i+1]) for i in range(len(yd))]
+    
+    tl_j = json.dumps(tl, ensure_ascii=False)
+    td_j = json.dumps([stats["topic_counts"][t] for t in tl], ensure_ascii=False)
+    tc_j = json.dumps([tcols[t] for t in tl], ensure_ascii=False)
+    yl_j = json.dumps(yl); yd_j = json.dumps(yd); cum_j = json.dumps(cum)
+    jrc_k = json.dumps(list(stats["journal_rank_counts"].keys()), ensure_ascii=False)
+    jrc_v = json.dumps(list(stats["journal_rank_counts"].values()), ensure_ascii=False)
+    
     # ── 热点论文 ──
-    hot_html = ""
+    hot_items = ""
     for i,p in enumerate(hot_papers[:10]):
         c = p.get("cited_by",0)
         jrnk = p.get("journal_rank","")
-        rcol = RANK_COLORS.get(jrnk,"#95A5A6")
         doi = p.get("doi","")
-        doi_h = f'<a href="https://doi.org/{doi}" class="doi" target="_blank">{doi[:40]}</a>' if doi else ""
-        hot_html += f"""
-        <div class="hp">
-            <span class="hp-num">{i+1}</span>
-            <div class="hp-body">
-                <div class="hp-title"><a href="{p.get("url","#")}" target="_blank">{p["title"][:90]}</a></div>
-                <div class="hp-meta">
-                    <span>{p.get("published","")[:10]}</span>
-                    <span class="cite">📊 {c} 引用</span>
-                    {f'<span class="rank" style="color:{rcol}">{jrnk}</span>' if jrnk else ''}
-                    {doi_h}
-                </div>
-            </div>
-        </div>"""
-
+        doi_h = '<a href="https://doi.org/' + doi + '" class="doi" target="_blank">' + doi[:35] + '</a>' if doi else ""
+        jrnk_h = '<span class="rk">' + jrnk + '</span>' if jrnk else ""
+        hot_items += ('<div class="hp">'
+            '<span class="hp-n">' + str(i+1) + '</span>'
+            '<div class="hp-b">'
+            '<div class="hp-t"><a href="' + p.get("url","#") + '" target="_blank">' + p["title"][:90] + '</a></div>'
+            '<div class="hp-m"><span>' + p.get("published","")[:10] + '</span><span class="ci">📊' + str(c) + '</span>' + jrnk_h + doi_h + '</div>'
+            '</div></div>')
+    
     # ── 各方向 ──
-    topics_html = ""
+    topics = ""
     for i,t in enumerate(tl):
         ps = sorted(stats["topic_papers"].get(t,[]), key=lambda x: x.get("cited_by",0), reverse=True)
-        c = stats["topic_counts"][t]
-        imp = topic_impact[t]
-        col = tcols[t]
+        imp = topic_impact[t]; col = tcols[t]
         items = ""
-        for p in ps[:8]:
-            ci = p.get("cited_by",0)
-            jour = p.get("journal","")
-            jrnk = p.get("journal_rank","")
-            doi = p.get("doi","")
+        for p in ps[:6]:
+            ci = p.get("cited_by",0); doi = p.get("doi","")
             au = ", ".join(p.get("authors",[])[:2])
-            doi_h = f'<a href="https://doi.org/{doi}" class="doi">📎 {doi[:30]}</a>' if doi else ""
-            items += f"""
-            <div class="pi">
-                <div class="pi-title"><a href="{p.get("url","#")}" target="_blank">{p["title"][:90]}</a></div>
-                <div class="pi-meta">
-                    <span>{p.get("published","")[:10]}</span>
-                    {f'<span class="au">{au[:50]}…</span>' if au else ''}
-                    {f'<span class="ci">📊 {ci}</span>' if ci else ''}
-                    {doi_h}
-                </div>
-            </div>"""
-        more = c - 8
-        topics_html += f"""
-        <div class="ts">
-            <div class="th" onclick="tt(this)">
-                <span class="dot" style="background:{col}"></span>
-                <span class="tn">{t}</span>
-                <span class="tc">{c}篇</span>
-                <span class="ti">📊 均引{imp["avg_cited"]} 最高{imp["max_cited"]}</span>
-                <span class="tic">▸</span>
-            </div>
-            <div class="tb" style="display:none">
-                {items}
-                {f'<p class="m">…还有{more}篇</p>' if more>0 else ''}
-            </div>
-        </div>"""
-
-    html = f"""<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>船舶研究动态 · 统计看板</title>
-<link rel="stylesheet" href="style.css">
-<script src="{CHART_CDN}"></script>
-</head>
-<body>
-<header>
-    <h1>🚢 船舶研究动态监测</h1>
-    <p class="sub">Ship & Maritime Research · 多源数据分析 · 每3天自动更新</p>
-    <p class="meta">🕐 {updated} | 数据来源: arXiv + OpenAlex + Semantic Scholar</p>
-</header>
-<main>
-    {cards}
-
-    <div class="charts-row">
-        <div class="cc">
-            <h2>📊 研究方向分布</h2>
-            <div class="cw"><canvas id="c1"></canvas></div>
-        </div>
-        <div class="cc">
-            <h2>📈 发文趋势</h2>
-            <div class="cw"><canvas id="c2"></canvas></div>
-        </div>
-        <div class="cc">
-            <h2>🏆 期刊等级分布</h2>
-            <div class="cw"><canvas id="c3"></canvas></div>
-        </div>
-    </div>
-
-    <section class="hot">
-        <h2>🔥 热点论文 · 综合加权排名</h2>
-        <p class="hint">引用数 + 时效性加权排序</p>
-        {hot_html}
-    </section>
-
-    <section class="detail">
-        <h2>📋 研究方向详情</h2>
-        <div class="tf"><input type="text" id="ts" placeholder="🔍 搜研究方向..." oninput="ft()"></div>
-        {topics_html}
-    </section>
-</main>
-<footer>
-    <p>采集: arXiv API + OpenAlex API + Semantic Scholar API | 每3天 08:00 自动更新</p>
-    <p><a href="https://github.com/Jison-hue/ship-research-monitor" target="_blank">GitHub</a></p>
-</footer>
-<script>
-const tx = {topic_labels_j}, td = {topic_data_j}, ta = {topic_avg_j}, tc = {topic_colors_j};
-new Chart(document.getElementById('c1'), {{
-    type:'bar', data:{{labels:tx, datasets:[{{label:'论文数',data:td,backgroundColor:tc,borderRadius:3}}]}},
-    options:{{indexAxis:'y', responsive:true, maintainAspectRatio:false,
-        plugins:{{legend:{{display:false}}}},
-        scales:{{x:{{beginAtZero:true,grid:{{color:'rgba(0,0,0,0.04)'}}}},y:{{grid:{{display:false}}}}}} }}
-}});
-new Chart(document.getElementById('c2'), {{
-    type:'bar', data:{{
-        labels:{yl_j}, datasets:[
-            {{label:'新增',data:{yd_j},backgroundColor:'rgba(91,143,168,0.6)',order:2}},
-            {{label:'累计',data:{cum_j},type:'line',borderColor:'#C98B7A',fill:true,tension:0.3,pointRadius:3,order:1}}
-        ]
-    }},
-    options:{{responsive:true, maintainAspectRatio:false, plugins:{{legend:{{position:'top',labels:{{font:{{size:12}}}}}}}},
-        scales:{{x:{{grid:{{display:false}}}},y:{{beginAtZero:true,grid:{{color:'rgba(0,0,0,0.04)'}}}}}} }}
-}});
-new Chart(document.getElementById('c3'), {{
-    type:'doughnut', data:{{
-        labels:{json.dumps(list(stats['journal_rank_counts'].keys()), ensure_ascii=False)},
-        datasets:[{{data:{json.dumps(list(stats['journal_rank_counts'].values()), ensure_ascii=False)},
-            backgroundColor:['#C0392B','#E67E22','#2980B9','#7F8C8D','#95A5A6']}}]
-    }},
-    options:{{responsive:true, maintainAspectRatio:false, plugins:{{legend:{{position:'bottom',labels:{{font:{{size:11}}}}}}}} }}
-}});
-function tt(el){{var b=el.nextElementSibling,i=el.querySelector('.tic');var o=b.style.display=='block';b.style.display=o?'none':'block';i.textContent=o?'▸':'▾';}}
-function ft(){{var q=document.getElementById('ts').value.toLowerCase();document.querySelectorAll('.ts').forEach(function(s){{s.style.display=s.querySelector('.tn').textContent.toLowerCase().includes(q)?'':'none';}});}}
-</script>
-</body>
-</html>"""
+            doi_h = '<a href="https://doi.org/' + doi + '" class="doi">📎' + doi[:25] + '</a>' if doi else ""
+            insts = p.get("institutions",[])
+            inst_h = '<span class="inst">🏛️ ' + insts[0][:35] + '</span>' if insts else ""
+            ci_h = '<span class="ci">📊'+str(ci)+'</span>' if ci else ""
+            au_h = '<span>'+au[:40]+'</span>' if au else ""
+            items += ('<div class="pi">'
+                '<div class="pi-t"><a href="' + p.get("url","#") + '" target="_blank">' + p["title"][:80] + '</a></div>'
+                '<div class="pi-m"><span>' + p.get("published","")[:10] + '</span>' + au_h + ci_h + inst_h + doi_h + '</div></div>')
+        more = stats["topic_counts"][t] - 6
+        if more > 0:
+            more_h = '<p class="m">…还有' + str(more) + '篇</p>'
+        else:
+            more_h = ""
+        topics += ('<div class="ts">'
+            '<div class="th" onclick="tt(this)">'
+            '<span class="dot" style="background:' + col + '"></span><span class="tn">' + t + '</span>'
+            '<span class="tc">' + str(stats["topic_counts"][t]) + '篇</span>'
+            '<span class="ti">📊均引' + str(imp["avg_cited"]) + '</span>'
+            '<span class="tic">▸</span>'
+            '</div><div class="tb" style="display:none">' + items + more_h + '</div></div>')
+    
+    html = '<!DOCTYPE html>\n<html lang="zh-CN">\n<head>\n<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n'
+    html += '<title>船舶研究动态 · 统计看板</title>\n<link rel="stylesheet" href="style.css">\n'
+    html += '<script src="' + CHART_CDN + '"></script>\n</head>\n<body>\n'
+    html += '<header>\n<h1>🚢 船舶与海洋工程研究动态监测</h1>\n'
+    html += '<p class="sub">多源数据分析 · 每3天自动更新 · ' + stats["year_range"] + '</p>\n'
+    html += '<p class="meta">🕐 ' + updated + ' | arXiv + OpenAlex + Semantic Scholar</p>\n</header>\n<main>\n'
+    html += cards + '\n'
+    html += '<div class="charts-row">\n'
+    html += '<div class="cc"><h2>📊 研究方向分布</h2><div class="cw"><canvas id="c1"></canvas></div></div>\n'
+    html += '<div class="cc"><h2>📈 发文趋势</h2><div class="cw"><canvas id="c2"></canvas></div></div>\n'
+    html += '<div class="cc"><h2>🏆 期刊等级</h2><div class="cw"><canvas id="c3"></canvas></div></div>\n</div>\n'
+    html += '<section class="hot"><h2>🔥 热点论文 · 综合排名</h2><p class="hint">引用+时效加权</p>' + hot_items + '</section>\n'
+    html += '<section class="ai-s"><h2>🏫 高产机构 Top 15</h2><div class="ai-l">' + inst_html + '</div></section>\n'
+    html += '<section class="ai-s"><h2>👨‍🔬 活跃作者 Top 12</h2><div class="ai-l">' + auth_html + '</div></section>\n'
+    html += '<section class="detail"><h2>📋 研究方向详情</h2>\n'
+    html += '<div class="tf"><input type="text" id="ts" placeholder="🔍 搜研究方向..." oninput="ft()"></div>\n'
+    html += topics + '</section>\n</main>\n'
+    html += '<footer><p>每3天08:00自动更新 · <a href="https://github.com/Jison-hue/ship-research-monitor">GitHub</a></p></footer>\n'
+    html += '<script>\n'
+    html += 'new Chart(c1,{type:"bar",data:{labels:' + tl_j + ',datasets:[{label:"论文数",data:' + td_j + ',backgroundColor:' + tc_j + ',borderRadius:3}]},options:{indexAxis:"y",responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{beginAtZero:true,grid:{color:"rgba(0,0,0,0.04)"}},y:{grid:{display:false}}}}});\n'
+    html += 'new Chart(c2,{type:"bar",data:{labels:' + yl_j + ',datasets:[{label:"新增",data:' + yd_j + ',backgroundColor:"rgba(91,143,168,0.6)",order:2},{label:"累计",data:' + cum_j + ',type:"line",borderColor:"#C98B7A",fill:true,tension:0.3,pointRadius:3,order:1}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:"top",labels:{font:{size:12}}}},scales:{x:{grid:{display:false}},y:{beginAtZero:true,grid:{color:"rgba(0,0,0,0.04)"}}}}});\n'
+    html += 'new Chart(c3,{type:"doughnut",data:{labels:' + jrc_k + ',datasets:[{data:' + jrc_v + ',backgroundColor:["#C0392B","#E67E22","#2980B9","#7F8C8D","#95A5A6"]}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:"bottom",labels:{font:{size:11}}}}}});\n'
+    html += 'function tt(el){var b=el.nextElementSibling,i=el.querySelector(".tic");b.style.display=b.style.display=="block"?"none":"block";i.textContent=b.style.display=="block"?"▾":"▸";}\n'
+    html += 'function ft(){var q=document.getElementById("ts").value.toLowerCase();document.querySelectorAll(".ts").forEach(function(s){s.style.display=s.querySelector(".tn").textContent.toLowerCase().includes(q)?"":"none";});}\n'
+    html += '</script>\n</body>\n</html>\n'
     os.makedirs(DOCS_DIR, exist_ok=True)
-    with open(OUTPUT_HTML, "w", encoding="utf-8") as f: f.write(html)
-
-# ═══════════════════════════════════════════════════════════
-#  主流程
-# ═══════════════════════════════════════════════════════════
+    with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
+        f.write(html)
 def main():
     print("="*50); print(f"🚢 船舶研究动态监测 v2"); print(f"⏰ {datetime.now().strftime('%Y-%m-%d %H:%M')}"); print("="*50)
     config = load_config(); existing = load_existing(DATA_PATH); all_new = []

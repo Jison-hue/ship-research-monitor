@@ -73,3 +73,13 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
     .ti{display:none}
     header h1{font-size:1.2rem}
 }
+
+/* ─── Author & Institution ─── */
+.ai-s{background:var(--card);border-radius:var(--r);padding:14px 16px;border:1px solid var(--bd);margin-bottom:14px}
+.ai-s h2{font-size:.88rem;font-weight:600;margin-bottom:8px}
+.ai-l{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+.ai-item{display:flex;justify-content:space-between;padding:4px 6px;font-size:.78rem;border-bottom:1px solid #f5f5f5}
+.ai-item:last-child{border:none}
+.ai-name{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--text)}
+.ai-count{font-weight:600;color:var(--accent);min-width:24px;text-align:right}
+@media(max-width:640px){.ai-l{grid-template-columns:1fr}}

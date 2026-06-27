@@ -736,7 +736,7 @@ def gen_html(data, config):
         ps = sorted(stats["topic_papers"].get(t,[]), key=lambda x: x.get("cited_by",0), reverse=True)
         imp = topic_impact[t]; col = tcols[t]
         items = ""
-        for p in ps[:6]:
+        for p in ps:  # Show all papers
             ci = p.get("cited_by",0); doi = p.get("doi","")
             au = ", ".join(p.get("authors",[])[:2])
             doi_h = '<a href="https://doi.org/' + doi + '" class="doi">📎' + doi[:25] + '</a>' if doi else ""
@@ -749,11 +749,7 @@ def gen_html(data, config):
             items += ('<div class="pi">'
                 '<div class="pi-t"><a href="' + p.get("url","#") + '" target="_blank">' + p["title"][:80] + '</a></div>'
                 '<div class="pi-m"><span>' + p.get("published","")[:10] + '</span>' + au_h + sk_h + ci_h + inst_h + doi_h + '</div></div>')
-        more = stats["topic_counts"][t] - 6
-        if more > 0:
-            more_h = '<p class="m">…还有' + str(more) + '篇</p>'
-        else:
-            more_h = ""
+        more_h = ""
         topics += ('<div class="ts">'
             '<div class="th" onclick="tt(this)">'
             '<span class="dot" style="background:' + col + '"></span><span class="tn">' + t + '</span>'

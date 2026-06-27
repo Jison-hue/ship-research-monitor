@@ -1,7 +1,7 @@
 {
   "project": {
     "name": "船舶研究动态监测",
-    "description": "每日自动采集船舶/海洋工程领域最新研究论文",
+    "description": "每3天自动采集船舶/海洋工程领域最新研究论文",
     "update_time": "08:00"
   },
   "sources": {

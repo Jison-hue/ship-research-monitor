@@ -464,15 +464,15 @@ def generate_html(data, config):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>船舶研究动态 | Ship Research Monitor</title>
     <link rel="stylesheet" href="style.css">
-    <meta name="description" content="每日自动采集船舶/海洋工程领域最新研究论文">
+    <meta name="description" content="每3天自动采集船舶/海洋工程领域最新研究论文">
     <meta property="og:title" content="船舶研究动态">
-    <meta property="og:description" content="每日自动采集船舶/海洋工程领域最新研究论文">
+    <meta property="og:description" content="每3天自动采集船舶/海洋工程领域最新研究论文">
 </head>
 <body>
     <header>
         <div class="header-content">
             <h1>🚢 船舶研究动态</h1>
-            <p class="subtitle">Ship & Maritime Research Monitor · 每日自动更新</p>
+            <p class="subtitle">Ship & Maritime Research Monitor · 每3天自动更新</p>
             <p class="update-info">🕐 最后更新: {updated} · 数据来源: arXiv + Semantic Scholar</p>
         </div>
     </header>
@@ -508,7 +508,7 @@ def generate_html(data, config):
     </main>
     
     <footer>
-        <p>⚡ 每日 {config.get("project", {}).get("update_time", "08:00")} 自动更新 · 基于 GitHub Actions</p>
+        <p>⚡ 每3天 {config.get("project", {}).get("update_time", "08:00")} 自动更新 · 基于 GitHub Actions</p>
         <p>数据来源: arXiv API · Semantic Scholar API</p>
     </footer>
     

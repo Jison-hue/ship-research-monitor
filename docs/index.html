@@ -10,7 +10,7 @@
 <header>
 <h1>🚢 船舶与海洋工程研究动态监测</h1>
 <p class="sub">多源数据分析 · 每3天自动更新 · 2021-2026</p>
-<p class="meta">🕐 2026-06-29 15:00 | arXiv + OpenAlex + Semantic Scholar</p>
+<p class="meta">🕐 2026-06-29 15:28 | arXiv + OpenAlex + Semantic Scholar</p>
 <p style="text-align:center;font-size:.78rem;margin-top:6px"><a href="weekly.html">📋 查看完整周报 →</a></p>
 </header>
 <main>
@@ -56,9 +56,9 @@
 <section class="detail"><h2>📋 研究方向详情</h2>
 <div class="df"><button class="df-btn active" data-dir="all" onclick="filterDir('all')">📌 全部</button><button class="df-btn" data-dir="⭐bookmark" onclick="filterDir('⭐bookmark')">⭐ 收藏</button><button class="df-btn" data-dir="船舶水动力学" onclick="filterDir(this.getAttribute('data-dir'))" style="border-left:3px solid #5B8FA8">船舶水动力学</button><button class="df-btn" data-dir="其他" onclick="filterDir(this.getAttribute('data-dir'))" style="border-left:3px solid #7BA9A0">其他</button><button class="df-btn" data-dir="水下航行器与海洋机器人" onclick="filterDir(this.getAttribute('data-dir'))" style="border-left:3px solid #B5A88D">水下航行器与海洋机器人</button><button class="df-btn" data-dir="船舶与海洋工程数值方法" onclick="filterDir(this.getAttribute('data-dir'))" style="border-left:3px solid #C98B7A">船舶与海洋工程数值方法</button><button class="df-btn" data-dir="船舶推进与节能" onclick="filterDir(this.getAttribute('data-dir'))" style="border-left:3px solid #A88BAB">船舶推进与节能</button><button class="df-btn" data-dir="自主船舶与智能航行" onclick="filterDir(this.getAttribute('data-dir'))" style="border-left:3px solid #8FAB8F">自主船舶与智能航行</button><button class="df-btn" data-dir="海洋可再生能源" onclick="filterDir(this.getAttribute('data-dir'))" style="border-left:3px solid #C9A88D">海洋可再生能源</button><button class="df-btn" data-dir="船舶结构力学与安全" onclick="filterDir(this.getAttribute('data-dir'))" style="border-left:3px solid #7FA8C9">船舶结构力学与安全</button><button class="df-btn" data-dir="船舶智能制造" onclick="filterDir(this.getAttribute('data-dir'))" style="border-left:3px solid #B58F8F">船舶智能制造</button><button class="df-btn" data-dir="海洋工程结构物" onclick="filterDir(this.getAttribute('data-dir'))" style="border-left:3px solid #8FA8A8">海洋工程结构物</button><button class="df-btn" data-dir="船舶设计与优化" onclick="filterDir(this.getAttribute('data-dir'))" style="border-left:3px solid #5B8FA8">船舶设计与优化</button><button class="df-btn" data-dir="船舶噪声与水下辐射" onclick="filterDir(this.getAttribute('data-dir'))" style="border-left:3px solid #7BA9A0">船舶噪声与水下辐射</button></div>
 <div class="search-bar">
-<input type="text" id="ps" class="ps-input" placeholder="🔍 搜论文标题/作者..." oninput="ps()">
-<select id="yrf" class="sf" onchange="af()"><option value="all">📅 全部年份</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option><option value="2021">2021</option></select>
-<select id="jrf" class="sf" onchange="af()"><option value="all">🏆 全部期刊</option><option value="一区/顶刊">一区/顶刊</option><option value="二区/重要">二区/重要</option><option value="核心期刊">核心期刊</option><option value="预印本">预印本</option><option value="其他">其他</option></select>
+<input type="text" id="ps" class="ps-input" placeholder="🔍 搜论文标题/作者..." oninput="uf()">
+<select id="yrf" class="sf" onchange="uf()"><option value="all">📅 全部年份</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option><option value="2021">2021</option></select>
+<select id="jrf" class="sf" onchange="uf()"><option value="all">🏆 全部期刊</option><option value="一区/顶刊">一区/顶刊</option><option value="二区/重要">二区/重要</option><option value="核心期刊">核心期刊</option><option value="预印本">预印本</option><option value="其他">其他</option></select>
 <span class="result-count" id="rc"></span>
 </div>
 <div class="tf"><input type="text" id="ts" placeholder="🔍 搜研究方向..." oninput="ft()"></div>
@@ -72,8 +72,9 @@ new Chart(c3,{type:"doughnut",data:{labels:["预印本", "核心期刊", "一区
 function tt(el){var b=el.nextElementSibling,i=el.querySelector(".tic");b.style.display=b.style.display=="block"?"none":"block";i.textContent=b.style.display=="block"?"▾":"▸";}
 function ft(){var q=document.getElementById("ts").value.toLowerCase();document.querySelectorAll(".ts").forEach(function(s){s.style.display=s.querySelector(".tn").textContent.toLowerCase().includes(q)?"":"none";});}
 /* ─── 搜索筛选函数 ─── */
-function af(){var yr=document.getElementById("yrf").value;var jr=document.getElementById("jrf").value;document.querySelectorAll(".pi").forEach(function(pi){var py=pi.getAttribute("data-year")||"";var pj=pi.getAttribute("data-jrank")||"";pi.dataset.afHide=(yr!=="all"&&py!==yr)||(jr!=="all"&&pj!==jr)?"1":""});ps()}
-function ps(){var q=document.getElementById("ps").value.toLowerCase().trim();document.querySelectorAll(".pi").forEach(function(pi){var t=(pi.querySelector(".pi-t a")||{}).textContent||"";t=t.toLowerCase();var m=(pi.querySelector(".pi-m")||{}).textContent||"";m=m.toLowerCase();var hide=!!pi.dataset.afHide||(q&&!t.includes(q)&&!m.includes(q));pi.style.display=hide?"none":""});var v=document.querySelectorAll(".pi:not([style*=none])").length;document.getElementById("rc").textContent=v>0?"找到 "+v+" 篇":""}
+function uf(){var yr=document.getElementById("yrf").value;var jr=document.getElementById("jrf").value;var q=document.getElementById("ps").value.toLowerCase().trim();document.querySelectorAll(".pi").forEach(function(pi){var py=pi.getAttribute("data-year")||"";var pj=pi.getAttribute("data-jrank")||"";var t=(pi.querySelector(".pi-t a")||{}).textContent||"";t=t.toLowerCase();var m=(pi.querySelector(".pi-m")||{}).textContent||"";m=m.toLowerCase();var y_ok=yr==="all"||py===yr;var j_ok=jr==="all"||pj===jr;var s_ok=!q||t.includes(q)||m.includes(q);pi.style.display=(y_ok&&j_ok&&s_ok)?"":"none"});var v=document.querySelectorAll(".pi:not([style*=none])").length;document.getElementById("rc").textContent=v>0?"找到 "+v+" 篇":""}
+function af(){uf()}
+function ps(){uf()}
 /* ─── 文献收藏 ─── */
 function getBm(){try{return JSON.parse(localStorage.getItem('ship_bm')||'[]')}catch(e){return []}}
 function saveBm(bm){localStorage.setItem('ship_bm',JSON.stringify(bm))}

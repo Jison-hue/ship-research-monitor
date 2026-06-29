@@ -495,27 +495,32 @@ def compute_stats(papers):
         topic_impact[t] = {"count":len(ps), "avg_cited":round(sum(c)/len(c),1) if c else 0,
                            "max_cited":max(c) if c else 0}
     
-    # 热点论文（含领域相关性加权）
+    # 热点论文 — 严格剔除不相关论文
     now = datetime.now()
-    # 船舶领域关健词白名单
-    domain_boost_kws = ["ship","marine","vessel","ocean","offshore","underwater","submarine",
+    domain_kws = ["ship","marine","vessel","ocean","offshore","underwater","submarine",
         "seakeeping","hydrodynam","propeller","cavitation","hull","CFD","platform",
         "mooring","riser","autonomous","AUV","ROV","wave energy","offshore wind",
         "shipbuilding","propulsion","maneuvering","naval","maritime","harbor",
-        "shipyard","浮式","船舶","航运","port","ferry","breakwater","coastal"]
+        "shipyard","浮式","船舶","航运","ferry","breakwater","coastal",
+        "propulsor","spar","subsea","shipboard","shipbreaking","seaport",
+        "航运","货轮","集装箱船","散货船","LNG船"]
+    def is_relevant(p):
+        """严格判断是否与船舶领域相关: 需要同时有文本证据+分类证据"""
+        txt = (p.get("title","") + " " + p.get("abstract","")).lower()
+        dm = sum(1 for kw in domain_kws if kw in txt)
+        if dm >= 3:
+            return True  # 标题/摘要里有多个领域词, 明确相关
+        ts = p.get("topic_score",0) or 0
+        if dm >= 1 and ts >= 3:
+            return True  # 至少有个领域词 + 被分类器认可
+        return False
     def hot_score(p):
-        cited = p.get("cited_by",0)
+        cited = p.get("cited_by",0) or 0
         try: d = (now - datetime.strptime(p["published"][:10],"%Y-%m-%d")).days
         except: d = 365
-        base = cited * 0.6 + max(0, 365 - d) * 0.4
-        # 领域相关性加权
-        ttl_abs = (p.get("title","") + " " + p.get("abstract","")).lower()
-        domain_matches = sum(1 for kw in domain_boost_kws if kw in ttl_abs)
-        if domain_matches >= 3: factor = 1.5
-        elif domain_matches >= 1: factor = 1.2
-        else: factor = 0.3  # 非领域论文大幅降权
-        return base * factor
-    hot = sorted(papers, key=lambda p: hot_score(p), reverse=True)[:20]
+        return cited * 0.6 + max(0, 365 - d) * 0.4
+    related = [p for p in papers if is_relevant(p)]
+    hot = sorted(related, key=lambda p: hot_score(p), reverse=True)[:20]
     
     # 作者/机构整理
     def top_n(counter, n=10):

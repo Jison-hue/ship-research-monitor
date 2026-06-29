@@ -70,8 +70,16 @@ main{max-width:1040px;margin:0 auto;padding:20px 16px 32px}
 .pi-t{display:flex;align-items:flex-start;gap:4px}
 .pi-t a{flex:1;min-width:0}
 .hp{position:relative}
-.hp .bm-btn{position:absolute;right:0;top:8px;font-size:1.05rem}
-.hp-body{padding-right:24px}
+.hp .bm-btn{position:absolute;right:8px;top:8px;font-size:1.05rem}
+.hp-b{padding-right:28px}
+
+/* ─── 搜索筛选栏 ─── */
+.search-bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+.ps-input{flex:2;min-width:160px;padding:8px 12px;border:1px solid var(--bd);border-radius:6px;font-size:.85rem;outline:0;background:var(--bg)}
+.ps-input:focus{border-color:var(--accent)}
+.sf{padding:7px 10px;border:1px solid var(--bd);border-radius:6px;font-size:.8rem;outline:0;background:var(--card);color:var(--text);cursor:pointer}
+.sf:focus{border-color:var(--accent)}
+.result-count{font-size:.78rem;color:var(--muted);white-space:nowrap}
 
 /* Footer */
 footer{text-align:center;padding:20px;color:var(--muted);font-size:.72rem;max-width:1040px;margin:0 auto}

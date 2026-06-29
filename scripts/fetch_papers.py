@@ -231,32 +231,39 @@ def fetch_arxiv(config):
     if not cfg.get("enabled"): return []
     queries = config["search_queries"]
     cats = cfg.get("categories",[])
-    max_r = cfg.get("max_results",50)
+    max_r = cfg.get("max_results",60)
     all_p = {}
+    # arXiv API 不适合复杂查询，改用分类独立搜 + 关键词精简
+    arxiv_keywords = [
+        "ship hydrodynamics", "propeller cavitation", "hull form",
+        "offshore platform", "marine renewable energy", "autonomous ship",
+        "underwater vehicle", "ship CFD", "ship structural",
+        "ship propulsion", "wave energy", "ship maneuvering"
+    ]
     for sort_by in ["relevance","submittedDate"]:
-        terms = " OR ".join("(" + " AND ".join("ti:" + w for w in q.split()) + ")" for q in queries)
-        cat_s = " OR ".join(f"cat:{c}" for c in cats)
-        query = f"({terms}) AND ({cat_s})"
-        url = ARXIV_API+"?search_query="+quote(query[:2000])+f"&start=0&max_results={max_r//2}&sortBy={sort_by}&sortOrder=descending"
-        try:
-            root = ElementTree.fromstring(urlopen(Request(url,headers={"User-Agent":"ShipMonitor/2.0"}),timeout=30).read())
-            ns = {"atom":"http://www.w3.org/2005/Atom","arxiv":"http://arxiv.org/schemas/atom"}
-            for e in root.findall("atom:entry",ns):
-                pid = e.find("atom:id",ns).text.strip()
-                if pid in all_p: continue
-                ttl = e.find("atom:title",ns).text.strip().replace("\n"," ")
-                abs_ = e.find("atom:summary",ns).text.strip().replace("\n"," ")
-                pub = e.find("atom:published",ns).text[:10]
-                au = [a.find("atom:name",ns).text for a in e.findall("atom:author",ns) if a.find("atom:name",ns) is not None]
-                aid = extract_arxiv_id(pid)
-                tp,ts,sk = classify(ttl, abs_)
-                all_p[pid] = dict(id=aid or pid, title=ttl, abstract=abs_[:500], authors=au[:5],
-                    published=pub, year=pub[:4], source="arXiv", url=pid, pdf_url="",
-                    doi=extract_doi(ttl,abs_,aid), topic=tp, topic_score=ts, sub_kws=sk,
-                    journal="arXiv Preprint", journal_rank="预印本", cited_by=0,
-                    institutions=[], concepts=[], fetched=datetime.now().strftime("%Y-%m-%d %H:%M"))
-            time.sleep(3)
-        except Exception as ex: print(f"  [WARN] arXiv {sort_by}: {ex}")
+        for kw in arxiv_keywords:
+            cat_s = " OR ".join(f"cat:{c}" for c in cats)
+            query = f"(ti:{kw} OR abs:{kw}) AND ({cat_s})"
+            url = ARXIV_API+"?search_query="+quote(query[:2000])+f"&start=0&max_results={max_r//len(arxiv_keywords)}&sortBy={sort_by}&sortOrder=descending"
+            try:
+                root = ElementTree.fromstring(urlopen(Request(url,headers={"User-Agent":"ShipMonitor/2.0"}),timeout=30).read())
+                ns = {"atom":"http://www.w3.org/2005/Atom","arxiv":"http://arxiv.org/schemas/atom"}
+                for e in root.findall("atom:entry",ns):
+                    pid = e.find("atom:id",ns).text.strip()
+                    if pid in all_p: continue
+                    ttl = e.find("atom:title",ns).text.strip().replace("\n"," ")
+                    abs_ = e.find("atom:summary",ns).text.strip().replace("\n"," ")
+                    pub = e.find("atom:published",ns).text[:10]
+                    au = [a.find("atom:name",ns).text for a in e.findall("atom:author",ns) if a.find("atom:name",ns) is not None]
+                    aid = extract_arxiv_id(pid)
+                    tp,ts,sk = classify(ttl, abs_)
+                    all_p[pid] = dict(id=aid or pid, title=ttl, abstract=abs_[:500], authors=au[:5],
+                        published=pub, year=pub[:4], source="arXiv", url=pid, pdf_url="",
+                        doi=extract_doi(ttl,abs_,aid), topic=tp, topic_score=ts, sub_kws=sk,
+                        journal="arXiv Preprint", journal_rank="预印本", cited_by=0,
+                        institutions=[], concepts=[], fetched=datetime.now().strftime("%Y-%m-%d %H:%M"))
+                time.sleep(2)
+            except Exception as ex: print(f"  [WARN] arXiv {kw}: {ex}")
     return list(all_p.values())
 
 def extract_arxiv_id(url):
@@ -267,6 +274,7 @@ def extract_arxiv_id(url):
 #  OpenAlex（覆盖期刊论文、会议论文、图书章节等）
 # ═══════════════════════════════════════════════════════════
 OA_API = "https://api.openalex.org/works"
+S2_API = "https://api.semanticscholar.org/graph/v1/paper/search"
 
 def fetch_openalex(config):
     """OpenAlex API fetcher with polite pool + retry logic"""
@@ -487,13 +495,26 @@ def compute_stats(papers):
         topic_impact[t] = {"count":len(ps), "avg_cited":round(sum(c)/len(c),1) if c else 0,
                            "max_cited":max(c) if c else 0}
     
-    # 热点论文
+    # 热点论文（含领域相关性加权）
     now = datetime.now()
+    # 船舶领域关健词白名单
+    domain_boost_kws = ["ship","marine","vessel","ocean","offshore","underwater","submarine",
+        "seakeeping","hydrodynam","propeller","cavitation","hull","CFD","platform",
+        "mooring","riser","autonomous","AUV","ROV","wave energy","offshore wind",
+        "shipbuilding","propulsion","maneuvering","naval","maritime","harbor",
+        "shipyard","浮式","船舶","航运","port","ferry","breakwater","coastal"]
     def hot_score(p):
         cited = p.get("cited_by",0)
         try: d = (now - datetime.strptime(p["published"][:10],"%Y-%m-%d")).days
         except: d = 365
-        return cited * 0.6 + max(0, 365 - d) * 0.4
+        base = cited * 0.6 + max(0, 365 - d) * 0.4
+        # 领域相关性加权
+        ttl_abs = (p.get("title","") + " " + p.get("abstract","")).lower()
+        domain_matches = sum(1 for kw in domain_boost_kws if kw in ttl_abs)
+        if domain_matches >= 3: factor = 1.5
+        elif domain_matches >= 1: factor = 1.2
+        else: factor = 0.3  # 非领域论文大幅降权
+        return base * factor
     hot = sorted(papers, key=lambda p: hot_score(p), reverse=True)[:20]
     
     # 作者/机构整理
@@ -747,6 +768,8 @@ def gen_html(data, config):
             ci = p.get("cited_by",0); doi = p.get("doi","")
             au = ", ".join(p.get("authors",[])[:2])
             pid = p.get("url","#")
+            yr = p.get("year","") or p.get("published","")[:4]
+            jr = p.get("journal_rank","")
             doi_h = '<a href="https://doi.org/' + doi + '" class="doi">📎' + doi[:25] + '</a>' if doi else ""
             insts = p.get("institutions",[])
             inst_h = '<span class="inst">🏛️ ' + insts[0][:35] + '</span>' if insts else ""
@@ -754,7 +777,7 @@ def gen_html(data, config):
             au_h = '<span>'+au[:40]+'</span>' if au else ""
             sk_pi = p.get("sub_kws",[])
             sk_h = '<span class="sk">#' + '#'.join(sk_pi[:3]) + '</span>' if sk_pi else ""
-            items += ('<div class="pi" data-pid="' + pid + '">'
+            items += ('<div class="pi" data-pid="' + pid + '" data-year="' + yr + '" data-jrank="' + jr + '">'
                 '<div class="pi-t">'
                 '<button class="bm-btn" onclick="toggleBm(this)" title="收藏">☆</button> '
                 '<a href="' + pid + '" target="_blank">' + p["title"][:80] + '</a></div>'
@@ -806,6 +829,13 @@ def gen_html(data, config):
         filter_tabs += '<button class="df-btn" data-dir="' + esc_t + '" onclick="filterDir(this.getAttribute(\'data-dir\'))" style="border-left:3px solid ' + col + '">' + esc_t + '</button>'
     filter_tabs += '</div>'
     html += filter_tabs + '\n'
+    # ── 搜索与筛选栏 ──
+    html += '<div class="search-bar">\n'
+    html += '<input type="text" id="ps" class="ps-input" placeholder="🔍 搜论文标题/作者..." oninput="ps()">\n'
+    html += '<select id="yrf" class="sf" onchange="af()"><option value="all">📅 全部年份</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option><option value="2021">2021</option></select>\n'
+    html += '<select id="jrf" class="sf" onchange="af()"><option value="all">🏆 全部期刊</option><option value="一区/顶刊">一区/顶刊</option><option value="二区/重要">二区/重要</option><option value="核心期刊">核心期刊</option><option value="预印本">预印本</option><option value="其他">其他</option></select>\n'
+    html += '<span class="result-count" id="rc"></span>\n'
+    html += '</div>\n'
     html += '<div class="tf"><input type="text" id="ts" placeholder="🔍 搜研究方向..." oninput="ft()"></div>\n'
     html += topics + '</section>\n</main>\n'
     html += '<footer><p>每3天08:00自动更新 · <a href="https://github.com/Jison-hue/ship-research-monitor">GitHub</a></p></footer>\n'
@@ -815,6 +845,9 @@ def gen_html(data, config):
     html += 'new Chart(c3,{type:"doughnut",data:{labels:' + jrc_k + ',datasets:[{data:' + jrc_v + ',backgroundColor:["#C0392B","#E67E22","#2980B9","#7F8C8D","#95A5A6"]}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:"bottom",labels:{font:{size:11}}}}}});\n'
     html += 'function tt(el){var b=el.nextElementSibling,i=el.querySelector(".tic");b.style.display=b.style.display=="block"?"none":"block";i.textContent=b.style.display=="block"?"▾":"▸";}\n'
     html += 'function ft(){var q=document.getElementById("ts").value.toLowerCase();document.querySelectorAll(".ts").forEach(function(s){s.style.display=s.querySelector(".tn").textContent.toLowerCase().includes(q)?"":"none";});}\n'
+    html += '/* ─── 搜索筛选函数 ─── */\n'
+    html += 'function ps(){var q=document.getElementById("ps").value.toLowerCase().trim();document.querySelectorAll(".pi").forEach(function(pi){var t=pi.querySelector(".pi-t a").textContent.toLowerCase();var m=pi.querySelector(".pi-m").textContent.toLowerCase();pi.style.display=(!q||t.includes(q)||m.includes(q))?"":"none"});var v=document.querySelectorAll(".pi:not([style*=none])").length;document.getElementById("rc").textContent=v>0?"找到 "+v+" 篇":""}\n'
+    html += 'function af(){var yr=document.getElementById("yrf").value;var jr=document.getElementById("jrf").value;document.querySelectorAll(".pi").forEach(function(pi){var py=pi.getAttribute("data-year")||"";var pj=pi.getAttribute("data-jrank")||"";var y_ok=yr==="all"||py===yr;var j_ok=jr==="all"||pj===jr;pi.style.display=(y_ok&&j_ok)?"":"none"});ps()}\n'
     html += '/* ─── 文献收藏 ─── */\n'
     html += 'function getBm(){try{return JSON.parse(localStorage.getItem(\'ship_bm\')||\'[]\')}catch(e){return []}}\n'
     html += 'function saveBm(bm){localStorage.setItem(\'ship_bm\',JSON.stringify(bm))}\n'

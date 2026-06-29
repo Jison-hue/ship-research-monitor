@@ -1,7 +1,3797 @@
 {
-  "papers": [],
-  "updated": "2026-06-27 22:20",
-  "today_new": 0,
-  "total": 0,
-  "history": []
+  "papers": [
+    {
+      "id": "https://openalex.org/W3133642465",
+      "title": "Large-scale compressed hydrogen storage as part of renewable electricity storage systems",
+      "abstract": "Storing energy in the form of hydrogen is a promising green alternative. Thus, there is a high interest to analyze the status quo of the different storage options. This paper focuses on the large-scale compressed hydrogen storage options with respect to three categories: storage vessels, geological storage, and other underground storage alternatives. In this study, we investigated a wide variety of compressed hydrogen storage technologies, discussing in fair detail their theory of operation, potential, and challenges. The analysis confirms that a techno-economic chain analysis is required to evaluate the viability of one storage option over another for a case by case. Some of the discussed technologies are immature; however, this does not rule out these technologies; rather, it portrays th",
+      "authors": [
+        "Ahmed M. Elberry",
+        "Jagruti Thakur",
+        "Annukka Santasalo-Aarnio",
+        "Martti Larmi"
+      ],
+      "published": "2021-03-08",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.ijhydene.2021.02.080",
+      "pdf_url": "",
+      "doi": "10.1016/j.ijhydene.2021.02.080",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "International Journal of Hydrogen Energy",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 497,
+      "institutions": [
+        "KTH Royal Institute of Technology",
+        "Aalto University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W3155205771",
+      "title": "Decarbonization in Shipping Industry: A Review of Research, Technology Development, and Innovation Proposals",
+      "abstract": "This review paper examines the possible pathways and possible technologies available that will help the shipping sector achieve the International Maritime Organization’s (IMO) deep decarbonization targets by 2050. There has been increased interest from important stakeholders regarding deep decarbonization, evidenced by market surveys conducted by Shell and Deloitte. However, deep decarbonization will require financial incentives and policies at an international and regional level given the maritime sector’s ~3% contribution to green house gas (GHG) emissions. The review paper, based on research articles and grey literature, discusses technoeconomic problems and/or benefits for technologies that will help the shipping sector achieve the IMO’s targets. The review presents a discussion on the",
+      "authors": [
+        "George Mallouppas",
+        "Elias A. Yfantis"
+      ],
+      "published": "2021-04-13",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/jmse9040415",
+      "pdf_url": "",
+      "doi": "10.3390/jmse9040415",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Journal of Marine Science and Engineerin",
+      "journal_rank": "核心期刊",
+      "cited_by": 291,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W3211866365",
+      "title": "A Review of DC Shipboard Microgrids—Part I: Power Architectures, Energy Storage, and Power Converters",
+      "abstract": "Integrated power systems are popular in the shipbuilding industry. DC shipboard microgrids (dc-SMGs) have many advantages compared with ac ones in terms of system efficiency, operation flexibility, component size, and fault protection performance. Being in the exploring stage, dc-SMGs have several potential configurations with different system architectures and voltage levels. In a dc-SMG, functional blocks integrated include power generation modules (PGMs), propulsion system, high power loads, and pulsed loads specifically in naval ships. In modern ships, the PGMs include not only generators and fuel cells but also energy storage systems (ESSs), which cooperate with generators to improve the overall efficiency and reliability. High power electric converters are vital interfaces between th",
+      "authors": [
+        "Luona Xu",
+        "Josep M. Guerrero",
+        "Abderezak Lashab",
+        "Baoze Wei",
+        "Najmeh Bazmohammadi"
+      ],
+      "published": "2021-11-16",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1109/tpel.2021.3128417",
+      "pdf_url": "",
+      "doi": "10.1109/tpel.2021.3128417",
+      "topic": "船舶水动力学",
+      "topic_score": 3,
+      "sub_kws": [
+        "CFD模拟"
+      ],
+      "journal": "IEEE Transactions on Power Electronics",
+      "journal_rank": "核心期刊",
+      "cited_by": 235,
+      "institutions": [
+        "King Abdulaziz University",
+        "Aalborg University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W4319296534",
+      "title": "Smart micro- and nanorobots for water purification",
+      "abstract": "",
+      "authors": [
+        "Mario Urso",
+        "Martina Ussia",
+        "Martin Pumera"
+      ],
+      "published": "2023-02-06",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1038/s44222-023-00025-9",
+      "pdf_url": "",
+      "doi": "10.1038/s44222-023-00025-9",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Nature Reviews Bioengineering",
+      "journal_rank": "核心期刊",
+      "cited_by": 183,
+      "institutions": [
+        "Brno University of Technology",
+        "Central European Institute of Technology"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W4376597726",
+      "title": "Review of current regulations, available technologies, and future trends in the green shipping industry",
+      "abstract": "This paper presents a comprehensive review of the current regulations and the various technologies as well as the decision support methods for each technology the maritime industry considers to ensure the fleet's sustainability. It covers the period between 2010 and 2022, emphasizing the last four years. It shows the impact of each technology on the reduction of ship resistance and the energy required on board, affecting the amount of fuel consumption and avoiding the transportation of harmful species around the world to achieve a smooth transition towards green shipping by improving the fleet's energy efficiency and achieving the goals of the 2050 plan. The paper covers five main topics: hull design, propulsion systems, new clean fuels and treatment systems, power systems and ship operati",
+      "authors": [
+        "Mina Tadros",
+        "L. Ventura",
+        "C. Guedes Soares"
+      ],
+      "published": "2023-05-11",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.oceaneng.2023.114670",
+      "pdf_url": "",
+      "doi": "10.1016/j.oceaneng.2023.114670",
+      "topic": "船舶水动力学",
+      "topic_score": 8,
+      "sub_kws": [
+        "粘性流",
+        "CFD模拟"
+      ],
+      "journal": "Ocean Engineering",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 157,
+      "institutions": [
+        "Alexandria University",
+        "University of Lisbon"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W4323316782",
+      "title": "Review of the evolution and prevention of friction, wear, and noise for water-lubricated bearings used in ships",
+      "abstract": "Abstract With the development of green tribology in the shipping industry, the application of water lubrication gradually replaces oil lubrication in stern bearings and thrust bearings. In terms of large-scale and high-speed ships, water-lubricated bearings with high performance are more strictly required. However, due to the lubricating medium, water-lubricated bearings have many problems such as friction, wear, vibration, noise, etc. This review focuses on the performance of marine water-lubricated bearings and their failure prevention mechanism. Furthermore, the research of marine water-lubricated bearings is reviewed by discussing its lubrication principle, test technology, friction and wear mechanism, and friction noise generation mechanism. The performance enhancement methods have be",
+      "authors": [
+        "Zhuo Zhang",
+        "Wu Ouyang",
+        "Xingxin Liang",
+        "Xinping Yan",
+        "Chengqin Yuan"
+      ],
+      "published": "2023-03-02",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1007/s40544-022-0707-5",
+      "pdf_url": "",
+      "doi": "10.1007/s40544-022-0707-5",
+      "topic": "船舶水动力学",
+      "topic_score": 4,
+      "sub_kws": [],
+      "journal": "Friction",
+      "journal_rank": "核心期刊",
+      "cited_by": 145,
+      "institutions": [
+        "Wuhan University of Technology"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W4285729644",
+      "title": "Rapid battery cost declines accelerate the prospects of all-electric interregional container shipping",
+      "abstract": "Abstract International maritime shipping—powered by heavy fuel oil—is a major contributor to global CO 2 , SO 2, and NO x emissions. The direct electrification of maritime vessels has been underexplored as a low-emission option despite its considerable efficiency advantage over electrofuels. Past studies on ship electrification have relied on outdated assumptions on battery cost, energy density values and available on-board space. We show that at battery prices of US$100 kWh −1 the electrification of intraregional trade routes of less than 1,500 km is economical, with minimal impact to ship carrying capacity. Including the environmental costs increases the economical range to 5,000 km. If batteries achieve a US$50 kWh −1 price point, the economical range nearly doubles. We describe a pathw",
+      "authors": [
+        "Jessica Kersey",
+        "Natalie Popovich",
+        "Amol Phadke"
+      ],
+      "published": "2022-07-18",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1038/s41560-022-01065-y",
+      "pdf_url": "",
+      "doi": "10.1038/s41560-022-01065-y",
+      "topic": "船舶推进与节能",
+      "topic_score": 4,
+      "sub_kws": [
+        "混合动力"
+      ],
+      "journal": "Nature Energy",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 134,
+      "institutions": [
+        "Lawrence Berkeley National Laboratory",
+        "University of California, Berkeley"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W4205557186",
+      "title": "Cyber Security in the Maritime Industry: A Systematic Survey of Recent Advances and Future Trends",
+      "abstract": "The paper presents a classification of cyber attacks within the context of the state of the art in the maritime industry. A systematic categorization of vessel components has been conducted, complemented by an analysis of key services delivered within ports. The vulnerabilities of the Global Navigation Satellite System (GNSS) have been given particular consideration since it is a critical subcategory of many maritime infrastructures and, consequently, a target for cyber attacks. Recent research confirms that the dramatic proliferation of cyber crimes is fueled by increased levels of integration of new enabling technologies, such as IoT and Big Data. The trend to greater systems integration is, however, compelling, yielding significant business value by facilitating the operation of autonom",
+      "authors": [
+        "Mohamed Amine Ben Farah",
+        "Elochukwu Ukwandu",
+        "Hanan Hindy",
+        "David Brosset",
+        "Miroslav Bureš"
+      ],
+      "published": "2022-01-06",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/info13010022",
+      "pdf_url": "",
+      "doi": "10.3390/info13010022",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Information",
+      "journal_rank": "核心期刊",
+      "cited_by": 130,
+      "institutions": [
+        "Cardiff Metropolitan University",
+        "Ain Shams University",
+        "University of Strathclyde"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W4378472283",
+      "title": "A Review of Subsea AUV Technology",
+      "abstract": "The observation and detection of the subsea environment urgently require large-scale and long-term observation platforms. The design and development of subsea AUVs involve three key points: the subsea-adapted main body structure, agile motion performance that adapts to complex underwater environments, and underwater acoustic communication and positioning technology. This paper discusses the development and evolution of subsea AUVs before proposing solutions to underwater acoustic communication and positioning navigation schemes. It also studies key technologies for the agile motion of subsea AUVs and finally gives an example of a solution for implementing underwater AUVs, i.e., the disk-shaped autonomous underwater helicopter (AUH). This paper will provide guidance for the design of subsea",
+      "authors": [
+        "Jing Zhou",
+        "Yulin Si",
+        "Ying Chen"
+      ],
+      "published": "2023-05-25",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/jmse11061119",
+      "pdf_url": "",
+      "doi": "10.3390/jmse11061119",
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 8,
+      "sub_kws": [
+        "导航定位"
+      ],
+      "journal": "Journal of Marine Science and Engineerin",
+      "journal_rank": "核心期刊",
+      "cited_by": 124,
+      "institutions": [
+        "Zhejiang University",
+        "CAS Key Laboratory of Urban Pollutant Conversion",
+        "Zhejiang Ocean University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W3201500456",
+      "title": "Blockchain and Autonomous Vehicles: Recent Advances and Future Directions",
+      "abstract": "Blockchain is an underlying technology for securing many real-time applications and their data. The automobile is one such sector in which auto-manufacturers are looking forward to accepting the advantages of distributed ledger technology in autonomous vehicles or systems and improving their products, customer satisfaction, and other valuable experiences. This work aims to find the significance of blockchain technology in Autonomous Vehicles, including Autonomous Electric Vehicles (AEV), Autonomous Underwater Vehicles (AUV), Autonomous Guided Vehicles (AGV), Autonomous Aerial Vehicles (AAeV), and Autonomous Driving. In this work, a comparative analysis of blockchain-integrated autonomous vehicle systems is explored to identify the present scenario and futuristic challenges. In addition to ",
+      "authors": [
+        "Saurabh Jain",
+        "Neelu Jyothi Ahuja",
+        "P. Srikanth",
+        "Kishor V. Bhadane",
+        "Bharathram Nagaiah"
+      ],
+      "published": "2021-01-01",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1109/access.2021.3113649",
+      "pdf_url": "",
+      "doi": "10.1109/access.2021.3113649",
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 9,
+      "sub_kws": [],
+      "journal": "IEEE Access",
+      "journal_rank": "核心期刊",
+      "cited_by": 123,
+      "institutions": [
+        "Intralytix (United States)",
+        "University of Petroleum and Energy Studies",
+        "Hindu College of Pharmacy"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W4200355601",
+      "title": "Advanced microfluidic devices for fabricating multi‐structural hydrogel microsphere",
+      "abstract": "Hydrogel microspheres are a novel functional material, arousing much attention in various fields. Microfluidics, a technology that controls and manipulates fluids at the micron scale, has emerged as a promising method for fabricating hydrogel microspheres due to its ability to generate uniform microspheres with controlled geometry. With the development of microfluidic devices, more complicated hydrogel microspheres with multiple structures can be constructed. This review presents an overview of advances in microfluidics for designing and engineering hydrogel microspheres. It starts with an introduction to the features of hydrogel microspheres and microfluidic techniques, followed by a discussion of material selection for fabricating microfluidic devices. Then the progress of microfluidic d",
+      "authors": [
+        "Zehao Chen",
+        "Zhendong Lv",
+        "Zhen Zhang",
+        "David A. Weitz",
+        "Hongbo Zhang"
+      ],
+      "published": "2021-12-01",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1002/exp.20210036",
+      "pdf_url": "",
+      "doi": "10.1002/exp.20210036",
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 1,
+      "sub_kws": [
+        "CFD方法",
+        "SPH"
+      ],
+      "journal": "Exploration",
+      "journal_rank": "核心期刊",
+      "cited_by": 119,
+      "institutions": [
+        "Shanghai University",
+        "University of Turku",
+        "Harvard University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W4396596868",
+      "title": "Ammonia combustion and emissions in practical applications: a review",
+      "abstract": "Abstract Ammonia is emerging as a viable alternative to fossil fuels in combustion systems, aiding in the reduction of carbon emissions. However, its use faces challenges, including NOx emissions and low flame speed. Innovative approaches and technologies have significantly advanced the development and implementation of ammonia as a zero-carbon fuel. This review explores current advancements in using ammonia as a fuel substitute, highlighting the complexities that various systems need to overcome before reaching full commercial maturity in support of practical decarbonising global strategies. Different from other reviews, this article incorporates insights of various industrial partners currently working towards green ammonia technologies. The work further addresses fundamental complexitie",
+      "authors": [
+        "Mohammad Alnajideen",
+        "Hao Shi",
+        "William F. Northrop",
+        "David Robert Emberson",
+        "Seamus P. Kane"
+      ],
+      "published": "2024-05-02",
+      "year": "2024",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1007/s43979-024-00088-6",
+      "pdf_url": "",
+      "doi": "10.1007/s43979-024-00088-6",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Carbon Neutrality",
+      "journal_rank": "核心期刊",
+      "cited_by": 118,
+      "institutions": [
+        "University of Minnesota",
+        "University of Minnesota System",
+        "Poznań University of Technology"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W4366751322",
+      "title": "Empowering wave energy with control technology: Possibilities and pitfalls",
+      "abstract": "With an increasing focus on climate action and energy security, an appropriate mix of renewable energy technologies is imperative. Despite having considerable global potential, wave energy has still not reached a state of maturity or economic competitiveness to have made an impact. Challenges include the high capital and operational costs associated with deployment in the harsh ocean environment, so it is imperative that the full energy harnessing capacity of wave energy devices, and arrays of devices in farms, is realised. To this end, control technology has an important role to play in maximising power capture, while ensuring that physical system constraints are respected, and control actions do not adversely affect device lifetime. Within the gamut of control technology, a variety of to",
+      "authors": [
+        "John V. Ringwood",
+        "Siyuan Zhan",
+        "Nicolás Faedo"
+      ],
+      "published": "2023-01-01",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.arcontrol.2023.04.004",
+      "pdf_url": "",
+      "doi": "10.1016/j.arcontrol.2023.04.004",
+      "topic": "海洋可再生能源",
+      "topic_score": 3,
+      "sub_kws": [],
+      "journal": "Annual Reviews in Control",
+      "journal_rank": "核心期刊",
+      "cited_by": 110,
+      "institutions": [
+        "National University of Ireland, Maynooth",
+        "Politecnico di Torino"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W3126886985",
+      "title": "Toward Holistic Energy Management Strategies for Fuel Cell Hybrid Electric Vehicles in Heavy-Duty Applications",
+      "abstract": "The increasing need to slow down climate change for environmental protection demands further advancements toward regenerative energy and sustainable mobility. While individual mobility applications are assumed to be satisfied with improving battery electric vehicles (BEVs), the growing sector of freight transport and heavy-duty applications requires alternative solutions to meet the requirements of long ranges and high payloads. Fuel cell hybrid electric vehicles (FCHEVs) emerge as a capable technology for high-energy applications. This technology comprises a fuel cell system (FCS) for energy supply combined with buffering energy storages, such as batteries or ultracapacitors. In this article, recent successful developments regarding FCHEVs in various heavy-duty applications are presented.",
+      "authors": [
+        "Thomas Rudolf",
+        "Tobias Schürmann",
+        "Stefan Schwab",
+        "Sören Hohmann"
+      ],
+      "published": "2021-02-10",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1109/jproc.2021.3055136",
+      "pdf_url": "",
+      "doi": "10.1109/jproc.2021.3055136",
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 1,
+      "sub_kws": [
+        "能量管理"
+      ],
+      "journal": "Proceedings of the IEEE",
+      "journal_rank": "核心期刊",
+      "cited_by": 108,
+      "institutions": [
+        "FZI Research Center for Information Technology",
+        "Karlsruhe Institute of Technology"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W3127746231",
+      "title": "Development of a Fuel Consumption Prediction Model Based on Machine Learning Using Ship In-Service Data",
+      "abstract": "As interest in eco-friendly ships increases, methods for status monitoring and forecasting using in-service data from ships are being developed. Models for predicting the energy efficiency of a ship in real time need to effectively process the operational data and be optimized for such an application. This paper presents models that can predict fuel consumption using in-service data collected from a 13,000 TEU class container ship, along with statistical and domain-knowledge methods to select the proper input variables for the models. These methods prevent overfitting and multicollinearity while providing practical applicability. To implement the prediction model, either an artificial neural network (ANN) or multiple linear regression (MLR) were applied, where the ANN-based models showed t",
+      "authors": [
+        "Young-Rong Kim",
+        "Min Jung",
+        "Jun-Bum Park"
+      ],
+      "published": "2021-01-29",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/jmse9020137",
+      "pdf_url": "",
+      "doi": "10.3390/jmse9020137",
+      "topic": "船舶推进与节能",
+      "topic_score": 1,
+      "sub_kws": [],
+      "journal": "Journal of Marine Science and Engineerin",
+      "journal_rank": "核心期刊",
+      "cited_by": 100,
+      "institutions": [
+        "Korea Institute of Maritime and Fisheries Technology",
+        "Norwegian University of Science and Technology",
+        "Korea Maritime and Ocean University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W4310012473",
+      "title": "Carbon footprint prediction considering the evolution of alternative fuels and cargo: A case study of Yangtze river ships",
+      "abstract": "",
+      "authors": [
+        "Xinping Yan",
+        "Yapeng He",
+        "Ailong Fan"
+      ],
+      "published": "2022-11-25",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.rser.2022.113068",
+      "pdf_url": "",
+      "doi": "10.1016/j.rser.2022.113068",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Renewable and Sustainable Energy Reviews",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 100,
+      "institutions": [
+        "Wuhan University of Technology"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W3124903390",
+      "title": "Neural Network Approach for Predicting Ship Speed and Fuel Consumption",
+      "abstract": "In this paper, simulations of a ship travelling on a given oceanic route were performed by a weather routing system to provide a large realistic navigation data set, which could represent a collection of data obtained on board a ship in operation. This data set was employed to train a neural network computing system in order to predict ship speed and fuel consumption. The model was trained using the Levenberg–Marquardt backpropagation scheme to establish the relation between the ship speed and the respective propulsion configuration for the existing sea conditions, i.e., the output torque of the main engine, the revolutions per minute of the propulsion shaft, the significant wave height, and the peak period of the waves, together with the relative angle of wave encounter. Additional result",
+      "authors": [
+        "Lúcia Moreira",
+        "Roberto Vettor",
+        "C. Guedes Soares"
+      ],
+      "published": "2021-01-25",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/jmse9020119",
+      "pdf_url": "",
+      "doi": "10.3390/jmse9020119",
+      "topic": "船舶水动力学",
+      "topic_score": 4,
+      "sub_kws": [],
+      "journal": "Journal of Marine Science and Engineerin",
+      "journal_rank": "核心期刊",
+      "cited_by": 99,
+      "institutions": [
+        "University of Lisbon"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W4224950573",
+      "title": "Plasmonic nanomaterials with responsive polymer hydrogels for sensing and actuation",
+      "abstract": "Plasmonic nanomaterials have become an integral part of numerous technologies, where they provide important functionalities spanning from extraction and harvesting of light in thin film optical devices to probing of molecular species and their interactions on biochip surfaces. More recently, we witness increasing research efforts devoted to a new class of plasmonic nanomaterials that allow for on-demand tuning of their properties by combining metallic nanostructures and responsive hydrogels. This review addresses this recently emerged vibrant field, which holds potential to expand the spectrum of possible applications and deliver functions that cannot be achieved by separate research in each of the respective fields. It aims at providing an overview of key principles, design rules, and cur",
+      "authors": [
+        "Fiona Diehl",
+        "Simone Hageneder",
+        "Stefan Fossati",
+        "Simone K. Auer",
+        "Jakub Dostálek"
+      ],
+      "published": "2022-01-01",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1039/d1cs01083b",
+      "pdf_url": "",
+      "doi": "10.1039/d1cs01083b",
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 3,
+      "sub_kws": [],
+      "journal": "Chemical Society Reviews",
+      "journal_rank": "核心期刊",
+      "cited_by": 97,
+      "institutions": [
+        "Kompetenzzentrum für elektrochemische Oberflächentechnologie",
+        "Austrian Institute of Technology",
+        "Czech Academy of Sciences"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W3121487180",
+      "title": "Thriving artificial underwater drag-reduction materials inspired from aquatic animals: progresses and challenges",
+      "abstract": "In the past decades, drag-reduction surfaces have attracted more and more attention due to their potentiality and wide applications in various fields such as traffic, energy transportation, agriculture, textile industry, and military. However, there are still some drag-reduction materials that need to be deeply explored. Fortunately, natural creatures always have the best properties after long-term evolution; aquatic organisms have diversified surface microstructures and drag-reducing materials, which provide design templates for the development of thriving artificial underwater drag-reduction materials. Aquatic animals are tamed by the current while fighting against the water, and thus have excellent drag reduction that is unparalleled in water. Inspired by biological principles, using aq",
+      "authors": [
+        "Guizhong Tian",
+        "Dongliang Fan",
+        "Xiaoming Feng",
+        "Honggen Zhou"
+      ],
+      "published": "2021-01-01",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1039/d0ra08672j",
+      "pdf_url": "",
+      "doi": "10.1039/d0ra08672j",
+      "topic": "船舶水动力学",
+      "topic_score": 4,
+      "sub_kws": [
+        "粘性流",
+        "CFD模拟"
+      ],
+      "journal": "RSC Advances",
+      "journal_rank": "核心期刊",
+      "cited_by": 94,
+      "institutions": [
+        "Jiangsu University of Science and Technology",
+        "Zhanjiang Experimental Station"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W3181090771",
+      "title": "Review on Unmanned Underwater Robotics, Structure Designs, Materials, Sensors, Actuators, and Navigation Control",
+      "abstract": "Since its beginning, around the 50s decade, until present days, the area of unmanned underwater vehicles (UUV) has considerably grown through time; those have been used for many tasks and applications, from bomb searching and recovery to sea exploration. Initially, these robots were used mainly for military and scientific purposes. However, nowadays, they are very much extended into civils, and it is not hard to find them being used for recreation. In this context, the present research is an effort to make a walkthrough of evolution in this area, showing a diversity of structure designs, used materials, sensor and instrumentation technologies, kinds and the number of actuators employed, navigation control techniques, and what is new in development trends. The paper gives a clear starting p",
+      "authors": [
+        "Javier Neira",
+        "Cristhel Sequeiros",
+        "Richard Huamani",
+        "Elfer Machaca",
+        "Paola Fonseca"
+      ],
+      "published": "2021-07-05",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1155/2021/5542920",
+      "pdf_url": "",
+      "doi": "10.1155/2021/5542920",
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 6,
+      "sub_kws": [
+        "导航定位"
+      ],
+      "journal": "Journal of Robotics",
+      "journal_rank": "核心期刊",
+      "cited_by": 88,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W4386069664",
+      "title": "A Survey on Unmanned Underwater Vehicles: Challenges, Enabling Technologies, and Future Research Directions",
+      "abstract": "Unmanned underwater vehicles (UUVs) are becoming increasingly important for a variety of applications, including ocean exploration, mine detection, and military surveillance. This paper aims to provide a comprehensive examination of the technologies that enable the operation of UUVs. We begin by introducing various types of unmanned vehicles capable of functioning in diverse environments. Subsequently, we delve into the underlying technologies necessary for unmanned vehicles operating in underwater environments. These technologies encompass communication, propulsion, dive systems, control systems, sensing, localization, energy resources, and supply. We also address general technical approaches and research contributions within this domain. Furthermore, we present a comprehensive overview o",
+      "authors": [
+        "Arif Wibisono",
+        "Md. Jalil Piran",
+        "Hyoung‐Kyu Song",
+        "Byung Moo Lee"
+      ],
+      "published": "2023-08-22",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/s23177321",
+      "pdf_url": "",
+      "doi": "10.3390/s23177321",
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 10,
+      "sub_kws": [
+        "导航定位"
+      ],
+      "journal": "Sensors",
+      "journal_rank": "核心期刊",
+      "cited_by": 86,
+      "institutions": [
+        "Sejong University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W4393033207",
+      "title": "Oceanic Challenges to Technological Solutions: A Review of Autonomous Underwater Vehicle Path Technologies in Biomimicry, Control, Navigation, and Sensing",
+      "abstract": "Autonomous Underwater Vehicles (AUVs) epitomize a revolutionary stride in underwater exploration, seamlessly assuming tasks once exclusive to manned vehicles. Their collaborative prowess within joint missions has inaugurated a new epoch of intricate applications in underwater domains. This study’s primary aim is to scrutinize recent technological advancements in AUVs and their role in navigating the complexities of underwater environments. Through a meticulous review of literature and empirical studies, this review synthesizes recent technological strides, spotlighting developments in biomimicry models, cutting-edge control systems, adaptive navigation algorithms, and pivotal sensor arrays crucial for exploring and mapping the ocean floor. The article meticulously delineates the profound i",
+      "authors": [
+        "Kayes Hasan",
+        "Shameem Ahmad",
+        "Abrar Fahim Liaf",
+        "Mazaher Karimi",
+        "Tofael Ahmed"
+      ],
+      "published": "2024-01-01",
+      "year": "2024",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1109/access.2024.3380458",
+      "pdf_url": "",
+      "doi": "10.1109/access.2024.3380458",
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 9,
+      "sub_kws": [
+        "导航定位"
+      ],
+      "journal": "IEEE Access",
+      "journal_rank": "核心期刊",
+      "cited_by": 85,
+      "institutions": [
+        "Chittagong University of Engineering & Technology",
+        "American International University-Bangladesh",
+        "University of Vaasa"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W4378084683",
+      "title": "Carbon Emissions in Transportation: A Synthesis Framework",
+      "abstract": "With the growing concern worldwide regarding greenhouse gas (GHG) emissions and their impacts on human health and the environment, transportation has become a central theme in their mitigation, responsible for 15% of anthropogenic GHG, 23% of global energy-related, and 8.7 Gt CO2-eq emissions. This study’s objective was to comprehensively review the current state of carbon mitigation in the transportation sector. This was conducted through a systematic literature review based on the multi-level perspective of socio-technical transition theory and structural contingency theory. In total, 30 review papers covering 3561 original articles were selected for full-text examination. The main findings were related to the fact that in order to build resilience against climate change, transportation ",
+      "authors": [
+        "Ana Luiza Ferrer",
+        "Antônio Márcio Tavares Thomé"
+      ],
+      "published": "2023-05-23",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/su15118475",
+      "pdf_url": "",
+      "doi": "10.3390/su15118475",
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 1,
+      "sub_kws": [
+        "CFD方法"
+      ],
+      "journal": "Sustainability",
+      "journal_rank": "核心期刊",
+      "cited_by": 78,
+      "institutions": [
+        "Pontifícia Universidade Católica do Rio de Janeiro"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W4297686154",
+      "title": "Roadmap on Li-ion battery manufacturing research",
+      "abstract": "Abstract Growth in the Li-ion battery market continues to accelerate, driven primarily by the increasing need for economic energy storage for electric vehicles. Electrode manufacture by slurry casting is the first main step in cell production but much of the manufacturing optimisation is based on trial and error, know-how and individual expertise. Advancing manufacturing science that underpins Li-ion battery electrode production is critical to adding to the electrode manufacturing value chain. Overcoming the current barriers in electrode manufacturing requires advances in materials, manufacturing technology, in-line process metrology and data analytics, and can enable improvements in cell performance, quality, safety and process sustainability. In this roadmap we explore the research oppor",
+      "authors": [
+        "Patrick S. Grant",
+        "David Greenwood",
+        "Kunal Pardikar",
+        "Rachel M. Smith",
+        "Thomas Entwistle"
+      ],
+      "published": "2022-08-31",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1088/2515-7655/ac8e30",
+      "pdf_url": "",
+      "doi": "10.1088/2515-7655/ac8e30",
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 1,
+      "sub_kws": [
+        "导航定位",
+        "能量管理"
+      ],
+      "journal": "Journal of Physics Energy",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 75,
+      "institutions": [
+        "Coventry (United Kingdom)",
+        "London South Bank University",
+        "University of Oxford"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W3158209027",
+      "title": "Dispersive stresses in turbulent flow over riblets",
+      "abstract": "Abstract",
+      "authors": [
+        "Davide Modesti",
+        "Sebastian Endrikat",
+        "Nicholas Hutchins",
+        "Daniel Chung"
+      ],
+      "published": "2021-05-04",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1017/jfm.2021.310",
+      "pdf_url": "",
+      "doi": "10.1017/jfm.2021.310",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Journal of Fluid Mechanics",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 74,
+      "institutions": [
+        "Delft University of Technology",
+        "The University of Melbourne"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W4200127314",
+      "title": "Cavitation control using passive flow control techniques",
+      "abstract": "Passive flow control techniques, and particularly vortex generators have been used successfully in a broad range of aero- and hydrodynamics applications to alter the characteristics of boundary layer separation. This study aims to review how such techniques can mitigate the extent and impact of cavitation in incompressible flows. This review focuses first on vortex generators to characterize key physical principles. It then considers the complete range of passive flow control technologies, including surface conditioning and roughness, geometry modification, grooves, discharge, injection, obstacles, vortex generators, and bubble generators. The passive flow control techniques reviewed typically delay and suppress boundary layer separation by decreasing the pressure gradient at the separatio",
+      "authors": [
+        "Mahshid Zaresharif",
+        "Florent Ravelet",
+        "David J. Kinahan",
+        "Yan Delauré"
+      ],
+      "published": "2021-12-01",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1063/5.0071781",
+      "pdf_url": "",
+      "doi": "10.1063/5.0071781",
+      "topic": "船舶水动力学",
+      "topic_score": 4,
+      "sub_kws": [
+        "粘性流",
+        "CFD模拟"
+      ],
+      "journal": "Physics of Fluids",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 74,
+      "institutions": [
+        "Arts et Métiers",
+        "Conservatoire National des Arts et Métiers"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W3183214888",
+      "title": "Global futures of trade impacting the challenge to decarbonize the international shipping sector",
+      "abstract": "",
+      "authors": [
+        "Eduardo Müller-Casseres",
+        "Oreane Y. Edelenbosch",
+        "Alexandre Szklo",
+        "Roberto Schaeffer",
+        "Detlef P. van Vuuren"
+      ],
+      "published": "2021-07-22",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.energy.2021.121547",
+      "pdf_url": "",
+      "doi": "10.1016/j.energy.2021.121547",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Energy",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 74,
+      "institutions": [
+        "Universidade Federal do Rio de Janeiro",
+        "Netherlands Environmental Assessment Agency",
+        "Utrecht University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W4307552289",
+      "title": "Ship Energy Efficiency and Maritime Sector Initiatives to Reduce Carbon Emissions",
+      "abstract": "With stricter IMO regulations on CO2 taking effect in 2023 and ambitious goals to reduce carbon intensity by 2030, the maritime industry is scrambling to clean up its act. Conventional methods and equipment are now being reevaluated, upgraded or completely replaced. The difference between a short-term fix and a long-term sustainable option is how flexible vessels will be to use new energy sources or technology as they become viable. The review discusses the recent literature on renewable energy sources, technical and operational strategies for new and existing ships, technology maturity, and alternative fuels. It is found that the IMO’s targets can be met by combining two or three technologies, or via a radical technology shift which can provide innovative, high-efficiency solutions from a",
+      "authors": [
+        "Mohamad Issa",
+        "Adrian Ilinca",
+        "Fahed Martini"
+      ],
+      "published": "2022-10-25",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/en15217910",
+      "pdf_url": "",
+      "doi": "10.3390/en15217910",
+      "topic": "船舶推进与节能",
+      "topic_score": 4,
+      "sub_kws": [
+        "替代燃料",
+        "排放控制"
+      ],
+      "journal": "Energies",
+      "journal_rank": "核心期刊",
+      "cited_by": 73,
+      "institutions": [
+        "Université du Québec à Rimouski"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W3159726766",
+      "title": "Advanced Development of Sensors’ Roles in Maritime-Based Industry and Research: From Field Monitoring to High-Risk Phenomenon Measurement",
+      "abstract": "The development of human civilization over the last decade has reached a landmark as Industry 4.0 has been widely introduced. Several aspects of industry and manufacturing activities are changing due to the Internet of Things (IoT), location detection technologies, and advanced human–machine interfaces. To enact industrial affairs under those specifications, a sensor is required to transform physical events into numerical information. The use of sensors in marine applications also appears in research and studies, in which the sensor is used for both monitoring the phenomena of a designated subject and data acquisition. Achievements in quantifying complex phenomena in critical maritime designs are fascinating subjects to discuss regarding their development and current states, which may be r",
+      "authors": [
+        "Aditya Rio Prabowo",
+        "Tuswan Tuswan",
+        "Ridwan Ridwan"
+      ],
+      "published": "2021-04-27",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/app11093954",
+      "pdf_url": "",
+      "doi": "10.3390/app11093954",
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 4,
+      "sub_kws": [
+        "CFD方法"
+      ],
+      "journal": "Applied Sciences",
+      "journal_rank": "核心期刊",
+      "cited_by": 72,
+      "institutions": [
+        "Sepuluh Nopember Institute of Technology",
+        "Sebelas Maret University",
+        "Muhammadiyah University of Ponorogo"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W4206054071",
+      "title": "Scale effects and full-scale ship hydrodynamics: A review",
+      "abstract": "",
+      "authors": [
+        "Momchil Terziev",
+        "Tahsin Tezdogan",
+        "Atilla İncecik"
+      ],
+      "published": "2022-01-06",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.oceaneng.2021.110496",
+      "pdf_url": "",
+      "doi": "10.1016/j.oceaneng.2021.110496",
+      "topic": "船舶水动力学",
+      "topic_score": 1,
+      "sub_kws": [],
+      "journal": "Ocean Engineering",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 72,
+      "institutions": [
+        "University of Strathclyde"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:30"
+    },
+    {
+      "id": "https://openalex.org/W4367625586",
+      "title": "Understanding melt pool characteristics in laser powder bed fusion: An overview of single- and multi-track melt pools for process optimization",
+      "abstract": "Laser powder bed fusion (LPBF) has made significant progress in producing solid and porous metal parts with complex shapes and geometries. However, LPBF produced parts often have defects (e.g., porosity, residual stress, and incomplete melting) that hinder its large-scale industrial commercialization. The LPBF process involves complex heat transfer and fluid flow, and the melt pool is a critical component of the process. The melt pool stability is a critical factor in determining the microstructure, mechanical properties, and corrosion resistance of LPBF produced metal parts. Furthermore, optimizing process parameters for new materials and designed structures is challenging due to the complexity of the LPBF process. This requires numerous trial-and-error cycles to minimize defects and enha",
+      "authors": [
+        "Jincheng Wang",
+        "Rui Zhu",
+        "Yujing Liu",
+        "Lai‐Chang Zhang"
+      ],
+      "published": "2023-05-01",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.apmate.2023.100137",
+      "pdf_url": "",
+      "doi": "10.1016/j.apmate.2023.100137",
+      "topic": "船舶水动力学",
+      "topic_score": 1,
+      "sub_kws": [
+        "粘性流",
+        "CFD模拟"
+      ],
+      "journal": "Advanced Powder Materials",
+      "journal_rank": "核心期刊",
+      "cited_by": 433,
+      "institutions": [
+        "Changsha University of Science and Technology",
+        "Shanghai University of Electric Power",
+        "The University of Melbourne"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4294176620",
+      "title": "An Extensive Review of Liquid Hydrogen in Transportation with Focus on the Maritime Sector",
+      "abstract": "The European Green Deal aims to transform the EU into a modern, resource-efficient, and competitive economy. The REPowerEU plan launched in May 2022 as part of the Green Deal reveals the willingness of several countries to become energy independent and tackle the climate crisis. Therefore, the decarbonization of different sectors such as maritime shipping is crucial and may be achieved through sustainable energy. Hydrogen is potentially clean and renewable and might be chosen as fuel to power ships and boats. Hydrogen technologies (e.g., fuel cells for propulsion) have already been implemented on board ships in the last 20 years, mainly during demonstration projects. Pressurized tanks filled with gaseous hydrogen were installed on most of these vessels. However, this type of storage would ",
+      "authors": [
+        "Federico Ustolin",
+        "Alessandro Campari",
+        "Rodolfo Taccani"
+      ],
+      "published": "2022-09-01",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/jmse10091222",
+      "pdf_url": "",
+      "doi": "10.3390/jmse10091222",
+      "topic": "船舶水动力学",
+      "topic_score": 5,
+      "sub_kws": [
+        "粘性流",
+        "CFD模拟"
+      ],
+      "journal": "Journal of Marine Science and Engineerin",
+      "journal_rank": "核心期刊",
+      "cited_by": 173,
+      "institutions": [
+        "Norwegian University of Science and Technology",
+        "University of Trieste"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3170332556",
+      "title": "Geometric optimisation of wave energy conversion devices: A survey",
+      "abstract": "Unlike more established renewable energy conversion technologies, such as wind turbines, wave power systems have reached neither commercial maturity, nor technological convergence. The significant variation in device geometries and operating principles has resulted in a diversification of effort, with little coordination or true comparative analysis. The situation is compounded by the relative lack of systematic optimisation applied to the sector, partly explained by the complexity and uncertainty associated with wave energy system models, as well as difficulties in the evaluation of appropriate target function metrics. This review provides a critical overview of the state-of-the-art in wave energy device geometry optimisation, comparing and contrasting various optimisation approaches, and",
+      "authors": [
+        "Bingyong Guo",
+        "John V. Ringwood"
+      ],
+      "published": "2021-05-26",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.apenergy.2021.117100",
+      "pdf_url": "",
+      "doi": "10.1016/j.apenergy.2021.117100",
+      "topic": "海洋可再生能源",
+      "topic_score": 4,
+      "sub_kws": [],
+      "journal": "Applied Energy",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 163,
+      "institutions": [
+        "National University of Ireland, Maynooth",
+        "Northwestern Polytechnical University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4313435149",
+      "title": "Floating Offshore Wind Turbines: Current Status and Future Prospects",
+      "abstract": "Offshore wind energy is a sustainable renewable energy source that is acquired by harnessing the force of the wind offshore, where the absence of obstructions allows the wind to travel at higher and more steady speeds. Offshore wind has recently grown in popularity because wind energy is more powerful offshore than on land. Prior to the development of floating structures, wind turbines could not be deployed in particularly deep or complicated seabed locations since they were dependent on fixed structures. With the advent of floating structures, which are moored to the seabed using flexible anchors, chains, or steel cables, wind turbines can now be placed far offshore. The deployment of floating wind turbines in deep waters is encouraged by several benefits, including steadier winds, less v",
+      "authors": [
+        "Mohammad Barooni",
+        "Turaj Ashuri",
+        "Deniz Velioglu Sogut",
+        "Stephen J. Wood",
+        "Shiva Ghaderpour Taleghani"
+      ],
+      "published": "2022-12-20",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/en16010002",
+      "pdf_url": "",
+      "doi": "10.3390/en16010002",
+      "topic": "海洋可再生能源",
+      "topic_score": 6,
+      "sub_kws": [],
+      "journal": "Energies",
+      "journal_rank": "核心期刊",
+      "cited_by": 158,
+      "institutions": [
+        "Florida Institute of Technology",
+        "Kennesaw State University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4385824748",
+      "title": "Review on the development of marine floating photovoltaic systems",
+      "abstract": "",
+      "authors": [
+        "Wei Shi",
+        "Chaojun Yan",
+        "Zhengru Ren",
+        "Zhiming Yuan",
+        "Yingyi Liu"
+      ],
+      "published": "2023-08-14",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.oceaneng.2023.115560",
+      "pdf_url": "",
+      "doi": "10.1016/j.oceaneng.2023.115560",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Ocean Engineering",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 150,
+      "institutions": [
+        "University of Strathclyde",
+        "Dalian University of Technology",
+        "Tsinghua–Berkeley Shenzhen Institute"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4390839314",
+      "title": "Deep learning in computational mechanics: a review",
+      "abstract": "Abstract The rapid growth of deep learning research, including within the field of computational mechanics, has resulted in an extensive and diverse body of literature. To help researchers identify key concepts and promising methodologies within this field, we provide an overview of deep learning in deterministic computational mechanics. Five main categories are identified and explored: simulation substitution, simulation enhancement, discretizations as neural networks, generative approaches, and deep reinforcement learning. This review focuses on deep learning methods rather than applications for computational mechanics, thereby enabling researchers to explore this field more effectively. As such, the review is not necessarily aimed at researchers with extensive knowledge of deep learning",
+      "authors": [
+        "Leon Herrmann",
+        "Stefan Kollmannsberger"
+      ],
+      "published": "2024-01-13",
+      "year": "2024",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1007/s00466-023-02434-4",
+      "pdf_url": "",
+      "doi": "10.1007/s00466-023-02434-4",
+      "topic": "船舶推进与节能",
+      "topic_score": 1,
+      "sub_kws": [],
+      "journal": "Computational Mechanics",
+      "journal_rank": "核心期刊",
+      "cited_by": 142,
+      "institutions": [
+        "Technical University of Munich"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4318994912",
+      "title": "Natural and synthetic superhydrophobic surfaces: A review of the fundamentals, structures, and applications",
+      "abstract": "Self-cleaning surfaces are nature-inspired and based on the surface processes occurring on butterfly wings and lotus leaves. Owing to their unique characteristics, they are usable in a number of industrial applications, including the manufacture of solar panels and glass. In particular, they can be used for the separation of oil and water, which is highly relevant to petroleum technologies. Self-cleaning surfaces help to reduce the time and cost of keeping equipment clean while enhancing its durability, and they can be broadly categorized into hydrophilic and hydrophobic surfaces. On hydrophilic surfaces, water spreads considerably (sheeting of water), and therefore, it can transport contaminants and leave a clean surface. However, a hydrophobic surface is cleaned by the slipping of water ",
+      "authors": [
+        "Freshteh Sotoudeh",
+        "Seyed Mahmood Mousavi",
+        "Nader Karimi",
+        "Bok Jik Lee",
+        "Javad Abolfazli Esfahani"
+      ],
+      "published": "2023-02-02",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.aej.2023.01.058",
+      "pdf_url": "",
+      "doi": "10.1016/j.aej.2023.01.058",
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 1,
+      "sub_kws": [
+        "CFD方法"
+      ],
+      "journal": "Alexandria Engineering Journal",
+      "journal_rank": "核心期刊",
+      "cited_by": 116,
+      "institutions": [
+        "Ferdowsi University of Mashhad",
+        "Queen Mary University of London",
+        "Southern Methodist University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3203846373",
+      "title": "A review of the UK and British Channel Islands practical tidal stream energy resource",
+      "abstract": "This review provides a critical, multi-faceted assessment of the practical contribution tidal stream energy can make to the UK and British Channel Islands future energy mix. Evidence is presented that broadly supports the latest national-scale practical resource estimate, of 34 TWh/year, equivalent to 11% of the UK’s current annual electricity demand. The size of the practical resource depends in part on the economic competitiveness of projects. In the UK, 124 MW of prospective tidal stream capacity is currently eligible to bid for subsidy support (MeyGen 1C, 80 MW; PTEC, 30 MW; and Morlais, 14 MW). It is estimated that the installation of this 124 MW would serve to drive down the levelized cost of energy (LCoE), through learning, from its current level of around <mml:math xmlns:mml=\"http:",
+      "authors": [
+        "Daniel Coles",
+        "Athanasios Angeloudis",
+        "Deborah Greaves",
+        "Gordon D. Hastie",
+        "Matthew Lewis"
+      ],
+      "published": "2021-11-01",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1098/rspa.2021.0469",
+      "pdf_url": "",
+      "doi": "10.1098/rspa.2021.0469",
+      "topic": "海洋可再生能源",
+      "topic_score": 1,
+      "sub_kws": [],
+      "journal": "Proceedings of the Royal Society A Mathe",
+      "journal_rank": "核心期刊",
+      "cited_by": 110,
+      "institutions": [
+        "University of Edinburgh",
+        "University of St Andrews",
+        "University of Exeter"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4387101134",
+      "title": "Gas Turbine Combustion Technologies for Hydrogen Blends",
+      "abstract": "The article reviews gas turbine combustion technologies focusing on their current ability to operate with hydrogen enriched natural gas up to 100% H2. The aim is to provide a picture of the most promising fuel-flexible and clean combustion technologies, the object of current research and development. The use of hydrogen in the gas turbine power generation sector is initially motivated, highlighting both its decarbonisation and electric grid stability objectives; moreover, the state-of-the-art of hydrogen-blend gas turbines and their 2024 and 2030 targets are reported in terms of some key performance indicators. Then, the changes in combustion characteristics due to the hydrogen enrichment of natural gas blends are briefly described, from their enhanced reactivity to their pollutant emissio",
+      "authors": [
+        "D. Cecere",
+        "E. Giacomazzi",
+        "Antonio Di Nardo",
+        "Giorgio Calchetti"
+      ],
+      "published": "2023-09-26",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/en16196829",
+      "pdf_url": "",
+      "doi": "10.3390/en16196829",
+      "topic": "船舶推进与节能",
+      "topic_score": 3,
+      "sub_kws": [
+        "替代燃料",
+        "排放控制"
+      ],
+      "journal": "Energies",
+      "journal_rank": "核心期刊",
+      "cited_by": 107,
+      "institutions": [
+        "National Agency for New Technologies, Energy and Sustainable Economic Development"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4394976071",
+      "title": "Floating offshore wind farm installation, challenges and opportunities: A comprehensive survey",
+      "abstract": "The deployment of floating offshore wind farms marks a pivotal step in unlocking the vast potential of offshore wind energy and propelling the world towards sustainable energy solutions. Despite the compelling prospects of floating wind technology, its implementation is challenging. Complex installation procedures, associated high costs, and evolving regulations can hinder widespread adoption. However, these challenges present opportunities for innovation and cost reduction. This paper delves into the technical, operational, and economic aspects of floating offshore wind farm installation, providing a comprehensive overview of the current state-of-the-art. The analysis goes beyond simply describing the current landscape by critically examining the complexities involved in floating offshore",
+      "authors": [
+        "Sunghun Hong",
+        "Jade McMorland",
+        "Houxiang Zhang",
+        "Maurizio Collu",
+        "Karl Henning Halse"
+      ],
+      "published": "2024-04-20",
+      "year": "2024",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.oceaneng.2024.117793",
+      "pdf_url": "",
+      "doi": "10.1016/j.oceaneng.2024.117793",
+      "topic": "船舶推进与节能",
+      "topic_score": 3,
+      "sub_kws": [],
+      "journal": "Ocean Engineering",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 97,
+      "institutions": [
+        "University of Strathclyde",
+        "Norwegian University of Science and Technology"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4383553809",
+      "title": "A Machine-Learning-Based Method for Ship Propulsion Power Prediction in Ice",
+      "abstract": "In recent years, safety issues respecting polar ship navigation in the presence of ice have become a research hotspot. The accurate prediction of propulsion power plays an important role in ensuring safe ship navigation and evaluating ship navigation ability, and deep learning has been widely applied in the field of shipping, of which the artificial neural network (ANN) is a common method. This study combines the scientific problems of ice resistance and propulsion power for polar ship design, focusing on the design of an ANN model for predicting the propulsion power of polar ships. Reference is made to the traditional propulsion power requirements of various classification societies, as well as ship model test and full-scale test data, to select appropriate input features and a training d",
+      "authors": [
+        "Li Zhou",
+        "Qianyang Sun",
+        "Shifeng Ding",
+        "Sen Han",
+        "Aimin Wang"
+      ],
+      "published": "2023-07-06",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/jmse11071381",
+      "pdf_url": "",
+      "doi": "10.3390/jmse11071381",
+      "topic": "船舶水动力学",
+      "topic_score": 7,
+      "sub_kws": [
+        "CFD模拟"
+      ],
+      "journal": "Journal of Marine Science and Engineerin",
+      "journal_rank": "核心期刊",
+      "cited_by": 94,
+      "institutions": [
+        "Jiangsu University of Science and Technology",
+        "Shanghai Jiao Tong University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4399561622",
+      "title": "Computational Fluid Dynamics (CFD) applications in Floating Offshore Wind Turbine (FOWT) dynamics: A review",
+      "abstract": "This review comprehensively examines advancements in Computational Fluid Dynamics (CFD) applications within the context of Floating Offshore Wind Turbines (FOWTs). It highlights the role of CFD in both hydrodynamics and aerodynamics, underscoring its significance in analyzing FOWT performance. The discussion includes a range of prototypes, encompassing various FOWT platforms and wind turbines, along with a comparative assessment of scale effects. Distinct features of diverse CFD software, comprising open-source, commercial, and in-house solvers, are critically analyzed. The review delves deeply into hydrodynamic CFD applications, addressing aspects like viscous damping, numerical wave tanks, and wave-induced motions. In aerodynamics, it explores wake flow, complex inflow, blade-tower inter",
+      "authors": [
+        "Wenzhe Zhang",
+        "Javier Calderón-Sánchez",
+        "Daniel Duque",
+        "Antonio Souto-Iglesias"
+      ],
+      "published": "2024-06-12",
+      "year": "2024",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.apor.2024.104075",
+      "pdf_url": "",
+      "doi": "10.1016/j.apor.2024.104075",
+      "topic": "船舶水动力学",
+      "topic_score": 1,
+      "sub_kws": [
+        "粘性流",
+        "CFD模拟"
+      ],
+      "journal": "Applied Ocean Research",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 93,
+      "institutions": [
+        "Universidad Politécnica de Madrid"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4307897553",
+      "title": "A comprehensive review on the prediction of ship energy consumption and pollution gas emissions",
+      "abstract": "",
+      "authors": [
+        "Kai Wang",
+        "Jianhang Wang",
+        "Lianzhong Huang",
+        "Yupeng Yuan",
+        "Guitao Wu"
+      ],
+      "published": "2022-10-31",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.oceaneng.2022.112826",
+      "pdf_url": "",
+      "doi": "10.1016/j.oceaneng.2022.112826",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Ocean Engineering",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 91,
+      "institutions": [
+        "Shanghai Jiao Tong University",
+        "University of Cambridge",
+        "Dalian Maritime University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4281695078",
+      "title": "Reduced basis methods for time-dependent problems",
+      "abstract": "Numerical simulation of parametrized differential equations is of crucial importance in the study of real-world phenomena in applied science and engineering. Computational methods for real-time and many-query simulation of such problems often require prohibitively high computational costs to achieve sufficiently accurate numerical solutions. During the last few decades, model order reduction has proved successful in providing low-complexity high-fidelity surrogate models that allow rapid and accurate simulations under parameter variation, thus enabling the numerical simulation of increasingly complex problems. However, many challenges remain to secure the robustness and efficiency needed for the numerical simulation of nonlinear time-dependent problems. The purpose of this article is to su",
+      "authors": [
+        "Jan S. Hesthaven",
+        "Cecilia Pagliantini",
+        "Gianluigi Rozza"
+      ],
+      "published": "2022-05-01",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1017/s0962492922000058",
+      "pdf_url": "",
+      "doi": "10.1017/s0962492922000058",
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 1,
+      "sub_kws": [
+        "CFD方法"
+      ],
+      "journal": "Acta Numerica",
+      "journal_rank": "核心期刊",
+      "cited_by": 90,
+      "institutions": [
+        "Scuola Internazionale Superiore di Studi Avanzati",
+        "Eindhoven University of Technology",
+        "École Polytechnique Fédérale de Lausanne"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4206711768",
+      "title": "Ship speed prediction based on machine learning for efficient shipping operation",
+      "abstract": "",
+      "authors": [
+        "Ameen M. Bassam",
+        "Alexander B. Phillips",
+        "Stephen R. Turnock",
+        "P.A. Wilson"
+      ],
+      "published": "2022-01-13",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.oceaneng.2021.110449",
+      "pdf_url": "",
+      "doi": "10.1016/j.oceaneng.2021.110449",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Ocean Engineering",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 82,
+      "institutions": [
+        "University of Southampton",
+        "National Oceanography Centre",
+        "Port Said University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3133476196",
+      "title": "A review of the design and optimization of large-scale hydrostatic bearing systems",
+      "abstract": "In the last decades, the demand for hydrostatic bearings application has been rising due to the possibilities and advantages they offer. The advancements in hydrostatic lubrication understanding and computer technology improvement opened new ways for hydrostatic bearing performance and precision improvement. The emergence of the trend Industry 4.0 has brought new challenges and opportunities to the heavy machinery industry. This paper reviews the overall design and optimization processes for large-scale hydrostatic bearing geometry including the hydraulic system. The latest developments in the bearing geometry optimization, pressurized fluid supply components, and flow control devices are discussed. Moreover, possible measures for avoiding costly maintenance and repairs of the hydrostatic ",
+      "authors": [
+        "Michal Michalec",
+        "Petr Svoboda",
+        "Ivan Křupka",
+        "Martin Hartl"
+      ],
+      "published": "2021-02-15",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.jestch.2021.01.010",
+      "pdf_url": "",
+      "doi": "10.1016/j.jestch.2021.01.010",
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 1,
+      "sub_kws": [],
+      "journal": "Engineering Science and Technology an In",
+      "journal_rank": "核心期刊",
+      "cited_by": 74,
+      "institutions": [
+        "Brno University of Technology"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4391344408",
+      "title": "A review on the research progress and application of compressed hydrogen in the marine hydrogen fuel cell power system",
+      "abstract": "The urgency to mitigate greenhouse gas emissions from maritime vessels has intensified due to the increasingly stringent directives set forth by the International Maritime Organization (IMO). These directives specifically address energy efficiency enhancements and emissions reduction within the shipping industry. In this context, hydrogen is the much sought after fuel for all the global economies and its applications, for transportation and propulsion in particular, is crucial for cutting down carbon emissions. Nevertheless, the realization of hydrogen-powered vessels is confronted by substantial technical hurdles that necessitate thorough examination. This study undertakes a comprehensive analysis encompassing diverse facets, including distinct variations of hydrogen fuel cells, hydrogen ",
+      "authors": [
+        "Jichao Li",
+        "Heng Xu",
+        "Ke Zhou",
+        "Jiqiang Li"
+      ],
+      "published": "2024-01-30",
+      "year": "2024",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.heliyon.2024.e25304",
+      "pdf_url": "",
+      "doi": "10.1016/j.heliyon.2024.e25304",
+      "topic": "船舶水动力学",
+      "topic_score": 7,
+      "sub_kws": [
+        "粘性流",
+        "CFD模拟"
+      ],
+      "journal": "Heliyon",
+      "journal_rank": "核心期刊",
+      "cited_by": 72,
+      "institutions": [
+        "Jining University",
+        "Ludong University",
+        "Hoseo University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4380682203",
+      "title": "Development of Antifouling Strategies for Marine Applications",
+      "abstract": "Marine biofouling is an undeniable challenge for aquatic systems since it is responsible for several environmental and ecological problems and economic losses. Several strategies have been developed to mitigate fouling-related issues in marine environments, including developing marine coatings using nanotechnology and biomimetic models, and incorporating natural compounds, peptides, bacteriophages, or specific enzymes on surfaces. The advantages and limitations of these strategies are discussed in this review, and the development of novel surfaces and coatings is highlighted. The performance of these novel antibiofilm coatings is currently tested by in vitro experiments, which should try to mimic real conditions in the best way, and/or by in situ tests through the immersion of surfaces in ",
+      "authors": [
+        "Maria J. Romeu",
+        "Filipe J. Mergulhão"
+      ],
+      "published": "2023-06-13",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/microorganisms11061568",
+      "pdf_url": "",
+      "doi": "10.3390/microorganisms11061568",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Microorganisms",
+      "journal_rank": "核心期刊",
+      "cited_by": 71,
+      "institutions": [
+        "Universidade do Porto"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4391252433",
+      "title": "Methanol, a Plugin Marine Fuel for Green House Gas Reduction—A Review",
+      "abstract": "The escalating global demand for goods transport via shipping has heightened energy consumption, impacting worldwide health and the environment. To mitigate this, international organizations aim to achieve complete fuel desulphurization and decarbonization by 50% by 2050. Investigating eco-friendly fuels is crucial, particularly those with a reduced carbon and zero sulfur content. Methanol derived mainly from renewable sources and produced by carbon dioxide’s hydrogenation method, stands out as an effective solution for GHG reduction. Leveraging its favorable properties, global scalability, and compatibility with the existing infrastructure, especially LNGs, methanol proves to be a cost-efficient and minimally disruptive alternative. This review explores methanol’s role as a hybrid maritim",
+      "authors": [
+        "Dimitrios Parris",
+        "Konstantinos Spinthiropoulos",
+        "Konstantina Ragazou",
+        "Anna Giovou",
+        "Constantinos Tsanaktsidis"
+      ],
+      "published": "2024-01-26",
+      "year": "2024",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/en17030605",
+      "pdf_url": "",
+      "doi": "10.3390/en17030605",
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 4,
+      "sub_kws": [],
+      "journal": "Energies",
+      "journal_rank": "核心期刊",
+      "cited_by": 69,
+      "institutions": [
+        "Neapolis University Pafos",
+        "University of Western Macedonia"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4284688935",
+      "title": "A review of numerical modelling and optimisation of the floating support structure for offshore wind turbines",
+      "abstract": "Abstract Compared to onshore wind power, floating offshore wind power is a promising renewable energy source due to higher wind speeds and larger suitable available areas. However, costs are still too high compared to onshore wind power. In general, the economic viability of offshore wind technology decreases with greater water depth and distance from shore. Floating wind platforms are more competitive compared to fixed offshore structures above a certain water depth, but there is still great variety and no clear design convergence. Therefore, optimisation of the floating support structure in the preliminary phase of the design process is still of great importance, often up to personal experience and sensibility. It is fundamental that a suitable optimisation approach is chosen to obtain m",
+      "authors": [
+        "Emilio Faraggiana",
+        "Giuseppe Giorgi",
+        "Massimo Sirigu",
+        "Alberto Ghigo",
+        "Giovanni Bracco"
+      ],
+      "published": "2022-07-07",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1007/s40722-022-00241-2",
+      "pdf_url": "",
+      "doi": "10.1007/s40722-022-00241-2",
+      "topic": "海洋工程结构物",
+      "topic_score": 6,
+      "sub_kws": [],
+      "journal": "Journal of Ocean Engineering and Marine ",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 67,
+      "institutions": [
+        "Politecnico di Torino"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4309787480",
+      "title": "Scientific Advancements in Composite Materials for Aircraft Applications: A Review",
+      "abstract": "Recent advances in aircraft materials and their manufacturing technologies have enabled progressive growth in innovative materials such as composites. Al-based, Mg-based, Ti-based alloys, ceramic-based, and polymer-based composites have been developed for the aerospace industry with outstanding properties. However, these materials still have some limitations such as insufficient mechanical properties, stress corrosion cracking, fretting wear, and corrosion. Subsequently, extensive studies have been conducted to develop aerospace materials that possess superior mechanical performance and are corrosion-resistant. Such materials can improve the performance as well as the life cycle cost. This review introduces the recent advancements in the development of composites for aircraft applications.",
+      "authors": [
+        "Bisma Parveez",
+        "M.I. Kittur",
+        "Irfan Anjum Badruddin",
+        "Sarfaraz Kamangar",
+        "Mohamed Hussien"
+      ],
+      "published": "2022-11-18",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/polym14225007",
+      "pdf_url": "",
+      "doi": "10.3390/polym14225007",
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 1,
+      "sub_kws": [
+        "导航定位"
+      ],
+      "journal": "Polymers",
+      "journal_rank": "核心期刊",
+      "cited_by": 387,
+      "institutions": [
+        "King Khalid University",
+        "Agricultural Research Center",
+        "International Islamic University Malaysia"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3209402504",
+      "title": "A review of tidal energy—Resource, feedbacks, and environmental interactions",
+      "abstract": "The ocean contains a variety of renewable energy resources, little of which has been exploited. Here, we review both tidal range and tidal stream energy, with a focus on the resource, feedbacks, and environmental interactions. The review covers a wide range of timescales of relevance to tidal energy, from fortnightly (spring-neap) and semi-diurnal variability, down to array, and device-scale turbulence. When simulating the regional tidal energy resource, and to assess environmental impacts, it is necessary to account for feedbacks between the tidal array and the resource itself. We critically review various methods for simulating energy extraction, from insights gained through theoretical studies of “tidal fences” in idealized channels, to realistic three-dimensional model studies with com",
+      "authors": [
+        "Simon P. Neill",
+        "Kevin Haas",
+        "Jérôme Thiébot",
+        "Zhaoqing Yang"
+      ],
+      "published": "2021-10-26",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1063/5.0069452",
+      "pdf_url": "",
+      "doi": "10.1063/5.0069452",
+      "topic": "海洋可再生能源",
+      "topic_score": 1,
+      "sub_kws": [],
+      "journal": "Journal of Renewable and Sustainable Ene",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 76,
+      "institutions": [
+        "Normandie Université",
+        "University of Washington",
+        "Bangor University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4385659399",
+      "title": "A classification and review of cavitation models with an emphasis on physical aspects of cavitation",
+      "abstract": "This review article presents a summary of the main categories of models developed for modeling cavitation, a multiphase phenomenon in which a fluid locally experiences phase change due to a drop in ambient pressure. The most common approaches to modeling cavitation along with the most common modifications to said approaches due to other effects of cavitating flows are identified and categorized. The application of said categorization is demonstrated through an analysis of selected cavitation models. For each of the models presented, the various assumptions and simplifications made by the authors of the model are discussed, and applications of the model to simulating various aspects of cavitating flow are also presented. The result of the analysis is demonstrated via a visualization of the ",
+      "authors": [
+        "Tobias Simonsen Folden",
+        "Fynn Jerome Aschmoneit"
+      ],
+      "published": "2023-08-01",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1063/5.0157926",
+      "pdf_url": "",
+      "doi": "10.1063/5.0157926",
+      "topic": "船舶水动力学",
+      "topic_score": 1,
+      "sub_kws": [],
+      "journal": "Physics of Fluids",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 66,
+      "institutions": [
+        "Aalborg University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3211242334",
+      "title": "A Review of Biofouling of Ships’ Internal Seawater Systems",
+      "abstract": "Internal seawater systems (ISS) are critical to the proper functioning of maritime vessels. Sea water is pumped on board ships for a broad array of uses, primarily for temperature control (e.g., engine and electrical systems), cooling capacity (e.g., air conditioners and refrigeration), and water provision (e.g., drinking, firefighting, steam, and ballast). Although sea water may spend only a brief period within ISS of a vessel, it can carry microorganisms and larval stages of macroorganisms throughout the system leading to biofouling accumulation that can impair system function or integrity. ISS can also act as a sub-vector of species translocations, potentially facilitating biological invasions. This review describes ships’ ISS with a focus on operational impacts of biofouling and curren",
+      "authors": [
+        "Ian Davidson",
+        "Patrick Cahill",
+        "Arne Hinz",
+        "Daniel Kluza",
+        "Chris Scianni"
+      ],
+      "published": "2021-10-28",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3389/fmars.2021.761531",
+      "pdf_url": "",
+      "doi": "10.3389/fmars.2021.761531",
+      "topic": "船舶推进与节能",
+      "topic_score": 5,
+      "sub_kws": [],
+      "journal": "Frontiers in Marine Science",
+      "journal_rank": "核心期刊",
+      "cited_by": 66,
+      "institutions": [
+        "Cawthron Institute",
+        "Ministry for Primary Industries",
+        "Nelson Marlborough Institute of Technology"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4321479449",
+      "title": "Climbing robots for manufacturing",
+      "abstract": "Robotized intelligent manufacturing is a growing trend in the manufacturing of large and complex components in aviation, aerospace, marine engineering and other industries. With their expansive workspaces and flexible deployment, climbing manufacturing robots can create a revolutionary manufacturing paradigm for large and complex components. This paper defines the climbing manufacturing robot based on the application status of climbing robots and then analyzes four key technical requirements: adhesion, locomotion, localization and control. Subsequently, the current research status of climbing robots in these four areas is classified and reviewed, along with a clarification of the research frontiers and trends in each area, and the applicability of the relevant research to manufacturing-ori",
+      "authors": [
+        "Bo Tao",
+        "Zeyu Gong",
+        "Han Ding"
+      ],
+      "published": "2023-02-16",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1093/nsr/nwad042",
+      "pdf_url": "",
+      "doi": "10.1093/nsr/nwad042",
+      "topic": "船舶推进与节能",
+      "topic_score": 3,
+      "sub_kws": [],
+      "journal": "National Science Review",
+      "journal_rank": "核心期刊",
+      "cited_by": 62,
+      "institutions": [
+        "Huazhong University of Science and Technology"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3208122339",
+      "title": "A review on the turbulence modelling strategy for ship hydrodynamic simulations",
+      "abstract": "",
+      "authors": [
+        "Blanca Peña",
+        "Luofeng Huang"
+      ],
+      "published": "2021-10-29",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.oceaneng.2021.110082",
+      "pdf_url": "",
+      "doi": "10.1016/j.oceaneng.2021.110082",
+      "topic": "船舶水动力学",
+      "topic_score": 1,
+      "sub_kws": [
+        "粘性流"
+      ],
+      "journal": "Ocean Engineering",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 59,
+      "institutions": [
+        "University College London"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3119557248",
+      "title": "Impact of High-Pressure Homogenization on the Extractability and Stability of Phytochemicals",
+      "abstract": "High-pressure homogenization (HPH) and high-pressure processing (HPP) are emerging technologies for the food industry. Both technologies employ high pressure to preserve foods. However, the principal mechanism of HPH is based on shear stress distribution in a material instead of a decrease in volume due to an increase in pressure as occurring in HPP. HPH can be used in extraction or preservation of bioactive compounds and phytochemicals. This review first describes the mechanism of HPH processing. Next, this review discusses the impact of HPH on extractability and stability of phytochemicals such as carotenoids, vitamin C, polyphenols, and anthocyanins in various food matrices. In general, the use of HPH slightly improved or maintained the extractability of the phytochemicals. Similarly, H",
+      "authors": [
+        "Shireena Xhiang Mun Yong",
+        "Cher Pin Song",
+        "Wee Sim Choo"
+      ],
+      "published": "2021-01-14",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3389/fsufs.2020.593259",
+      "pdf_url": "",
+      "doi": "10.3389/fsufs.2020.593259",
+      "topic": "船舶推进与节能",
+      "topic_score": 1,
+      "sub_kws": [],
+      "journal": "Frontiers in Sustainable Food Systems",
+      "journal_rank": "核心期刊",
+      "cited_by": 58,
+      "institutions": [
+        "Monash University Malaysia"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3172389888",
+      "title": "Mechanism analyses of the unsteady vortical cavitation behaviors for a waterjet pump in a non-uniform inflow",
+      "abstract": "",
+      "authors": [
+        "Renfang Huang",
+        "Yiwei Wang",
+        "Tezhuan Du",
+        "Xianwu Luo",
+        "Wei Zhang"
+      ],
+      "published": "2021-06-03",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.oceaneng.2021.108798",
+      "pdf_url": "",
+      "doi": "10.1016/j.oceaneng.2021.108798",
+      "topic": "船舶水动力学",
+      "topic_score": 1,
+      "sub_kws": [],
+      "journal": "Ocean Engineering",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 56,
+      "institutions": [
+        "Tsinghua University",
+        "Chinese Academy of Sciences",
+        "Institute of Mechanics"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4220821975",
+      "title": "Study on Applicability of Energy-Saving Devices to Hydrogen Fuel Cell-Powered Ships",
+      "abstract": "The decarbonisation of waterborne transport is arguably the biggest challenge faced by the maritime industry presently. By 2050, the International Maritime Organization (IMO) aims to reduce greenhouse gas emissions from the shipping industry by 50% compared to 2008, with a vision to phase out fossil fuels by the end of the century as a matter of urgency. To meet such targets, action must be taken immediately to address the barriers to adopt the various clean shipping options currently at different technological maturity levels. Green hydrogen as an alternative fuel presents an attractive solution to meet future targets from international bodies and is seen as a viable contributor within a future clean shipping vision. The cost of hydrogen fuel—in the short-term at least—is higher compared ",
+      "authors": [
+        "Callum Stark",
+        "Yunxin Xu",
+        "Ming Zhang",
+        "Zhiming Yuan",
+        "Longbin Tao"
+      ],
+      "published": "2022-03-08",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/jmse10030388",
+      "pdf_url": "",
+      "doi": "10.3390/jmse10030388",
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 4,
+      "sub_kws": [
+        "CFD方法"
+      ],
+      "journal": "Journal of Marine Science and Engineerin",
+      "journal_rank": "核心期刊",
+      "cited_by": 55,
+      "institutions": [
+        "University of Strathclyde"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4321375357",
+      "title": "Hybrid PEM Fuel Cell Power Plants Fuelled by Hydrogen for Improving Sustainability in Shipping: State of the Art and Review on Active Projects",
+      "abstract": "The interest in hybrid polymer electrolyte membrane fuel cells (PEMFC) fuelled by hydrogen in shipping has seen an unprecedented growth in the last years, as it could allow zero-emission navigation. However, technical, safety, and regulatory barriers in PEMFC ship design and operation are hampering the use of such systems on a large scale. While several studies analyse these aspects, a comprehensive and up-to-date overview on hydrogen PEMFCs for shipping is missing. Starting from the survey of past/ongoing projects on FCs in shipping, this paper presents an extensive review on maritime hydrogen PEMFCs, outlining the state of the art and future trends for hydrogen storage and bunkering, powertrain, and regulations. In addition to the need for a clear regulatory framework, future studies sho",
+      "authors": [
+        "Chiara Dall’Armi",
+        "Davide Pivetta",
+        "Rodolfo Taccani"
+      ],
+      "published": "2023-02-17",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/en16042022",
+      "pdf_url": "",
+      "doi": "10.3390/en16042022",
+      "topic": "船舶设计与优化",
+      "topic_score": 3,
+      "sub_kws": [],
+      "journal": "Energies",
+      "journal_rank": "核心期刊",
+      "cited_by": 54,
+      "institutions": [
+        "University of Trieste"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4283810094",
+      "title": "Review of Bubble Applications in Microrobotics: Propulsion, Manipulation, and Assembly",
+      "abstract": "In recent years, microbubbles have been widely used in the field of microrobots due to their unique properties. Microbubbles can be easily produced and used as power sources or tools of microrobots, and the bubbles can even serve as microrobots themselves. As a power source, bubbles can propel microrobots to swim in liquid under low-Reynolds-number conditions. As a manipulation tool, microbubbles can act as the micromanipulators of microrobots, allowing them to operate upon particles, cells, and organisms. As a microrobot, microbubbles can operate and assemble complex microparts in two- or three-dimensional spaces. This review provides a comprehensive overview of bubble applications in microrobotics including propulsion, micromanipulation, and microassembly. First, we introduce the diverse",
+      "authors": [
+        "Yuting Zhou",
+        "Liguo Dai",
+        "Niandong Jiao"
+      ],
+      "published": "2022-07-04",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/mi13071068",
+      "pdf_url": "",
+      "doi": "10.3390/mi13071068",
+      "topic": "船舶水动力学",
+      "topic_score": 1,
+      "sub_kws": [
+        "CFD模拟"
+      ],
+      "journal": "Micromachines",
+      "journal_rank": "核心期刊",
+      "cited_by": 54,
+      "institutions": [
+        "Chinese Academy of Sciences",
+        "Zhengzhou University of Light Industry",
+        "Shenyang Institute of Automation"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3199027646",
+      "title": "Cavitation funnel effect: Bio-inspired leading-edge tubercle application on ducted marine propeller blades",
+      "abstract": "",
+      "authors": [
+        "Callum Stark",
+        "Weichao Shi",
+        "Moritz Troll"
+      ],
+      "published": "2021-09-10",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.apor.2021.102864",
+      "pdf_url": "",
+      "doi": "10.1016/j.apor.2021.102864",
+      "topic": "船舶水动力学",
+      "topic_score": 7,
+      "sub_kws": [
+        "螺旋桨设计",
+        "CFD模拟"
+      ],
+      "journal": "Applied Ocean Research",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 54,
+      "institutions": [
+        "University of Strathclyde"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4296345800",
+      "title": "Ensuring the Environmental Friendliness of Drillships during Their Operation in Special Ecological Regions of Northern Europe",
+      "abstract": "The features of the operation of the drillship-type vessels in special ecological regions of Northern Europe are considered. The main gap in the study of these systems is to determine the optimal degree of recirculation. The requirements of the International Maritime Organization for the emission of nitrogen oxides from the exhaust gases of marine diesel engines are given. The aim of the study is to determine the optimal degree of recirculation of exhaust gases of a 16V32 STX-MAN marine diesel. During the research, the optimal degree of exhaust gas recirculation varied in the range of 0–21%, the load on the diesel—in the range of 35–95% of the rated power. It was established that in this case, the emission of nitrogen oxides decreases up to 7.7–33.6%, the specific fuel consumption increase",
+      "authors": [
+        "Сергій Вікторович Сагін",
+        "Oleksiy Kuropyatnyk",
+        "Arsenii Sagin",
+        "Ivan Tkachenko",
+        "Oleksij Fomin"
+      ],
+      "published": "2022-09-19",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/jmse10091331",
+      "pdf_url": "",
+      "doi": "10.3390/jmse10091331",
+      "topic": "船舶推进与节能",
+      "topic_score": 6,
+      "sub_kws": [
+        "余热回收"
+      ],
+      "journal": "Journal of Marine Science and Engineerin",
+      "journal_rank": "核心期刊",
+      "cited_by": 54,
+      "institutions": [
+        "State University of Infrastructure and Technologies",
+        "Odessa National Maritime University",
+        "Brno University of Technology"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4394986761",
+      "title": "Sustainable polymer composite marine structures: Developments and challenges",
+      "abstract": "",
+      "authors": [
+        "Christophe Baley",
+        "Peter Davies",
+        "Wilfried Troalen",
+        "Alexandre Chamley",
+        "Imogen Dinham-Price"
+      ],
+      "published": "2024-04-21",
+      "year": "2024",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.pmatsci.2024.101307",
+      "pdf_url": "",
+      "doi": "10.1016/j.pmatsci.2024.101307",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Progress in Materials Science",
+      "journal_rank": "核心期刊",
+      "cited_by": 54,
+      "institutions": [
+        "Centre National de la Recherche Scientifique",
+        "Ifremer",
+        "Université de Bretagne Sud"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3188686943",
+      "title": "Numerical investigation of flows around an axisymmetric body of revolution by using Reynolds-stress model based hybrid Reynolds-averaged Navier–Stokes/large eddy simulation",
+      "abstract": "Flows around an axisymmetric body of revolution at a zero yaw angle were studied using a hybrid Reynolds-averaged Navier–Stokes (RANS)/large eddy simulation (LES) approach, which employed a full Reynolds stress model (RSM) in the RANS branch with the aim of accounting for the Reynolds stress anisotropy, streamline curvature, and flow separations in the boundary layer. The SUBOFF model without appendages was applied to conduct the simulations, and the Reynolds number based on the free-stream velocity and the length of the body is ReL=1.2×106. The results, including time-averaged Cp, Cf, and velocity statistics, were compared with the experimental data and wall-resolved LES results available in the literature, and the overall agreement of the comparisons was satisfactory. To assess the perfo",
+      "authors": [
+        "Yi Liu",
+        "Zhiteng Zhou",
+        "Lixing Zhu",
+        "Shizhao Wang"
+      ],
+      "published": "2021-08-01",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1063/5.0058016",
+      "pdf_url": "",
+      "doi": "10.1063/5.0058016",
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 1,
+      "sub_kws": [
+        "CFD方法"
+      ],
+      "journal": "Physics of Fluids",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 52,
+      "institutions": [
+        "Chinese Academy of Sciences",
+        "Institute of Mechanics"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3191738710",
+      "title": "A Review and Meta-Analysis of Underwater Noise Radiated by Small (&lt;25 m Length) Vessels",
+      "abstract": "Managing the impacts of vessel noise on marine fauna requires identifying vessel numbers, movement, behaviour, and acoustic signatures. However, coastal and inland waters are predominantly used by ‘small’ (&lt;25 m-long) vessels, for which there is a paucity of data on acoustic output. We reviewed published literature to construct a dataset (1719 datapoints) of broadband source levels (SLs) from 17 studies, for 11 ‘Vessel Types’. After consolidating recordings that had associated information on factors that may affect SL estimates, data from seven studies remained (1355 datapoints) for statistical modelling. We applied a Generalized Additive Mixed Model to assess factors (six continuous and five categorical predictor variables) contributing to reported SLs for four Vessel Types. Estimated ",
+      "authors": [
+        "Miles Parsons",
+        "Christine Erbe",
+        "Mark G. Meekan",
+        "Sylvia K. Parsons"
+      ],
+      "published": "2021-07-30",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/jmse9080827",
+      "pdf_url": "",
+      "doi": "10.3390/jmse9080827",
+      "topic": "船舶噪声与水下辐射",
+      "topic_score": 5,
+      "sub_kws": [],
+      "journal": "Journal of Marine Science and Engineerin",
+      "journal_rank": "核心期刊",
+      "cited_by": 49,
+      "institutions": [
+        "Curtin University",
+        "Australian Institute of Marine Science"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3187150257",
+      "title": "A numerical investigation into the influence of bio-inspired leading-edge tubercles on the hydrodynamic performance of a benchmark ducted propeller",
+      "abstract": "",
+      "authors": [
+        "Callum Stark",
+        "Weichao Shi",
+        "Mehmet Atlar"
+      ],
+      "published": "2021-08-04",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.oceaneng.2021.109593",
+      "pdf_url": "",
+      "doi": "10.1016/j.oceaneng.2021.109593",
+      "topic": "船舶水动力学",
+      "topic_score": 4,
+      "sub_kws": [
+        "CFD模拟"
+      ],
+      "journal": "Ocean Engineering",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 49,
+      "institutions": [
+        "University of Strathclyde"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3143749777",
+      "title": "Prediction of cavitating propeller underwater radiated noise using RANS &amp; DES-based hybrid method",
+      "abstract": "This study focuses on the prediction of the hydrodynamic and hydroacoustic performance of a cavitating marine propeller in open water condition using Reynolds-averaged Navier-Stokes (RANS) and Detached Eddy Simulation (DES) solvers. The effectiveness of the methods is investigated for the recently introduced benchmark propeller that belongs to the research vessel \"The Princess Royal\". The main emphasis of the study is to examine the capabilities of the RANS and DES solvers for predicting the hydrodynamic performance of a propeller in the presence of sheet and tip vortex cavitation (TVC). In the numerical simulations of the cavitating propeller flow, the Schnerr-Sauer cavitation model based on a reduced Rayleigh-Plesset equation was used to model the sheet and tip vortex cavitation. An alte",
+      "authors": [
+        "Savaş Sezen",
+        "Mehmet Atlar",
+        "Patrick Fitzsimmons"
+      ],
+      "published": "2021-04-06",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1080/17445302.2021.1907071",
+      "pdf_url": "",
+      "doi": "10.1080/17445302.2021.1907071",
+      "topic": "船舶水动力学",
+      "topic_score": 12,
+      "sub_kws": [
+        "螺旋桨设计",
+        "粘性流",
+        "CFD模拟"
+      ],
+      "journal": "Ships and Offshore Structures",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 49,
+      "institutions": [
+        "University of Strathclyde"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4378741311",
+      "title": "Investigation on stall characteristics of marine centrifugal pump considering transition effect",
+      "abstract": "",
+      "authors": [
+        "Changliang Ye",
+        "Yuan Tang",
+        "Dongsen An",
+        "Fujun Wang",
+        "Yuan Zheng"
+      ],
+      "published": "2023-05-30",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.oceaneng.2023.114823",
+      "pdf_url": "",
+      "doi": "10.1016/j.oceaneng.2023.114823",
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 1,
+      "sub_kws": [
+        "CFD方法"
+      ],
+      "journal": "Ocean Engineering",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 48,
+      "institutions": [
+        "China Agricultural University",
+        "Hohai University",
+        "Eindhoven University of Technology"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3185607830",
+      "title": "Experimental evaluation of methodologies for single transient cavitation bubble generation in liquids",
+      "abstract": "Abstract Single bubble dynamics are of fundamental importance for understanding the underlying mechanisms in liquid–vapor transition phenomenon known as cavitation. In the past years, numerous studies were published and results were extrapolated from one technique to another and further on to “real-world” cavitation. In the present paper, we highlight the issues of using various experimental approaches to study the cavitation bubble phenomenon and its effects. We scrutinize the transients bubble generation mechanisms behind tension-based and energy deposition-based techniques and overview the physics behind the bubble production. Four vapor bubble generation methods, which are most commonly used in single bubble research, are directly compared in this study: the pulsed laser technique, a h",
+      "authors": [
+        "Darjan Podbevšek",
+        "Žiga Lokar",
+        "Jure Podobnikar",
+        "Rok Petkovšek",
+        "Matevž Dular"
+      ],
+      "published": "2021-07-19",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1007/s00348-021-03260-1",
+      "pdf_url": "",
+      "doi": "10.1007/s00348-021-03260-1",
+      "topic": "船舶水动力学",
+      "topic_score": 3,
+      "sub_kws": [
+        "粘性流",
+        "CFD模拟"
+      ],
+      "journal": "Experiments in Fluids",
+      "journal_rank": "核心期刊",
+      "cited_by": 46,
+      "institutions": [
+        "University of Ljubljana"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4308997479",
+      "title": "Feature Selection and Training Multilayer Perceptron Neural Networks Using Grasshopper Optimization Algorithm for Design Optimal Classifier of Big Data Sonar",
+      "abstract": "The complexity and high dimensions of big data sonar, as well as the unavoidable presence of unwanted signals such as noise, clutter, and reverberation in the environment of sonar propagation, have made the classification of big data sonar one of the most interesting and applicable topics for active researchers in this field. This paper proposes the use of the Grasshopper Optimization Algorithm (GOA) to train Multilayer Perceptron Artificial Neural Network (MLP-NN) and also to select optimal features in big data sonar (called GMLP-GOA). GMLP-GOA hybrid classifier first extracts the features of experimental sonar data using MFCC. Then, the most optimal features are selected using GOA. In the last step, MLP-NN trained with GOA is used to classify big data sonar. To evaluate the performance o",
+      "authors": [
+        "Houman Kosarirad",
+        "Mobin Ghasempour Nejati",
+        "Abbas Saffari",
+        "Mohammad Khishe",
+        "Mokhtar Mohammadi"
+      ],
+      "published": "2022-11-14",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1155/2022/9620555",
+      "pdf_url": "",
+      "doi": "10.1155/2022/9620555",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Journal of Sensors",
+      "journal_rank": "核心期刊",
+      "cited_by": 46,
+      "institutions": [
+        "Imam Khomeini Marine Science University",
+        "Lebanese French University",
+        "University of Tehran"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4221056168",
+      "title": "Effect of the odd and even number of blades on the hydrodynamic performance of a pre-swirl pumpjet propulsor",
+      "abstract": "A numerical study based on detached eddy simulations is conducted to investigate the effects of the odd and even number of rotor/stator blades, that is, nr/ns, on the hydrodynamic performance of a pre-swirl pumpjet propulsor (PJP). In this paper, six PJPs, the PJP 6-4 (ns–nr), 8-6, 10-8, 7-5, 9-7, and 11-9, are created. The hydrodynamic performance, the unsteady force of blades, and the wake structure of the PJPs are compared. The results show that the frequency of the fluctuating force of the whole rotor highly depends on the number or, more specifically, the parity of nr. When the parameter nr is the even number, it can be found that the total unsteady force of the rotor blades will be strengthened at the k-order stator-blades-passing frequency (k=1/2nr). Moreover, it indicates that the ",
+      "authors": [
+        "Denghui Qin",
+        "Qiaogao Huang",
+        "Guang Pan",
+        "Li-Ming Chao",
+        "Yang Luo"
+      ],
+      "published": "2022-03-01",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1063/5.0080661",
+      "pdf_url": "",
+      "doi": "10.1063/5.0080661",
+      "topic": "船舶水动力学",
+      "topic_score": 4,
+      "sub_kws": [
+        "CFD模拟"
+      ],
+      "journal": "Physics of Fluids",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 45,
+      "institutions": [
+        "University of Strathclyde",
+        "Centre National de la Recherche Scientifique",
+        "Northwestern Polytechnical University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4312825636",
+      "title": "Optimization Model to Manage Ship Fuel Consumption and Navigation Time",
+      "abstract": "Abstract Owners of vessels are interested in the lowest possible operating costs. These costs are mainly related to fuel consumption during navigation. To manage it rationally, the main decision-making problem is selecting the proper parameters of the ship’s propulsion system during navigation. In practice, operators of ships equipped with controllable pitch propellers controlled in manual mode make a selection of the commanded outputs based on their own knowledge, intuition, and all accessible information regarding sea conditions. In many cases, their decisions are unreasonable or incorrect. Therefore, it would be desirable to support their decision-making in selecting the commanded outputs. For this reason, we have decided to develop a decision support system in the form of an expert sys",
+      "authors": [
+        "Krzysztof Rudzki",
+        "Piotr Gomułka",
+        "Anh Tuan Hoang"
+      ],
+      "published": "2022-09-01",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.2478/pomr-2022-0034",
+      "pdf_url": "",
+      "doi": "10.2478/pomr-2022-0034",
+      "topic": "船舶水动力学",
+      "topic_score": 8,
+      "sub_kws": [
+        "CFD模拟"
+      ],
+      "journal": "Polish Maritime Research",
+      "journal_rank": "核心期刊",
+      "cited_by": 45,
+      "institutions": [
+        "Ho Chi Minh City University of Technology",
+        "Gdańsk University of Technology",
+        "HUTECH University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3202977917",
+      "title": "Influence of roughness on propeller performance with a view to mitigating tip vortex cavitation",
+      "abstract": "",
+      "authors": [
+        "Savaş Sezen",
+        "Dogancan Uzun",
+        "Osman Turan",
+        "Mehmet Atlar"
+      ],
+      "published": "2021-09-27",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.oceaneng.2021.109703",
+      "pdf_url": "",
+      "doi": "10.1016/j.oceaneng.2021.109703",
+      "topic": "船舶水动力学",
+      "topic_score": 4,
+      "sub_kws": [
+        "螺旋桨设计"
+      ],
+      "journal": "Ocean Engineering",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 44,
+      "institutions": [
+        "University of Strathclyde"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4306730746",
+      "title": "Real-time digital twin for ship operation in waves",
+      "abstract": "This paper introduces a real-time digital twin for ship operations in seaways. The concept of the digital twin is becoming popular, and it is adopted for ship operation systems in this study. In particular, this paper introduces a new and innovative concept of the digital twin to predict ocean waves and hydrodynamic performances, such as seakeeping and maneuvering, which enables the risk and optimum route to be forecast in real time. An essential element in the realization of such a real-time digital twin is the real-time prediction of ocean waves. Hence, a sophisticated algorithm for wave reconstruction using measured wave-radar images is developed, which is extended to predicting the future evolution of a three-dimensional wave field in front of a ship within a time window of the order o",
+      "authors": [
+        "Jae‐Hoon Lee",
+        "Yoon-Seo Nam",
+        "Yonghwan Kim",
+        "Yuming Liu",
+        "J.M. Lee"
+      ],
+      "published": "2022-10-18",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.oceaneng.2022.112867",
+      "pdf_url": "",
+      "doi": "10.1016/j.oceaneng.2022.112867",
+      "topic": "船舶水动力学",
+      "topic_score": 9,
+      "sub_kws": [
+        "CFD模拟",
+        "耐波性",
+        "操纵性"
+      ],
+      "journal": "Ocean Engineering",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 84,
+      "institutions": [
+        "Massachusetts Institute of Technology",
+        "Seoul National University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3168109058",
+      "title": "A concept of critical safety area applicable for an obstacle-avoidance process for manned and autonomous ships",
+      "abstract": "In times of increased automation of maritime transportation, ship collision with a stationary obstacle (allision) remains a significant problem. There are many existing solutions rooted primarily in the concept of ship domain and path-planning algorithms. However, among these, a geometrical approach to the determination of a required maneuvering area considering the dynamic nature of ship operations in close-quarters situations is still missing. Therefore, an improved concept of the CADCA (Collision Avoidance Dynamic Critical Area) is introduced for the case of ship allision. The CADCA is a deterministic zone that geometrically delimits required maneuvering space of a vessel. Its shape changes depending on the operational parameters of a ship, such as the magnitude of rudder angle, initial",
+      "authors": [
+        "Mateusz Gil"
+      ],
+      "published": "2021-05-30",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.ress.2021.107806",
+      "pdf_url": "",
+      "doi": "10.1016/j.ress.2021.107806",
+      "topic": "自主船舶与智能航行",
+      "topic_score": 8,
+      "sub_kws": [
+        "避碰"
+      ],
+      "journal": "Reliability Engineering & System Safety",
+      "journal_rank": "核心期刊",
+      "cited_by": 82,
+      "institutions": [
+        "Gdynia Maritime University",
+        "Aalto University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3136186071",
+      "title": "Multicriteria Ship Route Planning Method Based on Improved Particle Swarm Optimization–Genetic Algorithm",
+      "abstract": "With the continuous prosperity and development of the shipping industry, it is necessary and meaningful to plan a safe, green, and efficient route for ships sailing far away. In this study, a hybrid multicriteria ship route planning method based on improved particle swarm optimization–genetic algorithm is presented, which aims to optimize the meteorological risk, fuel consumption, and navigation time associated with a ship. The proposed algorithm not only has the fast convergence of the particle swarm algorithm but also improves the diversity of solutions by applying the crossover operation, selection operation, and multigroup elite selection operation of the genetic algorithm and improving the Pareto optimal frontier distribution. Based on the Pareto optimal solution set obtained by the a",
+      "authors": [
+        "Wei Zhao",
+        "Yan Wang",
+        "Zhanshuo Zhang",
+        "Hongbo Wang"
+      ],
+      "published": "2021-03-25",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/jmse9040357",
+      "pdf_url": "",
+      "doi": "10.3390/jmse9040357",
+      "topic": "船舶推进与节能",
+      "topic_score": 1,
+      "sub_kws": [],
+      "journal": "Journal of Marine Science and Engineerin",
+      "journal_rank": "核心期刊",
+      "cited_by": 81,
+      "institutions": [
+        "Jilin University",
+        "State Key Laboratory on Integrated Optoelectronics"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4293147536",
+      "title": "Fullest COLREGs Evaluation Using Fuzzy Logic for Collaborative Decision-Making Analysis of Autonomous Ships in Complex Situations",
+      "abstract": "Maritime Autonomous Surface Ships (MASSs) will reshape the fast-evolving ecosystem for their attractive socio-economic benefits and potential to improve safety. However, their new systems and technology need thorough verifications to identify unintended components of risk. The interaction between MASS cyber-physical systems and the existing regulatory framework is currently unpredictable; AI-powered intelligent situation awareness and autonomous navigation algorithms must safely and efficiently adhere to the regulations which are only designed for human interpretation without MASSs consideration. This paper contributes to algorithmic regulations and particularly algorithmic COLREGs in real-world MASS applications. It focuses on codifying COLREGs into a machine-executable system applicable ",
+      "authors": [
+        "Azzeddine Bakdi",
+        "Erik Vanem"
+      ],
+      "published": "2022-03-08",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1109/tits.2022.3151826",
+      "pdf_url": "",
+      "doi": "10.1109/tits.2022.3151826",
+      "topic": "自主船舶与智能航行",
+      "topic_score": 8,
+      "sub_kws": [
+        "避碰",
+        "自主决策"
+      ],
+      "journal": "IEEE Transactions on Intelligent Transpo",
+      "journal_rank": "核心期刊",
+      "cited_by": 68,
+      "institutions": [
+        "University of Oslo"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3191115947",
+      "title": "Free running CFD simulations to investigate ship manoeuvrability in waves",
+      "abstract": "",
+      "authors": [
+        "Daejeong Kim",
+        "Soonseok Song",
+        "Tahsin Tezdogan"
+      ],
+      "published": "2021-08-13",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.oceaneng.2021.109567",
+      "pdf_url": "",
+      "doi": "10.1016/j.oceaneng.2021.109567",
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 1,
+      "sub_kws": [],
+      "journal": "Ocean Engineering",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 56,
+      "institutions": [
+        "University of Strathclyde"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4367316620",
+      "title": "Digital Twins in the Marine Industry",
+      "abstract": "The ocean holds abundant resources, but the utilization of those resources for the marine economy presents a complex and dynamic industrial situation. Exploring sustainable development in this industry is of practical value, as it involves the rational use of marine resources while protecting the environment. This study provides an innovative review of the current application status of Digital Twins Technology (DTT) in various sectors of the marine industry, including the ship-building industry (SBI), Offshore Oil and Gas Industry, marine fishery, and marine energy industry. The findings reveal that DTT offers robust support for full life cycle management (LCM) in SBI, including digital design, intelligent processing, operation, and error management. Furthermore, this work delves into the ",
+      "authors": [
+        "Zhihan Lv",
+        "Haibin Lv",
+        "Mikael Fridenfalk"
+      ],
+      "published": "2023-04-27",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/electronics12092025",
+      "pdf_url": "",
+      "doi": "10.3390/electronics12092025",
+      "topic": "船舶智能制造",
+      "topic_score": 6,
+      "sub_kws": [],
+      "journal": "Electronics",
+      "journal_rank": "核心期刊",
+      "cited_by": 51,
+      "institutions": [
+        "National Bureau of Statistics of China",
+        "Ministry of Natural Resources",
+        "Uppsala University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3193668495",
+      "title": "Numerical evaluation of a ship's manoeuvrability and course keeping control under various wave conditions using CFD",
+      "abstract": "",
+      "authors": [
+        "Daejeong Kim",
+        "Soonseok Song",
+        "Byongug Jeong",
+        "Tahsin Tezdogan"
+      ],
+      "published": "2021-08-11",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.oceaneng.2021.109615",
+      "pdf_url": "",
+      "doi": "10.1016/j.oceaneng.2021.109615",
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 1,
+      "sub_kws": [],
+      "journal": "Ocean Engineering",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 46,
+      "institutions": [
+        "University of Strathclyde"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4386856124",
+      "title": "Prediction of wave-induced ship motions based on integrated neural network system and spatiotemporal wave-field data",
+      "abstract": "This study introduces an artificial neural network system for ship motion prediction in seaways. To consider the physical characteristics of wave-induced ship motions, neural networks based on a Long Short-Term Memory (LSTM) encoder and decoder, and a convolutional neural network (CNN) are integrated. The LSTM encoder computes the state vector representing the memory effects of motion-induced radiated waves based on past motion records, that is, a sequence-to-one model. In the LSTM decoder, the motion time series is predicted using the encoded initial state vector and foreseen information on the ocean wave field around a vessel, that is, a sequence-to-sequence model. In addition, a CNN is adopted to compress the wave data into a vector sequence. Particularly, the present CNN uses spatiotem",
+      "authors": [
+        "Jae‐Hoon Lee",
+        "J.M. Lee",
+        "Yonghwan Kim",
+        "Yangjun Ahn"
+      ],
+      "published": "2023-09-01",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1063/5.0163795",
+      "pdf_url": "",
+      "doi": "10.1063/5.0163795",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Physics of Fluids",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 42,
+      "institutions": [
+        "Sungshin Women's University",
+        "Seoul National University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4287958397",
+      "title": "Time-series forecasting of ships maneuvering in waves via dynamic mode decomposition",
+      "abstract": "Abstract A data-driven and equation-free approach is proposed and discussed to forecast responses of ships maneuvering in waves, based on the dynamic mode decomposition (DMD). DMD is a dimensionality-reduction/reduced-order modeling method, which provides a linear finite-dimensional representation of a possibly nonlinear system dynamics by means of a set of modes with associated oscillation frequencies and decay/growth rates. This linear representation is entirely derived from available data and does not require the knowledge of the underlying system equations, which are and remain unknown. Based on the linear representation, DMD allows for short-term future estimates of the system state, which can be used for real-time prediction and control. Here, the objective of the DMD is the analysis",
+      "authors": [
+        "Matteo Diez",
+        "Andrea Serani",
+        "Emilio F. Campana",
+        "Frederick Stern"
+      ],
+      "published": "2022-07-26",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1007/s40722-022-00243-0",
+      "pdf_url": "",
+      "doi": "10.1007/s40722-022-00243-0",
+      "topic": "船舶水动力学",
+      "topic_score": 1,
+      "sub_kws": [
+        "CFD模拟",
+        "操纵性"
+      ],
+      "journal": "Journal of Ocean Engineering and Marine ",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 42,
+      "institutions": [
+        "National Research Council",
+        "Institute of Marine Engineering",
+        "University of Iowa"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4366088890",
+      "title": "Review of the Decision Support Methods Used in Optimizing Ship Hulls towards Improving Energy Efficiency",
+      "abstract": "This paper presents a review of the different methods and techniques used to optimize ship hulls over the last six years (2017–2022). This review shows the different percentages of reduction in ship resistance, and thus in the fuel consumption, to improve ships’ energy efficiency, towards achieving the goal of maritime decarbonization. Operational research and machine learning are the common decision support methods and techniques used to find the optimal solution. This paper covers four research areas to improve ship hulls, including hull form, hull structure, hull cleaning and hull lubrication. In each area of research, several computer programs are used, depending on the study’s complexity and objective. It has been found that no specific method is considered the optimum, while the comb",
+      "authors": [
+        "Mina Tadros",
+        "L. Ventura",
+        "C. Guedes Soares"
+      ],
+      "published": "2023-04-15",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/jmse11040835",
+      "pdf_url": "",
+      "doi": "10.3390/jmse11040835",
+      "topic": "船舶水动力学",
+      "topic_score": 9,
+      "sub_kws": [],
+      "journal": "Journal of Marine Science and Engineerin",
+      "journal_rank": "核心期刊",
+      "cited_by": 39,
+      "institutions": [
+        "Alexandria University",
+        "University of Lisbon"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4292756344",
+      "title": "Time-series forecasting for ships maneuvering in waves via recurrent-type neural networks",
+      "abstract": "Abstract The prediction capability of recurrent-type neural networks is investigated for real-time short-term prediction (nowcasting) of ship motions in high sea state. Specifically, the performance of recurrent neural networks, long short-term memory, and gated recurrent units models are assessed and compared using a data set coming from computational fluid dynamics simulations of a self-propelled destroyer-type vessel in stern-quartering sea state 7. Time-series of incident wave, ship motions, rudder angle, as well as immersion probes, are used as variables for a nowcasting problem. The objective is to obtain about 20 s ahead prediction. Overall, the three methods provide promising and comparable results.",
+      "authors": [
+        "Danny D’Agostino",
+        "Andrea Serani",
+        "Frederick Stern",
+        "Matteo Diez"
+      ],
+      "published": "2022-08-23",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1007/s40722-022-00255-w",
+      "pdf_url": "",
+      "doi": "10.1007/s40722-022-00255-w",
+      "topic": "船舶水动力学",
+      "topic_score": 7,
+      "sub_kws": [
+        "CFD模拟",
+        "耐波性",
+        "操纵性"
+      ],
+      "journal": "Journal of Ocean Engineering and Marine ",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 38,
+      "institutions": [
+        "National Research Council",
+        "University of Iowa",
+        "Institute of Marine Engineering"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4297991646",
+      "title": "Uncertainties in modelling the low-frequency wave-induced global loads in ships",
+      "abstract": "The present paper targets uncertainties of wave-induced rigid-body ship responses with a focus on global wave loads. The review presents general concepts and modelling of the uncertainty in linear and non-linear low-frequency wave-induced loads. The relevance of these uncertainties for practical applications in the shipping industry as the rule development process, ship structural reliability analysis, uncertainty-based decision support systems, structural health monitoring and consequently, ship digital twins are addressed. Incentives and recommendations for future research are provided. The study is performed within the ISSC (International Ship and Offshore Structures Congress) and ITTC (International Towing Tank Conference) Joint Committee promoting a common understanding of matters rel",
+      "authors": [
+        "Joško Parunov",
+        "C. Guedes Soares",
+        "Spyros Hirdaris",
+        "Xueliang Wang"
+      ],
+      "published": "2022-09-29",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.marstruc.2022.103307",
+      "pdf_url": "",
+      "doi": "10.1016/j.marstruc.2022.103307",
+      "topic": "船舶结构力学与安全",
+      "topic_score": 8,
+      "sub_kws": [
+        "损伤检测"
+      ],
+      "journal": "Marine Structures",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 37,
+      "institutions": [
+        "University of Lisbon",
+        "University of Zagreb",
+        "Aalto University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4200356289",
+      "title": "Six-DOF CFD Simulations of Underwater Vehicle Operating Underwater Turning Maneuvers",
+      "abstract": "Maneuverability, which is closely related to operational performance and safety, is one of the important hydrodynamic properties of an underwater vehicle (UV), and its accurate prediction is essential for preliminary design. The purpose of this study is to analyze the turning ability of a UV while rising or submerging; the computational fluid dynamics (CFD) method was used to numerically predict the six-DOF self-propelled maneuvers of submarine model BB2, including steady turning maneuvers and space spiral maneuvers. In this study, the overset mesh method was used to deal with multi-body motion, the body force method was used to describe the thrust distribution of the propeller at the model scale, and the numerical prediction also included the dynamic deflection of the control planes, wher",
+      "authors": [
+        "Kunyu Han",
+        "Xide Cheng",
+        "Zuyuan Liu",
+        "Chenran Huang",
+        "Haichao Chang"
+      ],
+      "published": "2021-12-18",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/jmse9121451",
+      "pdf_url": "",
+      "doi": "10.3390/jmse9121451",
+      "topic": "船舶水动力学",
+      "topic_score": 8,
+      "sub_kws": [
+        "CFD模拟",
+        "操纵性"
+      ],
+      "journal": "Journal of Marine Science and Engineerin",
+      "journal_rank": "核心期刊",
+      "cited_by": 36,
+      "institutions": [
+        "Wuhan Ship Development & Design Institute",
+        "Wuhan University of Technology"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4396821088",
+      "title": "A Scoping Review on Simulation-Based Design Optimization in Marine Engineering: Trends, Best Practices, and Gaps",
+      "abstract": "This scoping review assesses the current use of simulation-based design optimization (SBDO) in marine engineering, focusing on identifying research trends, methodologies, and application areas. Analyzing 277 studies from Scopus and Web of Science, the review finds that SBDO is predominantly applied to optimizing marine vessel hulls, including both surface and underwater types, and extends to key components like bows, sterns, propellers, and fins. It also covers marine structures and renewable energy systems. A notable trend is the preference for deterministic single-objective optimization methods, indicating potential growth areas in multi-objective and stochastic approaches. The review points out the necessity of integrating more comprehensive multidisciplinary optimization methods to add",
+      "authors": [
+        "Andrea Serani",
+        "Thomas P. Scholcz",
+        "Valentina Vanzi"
+      ],
+      "published": "2024-05-15",
+      "year": "2024",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1007/s11831-024-10127-1",
+      "pdf_url": "",
+      "doi": "10.1007/s11831-024-10127-1",
+      "topic": "船舶水动力学",
+      "topic_score": 9,
+      "sub_kws": [
+        "CFD模拟"
+      ],
+      "journal": "Archives of Computational Methods in Eng",
+      "journal_rank": "核心期刊",
+      "cited_by": 35,
+      "institutions": [
+        "National Research Council",
+        "University of Rome Tor Vergata",
+        "Maritime Research Institute Netherlands"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3188822386",
+      "title": "An experimental study on transporting a free-float capable tension leg platform for a 10 MW wind turbine in waves",
+      "abstract": "",
+      "authors": [
+        "Jordi Mas-Soler",
+        "Emre Uzunoglu",
+        "Gabriele Bulian",
+        "C. Guedes Soares",
+        "Antonio Souto-Iglesias"
+      ],
+      "published": "2021-08-11",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.renene.2021.08.009",
+      "pdf_url": "",
+      "doi": "10.1016/j.renene.2021.08.009",
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 1,
+      "sub_kws": [
+        "CFD方法"
+      ],
+      "journal": "Renewable Energy",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 33,
+      "institutions": [
+        "University of Lisbon",
+        "University of Trieste",
+        "Universidade de São Paulo"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3208903014",
+      "title": "Unsteady RANS CFD simulations of ship manoeuvrability and course keeping control under various wave height conditions",
+      "abstract": "",
+      "authors": [
+        "Daejeong Kim",
+        "Soonseok Song",
+        "Byongug Jeong",
+        "Tahsin Tezdogan",
+        "Atilla İncecik"
+      ],
+      "published": "2021-11-03",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.apor.2021.102940",
+      "pdf_url": "",
+      "doi": "10.1016/j.apor.2021.102940",
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 5,
+      "sub_kws": [
+        "CFD方法"
+      ],
+      "journal": "Applied Ocean Research",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 32,
+      "institutions": [
+        "University of Strathclyde"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4387616583",
+      "title": "Estimating waves via measured ship responses",
+      "abstract": "Optimisation of energy efficiency and operational performance as well as assessment of safety levels and emissions of marine operations require detailed information about the acting wave system. It is possible-with an analogy to classical wave buoys-to estimate the directional wave spectrum by processing sensor measurements of wave-induced responses (e.g., motions and structural responses) from a ship. Compared to other sources of wave data (e.g., buoys, satellites, third-generation wave models), estimation concepts using the ship itself as a buoy provide the wave spectrum at the exact spatio-temporal point, potentially increasing accuracy and with minimal associated cost. This paper gives an overview of the technology, discusses associated uncertainties, and highlights new developments ma",
+      "authors": [
+        "Ulrik Dam Nielsen",
+        "Harry B. Bingham",
+        "Astrid H. Brodtkorb",
+        "Toshio Iseki",
+        "Jørgen Juncher Jensen"
+      ],
+      "published": "2023-10-13",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1038/s41598-023-44552-2",
+      "pdf_url": "",
+      "doi": "10.1038/s41598-023-44552-2",
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 3,
+      "sub_kws": [
+        "编队控制"
+      ],
+      "journal": "Scientific Reports",
+      "journal_rank": "核心期刊",
+      "cited_by": 32,
+      "institutions": [
+        "Technical University of Denmark",
+        "Tokyo University of Marine Science and Technology",
+        "National Maritime Research Institute"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3112008464",
+      "title": "Exploring the effects of speed and scale on a ship’s form factor using CFD",
+      "abstract": "The problem of predicting a ship’s form factor and associated scale effects has been subject to many investigations in recent years. In this study, an attempt is made to investigate whether the form factor is influenced by a change in the ship’s speed by numerically modelling a geosim series of the KCS hull form by means of a RANS solver. The turbulence dependence of the problem is also studied by altering the closure model among three widely used approaches (the k-ω, k-ω SST, and k-ε models). The results show that at very low speeds (Froude numbers in the range of 0.02–0.06) the numerical model predicts changes in the form factor of a ship between 10% and 20%, depending on the turbulence model and scale factor choices. As the speed is increased further, the form factor exhibits little cha",
+      "authors": [
+        "Momchil Terziev",
+        "Tahsin Tezdogan",
+        "Yiğit Kemal Demirel",
+        "Diego Villa",
+        "Simon Mizzi"
+      ],
+      "published": "2021-01-01",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.ijnaoe.2020.12.002",
+      "pdf_url": "",
+      "doi": "10.1016/j.ijnaoe.2020.12.002",
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 6,
+      "sub_kws": [
+        "CFD方法"
+      ],
+      "journal": "International Journal of Naval Architect",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 32,
+      "institutions": [
+        "University of Strathclyde",
+        "University of Genoa",
+        "University of Malta"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4378555434",
+      "title": "A review on ship motions and quiescent periods prediction models",
+      "abstract": "The prediction of ship motions and quiescent periods, is of paramount importance for the maritime industry. The capability to predict these events sufficiently in advance has the potential to improve the safety and efficiency of several marine operations, such as landing and take-off on aircraft carriers, transfer of cargo, and mating operations between ships. Several models have been proposed in the literature for the prediction of ship motions and quiescent period. This work will review them by first grouping them into three main categories (i.e., physical, data-driven, and hybrid models) and then by detailing the most recent and relevant ones describing the advantages and disadvantages of each approach. Review concludes with the open problems and future perspectives of this important fi",
+      "authors": [
+        "Giulia Cademartori",
+        "Luca Oneto",
+        "Federica Valdenazzi",
+        "Andrea Coraddu",
+        "Andrea Gambino"
+      ],
+      "published": "2023-05-27",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.oceaneng.2023.114822",
+      "pdf_url": "",
+      "doi": "10.1016/j.oceaneng.2023.114822",
+      "topic": "船舶推进与节能",
+      "topic_score": 5,
+      "sub_kws": [],
+      "journal": "Ocean Engineering",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 30,
+      "institutions": [
+        "Azienda-Unita' Sanitaria Locale Di Cesena",
+        "Delft University of Technology",
+        "University of Genoa"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3153402119",
+      "title": "Coupling of dynamic reaction forces of a heavy load crane and ship motion responses in waves",
+      "abstract": "The conventional approach to dynamic analysis of ship motion response with shipboard operation equipment is usually done by establishing combined equations of motion of the multi-body system. The weakness of such methods is usually associated with the effectiveness of modelling and the simulation efficiency of computing the dynamic ship responses in waves in the time domain. In recent years, time domain simulation of nonlinear ship motion response in waves has become more and more popular. In this paper, we present coupled simulation of a heavy load crane with interactive ship motion responses in waves. The static gravitational forces of the crane system and dynamic excitation forces from the payload are applied to the ship as external forces on varying attack points of the hull during cra",
+      "authors": [
+        "Yingguang Chu",
+        "Guoyuan Li",
+        "Lars Ivar Hatledal",
+        "Finn Tore Holmeset",
+        "Houxiang Zhang"
+      ],
+      "published": "2021-04-10",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1080/17445302.2021.1907066",
+      "pdf_url": "",
+      "doi": "10.1080/17445302.2021.1907066",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Ships and Offshore Structures",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 29,
+      "institutions": [
+        "Ålesund Hospital",
+        "Norwegian University of Science and Technology"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4200044824",
+      "title": "A Comprehensive Approach to Account for Weather Uncertainties in Ship Route Optimization",
+      "abstract": "This work aims at defining in a probabilistic manner objectives and constraints typically considered in route optimization systems. Information about weather-related uncertainties is introduced by adopting ensemble forecast results. Classical reliability methods commonly used in structural analysis are adopted, allowing to achieve a simple yet effective evaluation of the probability of failure and the variability associated with the predicted fuel consumption and time of arrival. A quantitative example of application is provided, taking into consideration one of the main North Atlantic routes.",
+      "authors": [
+        "Roberto Vettor",
+        "Giovanni Bergamini",
+        "C. Guedes Soares"
+      ],
+      "published": "2021-12-15",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/jmse9121434",
+      "pdf_url": "",
+      "doi": "10.3390/jmse9121434",
+      "topic": "船舶推进与节能",
+      "topic_score": 1,
+      "sub_kws": [],
+      "journal": "Journal of Marine Science and Engineerin",
+      "journal_rank": "核心期刊",
+      "cited_by": 29,
+      "institutions": [
+        "University of Lisbon"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4398769278",
+      "title": "VISIR-2: ship weather routing in Python",
+      "abstract": "Abstract. Ship weather routing, which involves suggesting low-emission routes, holds potential for contributing to the decarbonisation of maritime transport. However, including because of a lack of readily deployable open-source and open-language computational models, its quantitative impact has been explored only to a limited extent. As a response, the graph-search VISIR (discoVerIng Safe and effIcient Routes) model has been refactored in Python, incorporating novel features. For motor vessels, the angle of attack of waves has been considered, while for sailboats the combined effects of wind and sea currents are now accounted for. The velocity composition with currents has been refined, now encompassing leeway as well. Provided that the performance curve is available, no restrictions are ",
+      "authors": [
+        "Gianandrea Mannarini",
+        "Mario Leonardo Salinas",
+        "Lorenzo Carelli",
+        "Nicola Petacco",
+        "Josip Orović"
+      ],
+      "published": "2024-05-24",
+      "year": "2024",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.5194/gmd-17-4355-2024",
+      "pdf_url": "",
+      "doi": "10.5194/gmd-17-4355-2024",
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 6,
+      "sub_kws": [],
+      "journal": "Geoscientific model development",
+      "journal_rank": "核心期刊",
+      "cited_by": 27,
+      "institutions": [
+        "CMCC Foundation - Euro-Mediterranean Center on Climate Change",
+        "University of Genoa",
+        "University of Zadar"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3128858060",
+      "title": "Experimental and Numerical Analysis of Wave Drift Force on KVLCC2 Moving in Oblique Waves",
+      "abstract": "In this study, experimental and numerical methods were applied to estimate surge and sway wave drift forces and yaw drift moment acting on KVLCC2, advancing in oblique wave. An experiment was carried out in the ocean engineering basin of the Korea Research Institute of Ships and Ocean Engineering (KRISO). A series of regular wave tests under various heading conditions were conducted to investigate ship motion responses and wave drift forces. A Rankine panel method based on potential flow was adopted in the numerical analysis, and the direct pressure integration method that integrates second-order pressure on the hull surface was applied to compute wave drift force. Through this study, validation data of wave drift force acting on KVLCC2 was established, and the computation capability of th",
+      "authors": [
+        "Min-Guk Seo",
+        "Yoon Jin Ha",
+        "Bo Woo Nam",
+        "Yeongyu Kim"
+      ],
+      "published": "2021-01-29",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/jmse9020136",
+      "pdf_url": "",
+      "doi": "10.3390/jmse9020136",
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 8,
+      "sub_kws": [
+        "势流方法"
+      ],
+      "journal": "Journal of Marine Science and Engineerin",
+      "journal_rank": "核心期刊",
+      "cited_by": 27,
+      "institutions": [
+        "Korea Research Institute of Ships and Ocean Engineering",
+        "Seoul National University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3193515144",
+      "title": "Review on Ship Manoeuvrability Criteria and Standards",
+      "abstract": "Possible reduction of the installed power on newly designed merchant ships triggered by requirements of the Energy Efficiency Design Indices (EEDI) raised concern in possible safety degradation and revived interest in manoeuvrability standards to make them capable to compensate for negative effects of underpowering. A substantial part of the present article presents a detailed analytical review of general principles laid in the foundation of consistent safety standards in the naval architecture and analysis of the existing IMO manoeuvrability criteria and standards. Possible ways of extension of the existing standards to embrace situations associated with adverse sea and wind conditions are discussed and modification of the present standards related to the directional stability is consider",
+      "authors": [
+        "Serge Sutulo",
+        "C. Guedes Soares"
+      ],
+      "published": "2021-08-21",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/jmse9080904",
+      "pdf_url": "",
+      "doi": "10.3390/jmse9080904",
+      "topic": "船舶推进与节能",
+      "topic_score": 4,
+      "sub_kws": [
+        "节能装置"
+      ],
+      "journal": "Journal of Marine Science and Engineerin",
+      "journal_rank": "核心期刊",
+      "cited_by": 25,
+      "institutions": [
+        "University of Lisbon"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3134967399",
+      "title": "Review on Ammonia as a Potential Fuel: From Synthesis to Economics",
+      "abstract": "&lt;p&gt;Ammonia, a molecule that is gaining more interest as a fueling vector, has been considered as a candidate to power transport, produce energy, and support heating applications for decades. However, the particular characteristics of the molecule always made it a chemical with low, if any, benefit once compared to conventional fossil fuels. Still, the current need to decarbonize our economy makes the search of new methods crucial to use chemicals, such as ammonia, that can be produced and employed without incurring in the emission of carbon oxides. Therefore, current efforts in this field are leading scientists, industries, and governments to seriously invest efforts in the development of holistic solutions capable of making ammonia a viable fuel for the transition toward a clean fut",
+      "authors": [
+        "Agustín Valera-Medina",
+        "F. Amer-Hatem",
+        "A. K. Azad",
+        "Irene C. Dedoussi",
+        "Mara de Joannon"
+      ],
+      "published": "2021-02-28",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1021/acs.energyfuels.0c03685",
+      "pdf_url": "",
+      "doi": "10.1021/acs.energyfuels.0c03685",
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 3,
+      "sub_kws": [
+        "CFD方法"
+      ],
+      "journal": "Energy & Fuels",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 1007,
+      "institutions": [
+        "Universiti Brunei Darussalam",
+        "Physikalisch-Technische Bundesanstalt",
+        "Technical University of Denmark"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3164800436",
+      "title": "Digital Twin: Origin to Future",
+      "abstract": "Digital Twin (DT) refers to the virtual copy or model of any physical entity (physical twin) both of which are interconnected via exchange of data in real time. Conceptually, a DT mimics the state of its physical twin in real time and vice versa. Application of DT includes real-time monitoring, designing/planning, optimization, maintenance, remote access, etc. Its implementation is expected to grow exponentially in the coming decades. The advent of Industry 4.0 has brought complex industrial systems that are more autonomous, smart, and highly interconnected. These systems generate considerable amounts of data useful for several applications such as improving performance, predictive maintenance, training, etc. A sudden influx in the number of publications related to ‘Digital Twin’ has led t",
+      "authors": [
+        "Maulshree Singh",
+        "Evert Fuenmayor",
+        "Eoin P. Hinchy",
+        "Yuansong Qiao",
+        "Niall Murray"
+      ],
+      "published": "2021-05-24",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/asi4020036",
+      "pdf_url": "",
+      "doi": "10.3390/asi4020036",
+      "topic": "船舶智能制造",
+      "topic_score": 1,
+      "sub_kws": [],
+      "journal": "Applied System Innovation",
+      "journal_rank": "核心期刊",
+      "cited_by": 951,
+      "institutions": [
+        "Athlone Institute of Technology",
+        "University of Limerick"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4210314283",
+      "title": "Burnout: A Review of Theory and Measurement",
+      "abstract": "A growing body of empirical evidence shows that occupational health is now more relevant than ever due to the COVID-19 pandemic. This review focuses on burnout, an occupational phenomenon that results from chronic stress in the workplace. After analyzing how burnout occurs and its different dimensions, the following aspects are discussed: (1) Description of the factors that can trigger burnout and the individual factors that have been proposed to modulate it, (2) identification of the effects that burnout generates at both individual and organizational levels, (3) presentation of the main actions that can be used to prevent and/or reduce burnout, and (4) recapitulation of the main tools that have been developed so far to measure burnout, both from a generic perspective or applied to specif",
+      "authors": [
+        "Sergio Edú-Valsania",
+        "Ana Laguía",
+        "Juan A. Moriano"
+      ],
+      "published": "2022-02-04",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/ijerph19031780",
+      "pdf_url": "",
+      "doi": "10.3390/ijerph19031780",
+      "topic": "船舶推进与节能",
+      "topic_score": 1,
+      "sub_kws": [],
+      "journal": "International Journal of Environmental R",
+      "journal_rank": "核心期刊",
+      "cited_by": 774,
+      "institutions": [
+        "Universidad Europea Miguel de Cervantes",
+        "Universidad Nacional de Educación a Distancia"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4229452462",
+      "title": "The clinical progress of mRNA vaccines and immunotherapies",
+      "abstract": "",
+      "authors": [
+        "Ann Barbier",
+        "Allen Yujie Jiang",
+        "Peng Zhang",
+        "Richard Wooster",
+        "Daniel G. Anderson"
+      ],
+      "published": "2022-05-09",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1038/s41587-022-01294-2",
+      "pdf_url": "",
+      "doi": "10.1038/s41587-022-01294-2",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Nature Biotechnology",
+      "journal_rank": "核心期刊",
+      "cited_by": 772,
+      "institutions": [
+        "Harvard–MIT Division of Health Sciences and Technology",
+        "Translate Bio (United States)",
+        "Zhejiang University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3132985895",
+      "title": "The Role of AI, Machine Learning, and Big Data in Digital Twinning: A Systematic Literature Review, Challenges, and Opportunities",
+      "abstract": "Digital twinning is one of the top ten technology trends in the last couple of years, due to its high applicability in the industrial sector. The integration of big data analytics and artificial intelligence/machine learning (AI-ML) techniques with digital twinning, further enriches its significance and research potential with new opportunities and unique challenges. To date, a number of scientific models have been designed and implemented related to this evolving topic. However, there is no systematic review of digital twinning, particularly focusing on the role of AI-ML and big data, to guide the academia and industry towards future developments. Therefore, this article emphasizes the role of big data and AI-ML in the creation of digital twins (DTs) or DT-based systems for various indust",
+      "authors": [
+        "M. Mazhar Rathore",
+        "Syed Attique Shah",
+        "Dhirendra Shukla",
+        "Elmahdi Bentafat",
+        "Spiridon Bakiras"
+      ],
+      "published": "2021-01-01",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1109/access.2021.3060863",
+      "pdf_url": "",
+      "doi": "10.1109/access.2021.3060863",
+      "topic": "船舶智能制造",
+      "topic_score": 3,
+      "sub_kws": [],
+      "journal": "IEEE Access",
+      "journal_rank": "核心期刊",
+      "cited_by": 570,
+      "institutions": [
+        "University of Tartu",
+        "University of New Brunswick",
+        "Hamad bin Khalifa University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4213192013",
+      "title": "Nanomaterials by severe plastic deformation: review of historical developments and recent advances",
+      "abstract": "Severe plastic deformation (SPD) is effective in producing bulk ultrafine-grained and nanostructured materials with large densities of lattice defects. This field, also known as NanoSPD, experienced a significant progress within the past two decades. Beside classic SPD methods such as high-pressure torsion, equal-channel angular pressing, accumulative roll-bonding, twist extrusion, and multi-directional forging, various continuous techniques were introduced to produce upscaled samples. Moreover, numerous alloys, glasses, semiconductors, ceramics, polymers, and their composites were processed. The SPD methods were used to synthesize new materials or to stabilize metastable phases with advanced mechanical and functional properties. High strength combined with high ductility, low/room-tempera",
+      "authors": [
+        "Kaveh Edalati",
+        "Andrea Bachmaier",
+        "V. А. Beloshenko",
+        "Yan Beygelzimer",
+        "В. Д. Бланк"
+      ],
+      "published": "2022-02-17",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1080/21663831.2022.2029779",
+      "pdf_url": "",
+      "doi": "10.1080/21663831.2022.2029779",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Materials Research Letters",
+      "journal_rank": "核心期刊",
+      "cited_by": 551,
+      "institutions": [
+        "Université de Lorraine",
+        "Université du Québec à Trois-Rivières",
+        "Erich Schmid Institute of Materials Science"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4285551764",
+      "title": "Mineral commodity summaries 2021",
+      "abstract": "Data sheets contain information on the domestic industry structure, Government programs, tariffs, and 5-year salient statistics for more than 90 individual minerals and materials.",
+      "authors": [
+        "U.S. Geological Survey"
+      ],
+      "published": "2021-01-01",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3133/mcs2021",
+      "pdf_url": "",
+      "doi": "10.3133/mcs2021",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "article",
+      "journal_rank": "其他",
+      "cited_by": 466,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4321099465",
+      "title": "A Systematic Review of Advanced Sensor Technologies for Non-Destructive Testing and Structural Health Monitoring",
+      "abstract": "This paper reviews recent advances in sensor technologies for non-destructive testing (NDT) and structural health monitoring (SHM) of civil structures. The article is motivated by the rapid developments in sensor technologies and data analytics leading to ever-advancing systems for assessing and monitoring structures. Conventional and advanced sensor technologies are systematically reviewed and evaluated in the context of providing input parameters for NDT and SHM systems and for their suitability to determine the health state of structures. The presented sensing technologies and monitoring systems are selected based on their capabilities, reliability, maturity, affordability, popularity, ease of use, resilience, and innovation. A significant focus is placed on evaluating the selected tech",
+      "authors": [
+        "Sahar Hassani",
+        "Ulrike Dackermann"
+      ],
+      "published": "2023-02-15",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/s23042204",
+      "pdf_url": "",
+      "doi": "10.3390/s23042204",
+      "topic": "船舶结构力学与安全",
+      "topic_score": 1,
+      "sub_kws": [
+        "损伤检测"
+      ],
+      "journal": "Sensors",
+      "journal_rank": "核心期刊",
+      "cited_by": 431,
+      "institutions": [
+        "UNSW Sydney"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3029938308",
+      "title": "Pandemics: Implications for research and practice in industrial and organizational psychology",
+      "abstract": "Abstract Pandemics have historically shaped the world of work in various ways. With COVID-19 presenting as a global pandemic, there is much speculation about the implications of this crisis for the future of work and for people working in organizations. In this article, we discuss 10 of the most relevant research and practice topics in the field of industrial and organizational psychology that will likely be strongly influenced by COVID-19. For each of these topics, the pandemic crisis is creating new work-related challenges, but it is also presenting various opportunities. The topics discussed herein include occupational health and safety, work–family issues, telecommuting, virtual teamwork, job insecurity, precarious work, leadership, human resources policy, the aging workforce, and care",
+      "authors": [
+        "Cort W. Rudolph",
+        "Blake A. Allan",
+        "Malissa A. Clark",
+        "Guido Hertel",
+        "Andreas Hirschi"
+      ],
+      "published": "2021-05-24",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1017/iop.2020.48",
+      "pdf_url": "",
+      "doi": "10.1017/iop.2020.48",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Industrial and Organizational Psychology",
+      "journal_rank": "核心期刊",
+      "cited_by": 430,
+      "institutions": [
+        "University of Bern",
+        "University of Konstanz",
+        "UCLouvain Saint-Louis Brussels"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3210175542",
+      "title": "Manufacturing Technologies of Carbon/Glass Fiber-Reinforced Polymer Composites and Their Properties: A Review",
+      "abstract": "Over the last few years, there has been a growing interest in the study of lightweight composite materials. Due to their tailorable properties and unique characteristics (high strength, flexibility and stiffness), glass (GFs) and carbon (CFs) fibers are widely used in the production of advanced polymer matrix composites. Glass Fiber-Reinforced Polymer (GFRP) and Carbon Fiber-Reinforced Polymer (CFRP) composites have been developed by different fabrication methods and are extensively used for diverse engineering applications. A considerable amount of research papers have been published on GFRP and CFRP composites, but most of them focused on particular aspects. Therefore, in this review paper, a detailed classification of the existing types of GFs and CFs, highlighting their basic propertie",
+      "authors": [
+        "Dipen Kumar Rajak",
+        "Pratiksha H. Wagh",
+        "Emanoil Linul"
+      ],
+      "published": "2021-10-28",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/polym13213721",
+      "pdf_url": "",
+      "doi": "10.3390/polym13213721",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Polymers",
+      "journal_rank": "核心期刊",
+      "cited_by": 416,
+      "institutions": [
+        "Polytechnic University of Timişoara"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4285277461",
+      "title": "Perspective on the hydrogen economy as a pathway to reach net-zero CO<sub>2</sub>emissions in Europe",
+      "abstract": "The envisioned role of hydrogen in the energy transition – or the concept of a hydrogen economy – has varied through the years.",
+      "authors": [
+        "Mijndert van der Spek",
+        "Catherine Banet",
+        "Christian Bauer",
+        "Paolo Gabrielli",
+        "Ward Goldthorpe"
+      ],
+      "published": "2022-01-01",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1039/d1ee02118d",
+      "pdf_url": "",
+      "doi": "10.1039/d1ee02118d",
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 1,
+      "sub_kws": [
+        "CFD方法"
+      ],
+      "journal": "Energy & Environmental Science",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 399,
+      "institutions": [
+        "University of Oslo",
+        "ETH Zurich",
+        "SINTEF"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4229457720",
+      "title": "Understanding and shaping the future of work with self-determination theory",
+      "abstract": "",
+      "authors": [
+        "Marylène Gagné",
+        "Sharon K. Parker",
+        "Mark Griffin",
+        "Patrick D. Dunlop",
+        "Caroline Knight"
+      ],
+      "published": "2022-05-10",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1038/s44159-022-00056-w",
+      "pdf_url": "",
+      "doi": "10.1038/s44159-022-00056-w",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Nature Reviews Psychology",
+      "journal_rank": "核心期刊",
+      "cited_by": 372,
+      "institutions": [
+        "HEC Montréal",
+        "Curtin University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4210265212",
+      "title": "Mineral commodity summaries 2022",
+      "abstract": "Cover: A photomicrograph showing the four primary phases of cement: alite, belite, aluminate, and ferrite. Clinker is the primary component of cement, which in turn is the key ingredient of concrete. Concrete is a universal construction material, which is used in varying quantities in virtually every construction project in the world. The use of cement and concrete dates to ancient civilizations, and those materials are used for bridges, buildings, highways, and numerous other infrastructure projects. Cement production and consumption trends in developed countries can be useful as national economic indicators and often reflect the transition from emerging economies to industrial economies.",
+      "authors": [
+        "U.S. Geological Survey"
+      ],
+      "published": "2022-01-01",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3133/mcs2022",
+      "pdf_url": "",
+      "doi": "10.3133/mcs2022",
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 1,
+      "sub_kws": [
+        "CFD方法"
+      ],
+      "journal": "report",
+      "journal_rank": "预印本",
+      "cited_by": 366,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3120302401",
+      "title": "Social media marketing gains importance after Covid-19",
+      "abstract": "This exploratory research examines how the COVID-19 pandemic led to increases in consumers’ social media marketing behaviors in the United States (U.S.). Previous research on the impact of a pandemic has focused on behavior for preventive health, however, little attention has been given to the impact of a pandemic on consumer behaviors. To bridge this gap, the Consumer Decision-Making Model was used as a framework to investigate changes in consumers’ social media behaviors as they preform various consumer decision-making processes. More specifically, a questionnaire was used to collect survey data from 327 U.S. consumers. Analysis of Variance tests were performed to examine mean differences in consumers’ use of social media as a consumer decision-making tool. The findings showed that consu",
+      "authors": [
+        "Andrew Mason",
+        "John Narcum",
+        "Kevin Mason"
+      ],
+      "published": "2021-01-01",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1080/23311975.2020.1870797",
+      "pdf_url": "",
+      "doi": "10.1080/23311975.2020.1870797",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Cogent Business & Management",
+      "journal_rank": "核心期刊",
+      "cited_by": 360,
+      "institutions": [
+        "Arkansas Tech University",
+        "Juntendo University Hospital",
+        "Juntendo University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4391098453",
+      "title": "Artificial Intelligence for Predictive Maintenance Applications: Key Components, Trustworthiness, and Future Trends",
+      "abstract": "Predictive maintenance (PdM) is a policy applying data and analytics to predict when one of the components in a real system has been destroyed, and some anomalies appear so that maintenance can be performed before a breakdown takes place. Using cutting-edge technologies like data analytics and artificial intelligence (AI) enhances the performance and accuracy of predictive maintenance systems and increases their autonomy and adaptability in complex and dynamic working environments. This paper reviews the recent developments in AI-based PdM, focusing on key components, trustworthiness, and future trends. The state-of-the-art (SOTA) techniques, challenges, and opportunities associated with AI-based PdM are first analyzed. The integration of AI technologies into PdM in real-world applications",
+      "authors": [
+        "Ayşegül Uçar",
+        "Mehmet Karaköse",
+        "Necim Kırımça"
+      ],
+      "published": "2024-01-20",
+      "year": "2024",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/app14020898",
+      "pdf_url": "",
+      "doi": "10.3390/app14020898",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Applied Sciences",
+      "journal_rank": "核心期刊",
+      "cited_by": 351,
+      "institutions": [
+        "Eskişehir City Hospital",
+        "Fırat University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4311287698",
+      "title": "Bone Turnover Markers: Basic Biology to Clinical Applications",
+      "abstract": "Bone turnover markers (BTMs) are used widely, in both research and clinical practice. In the last 20 years, much experience has been gained in measurement and interpretation of these markers, which include commonly used bone formation markers (bone alkaline phosphatase, osteocalcin, and procollagen I N-propeptide); and commonly used resorption markers (serum C-telopeptides of type I collagen, urinary N-telopeptides of type I collagen, and tartrate-resistant acid phosphatase type 5b). BTMs are usually measured by enzyme-linked immunosorbent assay or automated immunoassay. Sources contributing to BTM variability include uncontrollable factors (eg, age, gender, ethnicity) and controllable factors, particularly relating to collection conditions (eg, fasting/feeding state, and timing relative t",
+      "authors": [
+        "Marian Schini",
+        "Tatiane Vilaça",
+        "Fatma Gossiel",
+        "Syazrah Salam",
+        "Richard Eastell"
+      ],
+      "published": "2022-12-13",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1210/endrev/bnac031",
+      "pdf_url": "",
+      "doi": "10.1210/endrev/bnac031",
+      "topic": "船舶推进与节能",
+      "topic_score": 1,
+      "sub_kws": [
+        "节能装置"
+      ],
+      "journal": "Endocrine Reviews",
+      "journal_rank": "核心期刊",
+      "cited_by": 330,
+      "institutions": [
+        "University of Sheffield",
+        "Sheffield Teaching Hospitals NHS Foundation Trust"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4390844037",
+      "title": "RETRACTED: Nanotechnology-enhanced fiber-reinforced polymer composites: Recent advancements on processing techniques and applications",
+      "abstract": "Incorporating nanoparticles can significantly improve the performance and functionality of fiber-reinforced polymer (FRP) composites. Different techniques exist for processing, testing, and implementing nanocomposites in various industries. Depending on these factors, these materials can be tailored to suit the specific applications of the automotive and aerospace industries, defence industries, biomedical and energy sectors etc. Nanotechnology offers several potential benefits for composites, including improved mechanical properties, surface modification, and sensing capabilities. This paper discusses the different types of nanoparticles, nanofibers, and nano-coating that can be used for reinforcement, surface modification, and property enhancement in FRP composites. It also examines the ",
+      "authors": [
+        "Adib Bin Rashid",
+        "Mahima Haque",
+        "S M Mohaimenul Islam",
+        "K. M. Rafi Uddin Labib"
+      ],
+      "published": "2024-01-01",
+      "year": "2024",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.heliyon.2024.e24692",
+      "pdf_url": "",
+      "doi": "10.1016/j.heliyon.2024.e24692",
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 1,
+      "sub_kws": [],
+      "journal": "Heliyon",
+      "journal_rank": "核心期刊",
+      "cited_by": 325,
+      "institutions": [
+        "Dhaka University of Engineering & Technology"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3159419122",
+      "title": "The Advancement of 7XXX Series Aluminum Alloys for Aircraft Structures: A Review",
+      "abstract": "7XXX series aluminum alloys (Al 7XXX alloys) are widely used in bearing components, such as aircraft frame, spars and stringers, for their high specific strength, high specific stiffness, high toughness, excellent processing, and welding performance. Therefore, Al 7XXX alloys are the most important structural materials in aviation. In this present review, the development tendency and the main applications of Al 7XXX alloys for aircraft structures are introduced, and the existing problems are simply discussed. Also, the heat treatment processes for improving the properties are compared and analyzed. It is the most important measures that optimizing alloy composition and improving heat treatment process are to enhance the comprehensive properties of Al 7XXX alloys. Among the method, solid so",
+      "authors": [
+        "Bo Zhou",
+        "Bo Liu",
+        "Shengen Zhang"
+      ],
+      "published": "2021-04-27",
+      "year": "2021",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3390/met11050718",
+      "pdf_url": "",
+      "doi": "10.3390/met11050718",
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 1,
+      "sub_kws": [],
+      "journal": "Metals",
+      "journal_rank": "核心期刊",
+      "cited_by": 322,
+      "institutions": [
+        "University of Science and Technology Beijing"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4318619700",
+      "title": "Mineral commodity summaries 2023",
+      "abstract": "First posted January 31, 2023 For additional information, contact: Director, National Minerals Information CenterU.S. Geological Survey12201 Sunrise Valley Drive988 National CenterReston, VA 20192Email: nmicrecordsmgt@usgs.gov Each mineral commodity chapter of the 2023 edition of the U.S. Geological Survey (USGS) Mineral Commodity Summaries (MCS) includes information on events, trends, and issues for each mineral commodity as well as discussions and tabular presentations on domestic industry structure, Government programs, tariffs, 5-year salient statistics, and world production, reserves, and resources. The MCS is the earliest comprehensive source of 2022 mineral production data for the world. More than 90 individual minerals and materials are covered by 2-page synopses.For mineral commod",
+      "authors": [
+        "U.S. Geological Survey"
+      ],
+      "published": "2023-01-01",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.3133/mcs2023",
+      "pdf_url": "",
+      "doi": "10.3133/mcs2023",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "report",
+      "journal_rank": "预印本",
+      "cited_by": 315,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4310580240",
+      "title": "A review of technical and regulatory limits for hydrogen blending in natural gas pipelines",
+      "abstract": "",
+      "authors": [
+        "Burcin Cakir Erdener",
+        "Brian Sergi",
+        "Omar José Guerra Fernandez",
+        "Aurelio Lazaro Chueca",
+        "Kwabena Addo Pambour"
+      ],
+      "published": "2022-12-02",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.ijhydene.2022.10.254",
+      "pdf_url": "",
+      "doi": "10.1016/j.ijhydene.2022.10.254",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "International Journal of Hydrogen Energy",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 313,
+      "institutions": [
+        "University of Colorado Boulder",
+        "National Laboratory of the Rockies"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4284884503",
+      "title": "Corrosion challenges towards a sustainable society",
+      "abstract": "Abstract A global transition towards more sustainable, affordable and reliable energy systems is being stimulated by the Paris Agreement and the United Nation's 2030 Agenda for Sustainable Development. This poses a challenge for the corrosion industry, as building climate‐resilient energy systems and infrastructures brings with it a long‐term direction, so as a result the long‐term behaviour of structural materials (mainly metals and alloys) becomes a major prospect. With this in mind “Corrosion Challenges Towards a Sustainable Society” presents a series of cases showing the importance of corrosion protection of metals and alloys in the development of energy production to further understand the science of corrosion, and bring the need for research and the consequences of corrosion into pub",
+      "authors": [
+        "Roman Bender",
+        "Damien Féron",
+        "D. J. Mills",
+        "Stefan Ritter",
+        "Ralph Bäßler"
+      ],
+      "published": "2022-07-07",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1002/maco.202213140",
+      "pdf_url": "",
+      "doi": "10.1002/maco.202213140",
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 3,
+      "sub_kws": [
+        "CFD方法"
+      ],
+      "journal": "Materials and Corrosion",
+      "journal_rank": "核心期刊",
+      "cited_by": 299,
+      "institutions": [
+        "Airbus (Germany)",
+        "German Society of Sport Science",
+        "Technical University of Košice"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4322753659",
+      "title": "The role of autophagy in bone metabolism and clinical significance",
+      "abstract": "The skeletal system is the basis of the vertebral body composition, which affords stabilization sites for muscle attachment, protects vital organs, stores mineral ions, supplies places to the hematopoietic system, and participates in complex endocrine and immune system. Not surprisingly, bones are constantly reabsorbed, formed, and remodeled under physiological conditions. Once bone metabolic homeostasis is interrupted (including inflammation, tumors, fractures, and bone metabolic diseases), the body rapidly initiates bone regeneration to maintain bone tissue structure and quality. Macroautophagy/autophagy is an essential metabolic process in eukaryotic cells, which maintains metabolic energy homeostasis and plays a vital role in bone regeneration by controlling molecular degradation and o",
+      "authors": [
+        "Jing Wang",
+        "Yi Zhang",
+        "Jin Cao",
+        "Yi Wang",
+        "Nadia Anwar"
+      ],
+      "published": "2023-03-02",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1080/15548627.2023.2186112",
+      "pdf_url": "",
+      "doi": "10.1080/15548627.2023.2186112",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Autophagy",
+      "journal_rank": "核心期刊",
+      "cited_by": 295,
+      "institutions": [
+        "Griffith University",
+        "Zunyi Medical University",
+        "Queensland University of Technology"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W3181577275",
+      "title": "Eighty Years of the Finite Element Method: Birth, Evolution, and Future",
+      "abstract": "Abstract This document presents comprehensive historical accounts on the developments of finite element methods (FEM) since 1941, with a specific emphasis on developments related to solid mechanics. We present a historical overview beginning with the theoretical formulations and origins of the FEM, while discussing important developments that have enabled the FEM to become the numerical method of choice for so many problems rooted in solid mechanics.",
+      "authors": [
+        "Wing Kam Liu",
+        "Shaofan Li",
+        "Harold S. Park"
+      ],
+      "published": "2022-06-13",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1007/s11831-022-09740-9",
+      "pdf_url": "",
+      "doi": "10.1007/s11831-022-09740-9",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Archives of Computational Methods in Eng",
+      "journal_rank": "核心期刊",
+      "cited_by": 291,
+      "institutions": [
+        "Northwestern University",
+        "University of California, Berkeley",
+        "Boston University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4283824284",
+      "title": "Additive manufacturing: expanding 3D printing horizon in industry 4.0",
+      "abstract": "",
+      "authors": [
+        "Gaurav Prashar",
+        "Hitesh Vasudev",
+        "Dharam Bhuddhi"
+      ],
+      "published": "2022-07-06",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1007/s12008-022-00956-4",
+      "pdf_url": "",
+      "doi": "10.1007/s12008-022-00956-4",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "International Journal on Interactive Des",
+      "journal_rank": "核心期刊",
+      "cited_by": 278,
+      "institutions": [
+        "Uttaranchal University",
+        "Lovely Professional University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4386765478",
+      "title": "Comorbidity between major depressive disorder and physical diseases: a comprehensive review of epidemiology, mechanisms and management",
+      "abstract": "Populations with common physical diseases - such as cardiovascular diseases, cancer and neurodegenerative disorders - experience substantially higher rates of major depressive disorder (MDD) than the general population. On the other hand, people living with MDD have a greater risk for many physical diseases. This high level of comorbidity is associated with worse outcomes, reduced adherence to treatment, increased mortality, and greater health care utilization and costs. Comorbidity can also result in a range of clinical challenges, such as a more complicated therapeutic alliance, issues pertaining to adaptive health behaviors, drug-drug interactions and adverse events induced by medications used for physical and mental disorders. Potential explanations for the high prevalence of the above",
+      "authors": [
+        "Michael Berk",
+        "Ole Köhler‐Forsberg",
+        "Megan Turner",
+        "Brenda W.J.H. Penninx",
+        "Anna Wrobel"
+      ],
+      "published": "2023-09-15",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1002/wps.21110",
+      "pdf_url": "",
+      "doi": "10.1002/wps.21110",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "World Psychiatry",
+      "journal_rank": "核心期刊",
+      "cited_by": 278,
+      "institutions": [
+        "Aarhus University",
+        "Greater Manchester Mental Health NHS Foundation Trust",
+        "Orygen Youth Health"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4292117589",
+      "title": "Immune checkpoint modulators in cancer immunotherapy: recent advances and emerging concepts",
+      "abstract": "The discovery of immune checkpoint inhibitors (ICIs) has now been universally acknowledged as a significant breakthrough in tumor therapy after the targeted treatment of checkpoint molecules: anti-programmed cell death protein 1/programmed cell death ligand 1 (PD-1/PD-L1) and anti-cytotoxic T lymphocyte-associated antigen-4 (CTLA-4) on several cancer types achieved satisfying results. However, there are still quite a lot of patients suffering from severe side effects and ineffective treatment outcomes. Although the current ICI therapy is far from satisfying, a series of novel immune checkpoint molecules with remarkable preclinical and clinical benefits are being widely investigated, like the V-domain Ig suppressor of T cell activation (VISTA), which can also be called PD-1 homolog (PD-1H),",
+      "authors": [
+        "Yuchen Wang",
+        "Hao Zhang",
+        "Chao Liu",
+        "Zeyu Wang",
+        "Wantao Wu"
+      ],
+      "published": "2022-08-17",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1186/s13045-022-01325-0",
+      "pdf_url": "",
+      "doi": "10.1186/s13045-022-01325-0",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Journal of Hematology & Oncology",
+      "journal_rank": "核心期刊",
+      "cited_by": 271,
+      "institutions": [
+        "National Clinical Research",
+        "Harbin Medical University",
+        "Zhujiang Hospital"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4389428089",
+      "title": "A comprehensive literature review of the applications of AI techniques through the lifecycle of industrial equipment",
+      "abstract": "Abstract Driven by the ongoing migration towards Industry 4.0, the increasing adoption of artificial intelligence (AI) has empowered smart manufacturing and digital transformation. AI enhances the migration towards industry 4.0 through AI-based decision-making by analyzing real-time data to optimize different processes such as production planning, predictive maintenance, quality control etc., thus guaranteeing reduced costs, high precision, efficiency and accuracy. This paper explores AI-driven smart manufacturing, revolutionizing traditional approaches and unlocking new possibilities throughout the major phases of the industrial equipment lifecycle. Through a comprehensive review, we delve into a wide range of AI techniques employed to tackle challenges such as optimizing process control,",
+      "authors": [
+        "Mahboob Elahi",
+        "Samuel Olaiya Afolaranmi",
+        "José L. Martínez Lastra",
+        "José Antonio Pérez García"
+      ],
+      "published": "2023-12-07",
+      "year": "2023",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1007/s44163-023-00089-x",
+      "pdf_url": "",
+      "doi": "10.1007/s44163-023-00089-x",
+      "topic": "船舶智能制造",
+      "topic_score": 4,
+      "sub_kws": [],
+      "journal": "Discover Artificial Intelligence",
+      "journal_rank": "核心期刊",
+      "cited_by": 269,
+      "institutions": [
+        "Universidade de Vigo",
+        "Tampere University"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    },
+    {
+      "id": "https://openalex.org/W4285725850",
+      "title": "Heterostructured stainless steel: Properties, current trends, and future perspectives",
+      "abstract": "",
+      "authors": [
+        "Liliana Romero-Resendiz",
+        "Moustafa El‐Tahawy",
+        "Tianlong Zhang",
+        "Mariana Correa Rossi",
+        "Diana Maritza Marulanda Cardona"
+      ],
+      "published": "2022-07-18",
+      "year": "2022",
+      "source": "OpenAlex",
+      "url": "https://doi.org/10.1016/j.mser.2022.100691",
+      "pdf_url": "",
+      "doi": "10.1016/j.mser.2022.100691",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Materials Science and Engineering R Repo",
+      "journal_rank": "核心期刊",
+      "cited_by": 259,
+      "institutions": [
+        "University of California, Santa Barbara",
+        "University of Tehran",
+        "Military University Nueva Granada"
+      ],
+      "concepts": [],
+      "fetched": "2026-06-29 14:31"
+    }
+  ],
+  "updated": "2026-06-29 14:31",
+  "today_new": 126,
+  "total": 126,
+  "history": [
+    {
+      "date": "2026-06-29",
+      "new": 126,
+      "total": 126
+    }
+  ]
 }

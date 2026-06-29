@@ -725,12 +725,14 @@ def gen_html(data, config):
         c = p.get("cited_by",0)
         jrnk = p.get("journal_rank","")
         doi = p.get("doi","")
+        pid = p.get("url","#")
         doi_h = '<a href="https://doi.org/' + doi + '" class="doi" target="_blank">' + doi[:35] + '</a>' if doi else ""
         jrnk_h = '<span class="rk">' + jrnk + '</span>' if jrnk else ""
-        hot_items += ('<div class="hp">'
+        hot_items += ('<div class="hp" data-pid="' + pid + '">'
             '<span class="hp-n">' + str(i+1) + '</span>'
+            '<button class="bm-btn" onclick="toggleBm(this)" title="收藏">☆</button>'
             '<div class="hp-b">'
-            '<div class="hp-t"><a href="' + p.get("url","#") + '" target="_blank">' + p["title"][:90] + '</a></div>'
+            '<div class="hp-t"><a href="' + pid + '" target="_blank">' + p["title"][:90] + '</a></div>'
             '<div class="hp-m"><span>' + p.get("published","")[:10] + '</span><span class="ci">📊' + str(c) + '</span>' + jrnk_h + doi_h + '</div>'
             '</div></div>')
     
@@ -744,6 +746,7 @@ def gen_html(data, config):
         for p in ps:  # Show all papers
             ci = p.get("cited_by",0); doi = p.get("doi","")
             au = ", ".join(p.get("authors",[])[:2])
+            pid = p.get("url","#")
             doi_h = '<a href="https://doi.org/' + doi + '" class="doi">📎' + doi[:25] + '</a>' if doi else ""
             insts = p.get("institutions",[])
             inst_h = '<span class="inst">🏛️ ' + insts[0][:35] + '</span>' if insts else ""
@@ -751,8 +754,10 @@ def gen_html(data, config):
             au_h = '<span>'+au[:40]+'</span>' if au else ""
             sk_pi = p.get("sub_kws",[])
             sk_h = '<span class="sk">#' + '#'.join(sk_pi[:3]) + '</span>' if sk_pi else ""
-            items += ('<div class="pi">'
-                '<div class="pi-t"><a href="' + p.get("url","#") + '" target="_blank">' + p["title"][:80] + '</a></div>'
+            items += ('<div class="pi" data-pid="' + pid + '">'
+                '<div class="pi-t">'
+                '<button class="bm-btn" onclick="toggleBm(this)" title="收藏">☆</button> '
+                '<a href="' + pid + '" target="_blank">' + p["title"][:80] + '</a></div>'
                 '<div class="pi-m"><span>' + p.get("published","")[:10] + '</span>' + au_h + sk_h + ci_h + inst_h + doi_h + '</div></div>')
         more_h = ""
         topics += ('<div class="ts">'
@@ -794,6 +799,7 @@ def gen_html(data, config):
     # Direction filter tabs
     filter_tabs = '<div class="df">'
     filter_tabs += '<button class="df-btn active" data-dir="all" onclick="filterDir(\'all\')">📌 全部</button>'
+    filter_tabs += '<button class="df-btn" data-dir="⭐bookmark" onclick="filterDir(\'⭐bookmark\')">⭐ 收藏</button>'
     for t in tl:
         col = tcols[t]
         esc_t = t.replace("&","&amp;").replace("'","")
@@ -809,6 +815,13 @@ def gen_html(data, config):
     html += 'new Chart(c3,{type:"doughnut",data:{labels:' + jrc_k + ',datasets:[{data:' + jrc_v + ',backgroundColor:["#C0392B","#E67E22","#2980B9","#7F8C8D","#95A5A6"]}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:"bottom",labels:{font:{size:11}}}}}});\n'
     html += 'function tt(el){var b=el.nextElementSibling,i=el.querySelector(".tic");b.style.display=b.style.display=="block"?"none":"block";i.textContent=b.style.display=="block"?"▾":"▸";}\n'
     html += 'function ft(){var q=document.getElementById("ts").value.toLowerCase();document.querySelectorAll(".ts").forEach(function(s){s.style.display=s.querySelector(".tn").textContent.toLowerCase().includes(q)?"":"none";});}\n'
+    html += '/* ─── 文献收藏 ─── */\n'
+    html += 'function getBm(){try{return JSON.parse(localStorage.getItem(\'ship_bm\')||\'[]\')}catch(e){return []}}\n'
+    html += 'function saveBm(bm){localStorage.setItem(\'ship_bm\',JSON.stringify(bm))}\n'
+    html += 'function toggleBm(btn){var pid=btn.closest(\'[data-pid]\').getAttribute(\'data-pid\');var bm=getBm();var idx=bm.indexOf(pid);if(idx>-1){bm.splice(idx,1);btn.textContent=\'☆\';btn.classList.remove(\'bm-on\')}else{bm.push(pid);btn.textContent=\'★\';btn.classList.add(\'bm-on\')}saveBm(bm)}\n'
+    html += 'function filterDir(dir){document.querySelectorAll(\'.df-btn\').forEach(function(b){b.classList.remove(\'active\')});document.querySelectorAll(\'.ts\').forEach(function(s){s.style.display=\'none\'});if(dir===\'all\'){document.querySelectorAll(\'.ts\').forEach(function(s){s.style.display=\'\'})}else if(dir===\'⭐bookmark\'){var bm=getBm();document.querySelectorAll(\'.ts\').forEach(function(s){var show=false;s.querySelectorAll(\'[data-pid]\').forEach(function(p){p.style.display=bm.indexOf(p.getAttribute(\'data-pid\'))>-1?\'\':\'none\';if(p.style.display!=\'none\')show=true});s.style.display=show?\'\':\'none\';var tic=s.querySelector(\'.tic\');var tb=s.querySelector(\'.tb\');if(show&&tic&&tb){tic.textContent=\'▾\';tb.style.display=\'block\'}})}else{document.querySelectorAll(\'.ts\').forEach(function(s){var t=s.querySelector(\'.tn\');if(t&&t.textContent.trim()===dir){s.style.display=\'\'}})};document.querySelectorAll(\'.df-btn\').forEach(function(b){if(b.getAttribute(\'data-dir\')===dir)b.classList.add(\'active\')})}\n'
+    html += 'function syncBm(){var bm=getBm();document.querySelectorAll(\'[data-pid]\').forEach(function(el){var pid=el.getAttribute(\'data-pid\');var btn=el.querySelector(\'.bm-btn\');if(btn){if(bm.indexOf(pid)>-1){btn.textContent=\'★\';btn.classList.add(\'bm-on\')}else{btn.textContent=\'☆\';btn.classList.remove(\'bm-on\')}}})}\n'
+    html += 'document.addEventListener(\'DOMContentLoaded\',syncBm);\n'
     html += '</script>\n</body>\n</html>\n'
     os.makedirs(DOCS_DIR, exist_ok=True)
     with open(OUTPUT_HTML, "w", encoding="utf-8") as f:

@@ -401,13 +401,19 @@ def merge_papers(new_p, existing):
         exist_ids.add(p["id"])
         if p.get("doi"): exist_ids.add(p["doi"])
     dedup = [p for p in new_p if p["id"] not in exist_ids and p.get("doi","") not in exist_ids]
+    # 记录本期新增的论文 ID
+    new_ids = set()
+    for p in dedup:
+        new_ids.add(p["id"])
+        if p.get("doi"): new_ids.add(p["doi"])
+        if p.get("url"): new_ids.add(p["url"])
     merged = dedup + old
     today = datetime.now().strftime("%Y-%m-%d")
     if dedup:
         hist.append({"date":today, "new":len(dedup), "total":len(merged)})
         hist = hist[-90:]
     return {"papers":merged, "updated":datetime.now().strftime("%Y-%m-%d %H:%M"),
-            "today_new":len(dedup), "total":len(merged), "history":hist}
+            "today_new":len(dedup), "total":len(merged), "history":hist, "new_ids":list(new_ids)}
 
 
 def classify_country(inst_name):
@@ -651,6 +657,7 @@ def gen_html(data, config):
     stats = compute_stats(papers)
     updated = data.get("updated","")
     total = data.get("total",0)
+    new_ids = set(data.get("new_ids", []))
 
     tl = list(stats["topic_counts"].keys())
     tcols = {t:COLORS[i%len(COLORS)] for i,t in enumerate(tl)}
@@ -806,6 +813,27 @@ def gen_html(data, config):
     html += '<p class="sub">多源数据分析 · 每3天自动更新 · 2021-2026</p>\n'
     html += '<p class="meta">🕐 ' + updated + ' | arXiv + OpenAlex + Semantic Scholar</p>\n<p style="text-align:center;font-size:.78rem;margin-top:6px"><a href="weekly.html">📋 \u67e5\u770b\u5b8c\u6574\u5468\u62a5 \u2192</a></p>\n</header>\n<main>\n'
     html += cards + '\n'
+    # ── 本期新增 ──
+    cutoff = (datetime.now() - timedelta(days=14)).strftime("%Y-%m-%d")
+    new_papers = [p for p in papers if p.get("published","")[:10] >= cutoff]
+    new_papers.sort(key=lambda p: p.get("cited_by",0) or 0, reverse=True)
+    new_html = ""
+    if new_papers:
+        new_items = ""
+        for p in new_papers[:8]:
+            c = p.get("cited_by",0) or 0
+            doi = p.get("doi","")
+            doi_h = '<a href="https://doi.org/' + doi + '" class="doi" target="_blank">' + doi[:30] + '</a>' if doi else ""
+            jrnk = p.get("journal_rank","")
+            jrnk_h = '<span class="rk">' + jrnk + '</span>' if jrnk else ""
+            new_items += ('<div class="hp" data-pid="' + p.get("url","#") + '">'
+                '<span class="new-badge">🆕</span>'
+                '<div class="hp-b">'
+                '<div class="hp-t"><a href="' + p.get("url","#") + '" target="_blank">' + p["title"][:90] + '</a></div>'
+                '<div class="hp-m"><span>' + p.get("published","")[:10] + '</span><span class="ci">📊' + str(c) + '</span>' + jrnk_h + doi_h + '</div>'
+                '</div></div>')
+        new_html = '<section class="new-section"><h2>📰 本期新增 <span class="new-count">' + str(len(new_papers)) + '篇</span></h2>' + new_items + '</section>\n'
+    html += new_html
     html += '<div class="charts-row">\n'
     html += '<div class="cc"><h2>📊 研究方向分布</h2><div class="cw"><canvas id="c1"></canvas></div></div>\n'
     html += '<div class="cc"><h2>📈 发文趋势</h2><div class="cw"><canvas id="c2"></canvas></div></div>\n'

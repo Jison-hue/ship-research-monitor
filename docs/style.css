@@ -97,6 +97,14 @@ main{max-width:1040px;margin:0 auto;padding:20px 16px 32px}
 .fr-more{padding:8px;text-align:center;color:var(--muted);font-size:.78rem}
 .fr-item .bm-btn{font-size:.85rem;padding:0 2px}
 
+/* ─── 本期新增 ─── */
+.new-section{background:linear-gradient(135deg,#f0f9f0,#e8f5e9);border-radius:var(--r);padding:16px 20px;border:1px solid #c8e6c9;margin-bottom:20px}
+.new-section h2{font-size:.95rem;font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.new-count{font-size:.72rem;color:#388e3c;background:#c8e6c9;padding:1px 8px;border-radius:10px;font-weight:400}
+.new-section .hp{border-bottom-color:#c8e6c9}
+.new-section .hp:last-child{border:none}
+.new-badge{font-size:1rem;min-width:26px;text-align:center}
+
 /* Footer */
 footer{text-align:center;padding:20px;color:var(--muted);font-size:.72rem;max-width:1040px;margin:0 auto}
 footer a{color:var(--muted)}footer a:hover{color:var(--accent)}

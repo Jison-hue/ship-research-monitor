@@ -505,14 +505,17 @@ def compute_stats(papers):
         "propulsor","spar","subsea","shipboard","shipbreaking","seaport",
         "航运","货轮","集装箱船","散货船","LNG船"]
     def is_relevant(p):
-        """严格判断是否与船舶领域相关: 需要同时有文本证据+分类证据"""
+        """严格判断: 剔除明显不相关的(其他方向+低dm),但保留被分类认可的"""
         txt = (p.get("title","") + " " + p.get("abstract","")).lower()
         dm = sum(1 for kw in domain_kws if kw in txt)
-        if dm >= 3:
-            return True  # 标题/摘要里有多个领域词, 明确相关
+        topic = p.get("topic","")
         ts = p.get("topic_score",0) or 0
-        if dm >= 1 and ts >= 3:
-            return True  # 至少有个领域词 + 被分类器认可
+        # 被分类到具体方向 且 分类分数>=2(至少1个关键词匹配): 通过
+        if topic != "其他" and ts >= 2:
+            return True
+        # 没分到方向但有强领域关键词: 通过
+        if dm >= 3:
+            return True
         return False
     def hot_score(p):
         cited = p.get("cited_by",0) or 0

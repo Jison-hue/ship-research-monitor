@@ -81,6 +81,22 @@ main{max-width:1040px;margin:0 auto;padding:20px 16px 32px}
 .sf:focus{border-color:var(--accent)}
 .result-count{font-size:.78rem;color:var(--muted);white-space:nowrap}
 
+/* ─── 筛选汇总视图 ─── */
+.filter-summary{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 14px;background:#f0f6f9;border-radius:8px;margin-bottom:10px;font-size:.82rem}
+.fs-badge{display:flex;gap:8px;flex-wrap:wrap}
+.fs-badge span{padding:2px 10px;border-radius:4px;font-weight:500}
+.fs-count{color:var(--accent);font-weight:600;white-space:nowrap}
+.filter-results{margin-bottom:14px}
+.fr-title{font-size:.85rem;font-weight:600;margin-bottom:8px;color:var(--text)}
+.fr-item{display:flex;align-items:flex-start;gap:6px;padding:6px 10px;border-bottom:1px solid #f0f0f0;font-size:.82rem}
+.fr-item:last-child{border:none}
+.fr-item a{flex:1;min-width:0;color:var(--text);line-height:1.4}
+.fr-item a:hover{color:var(--accent)}
+.fr-meta{font-size:.7rem;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}
+.fr-empty{padding:12px;text-align:center;color:var(--muted);font-size:.85rem}
+.fr-more{padding:8px;text-align:center;color:var(--muted);font-size:.78rem}
+.fr-item .bm-btn{font-size:.85rem;padding:0 2px}
+
 /* Footer */
 footer{text-align:center;padding:20px;color:var(--muted);font-size:.72rem;max-width:1040px;margin:0 auto}
 footer a{color:var(--muted)}footer a:hover{color:var(--accent)}

@@ -61,7 +61,9 @@ TOPICS = {
         "maneuvering", "hull form", "ship wave", "ship wake", "slamming",
         "added resistance", "propulsion", "drag reduction", "air lubrication",
         "propulsor", "bow shape", "stern", "ship flow", "wetted surface",
-        "ship squat", "marine propeller", "ship speed loss"
+        "ship squat", "marine propeller", "ship speed loss",
+        "ship motion", "wave-induced", "ship response", "extreme ship response",
+        "dynamic load", "crane ship", "heavy lift", "ship dynamic"
     ],
     "船舶结构力学与安全": [
         "ship structural", "hull strength", "girder", "ship fatigue",
@@ -69,21 +71,31 @@ TOPICS = {
         "buckling ship", "ship fracture", "structural health monit",
         "hull vibration", "ship vibration", "ship stress", "FEM ship",
         "stiffened panel", "crack propagation", "ship damage",
-        "hull integrity", "fatigue life"
+        "hull integrity", "fatigue life",
+        "marine corrosion", "corrosion monitoring", "protective coating",
+        "marine fouling", "composite marine", "lightweight",
+        "ship coating"
     ],
     "船舶推进与节能": [
         "ship propulsion", "marine engine", "fuel consumption",
-        "waste heat", "emission reduction", "LNG fuel", "alternative fuel marine",
+        "waste heat", "emission reduction", "LNG fuel", "alternative fuel",
         "ship decarboni", "shaft generator", "ship power",
         "energy saving ship", "EEDI", "ship efficiency",
-        "ship electrical", "hybrid propulsion", "SCR"
+        "ship electrical", "hybrid propulsion", "SCR",
+        "decarboniz", "green shipping", "ammonia fuel",
+        "methanol fuel", "marine fuel", "shipping sector",
+        "regulatory framework", "organic rankine", "ORC marine",
+        "oil gas", "energy consumption", "energy saving"
     ],
     "海洋工程结构物": [
         "offshore platform", "floating production", "FPSO", "semi-submersible",
         "jack-up", "riser", "mooring", "subsea pipeline", "deepwater structure",
         "jacket platform", "floating offshore", "TLP platform", "spar platform",
         "subsea system", "marine pipeline", "offshore structure",
-        "compliant tower", "gravity base"
+        "compliant tower", "gravity base",
+        "gas hydrate", "subsea well", "offshore jacket", "wellbore",
+        "tethered platform", "subsea gas",
+        "buoy", "marine buoy", "weather buoy", "marine weather"
     ],
     "船舶设计与优化": [
         "ship design", "hull form optimization", "parametric design",
@@ -101,7 +113,11 @@ TOPICS = {
         "wave energy", "tidal current", "offshore wind turbine",
         "floating wind", "marine current", "ocean thermal",
         "oscillating water column", "point absorber", "tidal stream",
-        "wave power", "wave converter"
+        "wave power", "wave converter",
+        "floating solar", "floating photovoltaic", "solar floating",
+        "solar energy", "OTEC", "ocean thermal",
+        "wave-structure", "wave structure",
+        "offshore renewable"
     ],
     "船舶噪声与水下辐射": [
         "ship noise", "underwater radiated noise", "ship acoustic",
@@ -113,13 +129,19 @@ TOPICS = {
         "autonomous ship", "unmanned surface", "MASS", "collision avoidance",
         "intelligent navigation", "path planning", "COLREG",
         "situational awareness", "vessel traffic", "smart ship",
-        "decision support ship", "autonomous navigation ship"
+        "decision support ship", "autonomous navigation ship",
+        "cyber security", "maritime safety", "collision risk",
+        "risk assessment", "maritime autonomous",
+        "machine learning", "deep learning maritime",
+        "marine accident", "maritime accident", "maritime traffic"
     ],
     "水下航行器与海洋机器人": [
         "autonomous underwater", "AUV", "ROV", "underwater glider",
         "marine robot", "underwater manipulation", "underwater vehicle",
         "unmanned underwater", "deep sea vehicle", "subsea vehicle",
-        "underwater drone"
+        "underwater drone",
+        "underwater sensor", "underwater network", "underwater communication",
+        "sensor network", "underwater acoustic", "underwater data"
     ],
     "船舶与海洋工程数值方法": [
         "CFD", "panel method", "boundary element", "SPH",
@@ -253,11 +275,11 @@ def classify(title, abstract):
         elif matches == 1 and domain_score >= 4:
             # 单个关键词匹配 + 极强领域信号
             scores[t] = matches * 2 + domain_score
-        elif matches == 1 and domain_score >= 2:
-            # 单个匹配 + 一般领域信号 → 仅限长关键词（>8字符）
+        elif matches == 1 and domain_score >= 1:
+            # 单个匹配 + 领域信号 → 仅限长关键词（>8字符）
             long_kws = [kw for kw in kws if len(kw) > 8 and kw.lower() in text]
             if long_kws:
-                scores[t] = 2 + domain_score
+                scores[t] = 2 + domain_score * 2
 
     if not scores:
         return ("其他", 0, [])

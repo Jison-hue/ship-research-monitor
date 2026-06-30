@@ -869,14 +869,14 @@ def gen_html(data, config):
 
 
     # ── 热度关键词 ──
-    hot_kws = stats.get("keyword_hot",[])[:20]
+    hot_kws = stats.get("keyword_hot",[])[:10]
     kw_trends = stats.get("keyword_trends",{})
     kw_html = ""
     for kw in hot_kws:
         n = kw["name"]
         trend = kw_trends.get(n, {})
         # Show yearly counts as a simple bar
-        years_sorted = sorted(trend.keys())
+        years_sorted = sorted(y for y in trend.keys() if y.isdigit() and 2021 <= int(y) <= 2026)
         counts = [trend[y] for y in years_sorted]
         max_c = max(counts) if counts else 1
         bars = ""
@@ -1037,7 +1037,7 @@ def gen_html(data, config):
     html += '<div class="cc"><h2>📈 发文趋势</h2><div class="cw"><canvas id="c2"></canvas></div></div>\n'
     html += '<div class="cc"><h2>🏆 期刊等级</h2><div class="cw"><canvas id="c3"></canvas></div></div>\n</div>\n'
     html += '<section class="hot"><h2>🔥 热点论文 · 综合排名</h2><p class="hint">引用+时效加权</p>' + hot_items + '</section>\n'
-    html += '<section class="kw-section"><h2>🔍 研究热度关键词 Top 20</h2><div class="kw-grid">' + kw_html + '</div></section>\n'
+    html += '<section class="kw-section"><h2>🔍 研究热度关键词 Top 10</h2><div class="kw-grid">' + kw_html + '</div></section>\n'
     hl = ""
     if hot_papers:
         tp = hot_papers[0]

@@ -6,7 +6,7 @@
   },
   "sources": {
     "arxiv": {
-      "enabled": false,
+      "enabled": true,
       "categories": [
         "physics.flu-dyn",
         "physics.ao-ph",
@@ -16,7 +16,7 @@
       "max_results": 60
     },
     "semantic_scholar": {
-      "enabled": false,
+      "enabled": true,
       "limit": 40,
       "fields_of_study": [
         "Engineering",
@@ -120,6 +120,59 @@
         "sediment transport",
         "sea dike"
       ]
+    },
+    {
+      "name": "船舶力学",
+      "issn": "1007-7294",
+      "years_back": 3,
+      "max_results": 40,
+      "keywords": [
+        "ship",
+        "marine",
+        "hull",
+        "propeller",
+        "cavitation",
+        "CFD",
+        "offshore",
+        "underwater",
+        "wave",
+        "structure"
+      ]
+    },
+    {
+      "name": "哈尔滨工程大学学报",
+      "issn": "1006-7043",
+      "years_back": 3,
+      "max_results": 40,
+      "keywords": [
+        "ship",
+        "marine",
+        "underwater",
+        "AUV",
+        "navigation",
+        "propeller",
+        "offshore",
+        "hull",
+        "CFD",
+        "ship structure"
+      ]
+    },
+    {
+      "name": "Shipbuilding of China",
+      "issn": "",
+      "source_id": "S4306529845",
+      "years_back": 3,
+      "max_results": 30,
+      "keywords": [
+        "ship",
+        "hull",
+        "marine",
+        "propeller",
+        "offshore",
+        "underwater",
+        "ship design",
+        "ship structure"
+      ]
     }
   ],
   "journal_rankings": {
@@ -156,7 +209,7 @@
       "brodogradnja",
       "transactions of the royal institution of naval architects",
       "international shipbuilding progress",
-      "shipbuilding of china",
+      "shipbuilding of china", "chuanbo lixue", "journal of harbin engineering university",
       "journal of ship mechanics"
     ]
   }

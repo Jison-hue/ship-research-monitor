@@ -472,11 +472,19 @@ def fetch_openalex_journals(config):
         for kw in j_keywords[:3]:  # 每个期刊用前3个关键词
             for attempt in range(3):
                 try:
+                    # 有 ISSN 按 ISSN 过滤，有 source_id 按 ID 过滤
+                    if issn:
+                        journal_filter = f"primary_location.source.issn:{issn}"
+                    elif j.get("source_id"):
+                        journal_filter = f"primary_location.source.id:{j['source_id']}"
+                    else:
+                        # fallback: 用名字搜索（通过 search 参数实现，不额外过滤）
+                        journal_filter = ""
                     params = dict(
                         search=kw,
                         per_page=per_page // max(len(j_keywords[:3]), 1),
                         sort="cited_by_count:desc",
-                        filter=f"primary_location.source.issn:{issn},from_publication_date:{start_date}",
+                        filter=f"{journal_filter},from_publication_date:{start_date}",
                         select="id,doi,title,abstract_inverted_index,authorships,primary_location,cited_by_count,publication_date,type"
                     )
                     url = OA_API + "?" + "&".join(f"{k}={quote(str(v))}" for k,v in params.items()) + "&" + polite

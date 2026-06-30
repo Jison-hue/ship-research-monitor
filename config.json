@@ -7,8 +7,8 @@
   "sources": {
     "arxiv": {
       "enabled": true,
-      "categories": ["physics.flu-dyn", "physics.ao-ph", "physics.ins-det", "math.NA", "cs.CE", "cs.RO", "cs.SY", "eess.SY", "eess.SP"],
-      "max_results": 80
+      "categories": ["physics.flu-dyn", "physics.ao-ph", "cs.CE", "cs.RO"],
+      "max_results": 60
     },
     "semantic_scholar": {
       "enabled": true,
@@ -21,26 +21,26 @@
     }
   },
   "search_queries": [
-    "ship hydrodynamics resistance propulsion",
-    "hull form optimization CFD ship",
-    "propeller cavitation marine propulsion",
-    "ship seakeeping maneuvering performance",
-    "ship structural strength fatigue",
-    "offshore platform floating structure",
-    "marine renewable energy wave offshore wind",
-    "autonomous ship collision avoidance navigation",
+    "ship hydrodynamics hull resistance",
+    "marine propeller cavitation propulsion",
+    "ship structural strength fatigue hull",
+    "offshore platform FPSO floating structure",
+    "marine renewable energy offshore wind wave",
+    "autonomous ship unmanned collision avoidance",
     "shipbuilding digital twin smart manufacturing",
-    "ship vibration noise underwater acoustic",
+    "ship underwater noise vibration acoustic",
+    "marine riser mooring subsea pipeline",
+    "ship energy efficiency emission EEDI",
+    "AUV ROV underwater vehicle marine robot",
+    "floating offshore wind turbine",
+    "ship CFD RANS hydrodynamics",
     "ship design optimization naval architecture",
-    "marine riser mooring system deepwater",
-    "ship energy efficiency emission reduction",
-    "ship CFD numerical simulation fluid dynamics",
     "ship ice navigation polar",
-    "ship structural health monitoring damage",
-    "underwater vehicle AUV ROV marine robot",
-    "marine composite sandwich plate shell",
-    "ship welding joining manufacturing",
-    "ship corrosion protection coating"
+    "ship structural health SHM damage detection",
+    "LNG ammonia hydrogen marine fuel",
+    "ship seakeeping maneuvering motion",
+    "marine composite sandwich structure",
+    "ship resistance drag reduction air lubrication"
   ],
   "journal_rankings": {
     "一区/顶刊": [

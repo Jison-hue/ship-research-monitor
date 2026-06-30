@@ -19,6 +19,41 @@ DATA_PATH = os.path.join(BASE_DIR, "data", "papers.json")
 DOCS_DIR = os.path.join(BASE_DIR, "docs")
 OUTPUT_HTML = os.path.join(DOCS_DIR, "index.html")
 
+# ─── 负向排除关键词 ─ 出现任意一个即拒掉 ──────────────
+NEGATIVE_KW = [
+    "clinical trial","patient","cancer","mRNA","vaccin","tumor","tumour",
+    "bone metabolism","autophagy","depression","psychiatr","psychology",
+    "social media","marketing","covid","mutant","antibody","antigen",
+    "muon","neutrino","collider","quark","LHC","CERN","hadron","lepton",
+    "gene","protein","cell","tissue","enzyme","DNA","RNA","genom","proteom",
+    "retail","consumer","banking","stock","currency","investor",
+    "clinical","diagnosis","therapy","surgery","pharmac","drug delivery",
+    "bone turnover","mineral commodit","muon flux",
+    "municipal","wastewater","sewage","water treatment",
+    "soil","microbiome","bacterium","fungal","pathogen",
+    "electoral","voting","political","legislature",
+    "tourism","hospitality","restaurant","customer satisfaction",
+]
+
+# ─── 强领域正向关键词 — 至少命中2个才放行 ──────────────
+STRONG_DOMAIN_KW = [
+    "ship","marine","vessel","ocean","maritime","naval",
+    "offshore","underwater","submarine","hull","propeller","cavitation",
+    "seakeeping","maneuvering","shipyard","shipbuilding","floating",
+    "mooring","riser","subsea","AUV","ROV","autonomous ship",
+    "shipping","port","harbor","watercraft","ferry","tanker","container ship",
+    "bulk carrier","LNG carrier",
+    "船舶","海洋","水动力","螺旋桨","推进","船体",
+    "浮式","航运","港口","码头","造船","船厂","水下",
+    "波浪","海洋工程","船型","舶","舰船","舰艇",
+    "breakwater","coastal","seaworth",
+    "propulsor","shipboard","seaport","seaway",
+    "ship wave","wave energy","ship motion","ship structure",
+    "ship noise","ship vibration","ship design","ship power",
+    "marine engine","marine current","marine propeller","marine structure",
+    "ship resistance","wave load","ship speed","ship flow",
+]
+
 # ─── 研究方向分类 ──────────────────────────────────────
 TOPICS = {
     "船舶水动力学": [
@@ -165,33 +200,72 @@ def classify_sub(title, abstract, topic):
     return matched
 
 
+def is_domain_relevant(title, abstract):
+    """严格领域准入检查：负向排除 + 正向关键词双保险"""
+    text = (title + " " + abstract).lower()
+
+    # 1) 负向排除（用单词边界匹配，避免 SHiP 误杀 ship）
+    for nkw in NEGATIVE_KW:
+        if re.search(r'\b' + re.escape(nkw.lower()) + r'\b', text):
+            return False
+
+    # 2) 正向领域关键词计数
+    domain_score = sum(1 for d in STRONG_DOMAIN_KW if d.lower() in text)
+
+    # 3) 至少命中2个强领域词才放行
+    if domain_score >= 2:
+        return True
+
+    # 4) domain_score == 1 时，检查是否有明确的方向关键词匹配
+    if domain_score == 1:
+        total_topic_matches = 0
+        for t, kws in TOPICS.items():
+            total_topic_matches += sum(1 for kw in kws if kw.lower() in text)
+        if total_topic_matches >= 3:
+            return True
+        return False
+
+    return False
+
+
 def classify(title, abstract):
     text = (title + " " + abstract).lower()
-    domain_q = ["ship","marine","vessel","ocean","maritime","naval","sea","hull",
-                "offshore","underwater","aquatic","seaworth","ferry","submarine",
-                "port","harbor","船舶","海洋","水动力","watercraft"]
+
+    # 先做负向检查（用单词边界匹配）
+    for nkw in NEGATIVE_KW:
+        if re.search(r'\b' + re.escape(nkw.lower()) + r'\b', text):
+            return ("其他", 0, [])
+
+    # 领域信号词（比原版更聚焦船舶领域）
+    domain_q = ["ship","marine","vessel","ocean","maritime","naval","hull",
+                "offshore","underwater","submarine",
+                "port","harbor","船舶","海洋","水动力","watercraft","ferry",
+                "seaworth","shipboard","propeller","mooring","riser",
+                "shipyard","shipbuilding","AUV","ROV","cavitation",
+                "seakeeping","maneuvering","shipping","breakwater"]
     domain_score = sum(1 for d in domain_q if d in text)
+
     scores = {}
     for t, kws in TOPICS.items():
         matches = sum(1 for kw in kws if kw.lower() in text)
-        if matches >= 2:
+        if matches >= 2:  # 至少2个方向关键词匹配 → 有明确的方向信号
+            scores[t] = matches * 3 + domain_score * 2
+        elif matches == 1 and domain_score >= 4:
+            # 单个关键词匹配 + 极强领域信号
             scores[t] = matches * 2 + domain_score
         elif matches == 1 and domain_score >= 2:
-            scores[t] = matches + domain_score
-        elif matches == 1 and any(kw.lower() in text for kw in kws):
-            # Single keyword match, but only count if domain-specific enough
-            kw_matched = [kw for kw in kws if kw.lower() in text][0]
-            if len(kw_matched) > 6 or any(d in text for d in domain_q[:5]):
-                scores[t] = 1 + (domain_score // 2)
+            # 单个匹配 + 一般领域信号 → 仅限长关键词（>8字符）
+            long_kws = [kw for kw in kws if len(kw) > 8 and kw.lower() in text]
+            if long_kws:
+                scores[t] = 2 + domain_score
+
     if not scores:
-        # Fallback: check if any paper at all relates to domain
-        for t, kws in TOPICS.items():
-            m = sum(1 for kw in kws if kw.lower() in text)
-            if m >= 1:
-                scores[t] = m
+        return ("其他", 0, [])
+
     best = max(scores, key=scores.get) if scores else None
-    sub_kws = classify_sub(title, abstract, best) if best != "其他" else []
+    sub_kws = classify_sub(title, abstract, best) if best else []
     return (best, scores[best], sub_kws) if best else ("其他", 0, [])
+
 
 def get_journal_rank(journal, config):
     if not journal: return ("", "")
@@ -401,6 +475,36 @@ def merge_papers(new_p, existing):
         exist_ids.add(p["id"])
         if p.get("doi"): exist_ids.add(p["doi"])
     dedup = [p for p in new_p if p["id"] not in exist_ids and p.get("doi","") not in exist_ids]
+
+    # ── 领域准入过滤：剔除不相关论文 ──
+    before = len(dedup)
+    dedup_filtered = []
+    for p in dedup:
+        title = p.get("title","")
+        abstract = p.get("abstract","")
+        topic = p.get("topic","")
+        topic_score = p.get("topic_score",0) or 0
+
+        # 1) 被分到具体方向 + 分数≥3 → 直接通过
+        if topic != "其他" and topic_score >= 3:
+            dedup_filtered.append(p)
+            continue
+
+        # 2) 被分到具体方向 + 分数≥2 → 再检查 domain relevance
+        if topic != "其他" and topic_score >= 2:
+            if is_domain_relevant(title, abstract):
+                dedup_filtered.append(p)
+            continue
+
+        # 3) 其他情况（"其他"类或低分）→ domain relevance 严格检查
+        if is_domain_relevant(title, abstract):
+            dedup_filtered.append(p)
+
+    rejected = before - len(dedup_filtered)
+    if rejected > 0:
+        print(f"   🗑️ 剔除不相关论文: {rejected}篇")
+    dedup = dedup_filtered
+
     # 记录本期新增的论文 ID
     new_ids = set()
     for p in dedup:
@@ -450,20 +554,20 @@ def compute_stats(papers):
     country_counter = {}
     kw_counter = Counter()
     kw_year_counter = defaultdict(lambda: Counter())
-    
+
     for p in papers:
         t = p.get("topic","其他"); tc[t] += 1; tp[t].append(p)
         y = p.get("year",""); yc[int(y)] += 1 if y.isdigit() else 0
         sc[p.get("source","")] += 1
         j = p.get("journal_rank",""); jc[j] += 1 if j else 0
-        
+
         # 作者统计
         for au in p.get("authors",[]):
             au_name = au.strip()
             if au_name and len(au_name) > 1:
                 author_counter[au_name] += 1
                 topic_authors[t][au_name] += 1
-        
+
         # 机构统计
         for inst in p.get("institutions",[]):
             inst_name = inst.strip()
@@ -482,9 +586,9 @@ def compute_stats(papers):
             y = p.get("year","")
             if y.isdigit():
                 kw_year_counter[skw][y] += 1
-    
+
     years = sorted(yc); yr = f"{min(years)}-{max(years)}" if years else "—"
-    
+
     # 每个方向的细粒度关键词统计
     keyword_topic = {}
     for t, ps in tp.items():
@@ -493,14 +597,14 @@ def compute_stats(papers):
             for sk in p.get("sub_kws",[]):
                 kw_t[sk] += 1
         keyword_topic[t] = [{"name":k,"count":v} for k,v in kw_t.most_common(15)]
-    
+
     # 每个方向论文的平均引用
     topic_impact = {}
     for t, ps in tp.items():
         c = [p.get("cited_by",0) for p in ps]
         topic_impact[t] = {"count":len(ps), "avg_cited":round(sum(c)/len(c),1) if c else 0,
                            "max_cited":max(c) if c else 0}
-    
+
     # 热点论文 — 严格剔除不相关论文
     now = datetime.now()
     domain_kws = ["ship","marine","vessel","ocean","offshore","underwater","submarine",
@@ -511,15 +615,12 @@ def compute_stats(papers):
         "propulsor","spar","subsea","shipboard","shipbreaking","seaport",
         "航运","货轮","集装箱船","散货船","LNG船"]
     def is_relevant(p):
-        """严格判断: 剔除明显不相关的(其他方向+低dm),但保留被分类认可的"""
         txt = (p.get("title","") + " " + p.get("abstract","")).lower()
         dm = sum(1 for kw in domain_kws if kw in txt)
         topic = p.get("topic","")
         ts = p.get("topic_score",0) or 0
-        # 被分类到具体方向 且 分类分数>=2(至少1个关键词匹配): 通过
         if topic != "其他" and ts >= 2:
             return True
-        # 没分到方向但有强领域关键词: 通过
         if dm >= 3:
             return True
         return False
@@ -530,11 +631,11 @@ def compute_stats(papers):
         return cited * 0.6 + max(0, 365 - d) * 0.4
     related = [p for p in papers if is_relevant(p)]
     hot = sorted(related, key=lambda p: hot_score(p), reverse=True)[:20]
-    
+
     # 作者/机构整理
     def top_n(counter, n=10):
         return [{"name":k, "count":v} for k,v in counter.most_common(n)]
-    
+
     return dict(
         topic_counts=dict(tc.most_common()),
         year_counts={str(k):yc[k] for k in years},
@@ -579,12 +680,12 @@ def bibtex_entry(p, key_prefix="ship"):
     year = p.get("year","") or "2024"
     doi = p.get("doi","")
     url = p.get("url","")
-    
+
     # 生成唯一key
     first_au = au[0].split(",")[0].split()[-1] if au else "Unknown"
     first_au = first_au.replace(" ","").replace(".","")
     key = f"{key_prefix}_{first_au}{year}"
-    
+
     b = f"@article{{{key},\n"
     b += f"  author = {{{authors}}},\n"
     b += f"  title = {{{title}}},\n"
@@ -600,46 +701,45 @@ def generate_weekly_report(data, config):
     """生成周报摘要页面"""
     papers = data.get("papers",[])
     history = data.get("history",[])
-    
+
     # 按中国周（周一开始）聚合
     from datetime import date, timedelta
     today = date.today()
     # 本周一
     this_monday = today - timedelta(days=today.weekday())
     last_monday = this_monday - timedelta(days=7)
-    two_mondays = this_monday - timedelta(days=14)
-    
+
     # 按周分组统计
     def week_group(week_start):
         ws = week_start.strftime("%Y-%m-%d")
         we = (week_start + timedelta(days=6)).strftime("%Y-%m-%d")
         weekly_papers = [p for p in papers if ws <= p.get("published","")[:10] <= we]
         return ws, we, weekly_papers
-    
+
     this_ws, this_we, this_week = week_group(this_monday)
     last_ws, last_we, last_week = week_group(last_monday)
-    
+
     # 本周统计
     topics_this = Counter(p.get("topic","其他") for p in this_week)
     hot_this = sorted(this_week, key=lambda p: p.get("cited_by",0), reverse=True)[:5]
-    
+
     # 比上周变化
     topics_last = Counter(p.get("topic","其他") for p in last_week)
     changes = {}
     for t in set(list(topics_this.keys()) + list(topics_last.keys())):
         c = topics_this.get(t,0) - topics_last.get(t,0)
         if c != 0: changes[t] = c
-    
+
     # 本周机构/作者
     insts = Counter()
     for p in this_week:
         for i in p.get("institutions",[]):
             if i: insts[i.split(",")[0].strip()[:50]] += 1
-    
+
     # 中文周数
     week_num = today.isocalendar()[1]
     year = today.year
-    
+
     return dict(
         week_num=week_num, year=year,
         date_range=f"{this_ws} ~ {this_we}",
@@ -661,13 +761,13 @@ def gen_html(data, config):
 
     tl = list(stats["topic_counts"].keys())
     tcols = {t:COLORS[i%len(COLORS)] for i,t in enumerate(tl)}
-    
+
     jrc = stats["journal_rank_counts"]
     top_j = sum(v for k,v in jrc.items() if k in ("一区/顶刊","二区/重要"))
-    
+
     topic_impact = stats["topic_impact"]
     hot_papers = stats["hot_papers"]
-    
+
 
     # ── 热度关键词 ──
     hot_kws = stats.get("keyword_hot",[])[:20]
@@ -692,14 +792,14 @@ def gen_html(data, config):
     intl_ratio = stats.get("country_ratio",{}).get("🌍 国外",50)
     cn_insts = stats.get("country_stats",{}).get("🇨🇳 国内",{}).get("institutions",0)
     intl_insts = stats.get("country_stats",{}).get("🌍 国外",{}).get("institutions",0)
-    
+
     # 按论文-机构出现次数排名
     cn_order = cn_count >= intl_count
     bar_top = '<div class="cbar cn" style="width:' + str(cn_ratio) + '%"></div>'
     bar_bot = '<div class="cbar intl" style="width:' + str(intl_ratio) + '%"></div>'
     if not cn_order:
         bar_top, bar_bot = bar_bot, bar_top
-        
+
     country_html = (
         '<div class="country-grid">'
         '<div class="cg-item ' + ('cn' if cn_order else 'intl') + '">'
@@ -723,12 +823,12 @@ def gen_html(data, config):
     for inst in stats["top_institutions"][:15]:
         n = inst["name"].replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
         inst_html += '<div class="ai-item"><span class="ai-name">' + n + '</span><span class="ai-count">' + str(inst["count"]) + '</span></div>\n'
-    
+
     auth_html = ""
     for au in stats["top_authors"][:12]:
         n = au["name"].replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
         auth_html += '<div class="ai-item"><span class="ai-name">' + n + '</span><span class="ai-count">' + str(au["count"]) + '</span></div>\n'
-    
+
     cards = ('<div class="stats-row">'
         '<div class="sc"><span class="n">' + str(total) + '</span><span class="l">论文总数</span></div>'
         '<div class="sc"><span class="n">' + str(stats["total_topics"]) + '</span><span class="l">研究方向</span></div>'
@@ -737,9 +837,8 @@ def gen_html(data, config):
         '<div class="sc"><span class="n">' + str(top_j) + '</span><span class="l">顶刊/重要</span></div>'
         '<div class="sc"><span class="n">' + str(len(stats["source_counts"])) + '</span><span class="l">数据源</span></div>'
         '</div>')
-    
+
     # ── Chart.js 数据 ──
-    # Force years 2021-2026 for consistent axis
     yl = [str(y) for y in range(2021, 2027)]
     yd = [stats["year_counts"].get(y, 0) for y in yl]
     cum = []
@@ -747,14 +846,14 @@ def gen_html(data, config):
     for v in yd:
         running += v
         cum.append(running)
-    
+
     tl_j = json.dumps(tl, ensure_ascii=False)
     td_j = json.dumps([stats["topic_counts"][t] for t in tl], ensure_ascii=False)
     tc_j = json.dumps([tcols[t] for t in tl], ensure_ascii=False)
     yl_j = json.dumps(yl); yd_j = json.dumps(yd); cum_j = json.dumps(cum)
     jrc_k = json.dumps(list(stats["journal_rank_counts"].keys()), ensure_ascii=False)
     jrc_v = json.dumps(list(stats["journal_rank_counts"].values()), ensure_ascii=False)
-    
+
     # ── 热点论文 ──
     hot_items = ""
     for i,p in enumerate(hot_papers[:10]):
@@ -771,7 +870,7 @@ def gen_html(data, config):
             '<div class="hp-t"><a href="' + pid + '" target="_blank">' + p["title"][:90] + '</a></div>'
             '<div class="hp-m"><span>' + p.get("published","")[:10] + '</span><span class="ci">📊' + str(c) + '</span>' + jrnk_h + doi_h + '</div>'
             '</div></div>')
-    
+
     # ── 各方向 ──
     topics = ""
     for i,t in enumerate(tl):
@@ -805,13 +904,13 @@ def gen_html(data, config):
             '<span class="ti">📊均引' + str(imp["avg_cited"]) + '</span>'
             '<span class="tic">▸</span>'
             '</div><div class="tb" style="display:none">' + items + more_h + '</div></div>')
-    
+
     html = '<!DOCTYPE html>\n<html lang="zh-CN">\n<head>\n<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n'
     html += '<title>船舶研究动态 · 统计看板</title>\n<link rel="stylesheet" href="style.css">\n'
     html += '<script src="' + CHART_CDN + '"></script>\n</head>\n<body>\n'
     html += '<header>\n<h1>🚢 船舶与海洋工程研究动态监测</h1>\n'
     html += '<p class="sub">多源数据分析 · 每3天自动更新 · 2021-2026</p>\n'
-    html += '<p class="meta">🕐 ' + updated + ' | arXiv + OpenAlex + Semantic Scholar</p>\n<p style="text-align:center;font-size:.78rem;margin-top:6px"><a href="weekly.html">📋 \u67e5\u770b\u5b8c\u6574\u5468\u62a5 \u2192</a></p>\n</header>\n<main>\n'
+    html += '<p class="meta">🕐 ' + updated + ' | arXiv + OpenAlex + Semantic Scholar</p>\n<p style="text-align:center;font-size:.78rem;margin-top:6px"><a href="weekly.html">📋 查看完整周报 →</a></p>\n</header>\n<main>\n'
     html += cards + '\n'
     # ── 本期新增 ──
     cutoff = (datetime.now() - timedelta(days=14)).strftime("%Y-%m-%d")
@@ -855,7 +954,6 @@ def gen_html(data, config):
     html += '<section class="ai-s"><h2>🏫 高产机构 Top 15</h2><div class="ai-l">' + inst_html + '</div></section>\n'
     html += '<section class="ai-s"><h2>👨‍🔬 活跃作者 Top 12</h2><div class="ai-l">' + auth_html + '</div></section>\n'
     html += '<section class="detail"><h2>📋 研究方向详情</h2>\n'
-    # Direction filter tabs
     filter_tabs = '<div class="df">'
     filter_tabs += '<button class="df-btn active" data-dir="all" onclick="filterDir(\'all\')">📌 全部</button>'
     filter_tabs += '<button class="df-btn" data-dir="⭐bookmark" onclick="filterDir(\'⭐bookmark\')">⭐ 收藏</button>'
@@ -885,6 +983,7 @@ def gen_html(data, config):
     html += 'function tt(el){var b=el.nextElementSibling,i=el.querySelector(".tic");b.style.display=b.style.display=="block"?"none":"block";i.textContent=b.style.display=="block"?"▾":"▸";}\n'
     html += 'function ft(){var q=document.getElementById("ts").value.toLowerCase();document.querySelectorAll(".ts").forEach(function(s){s.style.display=s.querySelector(".tn").textContent.toLowerCase().includes(q)?"":"none";});}\n'
     html += '/* ─── 搜索筛选函数 ─── */\n'
+
     html += 'function uf(){var yr=document.getElementById("yrf").value;var jr=document.getElementById("jrf").value;var q=document.getElementById("ps").value.toLowerCase().trim();var active=yr!=="all"||jr!=="all"||q;var fs=document.getElementById("fs");var fr=document.getElementById("fr");var matched=[];document.querySelectorAll(".pi").forEach(function(pi){var py=pi.getAttribute("data-year")||"";var pj=pi.getAttribute("data-jrank")||"";var t=(pi.querySelector(".pi-t a")||{}).textContent||"";t=t.toLowerCase();var m=(pi.querySelector(".pi-m")||{}).textContent||"";m=m.toLowerCase();var y_ok=yr==="all"||py===yr;var j_ok=jr==="all"||pj===jr;var s_ok=!q||t.includes(q)||m.includes(q);var show=y_ok&&j_ok&&s_ok;pi.style.display=show?"":"none";if(show&&active)matched.push(pi)});var v=document.querySelectorAll(".pi:not([style*=none])").length;document.getElementById("rc").textContent=v>0?"找到 "+v+" 篇":"";if(active){var chips=[];if(yr!=="all")chips.push("📅 "+yr);if(jr!=="all")chips.push("🏆 "+jr);if(q)chips.push("🔍 \\""+q+"\\"");fs.style.display="";fs.innerHTML="<div class=\\"fs-badge\\">"+chips.join("")+"</div><span class=\\"fs-count\\">→ 共 "+v+" 篇</span>";if(v>0){var html="<div class=\\"fr-title\\">📋 匹配论文</div>";var seen=new Set();matched.slice(0,50).forEach(function(pi){var a=pi.querySelector(".pi-t a");var title=a?a.textContent:"";var href=a?a.getAttribute("href"):"#";var meta=pi.querySelector(".pi-m");var metaText=meta?meta.textContent.trim():"";var pid=pi.getAttribute("data-pid");if(seen.has(pid))return;seen.add(pid);html+="<div class=\\"fr-item\\" data-pid=\\""+pid+"\\"><button class=\\"bm-btn\\" onclick=\\"toggleBm(this)\\" title=\\"收藏\\">☆</button><a href=\\""+href+"\\" target=\\"_blank\\">"+title+"</a><div class=\\"fr-meta\\">"+metaText+"</div></div>"});if(matched.length>50)html+="<div class=\\"fr-more\\">...仅显示前50篇</div>";fr.innerHTML=html;syncBm()}else fr.innerHTML="<div class=\\"fr-empty\\">😐 没有匹配的论文</div>"}else{fs.style.display="none";fr.innerHTML=""}}\n'
     html += 'function af(){uf()}\n'
     html += 'function ps(){uf()}\n'
@@ -904,7 +1003,7 @@ def gen_html(data, config):
 def main():
     print("="*50); print(f"🚢 船舶研究动态监测 v2"); print(f"⏰ {datetime.now().strftime('%Y-%m-%d %H:%M')}"); print("="*50)
     config = load_config(); existing = load_existing(DATA_PATH); all_new = []
-    print("\n📄 arXiv..."); 
+    print("\n📄 arXiv...");
     try: p=fetch_arxiv(config); print(f"   ✅ {len(p)}"); all_new.extend(p)
     except Exception as e: print(f"   ❌ {e}")
     print("📘 Semantic Scholar...")

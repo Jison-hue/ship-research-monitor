@@ -6,14 +6,24 @@
   },
   "sources": {
     "arxiv": {
-      "enabled": true,
-      "categories": ["physics.flu-dyn", "physics.ao-ph", "cs.CE", "cs.RO"],
+      "enabled": false,
+      "categories": [
+        "physics.flu-dyn",
+        "physics.ao-ph",
+        "cs.CE",
+        "cs.RO"
+      ],
       "max_results": 60
     },
     "semantic_scholar": {
-      "enabled": true,
+      "enabled": false,
       "limit": 40,
-      "fields_of_study": ["Engineering", "Physics", "Mathematics", "Computer Science"]
+      "fields_of_study": [
+        "Engineering",
+        "Physics",
+        "Mathematics",
+        "Computer Science"
+      ]
     },
     "openalex": {
       "enabled": true,
@@ -42,24 +52,111 @@
     "marine composite sandwich structure",
     "ship resistance drag reduction air lubrication"
   ],
+  "journal_tracking": [
+    {
+      "name": "Ocean Engineering",
+      "issn": "0029-8018",
+      "years_back": 3,
+      "max_results": 60,
+      "keywords": [
+        "ship hydrodynamics",
+        "offshore platform",
+        "marine structure",
+        "ship CFD",
+        "underwater vehicle",
+        "wave energy",
+        "ship propulsion",
+        "autonomous vessel",
+        "marine renewable",
+        "hull design",
+        "propeller cavitation",
+        "ship structural"
+      ]
+    },
+    {
+      "name": "Marine Structures",
+      "issn": "0951-8339",
+      "years_back": 3,
+      "max_results": 40,
+      "keywords": [
+        "ship structure",
+        "offshore platform",
+        "marine structure",
+        "hull strength",
+        "fatigue",
+        "ultimate strength",
+        "subsea pipeline",
+        "floating structure"
+      ]
+    },
+    {
+      "name": "Journal of Ship Research",
+      "issn": "0022-4502",
+      "years_back": 3,
+      "max_results": 30,
+      "keywords": [
+        "ship hydrodynamics",
+        "hull form",
+        "propeller",
+        "ship resistance",
+        "seakeeping",
+        "maneuvering",
+        "ship design",
+        "naval architecture"
+      ]
+    },
+    {
+      "name": "Coastal Engineering",
+      "issn": "0378-3839",
+      "years_back": 3,
+      "max_results": 30,
+      "keywords": [
+        "coastal structure",
+        "breakwater",
+        "Wave-structure",
+        "coastal protection",
+        "port",
+        "harbor",
+        "sediment transport",
+        "sea dike"
+      ]
+    }
+  ],
   "journal_rankings": {
     "一区/顶刊": [
-      "ocean engineering", "marine structures", "journal of ship research",
-      "ieee journal of oceanic engineering", "journal of fluid mechanics",
-      "physics of fluids", "renewable energy", "energy",
-      "mechanical systems and signal processing", "journal of offshore mechanics and arctic engineering",
-      "coastal engineering", "engineering structures", "computers and structures",
-      "journal of computational physics", "international journal of naval architecture and ocean engineering",
-      "ships and offshore structures", "applied ocean research"
+      "ocean engineering",
+      "marine structures",
+      "journal of ship research",
+      "ieee journal of oceanic engineering",
+      "journal of fluid mechanics",
+      "physics of fluids",
+      "renewable energy",
+      "energy",
+      "mechanical systems and signal processing",
+      "journal of offshore mechanics and arctic engineering",
+      "coastal engineering",
+      "engineering structures",
+      "computers and structures",
+      "journal of computational physics",
+      "international journal of naval architecture and ocean engineering",
+      "ships and offshore structures",
+      "applied ocean research"
     ],
     "二区/重要": [
-      "china ocean engineering", "ocean modelling", "marine pollution bulletin",
-      "journal of marine science and technology", "ocean & coastal management",
-      "marine technology society journal", "ship technology research",
-      "journal of ship production and design", "marine structures",
-      "journal of marine engineering and technology", "brodogradnja",
+      "china ocean engineering",
+      "ocean modelling",
+      "marine pollution bulletin",
+      "journal of marine science and technology",
+      "ocean & coastal management",
+      "marine technology society journal",
+      "ship technology research",
+      "journal of ship production and design",
+      "marine structures",
+      "journal of marine engineering and technology",
+      "brodogradnja",
       "transactions of the royal institution of naval architects",
-      "international shipbuilding progress", "shipbuilding of china",
+      "international shipbuilding progress",
+      "shipbuilding of china",
       "journal of ship mechanics"
     ]
   }

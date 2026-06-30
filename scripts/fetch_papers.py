@@ -424,6 +424,105 @@ def fetch_openalex(config):
                 print(f"  [WARN] OpenAlex '{q[:20]}': {ex}")
                 break
     return list(all_p.values())
+
+
+def fetch_openalex_journals(config):
+    """按期刊 ISSN 定向采集核心期刊论文"""
+    journals = config.get("journal_tracking", [])
+    if not journals:
+        return []
+    
+    all_p = {}; dois_seen = set()
+    polite = "mailto=jison@users.noreply.github.com"
+    ua = "ShipMonitor/2.0 (mailto:jison@users.noreply.github.com)"
+    domain_kws = config.get("search_queries", [])[:3]
+    
+    for j in journals:
+        jname = j.get("name", "")
+        issn = j.get("issn", "")
+        j_keywords = j.get("keywords", domain_kws)
+        years_back = j.get("years_back", 3)
+        start_date = (datetime.now() - timedelta(days=365*years_back)).strftime("%Y-%m-%d")
+        per_page = min(j.get("max_results", 50), 100)
+        
+        print(f"   📰 {jname}...")
+        
+        for kw in j_keywords[:3]:  # 每个期刊用前3个关键词
+            for attempt in range(3):
+                try:
+                    params = dict(
+                        search=kw,
+                        per_page=per_page // max(len(j_keywords[:3]), 1),
+                        sort="cited_by_count:desc",
+                        filter=f"primary_location.source.issn:{issn},from_publication_date:{start_date}",
+                        select="id,doi,title,abstract_inverted_index,authorships,primary_location,cited_by_count,publication_date,type"
+                    )
+                    url = OA_API + "?" + "&".join(f"{k}={quote(str(v))}" for k,v in params.items()) + "&" + polite
+                    data = json.load(urlopen(Request(url, headers={"User-Agent": ua}), timeout=30))
+                    
+                    for w in data.get("results", []):
+                        wid = w.get("id","")
+                        doi = (w.get("doi") or "").replace("https://doi.org/","")
+                        if doi in dois_seen or wid in all_p: continue
+                        dois_seen.add(doi); dois_seen.add(wid)
+                        ttl = w.get("title","")
+                        if not ttl or len(ttl) < 5: continue
+                        pub = (w.get("publication_date") or "2024")[:10]
+                        year = pub[:4]; cited = w.get("cited_by_count", 0)
+                        loc = w.get("primary_location") or {}
+                        src = loc.get("source") or {}
+                        jour = src.get("display_name","") or jname
+                        ws_type = w.get("type","") or ""
+                        
+                        ranks = config.get("journal_rankings", {})
+                        jrank = "一区/顶刊" if any(n in jour.lower() for n in ranks.get("一区/顶刊",[])) else \
+                                "二区/重要" if any(n in jour.lower() for n in ranks.get("二区/重要",[])) else \
+                                "核心期刊" if jour else "其他"
+                        
+                        au_info = []; insts_set = set()
+                        for a in w.get("authorships", []):
+                            name = (a.get("author") or {}).get("display_name","")
+                            insts = [i.get("display_name","") for i in (a.get("institutions") or [])]
+                            for i_ in insts[:2]:
+                                if i_: insts_set.add(i_)
+                            au_info.append({"name":name, "institutions":insts[:2]})
+                        
+                        inv_idx = w.get("abstract_inverted_index") or {}
+                        if inv_idx:
+                            word_positions = []
+                            for word, positions in inv_idx.items():
+                                for pos in positions:
+                                    word_positions.append((pos, word))
+                            word_positions.sort(key=lambda x: x[0])
+                            abstract_text = " ".join(w for _, w in word_positions)[:800]
+                        else:
+                            abstract_text = ""
+                        
+                        tp, ts, sk = classify(ttl, abstract_text)
+                        all_p[wid] = dict(
+                            id=wid, title=ttl, abstract=abstract_text,
+                            authors=[a["name"] for a in au_info[:5]],
+                            published=pub, year=year, source=f"📰 {jname}",
+                            url=f"https://doi.org/{doi}" if doi else wid, pdf_url="",
+                            doi=doi, topic=tp, topic_score=ts, sub_kws=sk,
+                            journal=jour[:40] if jour else jname, journal_rank=jrank,
+                            cited_by=cited, institutions=list(insts_set)[:3],
+                            concepts=[], fetched=datetime.now().strftime("%Y-%m-%d %H:%M")
+                        )
+                    time.sleep(4)  # 保持礼貌
+                    break
+                except Exception as ex:
+                    if "429" in str(ex):
+                        wait = 10 * (attempt + 1)
+                        print(f"     [WARN] 429, retry in {wait}s ({attempt+1}/3)")
+                        time.sleep(wait)
+                        continue
+                    print(f"     [WARN] {jname}: {ex}")
+                    break
+        print(f"     ✅ {len([v for v in all_p.values() if v.get('source','').endswith(jname)])}篇")
+    return list(all_p.values())
+
+
 def fetch_semantic(config):
     cfg = config["sources"]["semantic_scholar"]
     if not cfg.get("enabled"): return []
@@ -1011,6 +1110,9 @@ def main():
     except Exception as e: print(f"   ❌ {e}")
     print("🌐 OpenAlex...")
     try: p=fetch_openalex(config); print(f"   ✅ {len(p)}"); all_new.extend(p)
+    except Exception as e: print(f"   ❌ {e}")
+    print("📰 定向期刊...")
+    try: p=fetch_openalex_journals(config); print(f"   ✅ {len(p)}"); all_new.extend(p)
     except Exception as e: print(f"   ❌ {e}")
     print(f"\n🔄 合并..."); merged = merge_papers(all_new, existing)
     print(f"   总: {merged['total']} | 新增: {merged['today_new']}")

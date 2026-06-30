@@ -52,6 +52,20 @@
     "marine composite sandwich structure",
     "ship resistance drag reduction air lubrication"
   ],
+  "institution_tracking": [
+    {"name": "上海交通大学", "id": "I183067930", "max_results": 30,
+     "keywords": ["ship","marine","ocean","offshore","underwater","hull","CFD","propeller","autonomous","wave energy","naval","submarine"]},
+    {"name": "哈尔滨工程大学", "id": "I151727225", "max_results": 30,
+     "keywords": ["ship","underwater","AUV","marine","sonar","navigation","hull","propeller","CFD","offshore","autonomous","submarine"]},
+    {"name": "大连理工大学", "id": "I27357992", "max_results": 25,
+     "keywords": ["ship","marine","offshore","CFD","hull","wave","coastal","propeller","underwater","ocean engineering"]},
+    {"name": "武汉理工大学", "id": "I196699116", "max_results": 25,
+     "keywords": ["ship","marine","shipping","port","logistics","propeller","hull","CFD","navigation","autonomous","composite"]},
+    {"name": "江苏科技大学", "id": "I4210096899", "max_results": 20,
+     "keywords": ["ship","marine","hull","welding","propeller","CFD","shipbuilding","structural","underwater"]},
+    {"name": "天津大学", "id": "I162868743", "max_results": 20,
+     "keywords": ["ship","marine","offshore","coastal","harbor","wave","underwater","AUV","ocean engineering","navigation"]}
+  ],
   "journal_tracking": [
     {
       "name": "Ocean Engineering",

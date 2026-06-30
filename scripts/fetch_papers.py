@@ -553,6 +553,104 @@ def fetch_openalex_journals(config):
     return list(all_p.values())
 
 
+def fetch_openalex_institutions(config):
+    """按中国船舶院校定向采集论文（解决国内论文覆盖问题）"""
+    insts = config.get("institution_tracking", [])
+    if not insts:
+        return []
+    
+    all_p = {}; dois_seen = set()
+    polite = "mailto:jison@users.noreply.github.com"
+    ua = "ShipMonitor/2.0 (mailto:jison@users.noreply.github.com)"
+    domain_kws = config.get("search_queries", [])[:4]
+    
+    for inst in insts:
+        iname = inst.get("name", "")
+        iid = inst.get("id", "")
+        if not iid: continue
+        kw_list = inst.get("keywords", domain_kws)
+        max_r = min(inst.get("max_results", 30), 60)
+        start_date = (datetime.now() - timedelta(days=365*3)).strftime("%Y-%m-%d")
+        per_q = max(10, max_r // len(kw_list))
+        
+        print(f"   🏫 {iname}...")
+        
+        for kw in kw_list:
+            for attempt in range(3):
+                try:
+                    params = dict(
+                        search=kw,
+                        per_page=per_q,
+                        sort="cited_by_count:desc",
+                        filter=f"authorships.institutions.id:{iid},from_publication_date:{start_date}",
+                        select="id,doi,title,abstract_inverted_index,authorships,primary_location,cited_by_count,publication_date,type"
+                    )
+                    url = OA_API + "?" + "&".join(f"{k}={quote(str(v))}" for k,v in params.items()) + "&" + polite
+                    data = json.load(urlopen(Request(url, headers={"User-Agent": ua}), timeout=30))
+                    
+                    for w in data.get("results", []):
+                        wid = w.get("id","")
+                        doi = (w.get("doi") or "").replace("https://doi.org/","")
+                        if doi in dois_seen or wid in all_p: continue
+                        dois_seen.add(doi); dois_seen.add(wid)
+                        ttl = w.get("title","")
+                        if not ttl or len(ttl) < 5: continue
+                        pub = (w.get("publication_date") or "2024")[:10]
+                        year = pub[:4]; cited = w.get("cited_by_count", 0)
+                        loc = w.get("primary_location") or {}
+                        src = loc.get("source") or {}
+                        jour = src.get("display_name","") or ""
+                        ws_type = w.get("type","") or ""
+                        
+                        ranks = config.get("journal_rankings", {})
+                        jrank = "一区/顶刊" if any(n in jour.lower() for n in ranks.get("一区/顶刊",[])) else \
+                                "二区/重要" if any(n in jour.lower() for n in ranks.get("二区/重要",[])) else \
+                                "核心期刊" if jour else ("其他" if ws_type in ("article","review") else "预印本")
+                        
+                        au_info = []; insts_set = set()
+                        for a in w.get("authorships", []):
+                            name = (a.get("author") or {}).get("display_name","")
+                            inst_list = [i.get("display_name","") for i in (a.get("institutions") or [])]
+                            for i_ in inst_list[:2]:
+                                if i_: insts_set.add(i_)
+                            au_info.append({"name":name, "institutions":inst_list[:2]})
+                        
+                        inv_idx = w.get("abstract_inverted_index") or {}
+                        if inv_idx:
+                            word_positions = []
+                            for word, positions in inv_idx.items():
+                                for pos in positions:
+                                    word_positions.append((pos, word))
+                            word_positions.sort(key=lambda x: x[0])
+                            abstract_text = " ".join(w for _, w in word_positions)[:800]
+                        else:
+                            abstract_text = ""
+                        
+                        tp, ts, sk = classify(ttl, abstract_text)
+                        all_p[wid] = dict(
+                            id=wid, title=ttl, abstract=abstract_text,
+                            authors=[a["name"] for a in au_info[:5]],
+                            published=pub, year=year, source=f"🏫 {iname}",
+                            url=f"https://doi.org/{doi}" if doi else wid, pdf_url="",
+                            doi=doi, topic=tp, topic_score=ts, sub_kws=sk,
+                            journal=jour[:40] if jour else ws_type, journal_rank=jrank,
+                            cited_by=cited, institutions=list(insts_set)[:3],
+                            concepts=[], fetched=datetime.now().strftime("%Y-%m-%d %H:%M")
+                        )
+                    time.sleep(3.5)
+                    break
+                except Exception as ex:
+                    if "429" in str(ex):
+                        wait = 8 * (attempt + 1)
+                        time.sleep(wait)
+                        continue
+                    print(f"     [WARN] {iname}/{kw[:20]}: {ex}")
+                    break
+        count = len([v for v in all_p.values() if iid in v.get("id","")])
+        print(f"     ✅ {count}篇")
+    return list(all_p.values())
+
+
 def fetch_semantic(config):
     cfg = config["sources"]["semantic_scholar"]
     if not cfg.get("enabled"): return []
@@ -1143,6 +1241,9 @@ def main():
     except Exception as e: print(f"   ❌ {e}")
     print("📰 定向期刊...")
     try: p=fetch_openalex_journals(config); print(f"   ✅ {len(p)}"); all_new.extend(p)
+    except Exception as e: print(f"   ❌ {e}")
+    print("🏫 国内院校...")
+    try: p=fetch_openalex_institutions(config); print(f"   ✅ {len(p)}"); all_new.extend(p)
     except Exception as e: print(f"   ❌ {e}")
     print(f"\n🔄 合并..."); merged = merge_papers(all_new, existing)
     print(f"   总: {merged['total']} | 新增: {merged['today_new']}")

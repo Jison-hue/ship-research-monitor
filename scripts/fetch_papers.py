@@ -53,7 +53,7 @@ STRONG_DOMAIN_KW = [
     "船舶","海洋","水动力","螺旋桨","推进","船体",
     "浮式","航运","港口","码头","造船","船厂","水下",
     "波浪","海洋工程","船型","舶","舰船","舰艇",
-    "breakwater","coastal","seaworth",
+    "breakwater","coastal",
     "propulsor","shipboard","seaport","seaway",
     "ship wave","wave energy","ship motion","ship structure",
     "ship noise","ship vibration","ship design","ship power",
@@ -258,6 +258,33 @@ def is_domain_relevant(title, abstract):
     return False
 
 
+# ─── 论文类型分类（综述/实验/数值/理论） ─────────────
+def classify_type(title, abstract):
+    """根据标题+摘要关键词判断是综述/实验/数值/理论"""
+    text = (title + " " + (abstract or "")).lower()
+    # 综述类
+    if any(kw in text for kw in ["review", "survey", "state of the art", "overview",
+            "literature review", "systematic review", "comprehensive review",
+            "bibliometric", "meta-analysis"]):
+        return "综述"
+    # 实验类
+    if any(kw in text for kw in ["experimental", "experiment", "model test", "tank test",
+            "sea trial", "field test", "measurement", "test rig", "prototype",
+            "model basin", "laboratory test", "physical model"]):
+        return "实验"
+    # 数值类
+    if any(kw in text for kw in ["CFD", "numerical simulation", "finite element",
+            "RANS", "computational", "panel method", "boundary element",
+            "simulation", "SPH", "lattice Boltzmann", "DNS", "LES", "DES",
+            "numerical model", "FEM", "BEM"]):
+        return "数值"
+    # 理论/分析类
+    if any(kw in text for kw in ["theoretical", "analytical", "theory",
+            "formulation", "mathematical model", "theorem", "proof"]):
+        return "理论"
+    return "综合"
+
+
 def classify(title, abstract):
     text = (title + " " + abstract).lower()
 
@@ -266,7 +293,7 @@ def classify(title, abstract):
         if re.search(r'\b' + re.escape(nkw.lower()) + r'\b', text):
             return ("其他", 0, [])
 
-    # 领域信号词（比原版更聚焦船舶领域）
+    # 领域信号词
     domain_q = ["ship","marine","vessel","ocean","maritime","naval","hull",
                 "offshore","underwater","submarine",
                 "harbor","船舶","海洋","水动力","watercraft","ferry",
@@ -278,13 +305,11 @@ def classify(title, abstract):
     scores = {}
     for t, kws in TOPICS.items():
         matches = sum(1 for kw in kws if kw.lower() in text)
-        if matches >= 2:  # 至少2个方向关键词匹配 → 有明确的方向信号
+        if matches >= 2:
             scores[t] = matches * 3 + domain_score * 2
         elif matches == 1 and domain_score >= 4:
-            # 单个关键词匹配 + 极强领域信号
             scores[t] = matches * 2 + domain_score
         elif matches == 1 and domain_score >= 1:
-            # 单个匹配 + 领域信号 → 仅限长关键词（>8字符）
             long_kws = [kw for kw in kws if len(kw) > 8 and kw.lower() in text]
             if long_kws:
                 scores[t] = 2 + domain_score * 2
@@ -292,9 +317,9 @@ def classify(title, abstract):
     if not scores:
         return ("其他", 0, [])
 
-    best = max(scores, key=scores.get) if scores else None
-    sub_kws = classify_sub(title, abstract, best) if best else []
-    return (best, scores[best], sub_kws) if best else ("其他", 0, [])
+    best = max(scores, key=scores.get)
+    sub_kws = classify_sub(title, abstract, best)
+    return (best, scores[best], sub_kws)
 
 
 def get_journal_rank(journal, config):
@@ -715,7 +740,12 @@ def merge_papers(new_p, existing):
         if p.get("doi"): exist_ids.add(p["doi"])
     dedup = [p for p in new_p if p["id"] not in exist_ids and p.get("doi","") not in exist_ids]
 
-    # ── 领域准入过滤：剔除不相关论文 ──
+    # ── 论文类型标注 ──
+    for p in dedup:
+        if not p.get("paper_type"):
+            p["paper_type"] = classify_type(p.get("title",""), p.get("abstract",""))
+
+    # ── 领域准入过滤（收紧版）：剔除不相关论文 ──
     before = len(dedup)
     dedup_filtered = []
     for p in dedup:
@@ -724,18 +754,14 @@ def merge_papers(new_p, existing):
         topic = p.get("topic","")
         topic_score = p.get("topic_score",0) or 0
 
-        # 1) 被分到具体方向 + 分数≥3 → 直接通过
-        if topic != "其他" and topic_score >= 3:
-            dedup_filtered.append(p)
-            continue
-
-        # 2) 被分到具体方向 + 分数≥2 → 再检查 domain relevance
-        if topic != "其他" and topic_score >= 2:
+        # 所有论文都必须通过 domain_relevance 检查
+        # 高置信度（分数≥6）论文可获得放宽但仍需检查
+        if topic != "其他" and topic_score >= 6:
             if is_domain_relevant(title, abstract):
                 dedup_filtered.append(p)
             continue
 
-        # 3) 其他情况（"其他"类或低分）→ domain relevance 严格检查
+        # 中低分论文 → domain relevance 严格检查
         if is_domain_relevant(title, abstract):
             dedup_filtered.append(p)
 
@@ -1242,11 +1268,13 @@ def gen_html(data, config):
             ci_h = '<span class="ci">📊'+str(ci)+'</span>' if ci else ""
             sk_pi = p.get("sub_kws",[])
             sk_h = '<span class="sk">#' + '#'.join(sk_pi[:3]) + '</span>' if sk_pi else ""
+            pt = p.get("paper_type","")
+            pt_h = '<span class="pt ' + pt + '">' + pt + '</span>' if pt else ""
             items += ('<div class="pi" data-pid="' + pid + '" data-year="' + yr + '" data-jrank="' + jr + '">'
                 '<div class="pi-t">'
                 '<button class="bm-btn" onclick="toggleBm(this)" title="收藏">☆</button> '
                 '<a href="' + pid + '" target="_blank">' + p["title"][:80] + '</a></div>'
-                '<div class="pi-m"><span>' + p.get("published","")[:10] + '</span>' + au_h + sk_h + ci_h + inst_h + doi_h + '</div></div>')
+                '<div class="pi-m"><span>' + p.get("published","")[:10] + '</span>' + au_h + pt_h + sk_h + ci_h + inst_h + doi_h + '</div></div>')
         # 方向header附动量指标
         cm = imp.get('cite_momentum',0)
         pm = imp.get('pub_momentum',0)
@@ -1297,25 +1325,15 @@ def gen_html(data, config):
     html += '<section class="quality-s"><h2>📊 方向质量榜 <span class="hint">均引×发文增速×引文增速</span></h2>' + q_html + '</section>\n'
     html += '<section class="kw-section"><h2>🔍 研究热度关键词 Top 10</h2><div class="kw-grid">' + kw_html + '</div></section>\n'
     hl = ""
-    # 本期亮点：优先选近期（近1年）+高质量论文，不选5年前的老综述
-    # 亮点分 = 引用*0.5 + freshness*20（近期论文boost）+ 顶刊bonus
+    # 本期亮点：从近3年论文中选（避免推5年前老综述）
     now = datetime.now()
-    def highlight_score(p):
-        cited = p.get("cited_by",0) or 0
-        try: d = (now - datetime.strptime(p["published"][:10],"%Y-%m-%d")).days
-        except: d = 365
-        # 近1年论文给高boost，老论文快速衰减
-        fresh = max(0, 1 - d/365)
-        # 顶刊加分
-        jrk = p.get("journal_rank","")
-        j_bonus = 20 if jrk == "一区/顶刊" else 10 if jrk == "核心期刊" else 0
-        return cited * 0.5 + fresh * 50 + j_bonus
-    highlight_candidates = sorted(
-        [p for p in hot_papers if p.get("topic","") != "其他" and (p.get("topic_score",0) or 0) >= 3],
-        key=highlight_score, reverse=True)
-    if not highlight_candidates:
-        highlight_candidates = hot_papers[:3]
-    tp = highlight_candidates[0] if highlight_candidates else None
+    recent_cutoff = (now - timedelta(days=3*365)).strftime("%Y-%m-%d")
+    recent_hot = [p for p in hot_papers if p.get("published","")[:10] >= recent_cutoff
+                  and p.get("topic","") != "其他" and (p.get("topic_score",0) or 0) >= 3]
+    recent_hot = sorted(recent_hot,
+        key=lambda p: (p.get("cited_by",0) or 0) * 0.5 + (20 if p.get("journal_rank","")=="一区/顶刊" else 0),
+        reverse=True)
+    tp = recent_hot[0] if recent_hot else None
     if tp:
         doi = tp.get("doi","")
         dh = '<a href="https://doi.org/'+doi+'">'+doi[:30]+'</a>' if doi else ""

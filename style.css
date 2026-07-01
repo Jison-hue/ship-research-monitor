@@ -211,3 +211,11 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
 .au-link:hover { text-decoration: underline; color: #C0392B; }
 .ai-name { color: #1F4E79; text-decoration: none; cursor: pointer; font-weight: 500; }
 .ai-name:hover { text-decoration: underline; color: #C0392B; }
+
+/* 论文类型标签 */
+.pt { font-size: 0.65rem; padding: 1px 5px; border-radius: 3px; margin: 0 2px; font-weight: 500; white-space: nowrap; }
+.pt.综述 { background: #e8f0fe; color: #1a73e8; }
+.pt.实验 { background: #fce8e6; color: #d93025; }
+.pt.数值 { background: #e8f5e9; color: #188038; }
+.pt.理论 { background: #fef7e0; color: #e37400; }
+.pt.综合 { background: #f5f5f5; color: #666; }

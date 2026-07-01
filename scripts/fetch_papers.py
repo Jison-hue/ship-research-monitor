@@ -836,12 +836,35 @@ def compute_stats(papers):
                 kw_t[sk] += 1
         keyword_topic[t] = [{"name":k,"count":v} for k,v in kw_t.most_common(15)]
 
-    # 每个方向论文的平均引用
+    # 每个方向论文的平均引用 + 引用动量 + 潜力评分
     topic_impact = {}
+    now_y = datetime.now().year
     for t, ps in tp.items():
         c = [p.get("cited_by",0) for p in ps]
+        # 引用动量：用年均引用来消除时间偏差
+        # recent_avg = 最近2年论文的总引用 / (论文数 × 平均发表年数)
+        # early_avg = 更早论文的总引用 / (论文数 × 平均发表年数)
+        recent_ps = [p for p in ps if int(p.get("year",0) or 0) >= max(2021, now_y-2)]
+        early_ps = [p for p in ps if int(p.get("year",0) or 0) < max(2021, now_y-2) and int(p.get("year",0) or 0) >= 2021]
+        def avg_cite_per_year(pps):
+            if not pps: return 0
+            total_cites = sum(p.get("cited_by",0) or 0 for p in pps)
+            total_age = sum(max(1, now_y - (int(p.get("year",0) or 2021))) for p in pps)
+            return round(total_cites / total_age, 1) if total_age > 0 else 0
+        recent_cpy = avg_cite_per_year(recent_ps)
+        early_cpy = avg_cite_per_year(early_ps)
+        cite_momentum = round((recent_cpy - early_cpy) / max(early_cpy, 0.5) * 100, 0) if early_cpy > 0 else (999 if recent_cpy > 0 else 0)
+        # 发文量动量（最近2年 vs 之前的发文量占比）
+        recent_n = len(recent_ps)
+        early_n = len(early_ps)
+        total_n = recent_n + early_n
+        pub_momentum = round((recent_n - early_n) / max(early_n, 1) * 100, 0) if early_n > 0 else (999 if recent_n > 0 else 0)
+        # 综合质量评分 = 年均引用 × (1 + 发文增速) × (1 + 引文增速)
+        quality_score = round(recent_cpy * (1 + max(pub_momentum, 0)/100) * (1 + max(cite_momentum, 0)/100), 0) if recent_cpy > 0 else 0
         topic_impact[t] = {"count":len(ps), "avg_cited":round(sum(c)/len(c),1) if c else 0,
-                           "max_cited":max(c) if c else 0}
+                           "max_cited":max(c) if c else 0,
+                           "recent_cpy":recent_cpy, "cite_momentum":cite_momentum,
+                           "pub_momentum":pub_momentum, "quality_score":quality_score}
 
     # 热点论文 — 严格剔除不相关论文
     now = datetime.now()
@@ -1086,8 +1109,8 @@ def gen_html(data, config):
     # ── 机构列表 ──
     inst_html = ""
     for inst in stats["top_institutions"][:15]:
-        n = inst["name"].replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
-        inst_html += '<div class="ai-item"><span class="ai-name">' + n + '</span><span class="ai-count">' + str(inst["count"]) + '</span></div>\n'
+        esc = inst["name"].replace("&","&amp;").replace("<","&lt;").replace(">","&gt;").replace("'","\\'")
+        inst_html += '<div class="ai-item"><a href="#" onclick="searchBy(\'' + esc + '\');return false" class="ai-name">' + esc + '</a><span class="ai-count">' + str(inst["count"]) + '</span></div>\n'
 
     # ── 方向×机构交叉矩阵 ──
     cross_html = ""
@@ -1118,8 +1141,8 @@ def gen_html(data, config):
 
     auth_html = ""
     for au in stats["top_authors"][:12]:
-        n = au["name"].replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
-        auth_html += '<div class="ai-item"><span class="ai-name">' + n + '</span><span class="ai-count">' + str(au["count"]) + '</span></div>\n'
+        esc = au["name"].replace("&","&amp;").replace("<","&lt;").replace(">","&gt;").replace("'","\\'")
+        auth_html += '<div class="ai-item"><a href="#" onclick="searchBy(\'' + esc + '\');return false" class="ai-name">' + esc + '</a><span class="ai-count">' + str(au["count"]) + '</span></div>\n'
 
     cards = ('<div class="stats-row">'
         '<div class="sc"><span class="n">' + str(total) + '</span><span class="l">论文总数</span></div>'
@@ -1163,6 +1186,35 @@ def gen_html(data, config):
             '<div class="hp-m"><span>' + p.get("published","")[:10] + '</span><span class="ci">📊' + str(c) + '</span>' + jrnk_h + doi_h + '</div>'
             '</div></div>')
 
+    # ── 方向质量排名（引用动量 / 潜力信号）──
+    q_html = ''
+    # 按quality_score排序
+    ranked = sorted([(t, topic_impact[t]) for t in tl if topic_impact[t]['count'] >= 3],
+                    key=lambda x: x[1]['quality_score'], reverse=True)
+    q_html += '<div class="qi-grid">'
+    for t, imp in ranked[:5]:
+        cm = imp.get('cite_momentum',0)
+        pm = imp.get('pub_momentum',0)
+        qs = imp.get('quality_score',0)
+        # 潜力方向：论文少但引用动量高
+        if imp['count'] <= 10 and cm >= 50:
+            badge = '<span class="qp-badge">🔮 潜力</span>'
+        elif cm >= 50:
+            badge = '<span class="qp-badge q-hot">🔥 热</span>'
+        elif cm < -30:
+            badge = '<span class="qp-badge q-cold">🧊 降温</span>'
+        else:
+            badge = '<span class="qp-badge q-flat">➡️ 平稳</span>'
+        cm_icon = '📈' if cm > 30 else '📉' if cm < -30 else '➡️'
+        q_html += ('<div class="qi-item">'
+            '<div class="qi-header">' + badge + '<span class="qi-name" onclick="searchDir(\'' + t + '\')">' + t + '</span></div>'
+            '<div class="qi-body">'
+            '<span class="qi-stat">📄 <b>' + str(imp['count']) + '</b>篇</span>'
+            '<span class="qi-stat">📊 均引<b>' + str(imp['avg_cited']) + '</b></span>'
+            '<span class="qi-stat">' + cm_icon + ' 引用' + ('+' if cm>0 else '') + str(cm) + '%</span>'
+            '</div></div>')
+    q_html += '</div>'
+
     # ── 各方向 ──
     topics = ""
     for i,t in enumerate(tl):
@@ -1172,15 +1224,21 @@ def gen_html(data, config):
         items = ""
         for p in ps:  # Show all papers
             ci = p.get("cited_by",0); doi = p.get("doi","")
-            au = ", ".join(p.get("authors",[])[:2])
+            authors = p.get("authors",[])
+            # Make author names clickable
+            au_links = []
+            for a in authors[:2]:
+                esc_a = a.replace("'","\\'").replace('"','&quot;')
+                au_links.append('<a href="#" onclick="searchBy(\'' + esc_a + '\');return false" class="au-link">' + a + '</a>')
+            au_h = '<span>' + ', '.join(au_links)[:60] + '</span>' if au_links else ""
             pid = p.get("url","#")
             yr = p.get("year","") or p.get("published","")[:4]
             jr = p.get("journal_rank","")
             doi_h = '<a href="https://doi.org/' + doi + '" class="doi">📎' + doi[:25] + '</a>' if doi else ""
             insts = p.get("institutions",[])
-            inst_h = '<span class="inst">🏛️ ' + insts[0][:35] + '</span>' if insts else ""
+            inst_name = insts[0][:35].replace("'","\\'") if insts else ""
+            inst_h = '<span class="inst">🏛️ <a href="#" onclick="searchBy(\'' + inst_name + '\');return false" class="au-link">' + (insts[0][:35] if insts else '') + '</a></span>' if insts else ""
             ci_h = '<span class="ci">📊'+str(ci)+'</span>' if ci else ""
-            au_h = '<span>'+au[:40]+'</span>' if au else ""
             sk_pi = p.get("sub_kws",[])
             sk_h = '<span class="sk">#' + '#'.join(sk_pi[:3]) + '</span>' if sk_pi else ""
             items += ('<div class="pi" data-pid="' + pid + '" data-year="' + yr + '" data-jrank="' + jr + '">'
@@ -1188,12 +1246,17 @@ def gen_html(data, config):
                 '<button class="bm-btn" onclick="toggleBm(this)" title="收藏">☆</button> '
                 '<a href="' + pid + '" target="_blank">' + p["title"][:80] + '</a></div>'
                 '<div class="pi-m"><span>' + p.get("published","")[:10] + '</span>' + au_h + sk_h + ci_h + inst_h + doi_h + '</div></div>')
+        # 方向header附动量指标
+        cm = imp.get('cite_momentum',0)
+        pm = imp.get('pub_momentum',0)
+        cm_icon = '📈' if cm > 30 else '📉' if cm < -30 else '➡️'
+        ti_text = '均引' + str(imp['avg_cited']) + ' | ' + cm_icon + str(abs(cm)) + '%'
         more_h = ""
         topics += ('<div class="ts">'
             '<div class="th" onclick="tt(this)">'
             '<span class="dot" style="background:' + col + '"></span><span class="tn">' + t + '</span>'
             '<span class="tc">' + str(stats["topic_counts"][t]) + '篇</span>'
-            '<span class="ti">📊均引' + str(imp["avg_cited"]) + '</span>'
+            '<span class="ti">' + ti_text + '</span>'
             '<span class="tic">▸</span>'
             '</div><div class="tb" style="display:none">' + items + more_h + '</div></div>')
 
@@ -1230,6 +1293,7 @@ def gen_html(data, config):
     html += '<div class="cc"><h2>📈 发文趋势</h2><div class="cw"><canvas id="c2"></canvas></div></div>\n'
     html += '<div class="cc"><h2>🏆 期刊等级</h2><div class="cw"><canvas id="c3"></canvas></div></div>\n</div>\n'
     html += '<section class="hot"><h2>🔥 热点论文 · 综合排名</h2><p class="hint">引用+时效加权</p>' + hot_items + '</section>\n'
+    html += '<section class="quality-s"><h2>📊 方向质量榜 <span class="hint">均引×发文增速×引文增速</span></h2>' + q_html + '</section>\n'
     html += '<section class="kw-section"><h2>🔍 研究热度关键词 Top 10</h2><div class="kw-grid">' + kw_html + '</div></section>\n'
     hl = ""
     # 本期亮点：优先选近期（近1年）+高质量论文，不选5年前的老综述
@@ -1298,6 +1362,9 @@ def gen_html(data, config):
     html += 'function uf(){var yr=document.getElementById("yrf").value;var jr=document.getElementById("jrf").value;var q=document.getElementById("ps").value.toLowerCase().trim();var active=yr!=="all"||jr!=="all"||q;var fs=document.getElementById("fs");var fr=document.getElementById("fr");var matched=[];document.querySelectorAll(".pi").forEach(function(pi){var py=pi.getAttribute("data-year")||"";var pj=pi.getAttribute("data-jrank")||"";var t=(pi.querySelector(".pi-t a")||{}).textContent||"";t=t.toLowerCase();var m=(pi.querySelector(".pi-m")||{}).textContent||"";m=m.toLowerCase();var y_ok=yr==="all"||py===yr;var j_ok=jr==="all"||pj===jr;var s_ok=!q||t.includes(q)||m.includes(q);var show=y_ok&&j_ok&&s_ok;pi.style.display=show?"":"none";if(show&&active)matched.push(pi)});var v=document.querySelectorAll(".pi:not([style*=none])").length;document.getElementById("rc").textContent=v>0?"找到 "+v+" 篇":"";if(active){var chips=[];if(yr!=="all")chips.push("📅 "+yr);if(jr!=="all")chips.push("🏆 "+jr);if(q)chips.push("🔍 \\""+q+"\\"");fs.style.display="";fs.innerHTML="<div class=\\"fs-badge\\">"+chips.join("")+"</div><span class=\\"fs-count\\">→ 共 "+v+" 篇</span>";if(v>0){var html="<div class=\\"fr-title\\">📋 匹配论文</div>";var seen=new Set();matched.slice(0,50).forEach(function(pi){var a=pi.querySelector(".pi-t a");var title=a?a.textContent:"";var href=a?a.getAttribute("href"):"#";var meta=pi.querySelector(".pi-m");var metaText=meta?meta.textContent.trim():"";var pid=pi.getAttribute("data-pid");if(seen.has(pid))return;seen.add(pid);html+="<div class=\\"fr-item\\" data-pid=\\""+pid+"\\"><button class=\\"bm-btn\\" onclick=\\"toggleBm(this)\\" title=\\"收藏\\">☆</button><a href=\\""+href+"\\" target=\\"_blank\\">"+title+"</a><div class=\\"fr-meta\\">"+metaText+"</div></div>"});if(matched.length>50)html+="<div class=\\"fr-more\\">...仅显示前50篇</div>";fr.innerHTML=html;syncBm()}else fr.innerHTML="<div class=\\"fr-empty\\">😐 没有匹配的论文</div>"}else{fs.style.display="none";fr.innerHTML=""}}\n'
     html += 'function af(){uf()}\n'
     html += 'function ps(){uf()}\n'
+    html += '/* ─── 研究者/机构搜索 ─── */\n'
+    html += 'function searchBy(q){document.getElementById("ps").value=q;filterDir("all");uf();window.scrollTo({top:document.querySelector(".search-bar").offsetTop-100,behavior:"smooth"})}\n'
+    html += 'function searchDir(d){filterDir(d);document.querySelector(".df").scrollIntoView({behavior:"smooth",block:"start"})}\n'
     html += '/* ─── 文献收藏 ─── */\n'
     html += 'function getBm(){try{return JSON.parse(localStorage.getItem(\'ship_bm\')||\'[]\')}catch(e){return []}}\n'
     html += 'function saveBm(bm){localStorage.setItem(\'ship_bm\',JSON.stringify(bm))}\n'

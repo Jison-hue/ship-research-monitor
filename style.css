@@ -190,3 +190,24 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
 .gr-up { color: #27ae60; font-size: .7rem; margin-left: 3px; }
 .gr-down { color: #e74c3c; font-size: .7rem; margin-left: 3px; }
 .gr-flat { color: #95a5a6; font-size: .7rem; margin-left: 3px; }
+
+/* 方向质量榜 */
+.quality-s { margin: 18px 10px; }
+.qi-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+.qi-item { flex: 1 1 180px; background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 10px; }
+.qi-header { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
+.qi-name { font-weight: 600; font-size: 0.82rem; cursor: pointer; color: #1F4E79; }
+.qi-name:hover { text-decoration: underline; }
+.qi-body { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 0.75rem; color: #555; }
+.qi-stat { white-space: nowrap; }
+.qp-badge { font-size: 0.65rem; padding: 1px 5px; border-radius: 3px; font-weight: 500; white-space: nowrap; }
+.qp-badge { background: #e8f0fe; color: #1a73e8; }
+.q-hot { background: #fce8e6; color: #d93025; }
+.q-cold { background: #e8f5e9; color: #188038; }
+.q-flat { background: #f5f5f5; color: #666; }
+
+/* 作者/机构链接 */
+.au-link { color: #1F4E79; text-decoration: none; }
+.au-link:hover { text-decoration: underline; color: #C0392B; }
+.ai-name { color: #1F4E79; text-decoration: none; cursor: pointer; font-weight: 500; }
+.ai-name:hover { text-decoration: underline; color: #C0392B; }

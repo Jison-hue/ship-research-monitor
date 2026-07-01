@@ -338,11 +338,11 @@ def fetch_arxiv(config):
     max_r = cfg.get("max_results",60)
     all_p = {}
     # arXiv API 不适合复杂查询，改用分类独立搜 + 关键词精简
+    # arXiv 关键词精简但单次量加大
     arxiv_keywords = [
-        "ship hydrodynamics", "propeller cavitation", "hull form",
-        "offshore platform", "marine renewable energy", "autonomous ship",
-        "underwater vehicle", "ship CFD", "ship structural",
-        "ship propulsion", "wave energy", "ship maneuvering"
+        "ship hydrodynamics propulsion", "offshore marine structure",
+        "underwater vehicle AUV", "autonomous ship navigation",
+        "ship CFD resistance", "marine renewable wave offshore wind"
     ]
     for sort_by in ["relevance","submittedDate"]:
         for kw in arxiv_keywords:
@@ -388,7 +388,7 @@ def fetch_openalex(config):
     cfg = config["sources"].get("openalex",{})
     if not cfg.get("enabled"): return []
     queries = config["search_queries"][:5]
-    max_r = min(cfg.get("max_results",120), 200)
+    max_r = min(cfg.get("max_results",120), 400)
     per_q = max(20, max_r // len(queries))
     all_p = {}; dois_seen = set()
     polite = "mailto=jison@users.noreply.github.com"
@@ -476,7 +476,7 @@ def fetch_openalex_journals(config):
         j_keywords = j.get("keywords", domain_kws)
         years_back = j.get("years_back", 3)
         start_date = (datetime.now() - timedelta(days=365*years_back)).strftime("%Y-%m-%d")
-        per_page = min(j.get("max_results", 50), 100)
+        per_page = min(j.get("max_results", 50), 120)
         
         print(f"   📰 {jname}...")
         
@@ -580,7 +580,7 @@ def fetch_openalex_institutions(config):
         iid = inst.get("id", "")
         if not iid: continue
         kw_list = inst.get("keywords", domain_kws)
-        max_r = min(inst.get("max_results", 30), 60)
+        max_r = min(inst.get("max_results", 30), 80)
         start_date = (datetime.now() - timedelta(days=365*3)).strftime("%Y-%m-%d")
         per_q = max(10, max_r // len(kw_list))
         

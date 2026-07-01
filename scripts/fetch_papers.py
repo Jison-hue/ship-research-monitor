@@ -1383,48 +1383,45 @@ def gen_html(data, config):
 #  Crossref
 # ═══════════════════════════════════════════════════════════
 def fetch_crossref(config):
-    """通过Crossref API按ISSN补漏顶刊论文（免费）"""
+    """通过Crossref API补漏顶刊论文（免费，单查询快速返回）"""
     if not config.get("sources",{}).get("crossref",{}).get("enabled",True):
         return []
-    journals = [j for j in config.get("journal_tracking",[]) if j.get("issn")]
-    if not journals: return []
     all_p = {}; seen_dois = set()
-    from_date = (datetime.now() - timedelta(days=2*365)).strftime("%Y-%m-%d")
-    # 前4本核心期刊，快速查询
-    for j in journals[:4]:
-        issn = j["issn"]
-        url = (f"{CR_API}?filter=issn:{issn},from-pub-date:{from_date}"
-               f"&query=ship+marine+offshore&rows=20&sort=published&order=desc")
-        try:
-            data = json.load(urlopen(Request(url, headers={"User-Agent":"ShipMonitor/2.0"}), timeout=8))
-            for w in data.get("message",{}).get("items",[]):
-                doi = (w.get("DOI") or "").lower()
-                if not doi or doi in seen_dois: continue
-                seen_dois.add(doi)
-                ttl = " ".join(w.get("title",[""]))
-                if not ttl: continue
-                abs_ = re.sub(r'<[^>]+>', '', (w.get("abstract","") or ""))
-                pub_parts = (w.get("issued",{}) or {}).get("date-parts",[[]])[0]
-                if not pub_parts: continue
-                pub = f"{pub_parts[0]}-{pub_parts[1] if len(pub_parts)>1 else 1:02d}-{pub_parts[2] if len(pub_parts)>2 else 1:02d}"
-                year = str(pub_parts[0])
-                au = [a.get("given","")+" "+a.get("family","") for a in (w.get("author",[]) or [])[:5]]
-                au = [a.strip() for a in au if a.strip()]
-                jour = ((w.get("container-title",[]) or [""])[0] or "")
-                tp,ts,sk = classify(ttl, abs_)
-                ranks = config.get("journal_rankings",{})
-                jrank = "一区/顶刊" if any(n in jour.lower() for n in ranks.get("一区/顶刊",[])) else \
-                        "二区/重要" if any(n in jour.lower() for n in ranks.get("二区/重要",[])) else "核心期刊"
-                pid = f"https://doi.org/{doi}"
-                all_p[pid] = dict(id=pid, title=ttl, abstract=abs_[:500], authors=au,
-                    published=pub[:10], year=year, source="Crossref",
-                    url=pid, pdf_url="",
-                    doi=doi, topic=tp, topic_score=ts, sub_kws=sk,
-                    journal=jour[:40], journal_rank=jrank,
-                    cited_by=0, institutions=[], concepts=[],
-                    fetched=datetime.now().strftime("%Y-%m-%d %H:%M"))
-        except Exception as ex:
-            print(f"  [WARN] Crossref {j['name']}: {ex}")
+    from_date = (datetime.now() - timedelta(days=365)).strftime("%Y-%m-%d")
+    try:
+        url = (f"{CR_API}?query=ship+propeller+CFD&filter=from-pub-date:{from_date}"
+               f"&rows=30&sort=relevance&order=desc")
+        data = json.load(urlopen(Request(url, headers={"User-Agent":"ShipMonitor/2.0"}), timeout=8))
+        for w in data.get("message",{}).get("items",[]):
+            doi = (w.get("DOI") or "").lower()
+            if not doi or doi in seen_dois: continue
+            seen_dois.add(doi)
+            ttl = " ".join(w.get("title",[""]))
+            if not ttl: continue
+            abs_ = re.sub(r'<[^>]+>', '', (w.get("abstract","") or ""))[:500]
+            pub_parts = (w.get("issued",{}) or {}).get("date-parts",[[]])[0]
+            if not pub_parts: continue
+            pub = f"{pub_parts[0]}-{pub_parts[1] if len(pub_parts)>1 else 1:02d}-{pub_parts[2] if len(pub_parts)>2 else 1:02d}"
+            year = str(pub_parts[0])
+            au = [a.get("given","")+" "+a.get("family","") for a in (w.get("author",[]) or [])[:5]]
+            au = [a.strip() for a in au if a.strip()]
+            jour = ((w.get("container-title",[]) or [""])[0] or "")
+            if not any(k in (ttl+" "+abs_).lower() for k in ["ship","marine","offshore","underwater","hull","propeller","ocean","naval","wave"]):
+                continue
+            tp,ts,sk = classify(ttl, abs_)
+            ranks = config.get("journal_rankings",{})
+            jrank = "一区/顶刊" if any(n in jour.lower() for n in ranks.get("一区/顶刊",[])) else \
+                    "二区/重要" if any(n in jour.lower() for n in ranks.get("二区/重要",[])) else "核心期刊"
+            pid = f"https://doi.org/{doi}"
+            all_p[pid] = dict(id=pid, title=ttl, abstract=abs_, authors=au,
+                published=pub[:10], year=year, source="Crossref",
+                url=pid, pdf_url="",
+                doi=doi, topic=tp, topic_score=ts, sub_kws=sk,
+                journal=jour[:40], journal_rank=jrank,
+                cited_by=0, institutions=[], concepts=[],
+                fetched=datetime.now().strftime("%Y-%m-%d %H:%M"))
+    except:
+        pass
     return list(all_p.values())
 
 

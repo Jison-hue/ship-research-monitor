@@ -38,6 +38,13 @@ NEGATIVE_KW = [
     "nucleosynthesis","supernova","neutron star","stellar astrophys",
     # 纯气候海洋学 — 与海洋工程无关
     "ocean heat content","paleoclimate","el niño","sea surface temperature anomaly",
+    # 非船舶噪声：控制玩具问题、通用机器人、区块链
+    "cart-pole","inverted pendulum","table tennis robot",
+    "reinforcement learning for robot","vision-language-action",
+    "blockchain","cryptocurrency","smart contract",
+    # 纯航空航天/空间推进（非船舶推进）
+    "electrospray propulsion","ion thruster","spacecraft propulsion",
+    "rocket engine","satellite propulsion",
     # 微流控/电泳 — 非船舶流体
     "electrophoretic","microfluidic","electrokinetic",
 ]
@@ -291,7 +298,7 @@ def classify(title, abstract):
     # 先做负向检查（用单词边界匹配）
     for nkw in NEGATIVE_KW:
         if re.search(r'\b' + re.escape(nkw.lower()) + r'\b', text):
-            return ("其他", 0, [])
+            return ("船舶综合", 0, [])
 
     # 领域信号词
     domain_q = ["ship","marine","vessel","ocean","maritime","naval","hull",
@@ -315,7 +322,7 @@ def classify(title, abstract):
                 scores[t] = 2 + domain_score * 2
 
     if not scores:
-        return ("其他", 0, [])
+        return ("船舶综合", 0, [])
 
     best = max(scores, key=scores.get)
     sub_kws = classify_sub(title, abstract, best)
@@ -756,7 +763,7 @@ def merge_papers(new_p, existing):
 
         # 所有论文都必须通过 domain_relevance 检查
         # 高置信度（分数≥6）论文可获得放宽但仍需检查
-        if topic != "其他" and topic_score >= 6:
+        if topic != "船舶综合" and topic_score >= 6:
             if is_domain_relevant(title, abstract):
                 dedup_filtered.append(p)
             continue
@@ -821,7 +828,7 @@ def compute_stats(papers):
     kw_year_counter = defaultdict(lambda: Counter())
 
     for p in papers:
-        t = p.get("topic","其他"); tc[t] += 1; tp[t].append(p)
+        t = p.get("topic","船舶综合"); tc[t] += 1; tp[t].append(p)
         y = p.get("year",""); yc[int(y)] += 1 if y.isdigit() else 0
         sc[p.get("source","")] += 1
         j = p.get("journal_rank",""); jc[j] += 1 if j else 0
@@ -907,7 +914,7 @@ def compute_stats(papers):
         dm = sum(1 for kw in domain_kws if kw in txt)
         topic = p.get("topic","")
         ts = p.get("topic_score",0) or 0
-        if topic != "其他" and ts >= 2:
+        if topic != "船舶综合" and ts >= 2:
             return True
         if dm >= 3:
             return True
@@ -1025,11 +1032,11 @@ def generate_weekly_report(data, config):
     last_ws, last_we, last_week = week_group(last_monday)
 
     # 本周统计
-    topics_this = Counter(p.get("topic","其他") for p in this_week)
+    topics_this = Counter(p.get("topic","船舶综合") for p in this_week)
     hot_this = sorted(this_week, key=lambda p: p.get("cited_by",0), reverse=True)[:5]
 
     # 比上周变化
-    topics_last = Counter(p.get("topic","其他") for p in last_week)
+    topics_last = Counter(p.get("topic","船舶综合") for p in last_week)
     changes = {}
     for t in set(list(topics_this.keys()) + list(topics_last.keys())):
         c = topics_this.get(t,0) - topics_last.get(t,0)
@@ -1223,12 +1230,12 @@ def gen_html(data, config):
         cm = imp.get('cite_momentum',0)
         pm = imp.get('pub_momentum',0)
         qs = imp.get('quality_score',0)
-        # 潜力方向：论文少但引用动量高
-        if imp['count'] <= 10 and cm >= 50:
+        # 潜力方向：论文少但发文/引文在涨
+        if imp['count'] <= 15 and (cm >= 20 or pm >= 30):
             badge = '<span class="qp-badge">🔮 潜力</span>'
-        elif cm >= 50:
+        elif cm >= 30:
             badge = '<span class="qp-badge q-hot">🔥 热</span>'
-        elif cm < -30:
+        elif cm < -30 and imp['count'] >= 5:
             badge = '<span class="qp-badge q-cold">🧊 降温</span>'
         else:
             badge = '<span class="qp-badge q-flat">➡️ 平稳</span>'
@@ -1321,8 +1328,57 @@ def gen_html(data, config):
     html += '<div class="cc"><h2>📊 研究方向分布</h2><div class="cw"><canvas id="c1"></canvas></div></div>\n'
     html += '<div class="cc"><h2>📈 发文趋势</h2><div class="cw"><canvas id="c2"></canvas></div></div>\n'
     html += '<div class="cc"><h2>🏆 期刊等级</h2><div class="cw"><canvas id="c3"></canvas></div></div>\n</div>\n'
-    html += '<section class="hot"><h2>🔥 热点论文 · 综合排名</h2><p class="hint">引用+时效加权</p>' + hot_items + '</section>\n'
+    # ── 近期热点（近3年）──
+    cutoff_3y = (datetime.now() - timedelta(days=3*365)).strftime("%Y-%m-%d")
+    recent_hot = sorted([p for p in hot_papers if p.get("published","")[:10] >= cutoff_3y],
+                        key=lambda p: p.get("cited_by",0) or 0, reverse=True)[:10]
+    recent_hot_items = ""
+    for i,p in enumerate(recent_hot[:5]):
+        c = p.get("cited_by",0); jrnk = p.get("journal_rank","")
+        doi = p.get("doi",""); pid = p.get("url","#")
+        pt = p.get("paper_type","")
+        doi_h = '<a href="https://doi.org/'+doi+'" class="doi" target="_blank">📎'+doi[:25]+'</a>' if doi else ""
+        jrnk_h = '<span class="rk">'+jrnk+'</span>' if jrnk else ""
+        pt_h = '<span class="pt '+pt+'">'+pt+'</span>' if pt else ""
+        recent_hot_items += ('<div class="hp" data-pid="'+pid+'"><span class="hp-n">'+str(i+1)+'</span>'
+            '<button class="bm-btn" onclick="toggleBm(this)" title="收藏">☆</button>'
+            '<div class="hp-b"><div class="hp-t"><a href="'+pid+'" target="_blank">'+p["title"][:85]+'</a></div>'
+            '<div class="hp-m"><span>'+p.get("published","")[:10]+'</span>'+pt_h+'<span class="ci">📊'+str(c)+'</span>'+jrnk_h+doi_h+'</div></div></div>')
+    
+    # ── 本周必读推荐（近3年高质量论文 + 一句话理由）──
+    rec_papers = []
+    for p in hot_papers:
+        if p.get("published","")[:10] < cutoff_3y: continue
+        if p.get("topic","") == "其他": continue
+        score = (p.get("cited_by",0) or 0)
+        if p.get("journal_rank","") == "一区/顶刊": score += 30
+        rec_papers.append((score, p))
+    rec_papers.sort(key=lambda x: -x[0])
+    rec_html = ""
+    for score, p in rec_papers[:5]:
+        t = p.get("topic","")
+        pt = p.get("paper_type","综述")
+        # 生成推荐理由
+        reasons = []
+        if p.get("journal_rank","") == "一区/顶刊": reasons.append("顶刊")
+        if (p.get("cited_by",0) or 0) >= 50: reasons.append(f"高引({p.get('cited_by',0)})")
+        if pt == "综述": reasons.append("领域综述")
+        if not reasons: reasons.append("新近发表")
+        reason = " · ".join(reasons)
+        doi = p.get("doi","")
+        pid = p.get("url","#")
+        doi_h = '<a href="https://doi.org/'+doi+'" target="_blank">📎'+doi[:25]+'</a>' if doi else ""
+        rec_html += ('<div class="rec-item" data-pid="'+pid+'">'
+            '<div class="rec-t"><a href="'+pid+'" target="_blank">'+p["title"][:85]+'</a></div>'
+            '<div class="rec-m"><span class="rec-why">💡 '+reason+'</span>'
+            '<span class="rec-tag">#'+t+'</span>'
+            '<span class="rec-pt">'+pt+'</span>'
+            +doi_h+'</div></div>')
+
+    html += '<section class="hot"><h2>🔥 热点论文 · 综合排名</h2><p class="hint">引用+时效加权（全场）</p>' + hot_items + '</section>\n'
+    html += '<section class="hot"><h2>📈 近期热点 <span class="hint">近3年高引论文</span></h2><p class="hint">只看近3年发表，消除时间偏差</p>' + recent_hot_items + '</section>\n'
     html += '<section class="quality-s"><h2>📊 方向质量榜 <span class="hint">均引×发文增速×引文增速</span></h2>' + q_html + '</section>\n'
+    html += '<section class="rec-section"><h2>📋 本周必读 <span class="hint">近3年高质量论文推荐</span></h2>' + rec_html + '</section>\n'
     html += '<section class="kw-section"><h2>🔍 研究热度关键词 Top 10</h2><div class="kw-grid">' + kw_html + '</div></section>\n'
     hl = ""
     # 本期亮点：从近3年论文中选（避免推5年前老综述）

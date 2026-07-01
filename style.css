@@ -219,3 +219,16 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
 .pt.数值 { background: #e8f5e9; color: #188038; }
 .pt.理论 { background: #fef7e0; color: #e37400; }
 .pt.综合 { background: #f5f5f5; color: #666; }
+
+/* 近期热点 */
+.hot + .hot { margin-top: -10px; }
+
+/* 本周必读 */
+.rec-section { margin: 18px 10px; }
+.rec-item { display: flex; flex-direction: column; padding: 8px 10px; margin: 4px 0; background: #fff; border-left: 3px solid #1F4E79; border-radius: 0 4px 4px 0; }
+.rec-t a { font-size: .82rem; font-weight: 500; color: #1a0dab; text-decoration: none; }
+.rec-t a:hover { text-decoration: underline; }
+.rec-m { display: flex; flex-wrap: wrap; gap: 4px 8px; margin-top: 4px; font-size: .7rem; align-items: center; }
+.rec-why { color: #1F4E79; font-weight: 500; }
+.rec-tag { color: #666; background: #f0f0f0; padding: 1px 5px; border-radius: 3px; }
+.rec-pt { color: #888; }

@@ -175,3 +175,18 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
 .hl-meta{font-size:.75rem;color:var(--muted);margin-bottom:6px}
 .hl-desc{font-size:.8rem;color:#555;line-height:1.5;padding:6px 0}
 .hl-doi{font-size:.72rem;margin-top:4px}
+
+/* 机构×方向交叉矩阵 */
+.cross-s { margin: 18px 10px; }
+.cross-tbl { width: 100%; border-collapse: collapse; font-size: .75rem; }
+.cross-tbl th { background: #1F4E79; color: #fff; padding: 6px 4px; text-align: center; font-weight: 500; position: sticky; top: 0; }
+.cross-tbl td { padding: 4px 6px; text-align: center; border-bottom: 1px solid #e0e0e0; }
+.cross-tbl .ci-name { text-align: left; font-weight: 500; white-space: nowrap; max-width: 140px; overflow: hidden; text-overflow: ellipsis; }
+.cross-tbl .ci-n { font-weight: 600; color: #1F4E79; }
+.cross-tbl .ci-0 { color: #ccc; }
+.cross-tbl tr:hover { background: #f5f8fc; }
+
+/* 关键词增长率图标 */
+.gr-up { color: #27ae60; font-size: .7rem; margin-left: 3px; }
+.gr-down { color: #e74c3c; font-size: .7rem; margin-left: 3px; }
+.gr-flat { color: #95a5a6; font-size: .7rem; margin-left: 3px; }

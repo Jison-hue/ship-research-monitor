@@ -357,6 +357,9 @@ def fetch_arxiv(config):
                     if pid in all_p: continue
                     ttl = e.find("atom:title",ns).text.strip().replace("\n"," ")
                     abs_ = e.find("atom:summary",ns).text.strip().replace("\n"," ")
+                    # arXiv初筛：标题或摘要必须含强领域信号，否则跳过
+                    if not is_domain_relevant(ttl, abs_):
+                        continue
                     pub = e.find("atom:published",ns).text[:10]
                     au = [a.find("atom:name",ns).text for a in e.findall("atom:author",ns) if a.find("atom:name",ns) is not None]
                     aid = extract_arxiv_id(pid)
@@ -873,6 +876,20 @@ def compute_stats(papers):
     def top_n(counter, n=10):
         return [{"name":k, "count":v} for k,v in counter.most_common(n)]
 
+    # 关键词增长率计算
+    keyword_growth = {}
+    for kw, yrs in kw_year_counter.items():
+        yrs_sorted = sorted(y for y in yrs.keys() if y.isdigit() and 2021 <= int(y) <= 2026)
+        if len(yrs_sorted) >= 4:
+            recent = sum(yrs.get(y,0) for y in yrs_sorted[-2:])
+            early = sum(yrs.get(y,0) for y in yrs_sorted[:2])
+            if early > 0:
+                keyword_growth[kw] = {"pct": round((recent-early)/early*100,1), "recent": recent, "early": early}
+            else:
+                keyword_growth[kw] = {"pct": 999, "recent": recent, "early": 0}
+        else:
+            keyword_growth[kw] = {"pct": 0, "recent": 0, "early": 0}
+    
     return dict(
         topic_counts=dict(tc.most_common()),
         year_counts={str(k):yc[k] for k in years},
@@ -884,6 +901,7 @@ def compute_stats(papers):
         topic_year={t: Counter(p.get("year","") for p in ps) for t,ps in tp.items()},
         keyword_trends={kw: dict(sorted(yrs.items())) for kw, yrs in kw_year_counter.items()} if kw_year_counter else {},
         keyword_hot=[{"name":k,"count":v} for k,v in kw_counter.most_common(30)],
+        keyword_growth=keyword_growth,
         keyword_topic=keyword_topic,
         # 新增：作者与机构
         top_authors=top_n(author_counter, 15),
@@ -1009,10 +1027,20 @@ def gen_html(data, config):
     # ── 热度关键词 ──
     hot_kws = stats.get("keyword_hot",[])[:10]
     kw_trends = stats.get("keyword_trends",{})
+    kw_growth = stats.get("keyword_growth",{})
     kw_html = ""
     for kw in hot_kws:
         n = kw["name"]
         trend = kw_trends.get(n, {})
+        # 增长率指标
+        gr = kw_growth.get(n, {})
+        gr_pct = gr.get("pct",0)
+        if gr_pct > 30:
+            gr_icon = '<span class="gr-up">📈</span>'
+        elif gr_pct < -30:
+            gr_icon = '<span class="gr-down">📉</span>'
+        else:
+            gr_icon = '<span class="gr-flat">➡️</span>'
         # Show yearly counts as a simple bar
         years_sorted = sorted(y for y in trend.keys() if y.isdigit() and 2021 <= int(y) <= 2026)
         counts = [trend[y] for y in years_sorted]
@@ -1021,7 +1049,7 @@ def gen_html(data, config):
         for i, y in enumerate(years_sorted):
             pct = int(counts[i] / max_c * 100)
             bars += '<div class="kw-bar"><span class="kw-y">' + y + '</span><div class="kw-fill-w"><div class="kw-fill" style="width:' + str(pct) + '%"></div></div><span class="kw-c">' + str(counts[i]) + '</span></div>'
-        kw_html += '<div class="kw-item"><div class="kw-name">' + n + '</div><div class="kw-count">' + str(kw["count"]) + '</div><div class="kw-trend">' + bars + '</div></div>'
+        kw_html += '<div class="kw-item"><div class="kw-name">' + n + gr_icon + '</div><div class="kw-count">' + str(kw["count"]) + '</div><div class="kw-trend">' + bars + '</div></div>'
         # ── 地域分析 ──
     cn_count = stats.get("country_stats",{}).get("🇨🇳 国内",{}).get("papers",0)
     intl_count = stats.get("country_stats",{}).get("🌍 国外",{}).get("papers",0)
@@ -1060,6 +1088,33 @@ def gen_html(data, config):
     for inst in stats["top_institutions"][:15]:
         n = inst["name"].replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
         inst_html += '<div class="ai-item"><span class="ai-name">' + n + '</span><span class="ai-count">' + str(inst["count"]) + '</span></div>\n'
+
+    # ── 方向×机构交叉矩阵 ──
+    cross_html = ""
+    tti = stats.get("topic_top_institutions",{})
+    # 选论文最多的前6个方向
+    top_dirs = sorted(stats["topic_counts"].items(), key=lambda x:-x[1])[:6]
+    cross_html += '<table class="cross-tbl"><thead><tr><th>机构</th>'
+    for dir_name, _ in top_dirs:
+        esc = dir_name.replace("&","&amp;").replace("<","&lt;")
+        cross_html += '<th>' + esc + '</th>'
+    cross_html += '</tr></thead><tbody>'
+    # 选论文最多的前10个机构
+    top_insts = stats["top_institutions"][:10]
+    for inst in top_insts:
+        iname = inst["name"][:25].replace("&","&amp;").replace("<","&lt;")
+        cross_html += '<tr><td class="ci-name">' + iname + '</td>'
+        for dir_name, _ in top_dirs:
+            insts_in_dir = tti.get(dir_name, [])
+            cnt = 0
+            for ii in insts_in_dir:
+                if ii["name"][:25].lower() in inst["name"].lower():
+                    cnt = ii["count"]
+                    break
+            cell = str(cnt) if cnt > 0 else '<span class="ci-0">-</span>'
+            cross_html += '<td class="ci-n">' + cell + '</td>'
+        cross_html += '</tr>'
+    cross_html += '</tbody></table>\n'
 
     auth_html = ""
     for au in stats["top_authors"][:12]:
@@ -1177,10 +1232,22 @@ def gen_html(data, config):
     html += '<section class="hot"><h2>🔥 热点论文 · 综合排名</h2><p class="hint">引用+时效加权</p>' + hot_items + '</section>\n'
     html += '<section class="kw-section"><h2>🔍 研究热度关键词 Top 10</h2><div class="kw-grid">' + kw_html + '</div></section>\n'
     hl = ""
-    # 本期亮点：优先选高相关度的论文（topic_score≥3且topic非其他），
-    # 避免选到分类宽松但实际不相关的论文
-    highlight_candidates = [p for p in hot_papers
-        if p.get("topic","") != "其他" and (p.get("topic_score",0) or 0) >= 3]
+    # 本期亮点：优先选近期（近1年）+高质量论文，不选5年前的老综述
+    # 亮点分 = 引用*0.5 + freshness*20（近期论文boost）+ 顶刊bonus
+    now = datetime.now()
+    def highlight_score(p):
+        cited = p.get("cited_by",0) or 0
+        try: d = (now - datetime.strptime(p["published"][:10],"%Y-%m-%d")).days
+        except: d = 365
+        # 近1年论文给高boost，老论文快速衰减
+        fresh = max(0, 1 - d/365)
+        # 顶刊加分
+        jrk = p.get("journal_rank","")
+        j_bonus = 20 if jrk == "一区/顶刊" else 10 if jrk == "核心期刊" else 0
+        return cited * 0.5 + fresh * 50 + j_bonus
+    highlight_candidates = sorted(
+        [p for p in hot_papers if p.get("topic","") != "其他" and (p.get("topic_score",0) or 0) >= 3],
+        key=highlight_score, reverse=True)
     if not highlight_candidates:
         highlight_candidates = hot_papers[:3]
     tp = highlight_candidates[0] if highlight_candidates else None
@@ -1195,6 +1262,7 @@ def gen_html(data, config):
     html += hl + '\n'
     html += '<section class="country-s"><h2>🌏 地域分布 · 国内 vs 国外</h2>' + country_html + '</section>\n'
     html += '<section class="ai-s"><h2>🏫 高产机构 Top 15</h2><div class="ai-l">' + inst_html + '</div></section>\n'
+    html += '<section class="cross-s"><h2>🏛️ 机构×方向 矩阵 <span class="hint">论文数</span></h2>' + cross_html + '</section>\n'
     html += '<section class="ai-s"><h2>👨‍🔬 活跃作者 Top 12</h2><div class="ai-l">' + auth_html + '</div></section>\n'
     html += '<section class="detail"><h2>📋 研究方向详情</h2>\n'
     filter_tabs = '<div class="df">'

@@ -1,6 +1,878 @@
 {
   "papers": [
     {
+      "id": "2112.02132",
+      "title": "Optimal Vehicle Path Planning Using Quadratic Optimization for Baidu Apollo Open Platform",
+      "abstract": "Path planning is a key component in motion planning for autonomous vehicles. A path specifies the geometrical shape that the vehicle will travel, thus, it is critical to safe and comfortable vehicle motions. For urban driving scenarios, autonomous vehicles need the ability to navigate in cluttered environment, e.g., roads partially blocked by a number of vehicles/obstacles on the sides. How to generate a kinematically feasible and smooth path, that can avoid collision in complex environment, mak",
+      "authors": [
+        "Yajia Zhang",
+        "Hongyi Sun",
+        "Jinyun Zhou",
+        "Jiacheng Pan",
+        "Jiangtao Hu"
+      ],
+      "published": "2021-12-03",
+      "year": "2021",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2112.02132v1",
+      "pdf_url": "",
+      "doi": "10.48550/arXiv.2112.02132",
+      "topic": "自主船舶与智能航行",
+      "topic_score": 6,
+      "sub_kws": [
+        "路径规划",
+        "避碰"
+      ],
+      "journal": "arXiv Preprint",
+      "journal_rank": "预印本",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:29"
+    },
+    {
+      "id": "2303.08710",
+      "title": "Two-Scale Optimization of Graded Lattice Structures respecting Buckling on Micro- and Macroscale",
+      "abstract": "Interest in components with detailed structures increased with the progress in advanced manufacturing techniques in recent years. Parts with graded lattice elements can provide interesting mechanical, thermal, and acoustic properties compared to parts where only coarse features are included. One of these improvements is better global buckling resistance of the component. However, thin features are prone to local buckling. Normally, analyses with high computational effort are conducted on high-re",
+      "authors": [
+        "Daniel Hübner",
+        "Fabian Wein",
+        "Michael Stingl"
+      ],
+      "published": "2023-03-15",
+      "year": "2023",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2303.08710v1",
+      "pdf_url": "",
+      "doi": "10.48550/arXiv.2303.08710",
+      "topic": "船舶水动力学",
+      "topic_score": 4,
+      "sub_kws": [
+        "CFD模拟"
+      ],
+      "journal": "arXiv Preprint",
+      "journal_rank": "预印本",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:29"
+    },
+    {
+      "id": "2504.00474",
+      "title": "High specific impulse electrospray propulsion with small capillary emitters",
+      "abstract": "This study demonstrates the feasibility of using smaller capillary emitters to achieve higher specific impulse ($I_\\text{sp}$) in electrospray propulsion. Four ionic liquids were characterized using capillary emitters with tip diameters from 15 to 50 $μ$m. Smaller diameter capillaries produced smaller and more stable Taylor cones. This stabilization enabled steady cone-jet operation at significantly lower flow rates compared to larger emitters. This was unexpected because when the jet diameter i",
+      "authors": [
+        "Manel Caballero-Pérez",
+        "Marc Galobardes-Esteban",
+        "Manuel Gamero-Castaño"
+      ],
+      "published": "2025-04-01",
+      "year": "2025",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2504.00474v1",
+      "pdf_url": "",
+      "doi": "10.48550/arXiv.2504.00474",
+      "topic": "船舶水动力学",
+      "topic_score": 4,
+      "sub_kws": [
+        "CFD模拟"
+      ],
+      "journal": "arXiv Preprint",
+      "journal_rank": "预印本",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:29"
+    },
+    {
+      "id": "2403.07895",
+      "title": "Public Sector Sustainable Energy Scheduler -- A Blockchain and IoT Integrated System",
+      "abstract": "In response to the European Commission's aim of cutting carbon emissions by 2050, there is a growing need for cutting-edge solutions to promote low-carbon energy consumption in public infrastructures. This paper introduces a Proof of Concept (PoC) that integrates the transparency and immutability of blockchain and the Internet of Things (IoT) to enhance energy efficiency in tangible government-held public assets, focusing on curbing carbon emissions. Our system design utilizes a forecasting and ",
+      "authors": [
+        "Renan Lima Baima",
+        "Iván Abellán Álvarez",
+        "Ivan Pavić",
+        "Emanuela Podda"
+      ],
+      "published": "2024-02-08",
+      "year": "2024",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2403.07895v1",
+      "pdf_url": "",
+      "doi": "10.48550/arXiv.2403.07895",
+      "topic": "船舶推进与节能",
+      "topic_score": 6,
+      "sub_kws": [
+        "排放控制"
+      ],
+      "journal": "arXiv Preprint",
+      "journal_rank": "预印本",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:29"
+    },
+    {
+      "id": "1505.07071",
+      "title": "The climatological relationships between wind and solar energy supply in Britain",
+      "abstract": "We use reanalysis data to investigate the daily co-variability of wind and solar irradiance in Britain, and its implications for renewable energy supply balancing. The joint distribution of daily-mean wind speeds and irradiances shows that irradiance has a much stronger seasonal cycle than wind, due to the rotational tilt of the Earth. Irradiance is weakly anticorrelated with wind speed throughout the year ($-0.4 \\lesssim ρ\\lesssim -0.2$): there is a weak tendency for windy days to be cloudier. ",
+      "authors": [
+        "Philip E. Bett",
+        "Hazel E. Thornton"
+      ],
+      "published": "2015-05-26",
+      "year": "2015",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1505.07071v2",
+      "pdf_url": "",
+      "doi": "10.48550/arXiv.1505.07071",
+      "topic": "海洋可再生能源",
+      "topic_score": 6,
+      "sub_kws": [],
+      "journal": "arXiv Preprint",
+      "journal_rank": "预印本",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:29"
+    },
+    {
+      "id": "2206.09847",
+      "title": "Quaternion variational integration for inertial maneuvering in a biomimetic UAV",
+      "abstract": "Biological flying, gliding, and falling creatures are capable of extraordinary forms of inertial maneuvering: free-space maneuvering based on fine control of their multibody dynamics, as typified by the self-righting reflexes of cats. However, designing inertial maneuvering capability into biomimetic robots, such as biomimetic unmanned aerial vehicles (UAVs) is challenging. Accurately simulating this maneuvering requires numerical integrators that can ensure both singularity-free integration, an",
+      "authors": [
+        "Arion Pons",
+        "Fehmi Cirak"
+      ],
+      "published": "2022-06-20",
+      "year": "2022",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2206.09847v3",
+      "pdf_url": "",
+      "doi": "10.48550/arXiv.2206.09847",
+      "topic": "船舶水动力学",
+      "topic_score": 4,
+      "sub_kws": [
+        "CFD模拟",
+        "操纵性"
+      ],
+      "journal": "arXiv Preprint",
+      "journal_rank": "预印本",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:29"
+    },
+    {
+      "id": "2009.08807",
+      "title": "Monte Carlo Tree Search Based Tactical Maneuvering",
+      "abstract": "In this paper we explore the application of simultaneous move Monte Carlo Tree Search (MCTS) based online framework for tactical maneuvering between two unmanned aircrafts. Compared to other techniques, MCTS enables efficient search over long horizons and uses self-play to select best maneuver in the current state while accounting for the opponent aircraft tactics. We explore different algorithmic choices in MCTS and demonstrate the framework numerically in a simulated 2D tactical maneuvering ap",
+      "authors": [
+        "Kunal Srivastava",
+        "Amit Surana"
+      ],
+      "published": "2020-09-13",
+      "year": "2020",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2009.08807v1",
+      "pdf_url": "",
+      "doi": "10.48550/arXiv.2009.08807",
+      "topic": "船舶水动力学",
+      "topic_score": 4,
+      "sub_kws": [
+        "CFD模拟",
+        "操纵性"
+      ],
+      "journal": "arXiv Preprint",
+      "journal_rank": "预印本",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:29"
+    },
+    {
+      "id": "1908.10010",
+      "title": "Research on Autonomous Maneuvering Decision of UCAV based on Approximate Dynamic Programming",
+      "abstract": "Unmanned aircraft systems can perform some more dangerous and difficult missions than manned aircraft systems. In some highly complicated and changeable tasks, such as air combat, the maneuvering decision mechanism is required to sense the combat situation accurately and make the optimal strategy in real-time. This paper presents a formulation of a 3-D one-on-one air combat maneuvering problem and an approximate dynamic programming approach for computing an optimal policy on autonomous maneuveri",
+      "authors": [
+        "Zhencai Hu",
+        "Peng Gao",
+        "Fei Wang"
+      ],
+      "published": "2019-08-27",
+      "year": "2019",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1908.10010v2",
+      "pdf_url": "",
+      "doi": "10.48550/arXiv.1908.10010",
+      "topic": "船舶水动力学",
+      "topic_score": 4,
+      "sub_kws": [
+        "CFD模拟",
+        "操纵性"
+      ],
+      "journal": "arXiv Preprint",
+      "journal_rank": "预印本",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:29"
+    },
+    {
+      "id": "2206.10303",
+      "title": "Prediction of Maneuvering Status for Aerial Vehicles using Supervised Learning Methods",
+      "abstract": "Aerial Vehicles follow a guided approach based on Latitude, Longitude and Altitude. This information can be used for calculating the status of maneuvering for the aerial vehicles along the line of trajectory. This is a binary classification problem and Machine Learning can be leveraged for solving such problem. In this paper we present a methodology for deriving maneuvering status and its prediction using Linear, Distance Metric, Discriminant Analysis and Boosting Ensemble supervised learning me",
+      "authors": [
+        "Abhishek Gupta",
+        "Sarvesh Thustu",
+        "Riti Thakor",
+        "Saniya Patil",
+        "Raunak Joshi"
+      ],
+      "published": "2022-06-02",
+      "year": "2022",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2206.10303v2",
+      "pdf_url": "",
+      "doi": "10.48550/arXiv.2206.10303",
+      "topic": "船舶水动力学",
+      "topic_score": 4,
+      "sub_kws": [
+        "CFD模拟",
+        "操纵性"
+      ],
+      "journal": "arXiv Preprint",
+      "journal_rank": "预印本",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:29"
+    },
+    {
+      "id": "2606.31992",
+      "title": "GQL-Based Physical-Constraint-Preserving High-Order Finite Difference Schemes for Special Relativistic Hydrodynamics in Arbitrary Dimensions",
+      "abstract": "High-order accurate simulations of special relativistic hydrodynamics (RHD) are prone to numerical breakdown if intrinsic physical constraints (positive rest-mass density/pressure and subluminal velocity) are violated near strong discontinuities. In this work, we develop a robust and efficient physical-constraint-preserving (PCP) flux-limiting framework for high-order schemes, using finite-difference WENO as a representative example. By leveraging the geometric quasilinearization (GQL) represent",
+      "authors": [
+        "Linfeng Xu",
+        "Shengrong Ding",
+        "Kailiang Wu"
+      ],
+      "published": "2026-06-30",
+      "year": "2026",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2606.31992v1",
+      "pdf_url": "",
+      "doi": "10.48550/arXiv.2606.31992",
+      "topic": "船舶水动力学",
+      "topic_score": 4,
+      "sub_kws": [
+        "粘性流",
+        "CFD模拟"
+      ],
+      "journal": "arXiv Preprint",
+      "journal_rank": "预印本",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:29"
+    },
+    {
+      "id": "2606.32021",
+      "title": "Flexibility as a Universal Nature-Inspired Mechanism for Thrust Enhancement",
+      "abstract": "Nature has equipped jet-propelled swimmers with flexible nozzles that outperform rigid ones, yet the origin of this advantage has remained unexplained. By tracking where and when energy is exchanged between fluid and structure, three-dimensional numerical simulations resolve the underlying mechanism: a standing-wave response of the nozzle, in which the structure dilates and then recoils synchronously, charging and releasing energy to enhance thrust. Outside of this regime, the structure exhibits",
+      "authors": [
+        "Roberta Santoriello",
+        "Francesco Viola",
+        "Vincenzo Citro"
+      ],
+      "published": "2026-06-30",
+      "year": "2026",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2606.32021v1",
+      "pdf_url": "",
+      "doi": "10.48550/arXiv.2606.32021",
+      "topic": "船舶水动力学",
+      "topic_score": 8,
+      "sub_kws": [
+        "CFD模拟",
+        "操纵性"
+      ],
+      "journal": "arXiv Preprint",
+      "journal_rank": "预印本",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:29"
+    },
+    {
+      "id": "2606.25945",
+      "title": "A Methodology for Integrating Life Cycle Assessment into a Multidisciplinary Design Analysis and Optimization Framework for Sustainable Launcher Development",
+      "abstract": "The increasing number of orbital and sub-orbital launches makes it necessary to investigate the environmental impacts of launch vehicles and incorporate eco-design considerations into their development. In response, the European Space Agency has promoted Life Cycle Assessment (LCA) as a standardization methodology to mitigate environmental impacts of present and future space missions. This need is further amplified in the NewSpace, where numerous configurations and innovative technologies are ex",
+      "authors": [
+        "Alice De Oliveira",
+        "Mathieu Balesdent",
+        "Loïc Brevault",
+        "Annafederica Urbano"
+      ],
+      "published": "2026-06-24",
+      "year": "2026",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2606.25945v1",
+      "pdf_url": "",
+      "doi": "10.48550/arXiv.2606.25945",
+      "topic": "船舶水动力学",
+      "topic_score": 4,
+      "sub_kws": [
+        "粘性流",
+        "CFD模拟"
+      ],
+      "journal": "arXiv Preprint",
+      "journal_rank": "预印本",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:29"
+    },
+    {
+      "id": "2606.31613",
+      "title": "Robust Autonomous UAV Landing on Maritime Platforms via Multimodal Agentic AI and Active Wave Compensation",
+      "abstract": "Autonomous aerial inspection of marine infrastructure is frequently compromised by stochastic sea states, introducing risks of high-kinetic impacts, post-landing toppling, and sensory occlusion. This paper proposes a decoupled, multi-vehicle landing framework synchronizing an Unmanned Surface Vehicle (USV) equipped with a 3-RPU stabilized platform with a robust Unmanned Aerial Vehicle (UAV). The architecture utilizes two independent Deep Reinforcement Learning (DRL) agents: a Soft Actor-Critic (",
+      "authors": [
+        "Francisco S. Neves",
+        "Pedro N. Pereira",
+        "Raul D. S. G. Campilho",
+        "Andry M. Pinto"
+      ],
+      "published": "2026-06-30",
+      "year": "2026",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2606.31613v1",
+      "pdf_url": "",
+      "doi": "10.48550/arXiv.2606.31613",
+      "topic": "自主船舶与智能航行",
+      "topic_score": 6,
+      "sub_kws": [],
+      "journal": "arXiv Preprint",
+      "journal_rank": "预印本",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:30"
+    },
+    {
+      "id": "2606.31707",
+      "title": "Mean-Flow Adjoint Sensitivity Analysis of Unsteady Flow Around Porous Cylinders Using a Homogenized Lattice Boltzmann Method",
+      "abstract": "Adjoint-based sensitivity analysis is an indispensable tool for large-scale fluid-dynamic design and distributed control problems, yet its application to unsteady and turbulent flows is frequently hindered by the prohibitive memory footprint of transient checkpointing and the divergence of gradients in chaotic regimes. To address these computational bottlenecks, this paper presents a mean-flow adjoint sensitivity analysis framework for unsteady flows around porous cylinders using the homogenized",
+      "authors": [
+        "Shota Ito",
+        "Johannes L. Grafen",
+        "Fedor Bukreev",
+        "Adrian Kummerländer",
+        "Mathias J. Krause"
+      ],
+      "published": "2026-06-30",
+      "year": "2026",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2606.31707v1",
+      "pdf_url": "",
+      "doi": "10.48550/arXiv.2606.31707",
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 6,
+      "sub_kws": [
+        "CFD方法"
+      ],
+      "journal": "arXiv Preprint",
+      "journal_rank": "预印本",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:30"
+    },
+    {
+      "id": "2606.28569",
+      "title": "Data-driven linear analysis of turbulent flows",
+      "abstract": "Mean-flow-based linear analyses of turbulent flows, such as resolvent analysis, provide valuable insight about flow structures and their dynamics that has been widely leveraged to model, control and understand the underlying flow physics. However, these analyses are computationally expensive for flows over complex geometries and require the use of specialized codes that are typically only available in research environments. On the other hand, data-driven modal decompositions, such as the dynamic",
+      "authors": [
+        "Benjamin Herrmann",
+        "Katherine Cao",
+        "Carlos A. Gonzalez",
+        "S. L. Brunton",
+        "Beverley J. McKeon"
+      ],
+      "published": "2026-06-26",
+      "year": "2026",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2606.28569v1",
+      "pdf_url": "",
+      "doi": "10.48550/arXiv.2606.28569",
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 6,
+      "sub_kws": [
+        "CFD方法"
+      ],
+      "journal": "arXiv Preprint",
+      "journal_rank": "预印本",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:30"
+    },
+    {
+      "id": "2606.31846",
+      "title": "Z-1: Efficient Reinforcement Learning for Vision-Language-Action Models",
+      "abstract": "Vision-Language-Action (VLA) models offer a promising framework for robotic manipulation by connecting language instructions, visual observations, and continuous control. However, most existing policies remain limited by behavior cloning or supervised fine-tuning (SFT) from fixed demonstrations, which provides limited opportunity to improve from the policy's own failures. In this paper, we present Z-1, a reinforcement learning (RL) post-training framework for flow-based VLA models. Built on top ",
+      "authors": [
+        "Lang Cao",
+        "Renhong Chen",
+        "Luyi Li",
+        "Peng Wang",
+        "Mofan Peng"
+      ],
+      "published": "2026-06-30",
+      "year": "2026",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2606.31846v1",
+      "pdf_url": "",
+      "doi": "10.48550/arXiv.2606.31846",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "arXiv Preprint",
+      "journal_rank": "预印本",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:30"
+    },
+    {
+      "id": "2606.25680",
+      "title": "Power-Budgeted Underwater Vehicle Control via Constrained Reinforcement Learning",
+      "abstract": "Underwater vehicles operate from a fixed onboard energy budget that propulsion rapidly depletes, so a controller that completes its task while drawing less thruster power directly extends mission range and endurance. Reinforcement learning yields capable model-free controllers for station-keeping and trajectory tracking, but optimizing task accuracy alone drives the policy toward oscillatory, energy-wasting actuation. The established remedy subtracts an energy penalty from the reward, yet this s",
+      "authors": [
+        "Yinuo Wang",
+        "Gavin Tao",
+        "Yuze Liu"
+      ],
+      "published": "2026-06-24",
+      "year": "2026",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2606.25680v1",
+      "pdf_url": "",
+      "doi": "10.48550/arXiv.2606.25680",
+      "topic": "船舶水动力学",
+      "topic_score": 6,
+      "sub_kws": [
+        "CFD模拟"
+      ],
+      "journal": "arXiv Preprint",
+      "journal_rank": "预印本",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:30"
+    },
+    {
+      "id": "2606.28627",
+      "title": "Reachability Guarantees for Cart-Pole Swing-Up and Stabilization",
+      "abstract": "The cart-pole swing-up is a canonical benchmark for nonlinear control of underactuated systems, yet an end-to-end guarantee linking the global swing-up maneuver to the local stabilizer is seldom formalized. We present a reachability analysis of a switched energy-based/LQR controller that certifies convergence to the upright equilibrium from a compact set of initial conditions. The swing-up law is derived from an energy-error Lyapunov function; canceling the autonomous conservative term yields a ",
+      "authors": [
+        "Mohamed Khalid M Jaffar"
+      ],
+      "published": "2026-06-26",
+      "year": "2026",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2606.28627v1",
+      "pdf_url": "",
+      "doi": "10.48550/arXiv.2606.28627",
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 6,
+      "sub_kws": [
+        "CFD方法"
+      ],
+      "journal": "arXiv Preprint",
+      "journal_rank": "预印本",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:30"
+    },
+    {
+      "id": "66eb4a6fa18b04174916ebbe0c19c7ef465bdc4a",
+      "title": "Comprehensive bibliometric analysis of global research trends in hull grider ultimate-fatigue strength in naval and marine structures",
+      "abstract": "This study aims to identify the range of research trends by analysing bibliometric data in ship design and ship structure from 1990 to 2022 using the Scopus database. The findings are exported the same day to minimise differences between daily database updates. Only ‘article’ and ‘review’ are allowed as publication search types. Based on the sub-keywords: ship design, ship structures, and stiffened panels, a total of 1,279 publications (208 open access) written by 159 different authors are inclu",
+      "authors": [
+        "Ebenhaezer Candela Kristiawan Putra",
+        "A. Prabowo",
+        "R. Adiputra",
+        "H. Nubli",
+        "Wahyu Hendriyono"
+      ],
+      "published": "2025-11-30",
+      "year": "2025",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/66eb4a6fa18b04174916ebbe0c19c7ef465bdc4a",
+      "pdf_url": "",
+      "doi": "10.69644/ivk-2025-02-0319",
+      "topic": "船舶结构力学与安全",
+      "topic_score": 22,
+      "sub_kws": [
+        "船体强度"
+      ],
+      "journal": "Structural Integrity and Life",
+      "journal_rank": "核心期刊",
+      "cited_by": 1,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:30"
+    },
+    {
+      "id": "2f61f01415a46db9d200fb90d8e1add9af2ecd47",
+      "title": "The Effect of Torsion to the Longitudinal Strength on Container Ship",
+      "abstract": "The large deck openings of ultra-large container ships greatly reduce their torsional stiffness, and hydroelastic analysis is a must for reliable structural design. In the initial design stage, the beam model is a rational choice. This study aims to investigate torsion's effect on container ships' strength using a numerical approach based on fatigue boundary conditions and ultimate boundary conditions in the midship region. Regarding fatigue boundary conditions, the dimensional influence of the ",
+      "authors": [
+        "Indah Melati Suci"
+      ],
+      "published": "2025-03-31",
+      "year": "2025",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/2f61f01415a46db9d200fb90d8e1add9af2ecd47",
+      "pdf_url": "",
+      "doi": "10.62012/zl.v6i1.43178",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Zona Laut Jurnal Inovasi Sains Dan Tekno",
+      "journal_rank": "核心期刊",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:30"
+    },
+    {
+      "id": "a9099fc51dfd586dc2775be1e65bb7875e77d8dd",
+      "title": "Accumulated fatigue damage assessment of side structural details in a double hull tanker based on spectral fatigue analysis approach",
+      "abstract": "The fatigue life of structural details in the double side of a tanker ship was investigated, employing the spectral fatigue analysis approach. The stochastic environmental loads were derived by seakeeping software based on the 3D diffraction theory, in the frequency domain, and then mapped on a structural finite element model for the ship hull. The stress response at the considered details was extracted from the finite element analysis and the accumulated damage was estimated by Palmgren-Miner ’",
+      "authors": [
+        "A. Yosri",
+        "H. Leheta",
+        "S. Saad-Eldeen",
+        "A. Zayed"
+      ],
+      "published": "2022-05-01",
+      "year": "2022",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/a9099fc51dfd586dc2775be1e65bb7875e77d8dd",
+      "pdf_url": "",
+      "doi": "10.1016/j.oceaneng.2022.111069",
+      "topic": "船舶结构力学与安全",
+      "topic_score": 12,
+      "sub_kws": [
+        "船体强度",
+        "疲劳分析"
+      ],
+      "journal": "Ocean Engineering",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 16,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:30"
+    },
+    {
+      "id": "d02e16ca1130ce083cb10a0fed8b2657fa643569",
+      "title": "Design and Development of SHIPS-ROV",
+      "abstract": ": Ships that are operating can experience damage to the hull during operation, including: damage to deformation, fatigue, corrosion etc. The presence of bio-fouling attached to the hull makes the hull plates thin due to the formation of deposits or deposits on the hull caused by marine life. This will cause the condition of the ship’s structural strength to decrease due to the decreasing moment of inertia of the structure due to thinning plates. Therefore, it is necessary to inspect the conditio",
+      "authors": [
+        ".. Budianto",
+        "M. Basuki R.",
+        "I. Sutrisno",
+        "Zindhu Maulana",
+        "E. Julianto"
+      ],
+      "published": "2021",
+      "year": "2021",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/d02e16ca1130ce083cb10a0fed8b2657fa643569",
+      "pdf_url": "",
+      "doi": "10.5220/0010953000003260",
+      "topic": "船舶水动力学",
+      "topic_score": 8,
+      "sub_kws": [
+        "CFD模拟"
+      ],
+      "journal": "Proceedings of the 4th International Con",
+      "journal_rank": "核心期刊",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:30"
+    },
+    {
+      "id": "d45649c841ce2a608f12263a116b24af9a3008af",
+      "title": "Overview of Sensors and Signals in Structural Health Monitoring: A Case Study on Crack Detection in a Ship’s Hull*",
+      "abstract": "Sensing is an important step in structural health monitoring (SHM) since it provides good information to be analyzed by suitable signal processing techniques. This overview discusses several key sensors and the importance of proper sensor placement. Moreover, it presents important research on signal processing approaches for SHM. This overview aims to shed light on the importance of signals’ sensing and processing in SHM. It delves into a case study on crack detection in a ship’s hull using a me",
+      "authors": [
+        "Hassan Dabaja",
+        "H. Noura",
+        "M. Ouladsine"
+      ],
+      "published": "2025-07-01",
+      "year": "2025",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/d45649c841ce2a608f12263a116b24af9a3008af",
+      "pdf_url": "",
+      "doi": "10.1109/ICCAD64771.2025.11099289",
+      "topic": "船舶结构力学与安全",
+      "topic_score": 8,
+      "sub_kws": [
+        "疲劳分析",
+        "损伤检测"
+      ],
+      "journal": "2025 International Conference on Control",
+      "journal_rank": "核心期刊",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:30"
+    },
+    {
+      "id": "f287f3d9c9f44a9d0a02008df16710d24025e048",
+      "title": "Assessment of the ultimate and residual strength of a ship's hull",
+      "abstract": "The Common Structural Rules (CSR) developed by the International Association of Classification Societies (IACS) stipulate the incremental-iterative method as one of the standard methods for assessing the ultimate/residual strength of an intact or damaged ship's hull. Based on the force equilibrium condition (FEC), the position of the neutral axis (NA) of the cross-section is determined at each increment of curvature. However, in cases of non-uniform loading or damage due to collision/grounding, ",
+      "authors": [
+        "Sergei A. Ogay",
+        "Le Trong Thinh Thinh"
+      ],
+      "published": "2026-06-21",
+      "year": "2026",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/f287f3d9c9f44a9d0a02008df16710d24025e048",
+      "pdf_url": "",
+      "doi": "10.37890/jwt.vi87.697",
+      "topic": "船舶结构力学与安全",
+      "topic_score": 6,
+      "sub_kws": [
+        "船体强度"
+      ],
+      "journal": "Russian Journal of Water Transport",
+      "journal_rank": "核心期刊",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:30"
+    },
+    {
+      "id": "d6bcd295fef1e0fce4591a2696c76c7c9b77ea81",
+      "title": "Research on Fatigue Strength of Polar Icebreaker Structures Considering Ice Loads Based on Discrete Ice Element Model",
+      "abstract": "Structural safety is of utmost importance for polar icebreakers under both navigation and icebreaking conditions. In this research, the Palmgren–Miner linear cumulative damage theory is employed to evaluate the structural fatigue lifespan of polar icebreakers. A spectral analysis, incorporating the time distribution coefficients for three load conditions, is executed to assess the fatigue damage at typical hot spots during navigation. For icebreaking activities, the ship–ice interaction loads wi",
+      "authors": [
+        "Lizhi Chen",
+        "Zhiyong Pei"
+      ],
+      "published": "2025-08-12",
+      "year": "2025",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/d6bcd295fef1e0fce4591a2696c76c7c9b77ea81",
+      "pdf_url": "",
+      "doi": "10.3390/jmse13081545",
+      "topic": "船舶结构力学与安全",
+      "topic_score": 8,
+      "sub_kws": [
+        "疲劳分析",
+        "碰撞与搁浅"
+      ],
+      "journal": "Journal of Marine Science and Engineerin",
+      "journal_rank": "核心期刊",
+      "cited_by": 1,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:30"
+    },
+    {
+      "id": "41d6cbe6a7d9c8fd40320421b08a246b506bcef1",
+      "title": "Study on Practical Fatigue Assessment Considering Hull Vibration Based on the EWP Concept",
+      "abstract": "\n Onboard multi-position hull monitoring (HM) is carried out on an 8,600 TEU container ship. The relationship between the characteristics of hull vibration (HV) superimposed stress waveforms and the fatigue damage enlargement ratio resulting from HV (Cvib) is studied. Based on this analysis, a methodology for estimating Cvib throughout the entire ship from HM data at a select few reference positions (RP) is proposed. By integrating the proposed whole-ship Cvib estimation technique with the conce",
+      "authors": [
+        "Takaaki Takeuchi",
+        "Naoki Osawa",
+        "N. Fukutake",
+        "Shinichi Hirakawa",
+        "Yoshitaka Kawajiri"
+      ],
+      "published": "2024-06-09",
+      "year": "2024",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/41d6cbe6a7d9c8fd40320421b08a246b506bcef1",
+      "pdf_url": "",
+      "doi": "10.1115/omae2024-127275",
+      "topic": "船舶结构力学与安全",
+      "topic_score": 10,
+      "sub_kws": [
+        "疲劳分析",
+        "振动分析"
+      ],
+      "journal": "Volume 2: Structures, Safety, and Reliab",
+      "journal_rank": "核心期刊",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:30"
+    },
+    {
+      "id": "57a0a065bea9b0ab013e31f4ba451e3ab3d079f7",
+      "title": "An investigation of strength degradation due to thickness plate reduction on Ferry Ro-Ro Ship’s Hull",
+      "abstract": "Old ships will experience a degradation of the structural strength after receiving repeated loads. Decreased strength performance is also caused by structure shape and structural dimensions changes. In steel ships, Dimensional changes will be discovered when the ship is docked, because the material undergo corrosion causing in thinning the shell plate. In this study, a thickness reduction of the shell plate has been simulated to determine the longitudinal response of the ship’s structure. A Fini",
+      "authors": [
+        "A. M. Nugraha A",
+        "M. Pawara",
+        "A. Ardianti",
+        "F. Mahmuddin"
+      ],
+      "published": "2021-11-01",
+      "year": "2021",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/57a0a065bea9b0ab013e31f4ba451e3ab3d079f7",
+      "pdf_url": "",
+      "doi": "10.1088/1755-1315/921/1/012053",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "IOP Conference Series: Earth and Environ",
+      "journal_rank": "核心期刊",
+      "cited_by": 3,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:30"
+    },
+    {
+      "id": "c0d954deafb8dfaaee4468c1445dbfeaef043451",
+      "title": "Numerical analysis of fatigue strength for ultra-large ships considering springing",
+      "abstract": "Due to the low stiffness of ultra-large ships, the effect of springing becomes more obvious. The traditional quasi-static spectral method (QSM) ignores the coupling effect of hydrodynamic load and hull elastic characteristics, so it is unable to solve the problem of fatigue strength considering springing. To solve the problem and investigate the impact of springing response on fatigue, the stress mode superposition spectral method (SSM) suitable for ultra-large ships is proposed. The numerical a",
+      "authors": [
+        "Ling Chen",
+        "Q. Meng",
+        "Chibo Lu"
+      ],
+      "published": "2023-08-01",
+      "year": "2023",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/c0d954deafb8dfaaee4468c1445dbfeaef043451",
+      "pdf_url": "",
+      "doi": "10.1088/1742-6596/2553/1/012077",
+      "topic": "船舶水动力学",
+      "topic_score": 10,
+      "sub_kws": [
+        "CFD模拟"
+      ],
+      "journal": "Journal of Physics: Conference Series",
+      "journal_rank": "核心期刊",
+      "cited_by": 1,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:30"
+    },
+    {
+      "id": "4cc07dce3280010629721289dc60f69a79cd2328",
+      "title": "Improvement of trawler hull structure under condition of ensuring fatigue strength",
+      "abstract": "The structure of the hull of the project 1288 trawler in a region of fore hold was improved to ensure fatigue strength of assemblies of the intersection of main frames with the second bottom. To this end, a study of the fatigue strength of these assemblies was carried out for the original side structure and two versions of its modernization.\nValues of internal forces at the points of appearance of fatigue cracks in the compartment have been determined for three design versions of the side. It wa",
+      "authors": [
+        "Leontii Korostylov",
+        "Dmytro Lytvynenko",
+        "Hryhorii Sharun",
+        "I. Davydov"
+      ],
+      "published": "2021-08-31",
+      "year": "2021",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/4cc07dce3280010629721289dc60f69a79cd2328",
+      "pdf_url": "",
+      "doi": "10.15587/1729-4061.2021.239159",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "Eastern-European Journal of Enterprise T",
+      "journal_rank": "核心期刊",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:30"
+    },
+    {
+      "id": "ee6427c055640f0a74dc4566f24495334826de06",
+      "title": "Estimation of Still-Water Bending Moment of Ship Hull Girder Using Beam Finite Element Model and Ensemble Kalman Filter",
+      "abstract": "\n Longitudinal bending strength is the most fundamental strength of ship hull girders, and longitudinal bending moment acting on hull girders should be accurately monitored to ensure structural safety during ship operations. The longitudinal bending moment classified into still-water bending moment and wave-induced bending moment. This study proposes a data assimilation method to estimate the still water bending moment, and especially focuses on inverse estimation of cargo load. In the proposed ",
+      "authors": [
+        "Akira Tatsumi",
+        "K. Iijima",
+        "M. Fujikubo"
+      ],
+      "published": "2022-06-05",
+      "year": "2022",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/ee6427c055640f0a74dc4566f24495334826de06",
+      "pdf_url": "",
+      "doi": "10.1115/omae2022-78630",
+      "topic": "船舶水动力学",
+      "topic_score": 8,
+      "sub_kws": [],
+      "journal": "Volume 2: Structures, Safety, and Reliab",
+      "journal_rank": "核心期刊",
+      "cited_by": 2,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:30"
+    },
+    {
+      "id": "36e9998319a0b2ddfdbf3ead6ed8ca60187c1b5c",
+      "title": "Finite Element Analysis of Surface Ship Hull Thin Section Lifting Scheme",
+      "abstract": "Aiming at the problems that the deformation of the thin plate segments of surface ships may damage the internal structure or lead to the inability to lift and close the ship, taking three typical thin plate segments of a ship as an example, the corresponding lifting plan is designed, the factors affecting the construction efficiency of the lifting equipment on the whole process of lifting them are discussed, the deformation of the three thin plate segments under different working conditions is c",
+      "authors": [
+        "Hao Ge",
+        "Sheng Yang"
+      ],
+      "published": "2022-11-18",
+      "year": "2022",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/36e9998319a0b2ddfdbf3ead6ed8ca60187c1b5c",
+      "pdf_url": "",
+      "doi": "10.1109/WCMEIM56910.2022.10021422",
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
+      "journal": "2022 5th World Conference on Mechanical ",
+      "journal_rank": "核心期刊",
+      "cited_by": 0,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:30"
+    },
+    {
+      "id": "0313b3c2d9da19728a8507637c8ee6f57f436aae",
+      "title": "Fatigue damage calculation of ship hulls caused by ice loads in broken ice fields",
+      "abstract": "ABSTRACT Fatigue damage induced by ice loads is a key concern as ships operates in broken ice fields where a sea route is normally developed. This paper proposes a method for calculating fatigue damage of a ship structure advancing in broken ice, on the basis of numerical simulations. A random broken ice domain with polygon-shaped ice floes is generated using Centroidal Voronoi Tessellation (CVT) algorithm. A discrete element method (DEM) is employed to imitate ice-ice and ice-structure interact",
+      "authors": [
+        "Yue Han",
+        "Xinyao Zhu",
+        "Ming Song"
+      ],
+      "published": "2023-01-04",
+      "year": "2023",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/0313b3c2d9da19728a8507637c8ee6f57f436aae",
+      "pdf_url": "",
+      "doi": "10.1080/17445302.2022.2164420",
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 6,
+      "sub_kws": [
+        "CFD方法"
+      ],
+      "journal": "Ships and Offshore Structures",
+      "journal_rank": "一区/顶刊",
+      "cited_by": 7,
+      "institutions": [],
+      "concepts": [],
+      "fetched": "2026-07-01 14:30"
+    },
+    {
       "id": "https://openalex.org/W3200454905",
       "title": "AUV Trajectory Tracking Models and Control Strategies: A Review",
       "abstract": "Autonomous underwater vehicles (AUVs) have been widely used to perform underwater tasks. Due to the environmental disturbances, underactuated problems, system constraints, and system coupling, AUV trajectory tracking control is challenging. Thus, further investigation of dynamic characteristics and trajectory tracking control methods of the AUV motion system will be of great importance to improve underwater task performance. An AUV controller must be able to cope with various challenges with the underwater vehicle, adaptively update the reference model, and overcome unexpected deviations. In order to identify modeling strategies and the best control practices, this paper presents an overview of the main factors of control-oriented models and control strategies for AUVs. In modeling, two fi",
@@ -15,7 +887,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse9091020",
       "topic": "水下航行器与海洋机器人",
-      "topic_score": 14,
+      "topic_score": 16,
       "sub_kws": [],
       "journal": "Journal of Marine Science and Engineerin",
       "journal_rank": "核心期刊",
@@ -43,7 +915,7 @@
       "pdf_url": "",
       "doi": "10.3390/polym13020173",
       "topic": "船舶结构力学与安全",
-      "topic_score": 14,
+      "topic_score": 16,
       "sub_kws": [],
       "journal": "Polymers",
       "journal_rank": "核心期刊",
@@ -71,7 +943,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2021.110239",
       "topic": "船舶水动力学",
-      "topic_score": 6,
+      "topic_score": 4,
       "sub_kws": [
         "船型优化"
       ],
@@ -133,7 +1005,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2023.114327",
       "topic": "海洋工程结构物",
-      "topic_score": 6,
+      "topic_score": 4,
       "sub_kws": [
         "立管与锚泊"
       ],
@@ -293,7 +1165,7 @@
       "pdf_url": "",
       "doi": "10.1186/s41072-023-00159-4",
       "topic": "船舶水动力学",
-      "topic_score": 6,
+      "topic_score": 8,
       "sub_kws": [
         "粘性流",
         "CFD模拟"
@@ -325,7 +1197,7 @@
       "pdf_url": "",
       "doi": "10.3389/fmars.2022.970081",
       "topic": "海洋可再生能源",
-      "topic_score": 8,
+      "topic_score": 10,
       "sub_kws": [],
       "journal": "Frontiers in Marine Science",
       "journal_rank": "核心期刊",
@@ -387,7 +1259,7 @@
       "pdf_url": "",
       "doi": "10.1080/21650020.2024.2327362",
       "topic": "船舶水动力学",
-      "topic_score": 8,
+      "topic_score": 6,
       "sub_kws": [
         "粘性流",
         "CFD模拟"
@@ -450,7 +1322,7 @@
       "pdf_url": "",
       "doi": "10.1038/s41598-023-31533-8",
       "topic": "海洋工程结构物",
-      "topic_score": 10,
+      "topic_score": 12,
       "sub_kws": [
         "平台设计"
       ],
@@ -576,7 +1448,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.scitotenv.2023.163015",
       "topic": "海洋工程结构物",
-      "topic_score": 8,
+      "topic_score": 6,
       "sub_kws": [],
       "journal": "The Science of The Total Environment",
       "journal_rank": "核心期刊",
@@ -605,7 +1477,7 @@
       "pdf_url": "",
       "doi": "10.3390/s23042099",
       "topic": "海洋工程结构物",
-      "topic_score": 8,
+      "topic_score": 5,
       "sub_kws": [
         "基础与地基"
       ],
@@ -666,7 +1538,7 @@
       "pdf_url": "",
       "doi": "10.3390/en16041775",
       "topic": "船舶推进与节能",
-      "topic_score": 9,
+      "topic_score": 11,
       "sub_kws": [
         "节能装置",
         "替代燃料"
@@ -754,8 +1626,8 @@
       "url": "https://doi.org/10.3390/su14084832",
       "pdf_url": "",
       "doi": "10.3390/su14084832",
-      "topic": "其他",
-      "topic_score": 0,
+      "topic": "自主船舶与智能航行",
+      "topic_score": 4,
       "sub_kws": [],
       "journal": "Sustainability",
       "journal_rank": "核心期刊",
@@ -836,7 +1708,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2024.117684",
       "topic": "船舶推进与节能",
-      "topic_score": 8,
+      "topic_score": 6,
       "sub_kws": [
         "排放控制"
       ],
@@ -867,7 +1739,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2023.115255",
       "topic": "船舶水动力学",
-      "topic_score": 6,
+      "topic_score": 4,
       "sub_kws": [
         "操纵性"
       ],
@@ -1055,7 +1927,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2024.117443",
       "topic": "船舶水动力学",
-      "topic_score": 8,
+      "topic_score": 6,
       "sub_kws": [
         "粘性流",
         "CFD模拟"
@@ -1089,7 +1961,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2023.116476",
       "topic": "船舶水动力学",
-      "topic_score": 6,
+      "topic_score": 4,
       "sub_kws": [
         "CFD模拟"
       ],
@@ -1187,7 +2059,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2023.115751",
       "topic": "船舶推进与节能",
-      "topic_score": 6,
+      "topic_score": 8,
       "sub_kws": [
         "替代燃料"
       ],
@@ -1278,7 +2150,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2024.117020",
       "topic": "海洋可再生能源",
-      "topic_score": 6,
+      "topic_score": 4,
       "sub_kws": [],
       "journal": "Ocean Engineering",
       "journal_rank": "一区/顶刊",
@@ -1306,7 +2178,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2023.115841",
       "topic": "海洋工程结构物",
-      "topic_score": 11,
+      "topic_score": 8,
       "sub_kws": [
         "平台设计"
       ],
@@ -1396,7 +2268,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2024.116808",
       "topic": "海洋可再生能源",
-      "topic_score": 6,
+      "topic_score": 4,
       "sub_kws": [],
       "journal": "Ocean Engineering",
       "journal_rank": "一区/顶刊",
@@ -1485,7 +2357,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2024.119398",
       "topic": "船舶水动力学",
-      "topic_score": 6,
+      "topic_score": 5,
       "sub_kws": [],
       "journal": "Ocean Engineering",
       "journal_rank": "一区/顶刊",
@@ -1630,7 +2502,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2024.118444",
       "topic": "自主船舶与智能航行",
-      "topic_score": 16,
+      "topic_score": 18,
       "sub_kws": [],
       "journal": "Ocean Engineering",
       "journal_rank": "一区/顶刊",
@@ -1660,7 +2532,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2024.117829",
       "topic": "海洋可再生能源",
-      "topic_score": 10,
+      "topic_score": 12,
       "sub_kws": [],
       "journal": "Ocean Engineering",
       "journal_rank": "一区/顶刊",
@@ -1689,7 +2561,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2024.117732",
       "topic": "船舶推进与节能",
-      "topic_score": 6,
+      "topic_score": 4,
       "sub_kws": [],
       "journal": "Ocean Engineering",
       "journal_rank": "一区/顶刊",
@@ -1720,7 +2592,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2024.118174",
       "topic": "自主船舶与智能航行",
-      "topic_score": 10,
+      "topic_score": 4,
       "sub_kws": [],
       "journal": "Ocean Engineering",
       "journal_rank": "一区/顶刊",
@@ -1750,7 +2622,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2024.117652",
       "topic": "自主船舶与智能航行",
-      "topic_score": 18,
+      "topic_score": 15,
       "sub_kws": [
         "避碰"
       ],
@@ -1809,7 +2681,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.marstruc.2024.103716",
       "topic": "船舶与海洋工程数值方法",
-      "topic_score": 6,
+      "topic_score": 4,
       "sub_kws": [],
       "journal": "Marine Structures",
       "journal_rank": "一区/顶刊",
@@ -1982,7 +2854,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.marstruc.2023.103542",
       "topic": "海洋可再生能源",
-      "topic_score": 4,
+      "topic_score": 6,
       "sub_kws": [],
       "journal": "Marine Structures",
       "journal_rank": "一区/顶刊",
@@ -2040,7 +2912,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.marstruc.2024.103702",
       "topic": "海洋工程结构物",
-      "topic_score": 6,
+      "topic_score": 4,
       "sub_kws": [],
       "journal": "Marine Structures",
       "journal_rank": "一区/顶刊",
@@ -2165,7 +3037,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.marstruc.2024.103724",
       "topic": "海洋工程结构物",
-      "topic_score": 6,
+      "topic_score": 4,
       "sub_kws": [
         "平台设计"
       ],
@@ -2315,7 +3187,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.marstruc.2023.103505",
       "topic": "海洋可再生能源",
-      "topic_score": 8,
+      "topic_score": 10,
       "sub_kws": [],
       "journal": "Marine Structures",
       "journal_rank": "一区/顶刊",
@@ -2429,7 +3301,7 @@
       "pdf_url": "",
       "doi": "10.5957/josr.09220026",
       "topic": "船舶水动力学",
-      "topic_score": 8,
+      "topic_score": 5,
       "sub_kws": [
         "CFD模拟"
       ],
@@ -2667,7 +3539,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.coastaleng.2024.104614",
       "topic": "海洋可再生能源",
-      "topic_score": 11,
+      "topic_score": 8,
       "sub_kws": [],
       "journal": "Coastal Engineering",
       "journal_rank": "一区/顶刊",
@@ -2783,7 +3655,7 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.2311.05470",
       "topic": "船舶水动力学",
-      "topic_score": 6,
+      "topic_score": 4,
       "sub_kws": [
         "CFD模拟"
       ],
@@ -2835,7 +3707,7 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.2305.08279",
       "topic": "船舶设计与优化",
-      "topic_score": 6,
+      "topic_score": 4,
       "sub_kws": [],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
@@ -2887,7 +3759,7 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.1304.2653",
       "topic": "船舶与海洋工程数值方法",
-      "topic_score": 8,
+      "topic_score": 10,
       "sub_kws": [
         "CFD方法"
       ],
@@ -2942,9 +3814,12 @@
       "url": "http://arxiv.org/abs/2606.29853v1",
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.29853",
-      "topic": "其他",
-      "topic_score": 0,
-      "sub_kws": [],
+      "topic": "船舶水动力学",
+      "topic_score": 4,
+      "sub_kws": [
+        "粘性流",
+        "CFD模拟"
+      ],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
       "cited_by": 0,
@@ -2970,8 +3845,10 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.29875",
       "topic": "自主船舶与智能航行",
-      "topic_score": 6,
-      "sub_kws": [],
+      "topic_score": 4,
+      "sub_kws": [
+        "运动控制"
+      ],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
       "cited_by": 0,
@@ -3053,8 +3930,8 @@
       "url": "https://doi.org/10.1016/j.heliyon.2024.e39661",
       "pdf_url": "",
       "doi": "10.1016/j.heliyon.2024.e39661",
-      "topic": "其他",
-      "topic_score": 0,
+      "topic": "船舶结构力学与安全",
+      "topic_score": 4,
       "sub_kws": [],
       "journal": "Heliyon",
       "journal_rank": "核心期刊",
@@ -3141,7 +4018,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse11051021",
       "topic": "船舶推进与节能",
-      "topic_score": 8,
+      "topic_score": 6,
       "sub_kws": [],
       "journal": "Journal of Marine Science and Engineerin",
       "journal_rank": "核心期刊",
@@ -3258,8 +4135,9 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.2408.07783",
       "topic": "船舶水动力学",
-      "topic_score": 7,
+      "topic_score": 11,
       "sub_kws": [
+        "兴波阻力",
         "粘性流",
         "CFD模拟"
       ],
@@ -3288,7 +4166,7 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.1410.1918",
       "topic": "船舶水动力学",
-      "topic_score": 4,
+      "topic_score": 3,
       "sub_kws": [
         "CFD模拟"
       ],
@@ -3313,9 +4191,11 @@
       "url": "http://arxiv.org/abs/2606.11653v1",
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.11653",
-      "topic": "其他",
-      "topic_score": 0,
-      "sub_kws": [],
+      "topic": "船舶水动力学",
+      "topic_score": 1,
+      "sub_kws": [
+        "CFD模拟"
+      ],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
       "cited_by": 0,
@@ -3339,7 +4219,7 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.2303.16702",
       "topic": "船舶水动力学",
-      "topic_score": 6,
+      "topic_score": 4,
       "sub_kws": [
         "CFD模拟"
       ],
@@ -3367,9 +4247,11 @@
       "url": "http://arxiv.org/abs/2301.08861v2",
       "pdf_url": "",
       "doi": "10.48550/arXiv.2301.08861",
-      "topic": "其他",
-      "topic_score": 0,
-      "sub_kws": [],
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 3,
+      "sub_kws": [
+        "编队控制"
+      ],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
       "cited_by": 0,
@@ -3445,9 +4327,12 @@
       "url": "http://arxiv.org/abs/2405.13996v2",
       "pdf_url": "",
       "doi": "10.48550/arXiv.2405.13996",
-      "topic": "其他",
-      "topic_score": 0,
-      "sub_kws": [],
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 1,
+      "sub_kws": [
+        "导航定位",
+        "编队控制"
+      ],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
       "cited_by": 0,
@@ -3469,7 +4354,7 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.2604.22962",
       "topic": "船舶水动力学",
-      "topic_score": 13,
+      "topic_score": 8,
       "sub_kws": [
         "CFD模拟",
         "操纵性"
@@ -3496,9 +4381,11 @@
       "url": "http://arxiv.org/abs/2310.12886v1",
       "pdf_url": "",
       "doi": "10.48550/arXiv.2310.12886",
-      "topic": "其他",
-      "topic_score": 0,
-      "sub_kws": [],
+      "topic": "船舶水动力学",
+      "topic_score": 1,
+      "sub_kws": [
+        "CFD模拟"
+      ],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
       "cited_by": 0,
@@ -3524,8 +4411,10 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.2410.18669",
       "topic": "水下航行器与海洋机器人",
-      "topic_score": 13,
-      "sub_kws": [],
+      "topic_score": 7,
+      "sub_kws": [
+        "编队控制"
+      ],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
       "cited_by": 0,
@@ -3549,7 +4438,7 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.1603.04565",
       "topic": "船舶水动力学",
-      "topic_score": 4,
+      "topic_score": 1,
       "sub_kws": [
         "粘性流",
         "CFD模拟",
@@ -3580,7 +4469,7 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.2111.06120",
       "topic": "船舶水动力学",
-      "topic_score": 6,
+      "topic_score": 1,
       "sub_kws": [
         "CFD模拟",
         "操纵性"
@@ -3606,8 +4495,9 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.1609.06559",
       "topic": "船舶水动力学",
-      "topic_score": 10,
+      "topic_score": 5,
       "sub_kws": [
+        "CFD模拟",
         "操纵性"
       ],
       "journal": "arXiv Preprint",
@@ -3631,7 +4521,7 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.28021",
       "topic": "船舶水动力学",
-      "topic_score": 4,
+      "topic_score": 1,
       "sub_kws": [
         "粘性流",
         "CFD模拟"
@@ -3659,7 +4549,7 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.25472",
       "topic": "船舶水动力学",
-      "topic_score": 13,
+      "topic_score": 8,
       "sub_kws": [
         "CFD模拟"
       ],
@@ -3688,7 +4578,7 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.25373",
       "topic": "船舶与海洋工程数值方法",
-      "topic_score": 8,
+      "topic_score": 5,
       "sub_kws": [
         "CFD方法",
         "SPH"
@@ -3717,9 +4607,11 @@
       "url": "http://arxiv.org/abs/2606.28051v1",
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.28051",
-      "topic": "其他",
-      "topic_score": 0,
-      "sub_kws": [],
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 1,
+      "sub_kws": [
+        "导航定位"
+      ],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
       "cited_by": 0,
@@ -3744,9 +4636,12 @@
       "url": "http://arxiv.org/abs/2606.27475v1",
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.27475",
-      "topic": "其他",
-      "topic_score": 0,
-      "sub_kws": [],
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 1,
+      "sub_kws": [
+        "导航定位",
+        "水下抓取"
+      ],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
       "cited_by": 0,
@@ -3770,9 +4665,11 @@
       "url": "http://arxiv.org/abs/2606.28260v1",
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.28260",
-      "topic": "其他",
-      "topic_score": 0,
-      "sub_kws": [],
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 6,
+      "sub_kws": [
+        "CFD方法"
+      ],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
       "cited_by": 0,
@@ -3795,9 +4692,12 @@
       "url": "http://arxiv.org/abs/2606.28165v1",
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.28165",
-      "topic": "其他",
-      "topic_score": 0,
-      "sub_kws": [],
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 5,
+      "sub_kws": [
+        "CFD方法",
+        "SPH"
+      ],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
       "cited_by": 0,
@@ -3848,8 +4748,8 @@
       "url": "http://arxiv.org/abs/2606.24234v1",
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.24234",
-      "topic": "其他",
-      "topic_score": 0,
+      "topic": "船舶推进与节能",
+      "topic_score": 5,
       "sub_kws": [],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
@@ -3875,8 +4775,8 @@
       "url": "http://arxiv.org/abs/2606.19176v1",
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.19176",
-      "topic": "其他",
-      "topic_score": 0,
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 4,
       "sub_kws": [],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
@@ -3929,7 +4829,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse9040415",
       "topic": "船舶推进与节能",
-      "topic_score": 12,
+      "topic_score": 14,
       "sub_kws": [
         "排放控制"
       ],
@@ -3958,7 +4858,7 @@
       "pdf_url": "",
       "doi": "10.1109/tpel.2021.3128417",
       "topic": "船舶水动力学",
-      "topic_score": 6,
+      "topic_score": 3,
       "sub_kws": [
         "CFD模拟"
       ],
@@ -3988,7 +4888,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2023.114670",
       "topic": "船舶水动力学",
-      "topic_score": 14,
+      "topic_score": 8,
       "sub_kws": [
         "粘性流",
         "CFD模拟"
@@ -4020,8 +4920,8 @@
       "url": "https://doi.org/10.1007/s40544-022-0707-5",
       "pdf_url": "",
       "doi": "10.1007/s40544-022-0707-5",
-      "topic": "其他",
-      "topic_score": 0,
+      "topic": "船舶水动力学",
+      "topic_score": 4,
       "sub_kws": [],
       "journal": "Friction",
       "journal_rank": "核心期刊",
@@ -4048,7 +4948,7 @@
       "pdf_url": "",
       "doi": "10.1038/s41560-022-01065-y",
       "topic": "船舶推进与节能",
-      "topic_score": 6,
+      "topic_score": 4,
       "sub_kws": [
         "混合动力"
       ],
@@ -4080,7 +4980,7 @@
       "pdf_url": "",
       "doi": "10.3390/info13010022",
       "topic": "自主船舶与智能航行",
-      "topic_score": 6,
+      "topic_score": 8,
       "sub_kws": [],
       "journal": "Information",
       "journal_rank": "核心期刊",
@@ -4109,7 +5009,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse11061119",
       "topic": "水下航行器与海洋机器人",
-      "topic_score": 14,
+      "topic_score": 8,
       "sub_kws": [
         "导航定位"
       ],
@@ -4140,7 +5040,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.arcontrol.2023.04.004",
       "topic": "海洋可再生能源",
-      "topic_score": 4,
+      "topic_score": 3,
       "sub_kws": [],
       "journal": "Annual Reviews in Control",
       "journal_rank": "核心期刊",
@@ -4168,7 +5068,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse9020137",
       "topic": "船舶推进与节能",
-      "topic_score": 4,
+      "topic_score": 1,
       "sub_kws": [],
       "journal": "Journal of Marine Science and Engineerin",
       "journal_rank": "核心期刊",
@@ -4197,7 +5097,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse9020119",
       "topic": "船舶水动力学",
-      "topic_score": 6,
+      "topic_score": 4,
       "sub_kws": [],
       "journal": "Journal of Marine Science and Engineerin",
       "journal_rank": "核心期刊",
@@ -4225,8 +5125,8 @@
       "url": "https://doi.org/10.1039/d1cs01083b",
       "pdf_url": "",
       "doi": "10.1039/d1cs01083b",
-      "topic": "其他",
-      "topic_score": 0,
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 3,
       "sub_kws": [],
       "journal": "Chemical Society Reviews",
       "journal_rank": "核心期刊",
@@ -4317,7 +5217,7 @@
       "pdf_url": "",
       "doi": "10.3390/s23177321",
       "topic": "水下航行器与海洋机器人",
-      "topic_score": 13,
+      "topic_score": 10,
       "sub_kws": [
         "导航定位"
       ],
@@ -4348,7 +5248,7 @@
       "pdf_url": "",
       "doi": "10.1109/access.2024.3380458",
       "topic": "水下航行器与海洋机器人",
-      "topic_score": 13,
+      "topic_score": 9,
       "sub_kws": [
         "导航定位"
       ],
@@ -4444,7 +5344,7 @@
       "pdf_url": "",
       "doi": "10.3390/en15217910",
       "topic": "船舶推进与节能",
-      "topic_score": 12,
+      "topic_score": 4,
       "sub_kws": [
         "替代燃料",
         "排放控制"
@@ -4473,9 +5373,11 @@
       "url": "https://doi.org/10.3390/app11093954",
       "pdf_url": "",
       "doi": "10.3390/app11093954",
-      "topic": "其他",
-      "topic_score": 0,
-      "sub_kws": [],
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 4,
+      "sub_kws": [
+        "CFD方法"
+      ],
       "journal": "Applied Sciences",
       "journal_rank": "核心期刊",
       "cited_by": 72,
@@ -4503,7 +5405,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse10091222",
       "topic": "船舶水动力学",
-      "topic_score": 6,
+      "topic_score": 5,
       "sub_kws": [
         "粘性流",
         "CFD模拟"
@@ -4533,7 +5435,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.apenergy.2021.117100",
       "topic": "海洋可再生能源",
-      "topic_score": 6,
+      "topic_score": 4,
       "sub_kws": [],
       "journal": "Applied Energy",
       "journal_rank": "一区/顶刊",
@@ -4563,7 +5465,7 @@
       "pdf_url": "",
       "doi": "10.3390/en16010002",
       "topic": "海洋可再生能源",
-      "topic_score": 8,
+      "topic_score": 6,
       "sub_kws": [],
       "journal": "Energies",
       "journal_rank": "核心期刊",
@@ -4623,8 +5525,8 @@
       "url": "https://doi.org/10.1098/rspa.2021.0469",
       "pdf_url": "",
       "doi": "10.1098/rspa.2021.0469",
-      "topic": "其他",
-      "topic_score": 0,
+      "topic": "海洋可再生能源",
+      "topic_score": 1,
       "sub_kws": [],
       "journal": "Proceedings of the Royal Society A Mathe",
       "journal_rank": "核心期刊",
@@ -4653,9 +5555,12 @@
       "url": "https://doi.org/10.3390/en16196829",
       "pdf_url": "",
       "doi": "10.3390/en16196829",
-      "topic": "其他",
-      "topic_score": 0,
-      "sub_kws": [],
+      "topic": "船舶推进与节能",
+      "topic_score": 3,
+      "sub_kws": [
+        "替代燃料",
+        "排放控制"
+      ],
       "journal": "Energies",
       "journal_rank": "核心期刊",
       "cited_by": 107,
@@ -4713,7 +5618,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse11071381",
       "topic": "船舶水动力学",
-      "topic_score": 10,
+      "topic_score": 7,
       "sub_kws": [
         "CFD模拟"
       ],
@@ -4744,7 +5649,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.apor.2024.104075",
       "topic": "船舶水动力学",
-      "topic_score": 8,
+      "topic_score": 1,
       "sub_kws": [
         "粘性流",
         "CFD模拟"
@@ -4773,9 +5678,11 @@
       "url": "https://doi.org/10.1017/s0962492922000058",
       "pdf_url": "",
       "doi": "10.1017/s0962492922000058",
-      "topic": "其他",
-      "topic_score": 0,
-      "sub_kws": [],
+      "topic": "船舶与海洋工程数值方法",
+      "topic_score": 1,
+      "sub_kws": [
+        "CFD方法"
+      ],
       "journal": "Acta Numerica",
       "journal_rank": "核心期刊",
       "cited_by": 90,
@@ -4833,8 +5740,8 @@
       "url": "https://doi.org/10.1016/j.jestch.2021.01.010",
       "pdf_url": "",
       "doi": "10.1016/j.jestch.2021.01.010",
-      "topic": "其他",
-      "topic_score": 0,
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 1,
       "sub_kws": [],
       "journal": "Engineering Science and Technology an In",
       "journal_rank": "核心期刊",
@@ -4863,7 +5770,7 @@
       "pdf_url": "",
       "doi": "10.3390/en17030605",
       "topic": "船舶推进与节能",
-      "topic_score": 15,
+      "topic_score": 17,
       "sub_kws": [
         "替代燃料",
         "排放控制"
@@ -4896,7 +5803,7 @@
       "pdf_url": "",
       "doi": "10.1007/s40722-022-00241-2",
       "topic": "海洋工程结构物",
-      "topic_score": 8,
+      "topic_score": 6,
       "sub_kws": [],
       "journal": "Journal of Ocean Engineering and Marine ",
       "journal_rank": "一区/顶刊",
@@ -4924,8 +5831,8 @@
       "url": "https://doi.org/10.3389/fmars.2021.761531",
       "pdf_url": "",
       "doi": "10.3389/fmars.2021.761531",
-      "topic": "其他",
-      "topic_score": 0,
+      "topic": "船舶推进与节能",
+      "topic_score": 5,
       "sub_kws": [],
       "journal": "Frontiers in Marine Science",
       "journal_rank": "核心期刊",
@@ -4954,7 +5861,7 @@
       "pdf_url": "",
       "doi": "10.1093/nsr/nwad042",
       "topic": "船舶推进与节能",
-      "topic_score": 4,
+      "topic_score": 3,
       "sub_kws": [],
       "journal": "National Science Review",
       "journal_rank": "核心期刊",
@@ -4981,7 +5888,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.apor.2021.102864",
       "topic": "船舶水动力学",
-      "topic_score": 15,
+      "topic_score": 7,
       "sub_kws": [
         "螺旋桨设计",
         "CFD模拟"
@@ -5076,7 +5983,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse9080827",
       "topic": "船舶噪声与水下辐射",
-      "topic_score": 8,
+      "topic_score": 5,
       "sub_kws": [],
       "journal": "Journal of Marine Science and Engineerin",
       "journal_rank": "核心期刊",
@@ -5133,7 +6040,7 @@
       "pdf_url": "",
       "doi": "10.1080/17445302.2021.1907071",
       "topic": "船舶水动力学",
-      "topic_score": 22,
+      "topic_score": 12,
       "sub_kws": [
         "螺旋桨设计",
         "粘性流",
@@ -5166,7 +6073,7 @@
       "pdf_url": "",
       "doi": "10.1007/s00348-021-03260-1",
       "topic": "船舶水动力学",
-      "topic_score": 4,
+      "topic_score": 3,
       "sub_kws": [
         "粘性流",
         "CFD模拟"
@@ -5229,7 +6136,7 @@
       "pdf_url": "",
       "doi": "10.2478/pomr-2022-0034",
       "topic": "船舶水动力学",
-      "topic_score": 12,
+      "topic_score": 8,
       "sub_kws": [
         "CFD模拟"
       ],
@@ -5261,7 +6168,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2021.109703",
       "topic": "船舶水动力学",
-      "topic_score": 10,
+      "topic_score": 4,
       "sub_kws": [
         "螺旋桨设计"
       ],
@@ -5292,7 +6199,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2022.112867",
       "topic": "船舶水动力学",
-      "topic_score": 17,
+      "topic_score": 9,
       "sub_kws": [
         "CFD模拟",
         "耐波性",
@@ -5322,7 +6229,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.ress.2021.107806",
       "topic": "自主船舶与智能航行",
-      "topic_score": 14,
+      "topic_score": 8,
       "sub_kws": [
         "避碰"
       ],
@@ -5353,7 +6260,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse9040357",
       "topic": "船舶推进与节能",
-      "topic_score": 6,
+      "topic_score": 1,
       "sub_kws": [],
       "journal": "Journal of Marine Science and Engineerin",
       "journal_rank": "核心期刊",
@@ -5380,7 +6287,7 @@
       "pdf_url": "",
       "doi": "10.1109/tits.2022.3151826",
       "topic": "自主船舶与智能航行",
-      "topic_score": 16,
+      "topic_score": 8,
       "sub_kws": [
         "避碰",
         "自主决策"
@@ -5471,7 +6378,7 @@
       "pdf_url": "",
       "doi": "10.1007/s40722-022-00243-0",
       "topic": "船舶水动力学",
-      "topic_score": 6,
+      "topic_score": 1,
       "sub_kws": [
         "CFD模拟",
         "操纵性"
@@ -5503,7 +6410,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse11040835",
       "topic": "船舶水动力学",
-      "topic_score": 12,
+      "topic_score": 9,
       "sub_kws": [],
       "journal": "Journal of Marine Science and Engineerin",
       "journal_rank": "核心期刊",
@@ -5532,7 +6439,7 @@
       "pdf_url": "",
       "doi": "10.1007/s40722-022-00255-w",
       "topic": "船舶水动力学",
-      "topic_score": 15,
+      "topic_score": 7,
       "sub_kws": [
         "CFD模拟",
         "耐波性",
@@ -5566,7 +6473,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.marstruc.2022.103307",
       "topic": "船舶水动力学",
-      "topic_score": 12,
+      "topic_score": 14,
       "sub_kws": [
         "耐波性"
       ],
@@ -5599,7 +6506,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse9121451",
       "topic": "船舶水动力学",
-      "topic_score": 14,
+      "topic_score": 8,
       "sub_kws": [
         "CFD模拟",
         "操纵性"
@@ -5630,7 +6537,7 @@
       "pdf_url": "",
       "doi": "10.1007/s11831-024-10127-1",
       "topic": "船舶水动力学",
-      "topic_score": 16,
+      "topic_score": 9,
       "sub_kws": [
         "CFD模拟"
       ],
@@ -5725,7 +6632,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.ijnaoe.2020.12.002",
       "topic": "船舶与海洋工程数值方法",
-      "topic_score": 10,
+      "topic_score": 6,
       "sub_kws": [
         "CFD方法"
       ],
@@ -5758,7 +6665,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2023.114822",
       "topic": "船舶水动力学",
-      "topic_score": 8,
+      "topic_score": 6,
       "sub_kws": [
         "粘性流",
         "CFD模拟",
@@ -5823,7 +6730,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse9121434",
       "topic": "船舶推进与节能",
-      "topic_score": 4,
+      "topic_score": 1,
       "sub_kws": [],
       "journal": "Journal of Marine Science and Engineerin",
       "journal_rank": "核心期刊",
@@ -5851,8 +6758,8 @@
       "url": "https://doi.org/10.5194/gmd-17-4355-2024",
       "pdf_url": "",
       "doi": "10.5194/gmd-17-4355-2024",
-      "topic": "其他",
-      "topic_score": 0,
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 6,
       "sub_kws": [],
       "journal": "Geoscientific model development",
       "journal_rank": "核心期刊",
@@ -5882,7 +6789,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse9020136",
       "topic": "船舶与海洋工程数值方法",
-      "topic_score": 12,
+      "topic_score": 8,
       "sub_kws": [
         "势流方法"
       ],
@@ -5911,7 +6818,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse9080904",
       "topic": "船舶设计与优化",
-      "topic_score": 6,
+      "topic_score": 4,
       "sub_kws": [],
       "journal": "Journal of Marine Science and Engineerin",
       "journal_rank": "核心期刊",
@@ -5937,8 +6844,8 @@
       "url": "https://doi.org/10.3390/met11050718",
       "pdf_url": "",
       "doi": "10.3390/met11050718",
-      "topic": "其他",
-      "topic_score": 0,
+      "topic": "水下航行器与海洋机器人",
+      "topic_score": 1,
       "sub_kws": [],
       "journal": "Metals",
       "journal_rank": "核心期刊",
@@ -5979,9 +6886,9 @@
       "fetched": "2026-06-29 14:31"
     }
   ],
-  "updated": "2026-06-30 20:40",
-  "today_new": 92,
-  "total": 202,
+  "updated": "2026-07-01 14:32",
+  "today_new": 32,
+  "total": 234,
   "history": [
     {
       "date": "2026-06-29",
@@ -6002,7 +6909,109 @@
       "date": "2026-06-30",
       "new": 92,
       "total": 370
+    },
+    {
+      "date": "2026-07-01",
+      "new": 32,
+      "total": 234
     }
   ],
-  "new_ids": []
+  "new_ids": [
+    "http://arxiv.org/abs/2606.25945v1",
+    "2606.31707",
+    "10.48550/arXiv.2403.07895",
+    "d02e16ca1130ce083cb10a0fed8b2657fa643569",
+    "4cc07dce3280010629721289dc60f69a79cd2328",
+    "2206.09847",
+    "https://www.semanticscholar.org/paper/f287f3d9c9f44a9d0a02008df16710d24025e048",
+    "https://www.semanticscholar.org/paper/d02e16ca1130ce083cb10a0fed8b2657fa643569",
+    "10.48550/arXiv.2606.25945",
+    "http://arxiv.org/abs/2206.09847v3",
+    "10.5220/0010953000003260",
+    "10.48550/arXiv.2206.10303",
+    "10.37890/jwt.vi87.697",
+    "10.1016/j.oceaneng.2022.111069",
+    "2606.31992",
+    "http://arxiv.org/abs/2112.02132v1",
+    "10.3390/jmse13081545",
+    "http://arxiv.org/abs/1505.07071v2",
+    "2606.31613",
+    "d45649c841ce2a608f12263a116b24af9a3008af",
+    "2206.10303",
+    "https://www.semanticscholar.org/paper/d45649c841ce2a608f12263a116b24af9a3008af",
+    "http://arxiv.org/abs/2606.31846v1",
+    "10.1109/ICCAD64771.2025.11099289",
+    "10.48550/arXiv.2606.31846",
+    "http://arxiv.org/abs/2606.31613v1",
+    "https://www.semanticscholar.org/paper/2f61f01415a46db9d200fb90d8e1add9af2ecd47",
+    "https://www.semanticscholar.org/paper/36e9998319a0b2ddfdbf3ead6ed8ca60187c1b5c",
+    "2403.07895",
+    "10.1088/1742-6596/2553/1/012077",
+    "10.48550/arXiv.2206.09847",
+    "10.48550/arXiv.2606.28627",
+    "41d6cbe6a7d9c8fd40320421b08a246b506bcef1",
+    "2f61f01415a46db9d200fb90d8e1add9af2ecd47",
+    "10.15587/1729-4061.2021.239159",
+    "10.48550/arXiv.2606.25680",
+    "f287f3d9c9f44a9d0a02008df16710d24025e048",
+    "http://arxiv.org/abs/2009.08807v1",
+    "a9099fc51dfd586dc2775be1e65bb7875e77d8dd",
+    "2009.08807",
+    "https://www.semanticscholar.org/paper/66eb4a6fa18b04174916ebbe0c19c7ef465bdc4a",
+    "http://arxiv.org/abs/1908.10010v2",
+    "2112.02132",
+    "10.62012/zl.v6i1.43178",
+    "http://arxiv.org/abs/2206.10303v2",
+    "http://arxiv.org/abs/2606.31992v1",
+    "https://www.semanticscholar.org/paper/0313b3c2d9da19728a8507637c8ee6f57f436aae",
+    "2504.00474",
+    "1505.07071",
+    "http://arxiv.org/abs/2504.00474v1",
+    "10.48550/arXiv.1505.07071",
+    "2606.25680",
+    "10.48550/arXiv.2112.02132",
+    "http://arxiv.org/abs/2606.32021v1",
+    "10.1080/17445302.2022.2164420",
+    "10.48550/arXiv.2606.31992",
+    "https://www.semanticscholar.org/paper/c0d954deafb8dfaaee4468c1445dbfeaef043451",
+    "https://www.semanticscholar.org/paper/ee6427c055640f0a74dc4566f24495334826de06",
+    "10.48550/arXiv.2606.32021",
+    "0313b3c2d9da19728a8507637c8ee6f57f436aae",
+    "http://arxiv.org/abs/2403.07895v1",
+    "http://arxiv.org/abs/2606.31707v1",
+    "2606.31846",
+    "2606.28627",
+    "66eb4a6fa18b04174916ebbe0c19c7ef465bdc4a",
+    "10.48550/arXiv.2606.28569",
+    "1908.10010",
+    "http://arxiv.org/abs/2606.28627v1",
+    "10.69644/ivk-2025-02-0319",
+    "https://www.semanticscholar.org/paper/41d6cbe6a7d9c8fd40320421b08a246b506bcef1",
+    "36e9998319a0b2ddfdbf3ead6ed8ca60187c1b5c",
+    "c0d954deafb8dfaaee4468c1445dbfeaef043451",
+    "2606.32021",
+    "2606.28569",
+    "10.1109/WCMEIM56910.2022.10021422",
+    "10.48550/arXiv.2504.00474",
+    "10.48550/arXiv.2606.31613",
+    "10.48550/arXiv.2303.08710",
+    "57a0a065bea9b0ab013e31f4ba451e3ab3d079f7",
+    "http://arxiv.org/abs/2606.28569v1",
+    "https://www.semanticscholar.org/paper/d6bcd295fef1e0fce4591a2696c76c7c9b77ea81",
+    "https://www.semanticscholar.org/paper/a9099fc51dfd586dc2775be1e65bb7875e77d8dd",
+    "ee6427c055640f0a74dc4566f24495334826de06",
+    "10.48550/arXiv.1908.10010",
+    "http://arxiv.org/abs/2606.25680v1",
+    "10.1115/omae2024-127275",
+    "10.48550/arXiv.2606.31707",
+    "http://arxiv.org/abs/2303.08710v1",
+    "10.48550/arXiv.2009.08807",
+    "2606.25945",
+    "https://www.semanticscholar.org/paper/57a0a065bea9b0ab013e31f4ba451e3ab3d079f7",
+    "d6bcd295fef1e0fce4591a2696c76c7c9b77ea81",
+    "10.1115/omae2022-78630",
+    "2303.08710",
+    "https://www.semanticscholar.org/paper/4cc07dce3280010629721289dc60f69a79cd2328",
+    "10.1088/1755-1315/921/1/012053"
+  ]
 }

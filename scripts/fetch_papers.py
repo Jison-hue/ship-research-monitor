@@ -382,6 +382,7 @@ def extract_arxiv_id(url):
 # ═══════════════════════════════════════════════════════════
 OA_API = "https://api.openalex.org/works"
 S2_API = "https://api.semanticscholar.org/graph/v1/paper/search"
+CR_API = "https://api.crossref.org/works"  # 免费, 无需API Key
 
 def fetch_openalex(config):
     """OpenAlex API fetcher with polite pool + retry logic"""
@@ -1265,7 +1266,7 @@ def gen_html(data, config):
     html += '<script src="' + CHART_CDN + '"></script>\n</head>\n<body>\n'
     html += '<header>\n<h1>🚢 船舶与海洋工程研究动态监测</h1>\n'
     html += '<p class="sub">多源数据分析 · 每3天自动更新 · 2021-2026</p>\n'
-    html += '<p class="meta">🕐 ' + updated + ' | arXiv + OpenAlex + Semantic Scholar</p>\n<p style="text-align:center;font-size:.78rem;margin-top:6px"><a href="weekly.html">📋 查看完整周报 →</a></p>\n</header>\n<main>\n'
+    html += '<p class="meta">🕐 ' + updated + ' | arXiv + OpenAlex + Semantic Scholar + Crossref</p>\n<p style="text-align:center;font-size:.78rem;margin-top:6px"><a href="weekly.html">📋 查看完整周报 →</a></p>\n</header>\n<main>\n'
     html += cards + '\n'
     # ── 本期新增 ──
     cutoff = (datetime.now() - timedelta(days=14)).strftime("%Y-%m-%d")
@@ -1378,6 +1379,55 @@ def gen_html(data, config):
         f.write(html)
 
 
+# ═══════════════════════════════════════════════════════════
+#  Crossref
+# ═══════════════════════════════════════════════════════════
+def fetch_crossref(config):
+    """通过Crossref API按ISSN补漏顶刊论文（免费）"""
+    if not config.get("sources",{}).get("crossref",{}).get("enabled",True):
+        return []
+    journals = [j for j in config.get("journal_tracking",[]) if j.get("issn")]
+    if not journals: return []
+    all_p = {}; seen_dois = set()
+    from_date = (datetime.now() - timedelta(days=2*365)).strftime("%Y-%m-%d")
+    # 前4本核心期刊，快速查询
+    for j in journals[:4]:
+        issn = j["issn"]
+        url = (f"{CR_API}?filter=issn:{issn},from-pub-date:{from_date}"
+               f"&query=ship+marine+offshore&rows=20&sort=published&order=desc")
+        try:
+            data = json.load(urlopen(Request(url, headers={"User-Agent":"ShipMonitor/2.0"}), timeout=8))
+            for w in data.get("message",{}).get("items",[]):
+                doi = (w.get("DOI") or "").lower()
+                if not doi or doi in seen_dois: continue
+                seen_dois.add(doi)
+                ttl = " ".join(w.get("title",[""]))
+                if not ttl: continue
+                abs_ = re.sub(r'<[^>]+>', '', (w.get("abstract","") or ""))
+                pub_parts = (w.get("issued",{}) or {}).get("date-parts",[[]])[0]
+                if not pub_parts: continue
+                pub = f"{pub_parts[0]}-{pub_parts[1] if len(pub_parts)>1 else 1:02d}-{pub_parts[2] if len(pub_parts)>2 else 1:02d}"
+                year = str(pub_parts[0])
+                au = [a.get("given","")+" "+a.get("family","") for a in (w.get("author",[]) or [])[:5]]
+                au = [a.strip() for a in au if a.strip()]
+                jour = ((w.get("container-title",[]) or [""])[0] or "")
+                tp,ts,sk = classify(ttl, abs_)
+                ranks = config.get("journal_rankings",{})
+                jrank = "一区/顶刊" if any(n in jour.lower() for n in ranks.get("一区/顶刊",[])) else \
+                        "二区/重要" if any(n in jour.lower() for n in ranks.get("二区/重要",[])) else "核心期刊"
+                pid = f"https://doi.org/{doi}"
+                all_p[pid] = dict(id=pid, title=ttl, abstract=abs_[:500], authors=au,
+                    published=pub[:10], year=year, source="Crossref",
+                    url=pid, pdf_url="",
+                    doi=doi, topic=tp, topic_score=ts, sub_kws=sk,
+                    journal=jour[:40], journal_rank=jrank,
+                    cited_by=0, institutions=[], concepts=[],
+                    fetched=datetime.now().strftime("%Y-%m-%d %H:%M"))
+        except Exception as ex:
+            print(f"  [WARN] Crossref {j['name']}: {ex}")
+    return list(all_p.values())
+
+
 def main():
     print("="*50); print(f"🚢 船舶研究动态监测 v2"); print(f"⏰ {datetime.now().strftime('%Y-%m-%d %H:%M')}"); print("="*50)
     config = load_config(); existing = load_existing(DATA_PATH); all_new = []
@@ -1395,6 +1445,9 @@ def main():
     except Exception as e: print(f"   ❌ {e}")
     print("🏫 国内院校...")
     try: p=fetch_openalex_institutions(config); print(f"   ✅ {len(p)}"); all_new.extend(p)
+    except Exception as e: print(f"   ❌ {e}")
+    print("📰 Crossref...")
+    try: p=fetch_crossref(config); print(f"   ✅ {len(p)}"); all_new.extend(p)
     except Exception as e: print(f"   ❌ {e}")
     print(f"\n🔄 合并..."); merged = merge_papers(all_new, existing)
     print(f"   总: {merged['total']} | 新增: {merged['today_new']}")

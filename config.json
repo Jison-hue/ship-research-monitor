@@ -28,6 +28,9 @@
     "openalex": {
       "enabled": true,
       "max_results": 400
+    },
+    "crossref": {
+      "enabled": false
     }
   },
   "search_queries": [
@@ -53,26 +56,178 @@
     "ship resistance drag reduction air lubrication"
   ],
   "institution_tracking": [
-    {"name": "上海交通大学", "id": "I183067930", "max_results": 50,
-     "keywords": ["ship","marine","ocean","offshore","underwater","hull","CFD","propeller","autonomous","wave energy","naval","submarine"]},
-    {"name": "哈尔滨工程大学", "id": "I151727225", "max_results": 50,
-     "keywords": ["ship","underwater","AUV","marine","sonar","navigation","hull","propeller","CFD","offshore","autonomous","submarine"]},
-    {"name": "大连理工大学", "id": "I27357992", "max_results": 40,
-     "keywords": ["ship","marine","offshore","CFD","hull","wave","coastal","propeller","underwater","ocean engineering"]},
-    {"name": "武汉理工大学", "id": "I196699116", "max_results": 40,
-     "keywords": ["ship","marine","shipping","port","logistics","propeller","hull","CFD","navigation","autonomous","composite"]},
-    {"name": "江苏科技大学", "id": "I4210096899", "max_results": 40,
-     "keywords": ["ship","marine","hull","welding","propeller","CFD","shipbuilding","structural","underwater"]},
-    {"name": "天津大学", "id": "I162868743", "max_results": 30,
-     "keywords": ["ship","marine","offshore","coastal","harbor","wave","underwater","AUV","ocean engineering","navigation"]},
-    {"name": "大连海事大学", "id": "I149969031", "max_results": 30,
-     "keywords": ["ship","marine","maritime","navigation","CFD","hull","autonomous","underwater","port","shipping"]},
-    {"name": "上海海事大学", "id": "I226675891", "max_results": 30,
-     "keywords": ["ship","marine","maritime","shipping","port","logistics","navigation","autonomous","energy"]},
-    {"name": "浙江大学", "id": "I45300655", "max_results": 30,
-     "keywords": ["ship","marine","offshore","underwater","CFD","wave","propeller","ocean","autonomous"]},
-    {"name": "华南理工大学", "id": "I61321625", "max_results": 25,
-     "keywords": ["ship","marine","hull","propeller","CFD","offshore","coastal","underwater","composite","structure"]}
+    {
+      "name": "上海交通大学",
+      "id": "I183067930",
+      "max_results": 50,
+      "keywords": [
+        "ship",
+        "marine",
+        "ocean",
+        "offshore",
+        "underwater",
+        "hull",
+        "CFD",
+        "propeller",
+        "autonomous",
+        "wave energy",
+        "naval",
+        "submarine"
+      ]
+    },
+    {
+      "name": "哈尔滨工程大学",
+      "id": "I151727225",
+      "max_results": 50,
+      "keywords": [
+        "ship",
+        "underwater",
+        "AUV",
+        "marine",
+        "sonar",
+        "navigation",
+        "hull",
+        "propeller",
+        "CFD",
+        "offshore",
+        "autonomous",
+        "submarine"
+      ]
+    },
+    {
+      "name": "大连理工大学",
+      "id": "I27357992",
+      "max_results": 40,
+      "keywords": [
+        "ship",
+        "marine",
+        "offshore",
+        "CFD",
+        "hull",
+        "wave",
+        "coastal",
+        "propeller",
+        "underwater",
+        "ocean engineering"
+      ]
+    },
+    {
+      "name": "武汉理工大学",
+      "id": "I196699116",
+      "max_results": 40,
+      "keywords": [
+        "ship",
+        "marine",
+        "shipping",
+        "port",
+        "logistics",
+        "propeller",
+        "hull",
+        "CFD",
+        "navigation",
+        "autonomous",
+        "composite"
+      ]
+    },
+    {
+      "name": "江苏科技大学",
+      "id": "I4210096899",
+      "max_results": 40,
+      "keywords": [
+        "ship",
+        "marine",
+        "hull",
+        "welding",
+        "propeller",
+        "CFD",
+        "shipbuilding",
+        "structural",
+        "underwater"
+      ]
+    },
+    {
+      "name": "天津大学",
+      "id": "I162868743",
+      "max_results": 30,
+      "keywords": [
+        "ship",
+        "marine",
+        "offshore",
+        "coastal",
+        "harbor",
+        "wave",
+        "underwater",
+        "AUV",
+        "ocean engineering",
+        "navigation"
+      ]
+    },
+    {
+      "name": "大连海事大学",
+      "id": "I149969031",
+      "max_results": 30,
+      "keywords": [
+        "ship",
+        "marine",
+        "maritime",
+        "navigation",
+        "CFD",
+        "hull",
+        "autonomous",
+        "underwater",
+        "port",
+        "shipping"
+      ]
+    },
+    {
+      "name": "上海海事大学",
+      "id": "I226675891",
+      "max_results": 30,
+      "keywords": [
+        "ship",
+        "marine",
+        "maritime",
+        "shipping",
+        "port",
+        "logistics",
+        "navigation",
+        "autonomous",
+        "energy"
+      ]
+    },
+    {
+      "name": "浙江大学",
+      "id": "I45300655",
+      "max_results": 30,
+      "keywords": [
+        "ship",
+        "marine",
+        "offshore",
+        "underwater",
+        "CFD",
+        "wave",
+        "propeller",
+        "ocean",
+        "autonomous"
+      ]
+    },
+    {
+      "name": "华南理工大学",
+      "id": "I61321625",
+      "max_results": 25,
+      "keywords": [
+        "ship",
+        "marine",
+        "hull",
+        "propeller",
+        "CFD",
+        "offshore",
+        "coastal",
+        "underwater",
+        "composite",
+        "structure"
+      ]
+    }
   ],
   "journal_tracking": [
     {
@@ -149,7 +304,15 @@
       "years_back": 3,
       "max_results": 40,
       "keywords": [
-        "ship","marine","offshore","wave","CFD","platform","hull","propeller","coastal"
+        "ship",
+        "marine",
+        "offshore",
+        "wave",
+        "CFD",
+        "platform",
+        "hull",
+        "propeller",
+        "coastal"
       ]
     },
     {
@@ -158,7 +321,13 @@
       "years_back": 3,
       "max_results": 40,
       "keywords": [
-        "ship","marine","offshore","hull","propeller","platform","structural"
+        "ship",
+        "marine",
+        "offshore",
+        "hull",
+        "propeller",
+        "platform",
+        "structural"
       ]
     },
     {
@@ -167,7 +336,14 @@
       "years_back": 3,
       "max_results": 40,
       "keywords": [
-        "ship","naval","marine","hull","propeller","CFD","offshore","underwater"
+        "ship",
+        "naval",
+        "marine",
+        "hull",
+        "propeller",
+        "CFD",
+        "offshore",
+        "underwater"
       ]
     },
     {
@@ -229,7 +405,14 @@
       "years_back": 3,
       "max_results": 30,
       "keywords": [
-        "offshore","arctic","ship","marine","platform","ice","subsea","riser"
+        "offshore",
+        "arctic",
+        "ship",
+        "marine",
+        "platform",
+        "ice",
+        "subsea",
+        "riser"
       ]
     },
     {
@@ -238,7 +421,12 @@
       "years_back": 3,
       "max_results": 30,
       "keywords": [
-        "ship","marine","oil spill","ballast water","biofouling","shipping pollution"
+        "ship",
+        "marine",
+        "oil spill",
+        "ballast water",
+        "biofouling",
+        "shipping pollution"
       ]
     },
     {
@@ -247,7 +435,13 @@
       "years_back": 3,
       "max_results": 30,
       "keywords": [
-        "ship","marine","ocean","CFD","propeller","hull","offshore"
+        "ship",
+        "marine",
+        "ocean",
+        "CFD",
+        "propeller",
+        "hull",
+        "offshore"
       ]
     }
   ],
@@ -284,7 +478,9 @@
       "brodogradnja",
       "transactions of the royal institution of naval architects",
       "international shipbuilding progress",
-      "shipbuilding of china", "chuanbo lixue", "journal of harbin engineering university",
+      "shipbuilding of china",
+      "chuanbo lixue",
+      "journal of harbin engineering university",
       "journal of ship mechanics",
       "journal of offshore mechanics and arctic engineering",
       "marine pollution bulletin"

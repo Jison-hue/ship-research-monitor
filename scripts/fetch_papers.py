@@ -5,7 +5,7 @@
 涵盖: 期刊论文、预印本、会议论文
 """
 
-import json, os, re, time, sys
+import json, os, re, time, sys, math
 from datetime import datetime, timedelta
 from xml.etree import ElementTree
 from urllib.request import urlopen, Request
@@ -33,6 +33,13 @@ NEGATIVE_KW = [
     "soil","microbiome","bacterium","fungal","pathogen",
     "electoral","voting","political","legislature",
     "tourism","hospitality","restaurant","customer satisfaction",
+    # 天体物理/恒星物理 — 纯天文学，跟船舶无关
+    "red giant","star formation","galaxy formation","cosmolog",
+    "nucleosynthesis","supernova","neutron star","stellar astrophys",
+    # 纯气候海洋学 — 与海洋工程无关
+    "ocean heat content","paleoclimate","el niño","sea surface temperature anomaly",
+    # 微流控/电泳 — 非船舶流体
+    "electrophoretic","microfluidic","electrokinetic",
 ]
 
 # ─── 强领域正向关键词 — 至少命中2个才放行 ──────────────
@@ -132,7 +139,8 @@ TOPICS = {
         "decision support ship", "autonomous navigation ship",
         "cyber security", "maritime safety", "collision risk",
         "risk assessment", "maritime autonomous",
-        "machine learning", "deep learning maritime",
+        "machine learning", "machine learning marine", "machine learning ship",
+        "deep learning marine", "deep learning ship",
         "marine accident", "maritime accident", "maritime traffic"
     ],
     "水下航行器与海洋机器人": [
@@ -261,7 +269,7 @@ def classify(title, abstract):
     # 领域信号词（比原版更聚焦船舶领域）
     domain_q = ["ship","marine","vessel","ocean","maritime","naval","hull",
                 "offshore","underwater","submarine",
-                "port","harbor","船舶","海洋","水动力","watercraft","ferry",
+                "harbor","船舶","海洋","水动力","watercraft","ferry",
                 "seaworth","shipboard","propeller","mooring","riser",
                 "shipyard","shipbuilding","AUV","ROV","cavitation",
                 "seakeeping","maneuvering","shipping","breakwater"]
@@ -855,7 +863,9 @@ def compute_stats(papers):
         cited = p.get("cited_by",0) or 0
         try: d = (now - datetime.strptime(p["published"][:10],"%Y-%m-%d")).days
         except: d = 365
-        return cited * 0.6 + max(0, 365 - d) * 0.4
+        # 对数衰减：新论文给有限提升（~30分），不淹没引用价值
+        fresh_boost = math.log(1 + max(0, 365 - d)) * 5
+        return cited * 0.8 + fresh_boost
     related = [p for p in papers if is_relevant(p)]
     hot = sorted(related, key=lambda p: hot_score(p), reverse=True)[:20]
 
@@ -1167,8 +1177,14 @@ def gen_html(data, config):
     html += '<section class="hot"><h2>🔥 热点论文 · 综合排名</h2><p class="hint">引用+时效加权</p>' + hot_items + '</section>\n'
     html += '<section class="kw-section"><h2>🔍 研究热度关键词 Top 10</h2><div class="kw-grid">' + kw_html + '</div></section>\n'
     hl = ""
-    if hot_papers:
-        tp = hot_papers[0]
+    # 本期亮点：优先选高相关度的论文（topic_score≥3且topic非其他），
+    # 避免选到分类宽松但实际不相关的论文
+    highlight_candidates = [p for p in hot_papers
+        if p.get("topic","") != "其他" and (p.get("topic_score",0) or 0) >= 3]
+    if not highlight_candidates:
+        highlight_candidates = hot_papers[:3]
+    tp = highlight_candidates[0] if highlight_candidates else None
+    if tp:
         doi = tp.get("doi","")
         dh = '<a href="https://doi.org/'+doi+'">'+doi[:30]+'</a>' if doi else ""
         au = ", ".join(tp.get("authors",[])[:2])

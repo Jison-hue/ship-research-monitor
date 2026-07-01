@@ -15,7 +15,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse9091020",
       "topic": "水下航行器与海洋机器人",
-      "topic_score": 16,
+      "topic_score": 14,
       "sub_kws": [],
       "journal": "Journal of Marine Science and Engineerin",
       "journal_rank": "核心期刊",
@@ -43,7 +43,7 @@
       "pdf_url": "",
       "doi": "10.3390/polym13020173",
       "topic": "船舶结构力学与安全",
-      "topic_score": 16,
+      "topic_score": 14,
       "sub_kws": [],
       "journal": "Polymers",
       "journal_rank": "核心期刊",
@@ -71,7 +71,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2021.110239",
       "topic": "船舶水动力学",
-      "topic_score": 4,
+      "topic_score": 6,
       "sub_kws": [
         "船型优化"
       ],
@@ -133,7 +133,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2023.114327",
       "topic": "海洋工程结构物",
-      "topic_score": 4,
+      "topic_score": 6,
       "sub_kws": [
         "立管与锚泊"
       ],
@@ -293,7 +293,7 @@
       "pdf_url": "",
       "doi": "10.1186/s41072-023-00159-4",
       "topic": "船舶水动力学",
-      "topic_score": 8,
+      "topic_score": 6,
       "sub_kws": [
         "粘性流",
         "CFD模拟"
@@ -325,7 +325,7 @@
       "pdf_url": "",
       "doi": "10.3389/fmars.2022.970081",
       "topic": "海洋可再生能源",
-      "topic_score": 10,
+      "topic_score": 8,
       "sub_kws": [],
       "journal": "Frontiers in Marine Science",
       "journal_rank": "核心期刊",
@@ -387,7 +387,7 @@
       "pdf_url": "",
       "doi": "10.1080/21650020.2024.2327362",
       "topic": "船舶水动力学",
-      "topic_score": 6,
+      "topic_score": 8,
       "sub_kws": [
         "粘性流",
         "CFD模拟"
@@ -450,7 +450,7 @@
       "pdf_url": "",
       "doi": "10.1038/s41598-023-31533-8",
       "topic": "海洋工程结构物",
-      "topic_score": 12,
+      "topic_score": 10,
       "sub_kws": [
         "平台设计"
       ],
@@ -576,7 +576,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.scitotenv.2023.163015",
       "topic": "海洋工程结构物",
-      "topic_score": 6,
+      "topic_score": 8,
       "sub_kws": [],
       "journal": "The Science of The Total Environment",
       "journal_rank": "核心期刊",
@@ -605,7 +605,7 @@
       "pdf_url": "",
       "doi": "10.3390/s23042099",
       "topic": "海洋工程结构物",
-      "topic_score": 5,
+      "topic_score": 8,
       "sub_kws": [
         "基础与地基"
       ],
@@ -666,7 +666,7 @@
       "pdf_url": "",
       "doi": "10.3390/en16041775",
       "topic": "船舶推进与节能",
-      "topic_score": 11,
+      "topic_score": 9,
       "sub_kws": [
         "节能装置",
         "替代燃料"
@@ -754,8 +754,8 @@
       "url": "https://doi.org/10.3390/su14084832",
       "pdf_url": "",
       "doi": "10.3390/su14084832",
-      "topic": "自主船舶与智能航行",
-      "topic_score": 4,
+      "topic": "其他",
+      "topic_score": 0,
       "sub_kws": [],
       "journal": "Sustainability",
       "journal_rank": "核心期刊",
@@ -836,7 +836,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2024.117684",
       "topic": "船舶推进与节能",
-      "topic_score": 6,
+      "topic_score": 8,
       "sub_kws": [
         "排放控制"
       ],
@@ -867,7 +867,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2023.115255",
       "topic": "船舶水动力学",
-      "topic_score": 4,
+      "topic_score": 6,
       "sub_kws": [
         "操纵性"
       ],
@@ -1055,7 +1055,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2024.117443",
       "topic": "船舶水动力学",
-      "topic_score": 6,
+      "topic_score": 8,
       "sub_kws": [
         "粘性流",
         "CFD模拟"
@@ -1089,7 +1089,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2023.116476",
       "topic": "船舶水动力学",
-      "topic_score": 4,
+      "topic_score": 6,
       "sub_kws": [
         "CFD模拟"
       ],
@@ -1187,7 +1187,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2023.115751",
       "topic": "船舶推进与节能",
-      "topic_score": 8,
+      "topic_score": 6,
       "sub_kws": [
         "替代燃料"
       ],
@@ -1278,7 +1278,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2024.117020",
       "topic": "海洋可再生能源",
-      "topic_score": 4,
+      "topic_score": 6,
       "sub_kws": [],
       "journal": "Ocean Engineering",
       "journal_rank": "一区/顶刊",
@@ -1306,7 +1306,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2023.115841",
       "topic": "海洋工程结构物",
-      "topic_score": 8,
+      "topic_score": 11,
       "sub_kws": [
         "平台设计"
       ],
@@ -1396,7 +1396,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2024.116808",
       "topic": "海洋可再生能源",
-      "topic_score": 4,
+      "topic_score": 6,
       "sub_kws": [],
       "journal": "Ocean Engineering",
       "journal_rank": "一区/顶刊",
@@ -1485,7 +1485,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2024.119398",
       "topic": "船舶水动力学",
-      "topic_score": 5,
+      "topic_score": 6,
       "sub_kws": [],
       "journal": "Ocean Engineering",
       "journal_rank": "一区/顶刊",
@@ -1630,7 +1630,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2024.118444",
       "topic": "自主船舶与智能航行",
-      "topic_score": 18,
+      "topic_score": 16,
       "sub_kws": [],
       "journal": "Ocean Engineering",
       "journal_rank": "一区/顶刊",
@@ -1660,7 +1660,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2024.117829",
       "topic": "海洋可再生能源",
-      "topic_score": 12,
+      "topic_score": 10,
       "sub_kws": [],
       "journal": "Ocean Engineering",
       "journal_rank": "一区/顶刊",
@@ -1689,7 +1689,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2024.117732",
       "topic": "船舶推进与节能",
-      "topic_score": 4,
+      "topic_score": 6,
       "sub_kws": [],
       "journal": "Ocean Engineering",
       "journal_rank": "一区/顶刊",
@@ -1720,7 +1720,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2024.118174",
       "topic": "自主船舶与智能航行",
-      "topic_score": 4,
+      "topic_score": 10,
       "sub_kws": [],
       "journal": "Ocean Engineering",
       "journal_rank": "一区/顶刊",
@@ -1750,7 +1750,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2024.117652",
       "topic": "自主船舶与智能航行",
-      "topic_score": 15,
+      "topic_score": 18,
       "sub_kws": [
         "避碰"
       ],
@@ -1809,7 +1809,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.marstruc.2024.103716",
       "topic": "船舶与海洋工程数值方法",
-      "topic_score": 4,
+      "topic_score": 6,
       "sub_kws": [],
       "journal": "Marine Structures",
       "journal_rank": "一区/顶刊",
@@ -1982,7 +1982,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.marstruc.2023.103542",
       "topic": "海洋可再生能源",
-      "topic_score": 6,
+      "topic_score": 4,
       "sub_kws": [],
       "journal": "Marine Structures",
       "journal_rank": "一区/顶刊",
@@ -2040,7 +2040,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.marstruc.2024.103702",
       "topic": "海洋工程结构物",
-      "topic_score": 4,
+      "topic_score": 6,
       "sub_kws": [],
       "journal": "Marine Structures",
       "journal_rank": "一区/顶刊",
@@ -2165,7 +2165,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.marstruc.2024.103724",
       "topic": "海洋工程结构物",
-      "topic_score": 4,
+      "topic_score": 6,
       "sub_kws": [
         "平台设计"
       ],
@@ -2315,7 +2315,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.marstruc.2023.103505",
       "topic": "海洋可再生能源",
-      "topic_score": 10,
+      "topic_score": 8,
       "sub_kws": [],
       "journal": "Marine Structures",
       "journal_rank": "一区/顶刊",
@@ -2429,7 +2429,7 @@
       "pdf_url": "",
       "doi": "10.5957/josr.09220026",
       "topic": "船舶水动力学",
-      "topic_score": 5,
+      "topic_score": 8,
       "sub_kws": [
         "CFD模拟"
       ],
@@ -2667,7 +2667,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.coastaleng.2024.104614",
       "topic": "海洋可再生能源",
-      "topic_score": 8,
+      "topic_score": 11,
       "sub_kws": [],
       "journal": "Coastal Engineering",
       "journal_rank": "一区/顶刊",
@@ -2783,7 +2783,7 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.2311.05470",
       "topic": "船舶水动力学",
-      "topic_score": 4,
+      "topic_score": 6,
       "sub_kws": [
         "CFD模拟"
       ],
@@ -2835,7 +2835,7 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.2305.08279",
       "topic": "船舶设计与优化",
-      "topic_score": 4,
+      "topic_score": 6,
       "sub_kws": [],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
@@ -2887,7 +2887,7 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.1304.2653",
       "topic": "船舶与海洋工程数值方法",
-      "topic_score": 10,
+      "topic_score": 8,
       "sub_kws": [
         "CFD方法"
       ],
@@ -2942,12 +2942,9 @@
       "url": "http://arxiv.org/abs/2606.29853v1",
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.29853",
-      "topic": "船舶水动力学",
-      "topic_score": 4,
-      "sub_kws": [
-        "粘性流",
-        "CFD模拟"
-      ],
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
       "cited_by": 0,
@@ -2973,10 +2970,8 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.29875",
       "topic": "自主船舶与智能航行",
-      "topic_score": 4,
-      "sub_kws": [
-        "运动控制"
-      ],
+      "topic_score": 6,
+      "sub_kws": [],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
       "cited_by": 0,
@@ -3058,8 +3053,8 @@
       "url": "https://doi.org/10.1016/j.heliyon.2024.e39661",
       "pdf_url": "",
       "doi": "10.1016/j.heliyon.2024.e39661",
-      "topic": "船舶结构力学与安全",
-      "topic_score": 4,
+      "topic": "其他",
+      "topic_score": 0,
       "sub_kws": [],
       "journal": "Heliyon",
       "journal_rank": "核心期刊",
@@ -3146,7 +3141,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse11051021",
       "topic": "船舶推进与节能",
-      "topic_score": 6,
+      "topic_score": 8,
       "sub_kws": [],
       "journal": "Journal of Marine Science and Engineerin",
       "journal_rank": "核心期刊",
@@ -3263,9 +3258,8 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.2408.07783",
       "topic": "船舶水动力学",
-      "topic_score": 11,
+      "topic_score": 7,
       "sub_kws": [
-        "兴波阻力",
         "粘性流",
         "CFD模拟"
       ],
@@ -3294,7 +3288,7 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.1410.1918",
       "topic": "船舶水动力学",
-      "topic_score": 3,
+      "topic_score": 4,
       "sub_kws": [
         "CFD模拟"
       ],
@@ -3319,11 +3313,9 @@
       "url": "http://arxiv.org/abs/2606.11653v1",
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.11653",
-      "topic": "船舶水动力学",
-      "topic_score": 1,
-      "sub_kws": [
-        "CFD模拟"
-      ],
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
       "cited_by": 0,
@@ -3347,7 +3339,7 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.2303.16702",
       "topic": "船舶水动力学",
-      "topic_score": 4,
+      "topic_score": 6,
       "sub_kws": [
         "CFD模拟"
       ],
@@ -3375,11 +3367,9 @@
       "url": "http://arxiv.org/abs/2301.08861v2",
       "pdf_url": "",
       "doi": "10.48550/arXiv.2301.08861",
-      "topic": "水下航行器与海洋机器人",
-      "topic_score": 3,
-      "sub_kws": [
-        "编队控制"
-      ],
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
       "cited_by": 0,
@@ -3455,12 +3445,9 @@
       "url": "http://arxiv.org/abs/2405.13996v2",
       "pdf_url": "",
       "doi": "10.48550/arXiv.2405.13996",
-      "topic": "水下航行器与海洋机器人",
-      "topic_score": 1,
-      "sub_kws": [
-        "导航定位",
-        "编队控制"
-      ],
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
       "cited_by": 0,
@@ -3482,7 +3469,7 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.2604.22962",
       "topic": "船舶水动力学",
-      "topic_score": 8,
+      "topic_score": 13,
       "sub_kws": [
         "CFD模拟",
         "操纵性"
@@ -3509,11 +3496,9 @@
       "url": "http://arxiv.org/abs/2310.12886v1",
       "pdf_url": "",
       "doi": "10.48550/arXiv.2310.12886",
-      "topic": "船舶水动力学",
-      "topic_score": 1,
-      "sub_kws": [
-        "CFD模拟"
-      ],
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
       "cited_by": 0,
@@ -3539,10 +3524,8 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.2410.18669",
       "topic": "水下航行器与海洋机器人",
-      "topic_score": 7,
-      "sub_kws": [
-        "编队控制"
-      ],
+      "topic_score": 13,
+      "sub_kws": [],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
       "cited_by": 0,
@@ -3566,7 +3549,7 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.1603.04565",
       "topic": "船舶水动力学",
-      "topic_score": 1,
+      "topic_score": 4,
       "sub_kws": [
         "粘性流",
         "CFD模拟",
@@ -3597,7 +3580,7 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.2111.06120",
       "topic": "船舶水动力学",
-      "topic_score": 1,
+      "topic_score": 6,
       "sub_kws": [
         "CFD模拟",
         "操纵性"
@@ -3623,9 +3606,8 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.1609.06559",
       "topic": "船舶水动力学",
-      "topic_score": 5,
+      "topic_score": 10,
       "sub_kws": [
-        "CFD模拟",
         "操纵性"
       ],
       "journal": "arXiv Preprint",
@@ -3649,7 +3631,7 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.28021",
       "topic": "船舶水动力学",
-      "topic_score": 1,
+      "topic_score": 4,
       "sub_kws": [
         "粘性流",
         "CFD模拟"
@@ -3677,7 +3659,7 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.25472",
       "topic": "船舶水动力学",
-      "topic_score": 8,
+      "topic_score": 13,
       "sub_kws": [
         "CFD模拟"
       ],
@@ -3706,7 +3688,7 @@
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.25373",
       "topic": "船舶与海洋工程数值方法",
-      "topic_score": 5,
+      "topic_score": 8,
       "sub_kws": [
         "CFD方法",
         "SPH"
@@ -3735,11 +3717,9 @@
       "url": "http://arxiv.org/abs/2606.28051v1",
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.28051",
-      "topic": "水下航行器与海洋机器人",
-      "topic_score": 1,
-      "sub_kws": [
-        "导航定位"
-      ],
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
       "cited_by": 0,
@@ -3764,12 +3744,9 @@
       "url": "http://arxiv.org/abs/2606.27475v1",
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.27475",
-      "topic": "水下航行器与海洋机器人",
-      "topic_score": 1,
-      "sub_kws": [
-        "导航定位",
-        "水下抓取"
-      ],
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
       "cited_by": 0,
@@ -3793,11 +3770,9 @@
       "url": "http://arxiv.org/abs/2606.28260v1",
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.28260",
-      "topic": "船舶与海洋工程数值方法",
-      "topic_score": 6,
-      "sub_kws": [
-        "CFD方法"
-      ],
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
       "cited_by": 0,
@@ -3820,12 +3795,9 @@
       "url": "http://arxiv.org/abs/2606.28165v1",
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.28165",
-      "topic": "船舶与海洋工程数值方法",
-      "topic_score": 5,
-      "sub_kws": [
-        "CFD方法",
-        "SPH"
-      ],
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
       "cited_by": 0,
@@ -3876,8 +3848,8 @@
       "url": "http://arxiv.org/abs/2606.24234v1",
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.24234",
-      "topic": "船舶推进与节能",
-      "topic_score": 5,
+      "topic": "其他",
+      "topic_score": 0,
       "sub_kws": [],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
@@ -3903,8 +3875,8 @@
       "url": "http://arxiv.org/abs/2606.19176v1",
       "pdf_url": "",
       "doi": "10.48550/arXiv.2606.19176",
-      "topic": "水下航行器与海洋机器人",
-      "topic_score": 4,
+      "topic": "其他",
+      "topic_score": 0,
       "sub_kws": [],
       "journal": "arXiv Preprint",
       "journal_rank": "预印本",
@@ -3957,7 +3929,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse9040415",
       "topic": "船舶推进与节能",
-      "topic_score": 14,
+      "topic_score": 12,
       "sub_kws": [
         "排放控制"
       ],
@@ -3986,7 +3958,7 @@
       "pdf_url": "",
       "doi": "10.1109/tpel.2021.3128417",
       "topic": "船舶水动力学",
-      "topic_score": 3,
+      "topic_score": 6,
       "sub_kws": [
         "CFD模拟"
       ],
@@ -4016,7 +3988,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2023.114670",
       "topic": "船舶水动力学",
-      "topic_score": 8,
+      "topic_score": 14,
       "sub_kws": [
         "粘性流",
         "CFD模拟"
@@ -4048,8 +4020,8 @@
       "url": "https://doi.org/10.1007/s40544-022-0707-5",
       "pdf_url": "",
       "doi": "10.1007/s40544-022-0707-5",
-      "topic": "船舶水动力学",
-      "topic_score": 4,
+      "topic": "其他",
+      "topic_score": 0,
       "sub_kws": [],
       "journal": "Friction",
       "journal_rank": "核心期刊",
@@ -4076,7 +4048,7 @@
       "pdf_url": "",
       "doi": "10.1038/s41560-022-01065-y",
       "topic": "船舶推进与节能",
-      "topic_score": 4,
+      "topic_score": 6,
       "sub_kws": [
         "混合动力"
       ],
@@ -4108,7 +4080,7 @@
       "pdf_url": "",
       "doi": "10.3390/info13010022",
       "topic": "自主船舶与智能航行",
-      "topic_score": 8,
+      "topic_score": 6,
       "sub_kws": [],
       "journal": "Information",
       "journal_rank": "核心期刊",
@@ -4137,7 +4109,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse11061119",
       "topic": "水下航行器与海洋机器人",
-      "topic_score": 8,
+      "topic_score": 14,
       "sub_kws": [
         "导航定位"
       ],
@@ -4168,7 +4140,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.arcontrol.2023.04.004",
       "topic": "海洋可再生能源",
-      "topic_score": 3,
+      "topic_score": 4,
       "sub_kws": [],
       "journal": "Annual Reviews in Control",
       "journal_rank": "核心期刊",
@@ -4196,7 +4168,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse9020137",
       "topic": "船舶推进与节能",
-      "topic_score": 1,
+      "topic_score": 4,
       "sub_kws": [],
       "journal": "Journal of Marine Science and Engineerin",
       "journal_rank": "核心期刊",
@@ -4225,7 +4197,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse9020119",
       "topic": "船舶水动力学",
-      "topic_score": 4,
+      "topic_score": 6,
       "sub_kws": [],
       "journal": "Journal of Marine Science and Engineerin",
       "journal_rank": "核心期刊",
@@ -4253,8 +4225,8 @@
       "url": "https://doi.org/10.1039/d1cs01083b",
       "pdf_url": "",
       "doi": "10.1039/d1cs01083b",
-      "topic": "水下航行器与海洋机器人",
-      "topic_score": 3,
+      "topic": "其他",
+      "topic_score": 0,
       "sub_kws": [],
       "journal": "Chemical Society Reviews",
       "journal_rank": "核心期刊",
@@ -4345,7 +4317,7 @@
       "pdf_url": "",
       "doi": "10.3390/s23177321",
       "topic": "水下航行器与海洋机器人",
-      "topic_score": 10,
+      "topic_score": 13,
       "sub_kws": [
         "导航定位"
       ],
@@ -4376,7 +4348,7 @@
       "pdf_url": "",
       "doi": "10.1109/access.2024.3380458",
       "topic": "水下航行器与海洋机器人",
-      "topic_score": 9,
+      "topic_score": 13,
       "sub_kws": [
         "导航定位"
       ],
@@ -4472,7 +4444,7 @@
       "pdf_url": "",
       "doi": "10.3390/en15217910",
       "topic": "船舶推进与节能",
-      "topic_score": 4,
+      "topic_score": 12,
       "sub_kws": [
         "替代燃料",
         "排放控制"
@@ -4501,11 +4473,9 @@
       "url": "https://doi.org/10.3390/app11093954",
       "pdf_url": "",
       "doi": "10.3390/app11093954",
-      "topic": "船舶与海洋工程数值方法",
-      "topic_score": 4,
-      "sub_kws": [
-        "CFD方法"
-      ],
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
       "journal": "Applied Sciences",
       "journal_rank": "核心期刊",
       "cited_by": 72,
@@ -4533,7 +4503,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse10091222",
       "topic": "船舶水动力学",
-      "topic_score": 5,
+      "topic_score": 6,
       "sub_kws": [
         "粘性流",
         "CFD模拟"
@@ -4563,7 +4533,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.apenergy.2021.117100",
       "topic": "海洋可再生能源",
-      "topic_score": 4,
+      "topic_score": 6,
       "sub_kws": [],
       "journal": "Applied Energy",
       "journal_rank": "一区/顶刊",
@@ -4593,7 +4563,7 @@
       "pdf_url": "",
       "doi": "10.3390/en16010002",
       "topic": "海洋可再生能源",
-      "topic_score": 6,
+      "topic_score": 8,
       "sub_kws": [],
       "journal": "Energies",
       "journal_rank": "核心期刊",
@@ -4653,8 +4623,8 @@
       "url": "https://doi.org/10.1098/rspa.2021.0469",
       "pdf_url": "",
       "doi": "10.1098/rspa.2021.0469",
-      "topic": "海洋可再生能源",
-      "topic_score": 1,
+      "topic": "其他",
+      "topic_score": 0,
       "sub_kws": [],
       "journal": "Proceedings of the Royal Society A Mathe",
       "journal_rank": "核心期刊",
@@ -4683,12 +4653,9 @@
       "url": "https://doi.org/10.3390/en16196829",
       "pdf_url": "",
       "doi": "10.3390/en16196829",
-      "topic": "船舶推进与节能",
-      "topic_score": 3,
-      "sub_kws": [
-        "替代燃料",
-        "排放控制"
-      ],
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
       "journal": "Energies",
       "journal_rank": "核心期刊",
       "cited_by": 107,
@@ -4746,7 +4713,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse11071381",
       "topic": "船舶水动力学",
-      "topic_score": 7,
+      "topic_score": 10,
       "sub_kws": [
         "CFD模拟"
       ],
@@ -4777,7 +4744,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.apor.2024.104075",
       "topic": "船舶水动力学",
-      "topic_score": 1,
+      "topic_score": 8,
       "sub_kws": [
         "粘性流",
         "CFD模拟"
@@ -4806,11 +4773,9 @@
       "url": "https://doi.org/10.1017/s0962492922000058",
       "pdf_url": "",
       "doi": "10.1017/s0962492922000058",
-      "topic": "船舶与海洋工程数值方法",
-      "topic_score": 1,
-      "sub_kws": [
-        "CFD方法"
-      ],
+      "topic": "其他",
+      "topic_score": 0,
+      "sub_kws": [],
       "journal": "Acta Numerica",
       "journal_rank": "核心期刊",
       "cited_by": 90,
@@ -4868,8 +4833,8 @@
       "url": "https://doi.org/10.1016/j.jestch.2021.01.010",
       "pdf_url": "",
       "doi": "10.1016/j.jestch.2021.01.010",
-      "topic": "水下航行器与海洋机器人",
-      "topic_score": 1,
+      "topic": "其他",
+      "topic_score": 0,
       "sub_kws": [],
       "journal": "Engineering Science and Technology an In",
       "journal_rank": "核心期刊",
@@ -4898,7 +4863,7 @@
       "pdf_url": "",
       "doi": "10.3390/en17030605",
       "topic": "船舶推进与节能",
-      "topic_score": 17,
+      "topic_score": 15,
       "sub_kws": [
         "替代燃料",
         "排放控制"
@@ -4931,7 +4896,7 @@
       "pdf_url": "",
       "doi": "10.1007/s40722-022-00241-2",
       "topic": "海洋工程结构物",
-      "topic_score": 6,
+      "topic_score": 8,
       "sub_kws": [],
       "journal": "Journal of Ocean Engineering and Marine ",
       "journal_rank": "一区/顶刊",
@@ -4959,8 +4924,8 @@
       "url": "https://doi.org/10.3389/fmars.2021.761531",
       "pdf_url": "",
       "doi": "10.3389/fmars.2021.761531",
-      "topic": "船舶推进与节能",
-      "topic_score": 5,
+      "topic": "其他",
+      "topic_score": 0,
       "sub_kws": [],
       "journal": "Frontiers in Marine Science",
       "journal_rank": "核心期刊",
@@ -4989,7 +4954,7 @@
       "pdf_url": "",
       "doi": "10.1093/nsr/nwad042",
       "topic": "船舶推进与节能",
-      "topic_score": 3,
+      "topic_score": 4,
       "sub_kws": [],
       "journal": "National Science Review",
       "journal_rank": "核心期刊",
@@ -5016,7 +4981,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.apor.2021.102864",
       "topic": "船舶水动力学",
-      "topic_score": 7,
+      "topic_score": 15,
       "sub_kws": [
         "螺旋桨设计",
         "CFD模拟"
@@ -5111,7 +5076,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse9080827",
       "topic": "船舶噪声与水下辐射",
-      "topic_score": 5,
+      "topic_score": 8,
       "sub_kws": [],
       "journal": "Journal of Marine Science and Engineerin",
       "journal_rank": "核心期刊",
@@ -5168,7 +5133,7 @@
       "pdf_url": "",
       "doi": "10.1080/17445302.2021.1907071",
       "topic": "船舶水动力学",
-      "topic_score": 12,
+      "topic_score": 22,
       "sub_kws": [
         "螺旋桨设计",
         "粘性流",
@@ -5201,7 +5166,7 @@
       "pdf_url": "",
       "doi": "10.1007/s00348-021-03260-1",
       "topic": "船舶水动力学",
-      "topic_score": 3,
+      "topic_score": 4,
       "sub_kws": [
         "粘性流",
         "CFD模拟"
@@ -5264,7 +5229,7 @@
       "pdf_url": "",
       "doi": "10.2478/pomr-2022-0034",
       "topic": "船舶水动力学",
-      "topic_score": 8,
+      "topic_score": 12,
       "sub_kws": [
         "CFD模拟"
       ],
@@ -5296,7 +5261,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2021.109703",
       "topic": "船舶水动力学",
-      "topic_score": 4,
+      "topic_score": 10,
       "sub_kws": [
         "螺旋桨设计"
       ],
@@ -5327,7 +5292,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2022.112867",
       "topic": "船舶水动力学",
-      "topic_score": 9,
+      "topic_score": 17,
       "sub_kws": [
         "CFD模拟",
         "耐波性",
@@ -5357,7 +5322,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.ress.2021.107806",
       "topic": "自主船舶与智能航行",
-      "topic_score": 8,
+      "topic_score": 14,
       "sub_kws": [
         "避碰"
       ],
@@ -5388,7 +5353,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse9040357",
       "topic": "船舶推进与节能",
-      "topic_score": 1,
+      "topic_score": 6,
       "sub_kws": [],
       "journal": "Journal of Marine Science and Engineerin",
       "journal_rank": "核心期刊",
@@ -5415,7 +5380,7 @@
       "pdf_url": "",
       "doi": "10.1109/tits.2022.3151826",
       "topic": "自主船舶与智能航行",
-      "topic_score": 8,
+      "topic_score": 16,
       "sub_kws": [
         "避碰",
         "自主决策"
@@ -5506,7 +5471,7 @@
       "pdf_url": "",
       "doi": "10.1007/s40722-022-00243-0",
       "topic": "船舶水动力学",
-      "topic_score": 1,
+      "topic_score": 6,
       "sub_kws": [
         "CFD模拟",
         "操纵性"
@@ -5538,7 +5503,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse11040835",
       "topic": "船舶水动力学",
-      "topic_score": 9,
+      "topic_score": 12,
       "sub_kws": [],
       "journal": "Journal of Marine Science and Engineerin",
       "journal_rank": "核心期刊",
@@ -5567,7 +5532,7 @@
       "pdf_url": "",
       "doi": "10.1007/s40722-022-00255-w",
       "topic": "船舶水动力学",
-      "topic_score": 7,
+      "topic_score": 15,
       "sub_kws": [
         "CFD模拟",
         "耐波性",
@@ -5601,7 +5566,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.marstruc.2022.103307",
       "topic": "船舶水动力学",
-      "topic_score": 14,
+      "topic_score": 12,
       "sub_kws": [
         "耐波性"
       ],
@@ -5634,7 +5599,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse9121451",
       "topic": "船舶水动力学",
-      "topic_score": 8,
+      "topic_score": 14,
       "sub_kws": [
         "CFD模拟",
         "操纵性"
@@ -5665,7 +5630,7 @@
       "pdf_url": "",
       "doi": "10.1007/s11831-024-10127-1",
       "topic": "船舶水动力学",
-      "topic_score": 9,
+      "topic_score": 16,
       "sub_kws": [
         "CFD模拟"
       ],
@@ -5760,7 +5725,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.ijnaoe.2020.12.002",
       "topic": "船舶与海洋工程数值方法",
-      "topic_score": 6,
+      "topic_score": 10,
       "sub_kws": [
         "CFD方法"
       ],
@@ -5793,7 +5758,7 @@
       "pdf_url": "",
       "doi": "10.1016/j.oceaneng.2023.114822",
       "topic": "船舶水动力学",
-      "topic_score": 6,
+      "topic_score": 8,
       "sub_kws": [
         "粘性流",
         "CFD模拟",
@@ -5858,7 +5823,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse9121434",
       "topic": "船舶推进与节能",
-      "topic_score": 1,
+      "topic_score": 4,
       "sub_kws": [],
       "journal": "Journal of Marine Science and Engineerin",
       "journal_rank": "核心期刊",
@@ -5886,8 +5851,8 @@
       "url": "https://doi.org/10.5194/gmd-17-4355-2024",
       "pdf_url": "",
       "doi": "10.5194/gmd-17-4355-2024",
-      "topic": "水下航行器与海洋机器人",
-      "topic_score": 6,
+      "topic": "其他",
+      "topic_score": 0,
       "sub_kws": [],
       "journal": "Geoscientific model development",
       "journal_rank": "核心期刊",
@@ -5917,7 +5882,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse9020136",
       "topic": "船舶与海洋工程数值方法",
-      "topic_score": 8,
+      "topic_score": 12,
       "sub_kws": [
         "势流方法"
       ],
@@ -5946,7 +5911,7 @@
       "pdf_url": "",
       "doi": "10.3390/jmse9080904",
       "topic": "船舶设计与优化",
-      "topic_score": 4,
+      "topic_score": 6,
       "sub_kws": [],
       "journal": "Journal of Marine Science and Engineerin",
       "journal_rank": "核心期刊",
@@ -5972,8 +5937,8 @@
       "url": "https://doi.org/10.3390/met11050718",
       "pdf_url": "",
       "doi": "10.3390/met11050718",
-      "topic": "水下航行器与海洋机器人",
-      "topic_score": 1,
+      "topic": "其他",
+      "topic_score": 0,
       "sub_kws": [],
       "journal": "Metals",
       "journal_rank": "核心期刊",

@@ -232,3 +232,24 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
 .rec-why { color: #1F4E79; font-weight: 500; }
 .rec-tag { color: #666; background: #f0f0f0; padding: 1px 5px; border-radius: 3px; }
 .rec-pt { color: #888; }
+
+/* 信息流重构 — 研究生用户 */
+/* 本周必读置顶 */
+.rec-top { margin-top: 8px; background: linear-gradient(135deg, #f0f7ff 0%, #fff 100%); border-radius: 6px; padding: 4px 10px; }
+
+/* 研究建议 */
+.advice-list { display: flex; flex-direction: column; gap: 4px; }
+.advice-item { padding: 8px 12px; background: #fff; border-radius: 4px; font-size: .8rem; border: 1px solid #e8e8e8; line-height: 1.5; }
+
+/* 更多数据折叠 */
+.more-toggle { font-size: .82rem; font-weight: 600; color: #1F4E79; padding: 10px; cursor: pointer; background: #f5f8fc; border-radius: 4px; margin: 6px 10px; text-align: center; }
+.more-toggle:hover { background: #e8f0fe; }
+details .more-toggle { list-style: none; }
+details .more-toggle::-webkit-details-marker { display: none; }
+
+/* 紧凑热点 */
+.hot-grid .hp { margin-bottom: 3px; }
+.hp-sm .hp-t a { font-size: .78rem; }
+
+/* JSS: fix 收藏按钮定位 */
+.hp { position: relative; }

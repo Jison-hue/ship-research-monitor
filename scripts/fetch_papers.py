@@ -1303,31 +1303,12 @@ def gen_html(data, config):
     html += '<p class="sub">多源数据分析 · 每3天自动更新 · 2021-2026</p>\n'
     html += '<p class="meta">🕐 ' + updated + ' | arXiv + OpenAlex + Semantic Scholar + Crossref</p>\n<p style="text-align:center;font-size:.78rem;margin-top:6px"><a href="weekly.html">📋 查看完整周报 →</a></p>\n</header>\n<main>\n'
     html += cards + '\n'
-    # ── 本期新增 ──
-    cutoff = (datetime.now() - timedelta(days=14)).strftime("%Y-%m-%d")
-    new_papers = [p for p in papers if p.get("published","")[:10] >= cutoff]
-    new_papers.sort(key=lambda p: p.get("cited_by",0) or 0, reverse=True)
-    new_html = ""
-    if new_papers:
-        new_items = ""
-        for p in new_papers[:8]:
-            c = p.get("cited_by",0) or 0
-            doi = p.get("doi","")
-            doi_h = '<a href="https://doi.org/' + doi + '" class="doi" target="_blank">' + doi[:30] + '</a>' if doi else ""
-            jrnk = p.get("journal_rank","")
-            jrnk_h = '<span class="rk">' + jrnk + '</span>' if jrnk else ""
-            new_items += ('<div class="hp" data-pid="' + p.get("url","#") + '">'
-                '<span class="new-badge">🆕</span>'
-                '<div class="hp-b">'
-                '<div class="hp-t"><a href="' + p.get("url","#") + '" target="_blank">' + p["title"][:90] + '</a></div>'
-                '<div class="hp-m"><span>' + p.get("published","")[:10] + '</span><span class="ci">📊' + str(c) + '</span>' + jrnk_h + doi_h + '</div>'
-                '</div></div>')
-        new_html = '<section class="new-section"><h2>📰 本期新增 <span class="new-count">' + str(len(new_papers)) + '篇</span></h2>' + new_items + '</section>\n'
-    html += new_html
-    html += '<div class="charts-row">\n'
-    html += '<div class="cc"><h2>📊 研究方向分布</h2><div class="cw"><canvas id="c1"></canvas></div></div>\n'
-    html += '<div class="cc"><h2>📈 发文趋势</h2><div class="cw"><canvas id="c2"></canvas></div></div>\n'
-    html += '<div class="cc"><h2>🏆 期刊等级</h2><div class="cw"><canvas id="c3"></canvas></div></div>\n</div>\n'
+
+    # ═══════════════════════════════════════════
+    # 信息流 - 为你（研究生）重构
+    # 1. 本周必读 → 2. 方向建议 → 3. 近期热点 → 4. 全景数据
+    # ═══════════════════════════════════════════
+
     # ── 近期热点（近3年）──
     cutoff_3y = (datetime.now() - timedelta(days=3*365)).strftime("%Y-%m-%d")
     recent_hot = sorted([p for p in hot_papers if p.get("published","")[:10] >= cutoff_3y],
@@ -1340,7 +1321,7 @@ def gen_html(data, config):
         doi_h = '<a href="https://doi.org/'+doi+'" class="doi" target="_blank">📎'+doi[:25]+'</a>' if doi else ""
         jrnk_h = '<span class="rk">'+jrnk+'</span>' if jrnk else ""
         pt_h = '<span class="pt '+pt+'">'+pt+'</span>' if pt else ""
-        recent_hot_items += ('<div class="hp" data-pid="'+pid+'"><span class="hp-n">'+str(i+1)+'</span>'
+        recent_hot_items += ('<div class="hp hp-sm" data-pid="'+pid+'"><span class="hp-n">'+str(i+1)+'</span>'
             '<button class="bm-btn" onclick="toggleBm(this)" title="收藏">☆</button>'
             '<div class="hp-b"><div class="hp-t"><a href="'+pid+'" target="_blank">'+p["title"][:85]+'</a></div>'
             '<div class="hp-m"><span>'+p.get("published","")[:10]+'</span>'+pt_h+'<span class="ci">📊'+str(c)+'</span>'+jrnk_h+doi_h+'</div></div></div>')
@@ -1349,7 +1330,7 @@ def gen_html(data, config):
     rec_papers = []
     for p in hot_papers:
         if p.get("published","")[:10] < cutoff_3y: continue
-        if p.get("topic","") == "其他": continue
+        if p.get("topic","") == "船舶综合": continue
         score = (p.get("cited_by",0) or 0)
         if p.get("journal_rank","") == "一区/顶刊": score += 30
         rec_papers.append((score, p))
@@ -1358,47 +1339,79 @@ def gen_html(data, config):
     for score, p in rec_papers[:5]:
         t = p.get("topic","")
         pt = p.get("paper_type","综述")
-        # 生成推荐理由
         reasons = []
         if p.get("journal_rank","") == "一区/顶刊": reasons.append("顶刊")
         if (p.get("cited_by",0) or 0) >= 50: reasons.append(f"高引({p.get('cited_by',0)})")
         if pt == "综述": reasons.append("领域综述")
         if not reasons: reasons.append("新近发表")
         reason = " · ".join(reasons)
-        doi = p.get("doi","")
-        pid = p.get("url","#")
+        doi = p.get("doi",""); pid = p.get("url","#")
         doi_h = '<a href="https://doi.org/'+doi+'" target="_blank">📎'+doi[:25]+'</a>' if doi else ""
         rec_html += ('<div class="rec-item" data-pid="'+pid+'">'
             '<div class="rec-t"><a href="'+pid+'" target="_blank">'+p["title"][:85]+'</a></div>'
             '<div class="rec-m"><span class="rec-why">💡 '+reason+'</span>'
-            '<span class="rec-tag">#'+t+'</span>'
-            '<span class="rec-pt">'+pt+'</span>'
-            +doi_h+'</div></div>')
+            '<span class="rec-tag">#'+t+'</span><span class="rec-pt">'+pt+'</span>'+doi_h+'</div></div>')
 
-    html += '<section class="hot"><h2>🔥 热点论文 · 综合排名</h2><p class="hint">引用+时效加权（全场）</p>' + hot_items + '</section>\n'
-    html += '<section class="hot"><h2>📈 近期热点 <span class="hint">近3年高引论文</span></h2><p class="hint">只看近3年发表，消除时间偏差</p>' + recent_hot_items + '</section>\n'
-    html += '<section class="quality-s"><h2>📊 方向质量榜 <span class="hint">均引×发文增速×引文增速</span></h2>' + q_html + '</section>\n'
-    html += '<section class="rec-section"><h2>📋 本周必读 <span class="hint">近3年高质量论文推荐</span></h2>' + rec_html + '</section>\n'
-    html += '<section class="kw-section"><h2>🔍 研究热度关键词 Top 10</h2><div class="kw-grid">' + kw_html + '</div></section>\n'
+    # ── 方向建议 ──
+    advice = []
+    for t, imp in ranked[:5]:
+        cm = imp.get('cite_momentum',0); pm = imp.get('pub_momentum',0)
+        cnt = imp['count']; avg = imp.get('avg_cited',0)
+        if cnt <= 15 and (cm >= 20 or pm >= 30):
+            advice.append(f'🔮 <b>{t}</b>：{cnt}篇 均引{avg} 发文&引文动量向上，适合作为新兴方向切入')
+        elif cm >= 30:
+            advice.append(f'🔥 <b>{t}</b>：{cnt}篇 均引{avg} 引文动量+{cm}%强劲增长，是当前热门方向')
+        elif cm < -30 and cnt >= 5:
+            advice.append(f'🧊 <b>{t}</b>：{cnt}篇 均引{avg} 引文{cm}%降温，但基础仍在，适合深耕细分问题')
+        else:
+            advice.append(f'➡️ <b>{t}</b>：{cnt}篇 均引{avg} 引文{cm}%平稳，适合稳妥跟进')
+    advice_html = '<div class="advice-list">'+''.join('<div class="advice-item">'+a+'</div>' for a in advice)+'</div>'
+
+    # ── 标题下方亮点 ──
+    recent_hot_fresh = [p for p in hot_papers if p.get("published","")[:10] >= cutoff_3y
+                        and p.get("topic","") != "船舶综合" and (p.get("topic_score",0) or 0) >= 3]
+    recent_hot_fresh = sorted(recent_hot_fresh,
+        key=lambda p: (p.get("cited_by",0) or 0)*0.5+(20 if p.get("journal_rank","")=="一区/顶刊" else 0), reverse=True)
+    tp = recent_hot_fresh[0] if recent_hot_fresh else None
     hl = ""
-    # 本期亮点：从近3年论文中选（避免推5年前老综述）
-    now = datetime.now()
-    recent_cutoff = (now - timedelta(days=3*365)).strftime("%Y-%m-%d")
-    recent_hot = [p for p in hot_papers if p.get("published","")[:10] >= recent_cutoff
-                  and p.get("topic","") != "其他" and (p.get("topic_score",0) or 0) >= 3]
-    recent_hot = sorted(recent_hot,
-        key=lambda p: (p.get("cited_by",0) or 0) * 0.5 + (20 if p.get("journal_rank","")=="一区/顶刊" else 0),
-        reverse=True)
-    tp = recent_hot[0] if recent_hot else None
     if tp:
-        doi = tp.get("doi","")
-        dh = '<a href="https://doi.org/'+doi+'">'+doi[:30]+'</a>' if doi else ""
-        au = ", ".join(tp.get("authors",[])[:2])
-        jour = tp.get("journal","")[:20]
-        top = tp.get("topic","")
-        url = tp.get("url","#")
-        hl = '<div class="hl"><span class="hl-badge">🔥 本期亮点</span><span class="hl-txt"><b><a href="' + url + '" target="_blank">' + tp["title"][:80] + '</a></b> 由 ' + au + ' 等人完成，发表在 <b>' + jour + '</b>，属于<b>' + top + '</b>方向。已被引用 ' + str(tp.get("cited_by",0)) + ' 次。' + dh + '</span></div>'
+        doi = tp.get("doi",""); dh = '<a href="https://doi.org/'+doi+'">'+doi[:30]+'</a>' if doi else ""
+        au = ", ".join(tp.get("authors",[])[:2]); jour = tp.get("journal","")[:20]
+        top = tp.get("topic",""); url = tp.get("url","#")
+        hl = '<div class="hl"><span class="hl-badge">🔥 本期亮点</span><span class="hl-txt"><b><a href="'+url+'" target="_blank">'+tp["title"][:80]+'</a></b> 由 '+au+' 等人完成，发表在 <b>'+jour+'</b>，属于<b>'+top+'</b>方向。已被引用 '+str(tp.get("cited_by",0))+' 次。'+dh+'</span></div>'
+
+    # 组装页面（新顺序）
     html += hl + '\n'
+    html += '<section class="rec-section rec-top"><h2>📋 本周必读 <span class="hint">近3年 · 你的专属推荐</span></h2>' + rec_html + '</section>\n'
+    html += '<section class="quality-s"><h2>🎯 研究方向建议 <span class="hint">根据引文动量和论文量自动分析</span></h2>' + advice_html + '</section>\n'
+    html += '<section class="kw-section"><h2>📈 近期热点 <span class="hint">近3年发表 · 消除时间偏差</span></h2><div class="hot-grid">' + recent_hot_items + '</div></section>\n'
+    html += '<section class="quality-s"><h2>📊 方向质量榜 <span class="hint">均引×发文增速×引文增速</span></h2>' + q_html + '</section>\n'
+
+    # ── 本期新增（14天内）──
+    new_html = ""
+    cutoff_14d = (datetime.now() - timedelta(days=14)).strftime("%Y-%m-%d")
+    new_p = [p for p in papers if p.get("published","")[:10] >= cutoff_14d]
+    new_p.sort(key=lambda p: p.get("cited_by",0) or 0, reverse=True)
+    if new_p:
+        ni = ""
+        for p in new_p[:8]:
+            c = p.get("cited_by",0) or 0; doi = p.get("doi","")
+            doi_h = '<a href="https://doi.org/'+doi+'" class="doi" target="_blank">'+doi[:30]+'</a>' if doi else ""
+            jrnk = p.get("journal_rank",""); jrnk_h = '<span class="rk">'+jrnk+'</span>' if jrnk else ""
+            ni += ('<div class="hp" data-pid="'+p.get("url","#")+'"><span class="new-badge">🆕</span>'
+                '<div class="hp-b"><div class="hp-t"><a href="'+p.get("url","#")+'" target="_blank">'+p["title"][:90]+'</a></div>'
+                '<div class="hp-m"><span>'+p.get("published","")[:10]+'</span><span class="ci">📊'+str(c)+'</span>'+jrnk_h+doi_h+'</div></div></div>')
+        new_html = '<section class="new-section"><h2>📰 本期新增 <span class="new-count">'+str(len(new_p))+'篇</span></h2>'+ni+'</section>\n'
+
+    # ── 更多数据（折叠）──
+    html += '<details><summary class="more-toggle">📂 更多数据（本期新增、热点排名、关键词、图表等）</summary>\n'
+    html += new_html
+    html += '<div class="charts-row">\n'
+    html += '<div class="cc"><h2>📊 研究方向分布</h2><div class="cw"><canvas id="c1"></canvas></div></div>\n'
+    html += '<div class="cc"><h2>📈 发文趋势</h2><div class="cw"><canvas id="c2"></canvas></div></div>\n'
+    html += '<div class="cc"><h2>🏆 期刊等级</h2><div class="cw"><canvas id="c3"></canvas></div></div>\n</div>\n'
+    html += '<section class="hot"><h2>🔥 热点论文 · 综合排名</h2><p class="hint">引用+时效加权（全场）</p>' + hot_items + '</section>\n'
+    html += '<section class="kw-section"><h2>🔍 研究热度关键词 Top 10</h2><div class="kw-grid">' + kw_html + '</div></section>\n'
     html += '<section class="country-s"><h2>🌏 地域分布 · 国内 vs 国外</h2>' + country_html + '</section>\n'
     html += '<section class="ai-s"><h2>🏫 高产机构 Top 15</h2><div class="ai-l">' + inst_html + '</div></section>\n'
     html += '<section class="cross-s"><h2>🏛️ 机构×方向 矩阵 <span class="hint">论文数</span></h2>' + cross_html + '</section>\n'
@@ -1424,7 +1437,7 @@ def gen_html(data, config):
     html += '<div id="fs" class="filter-summary" style="display:none"></div>\n'
     html += '<div id="fr" class="filter-results"></div>\n'
     html += '<div class="tf"><input type="text" id="ts" placeholder="🔍 搜研究方向..." oninput="ft()"></div>\n'
-    html += topics + '</section>\n</main>\n'
+    html += topics + '</section>\n</details>\n</main>\n'
     html += '<footer><p>每3天08:00自动更新 · <a href="https://github.com/Jison-hue/ship-research-monitor">GitHub</a></p></footer>\n'
     html += '<script>\n'
     html += 'new Chart(c1,{type:"bar",data:{labels:' + tl_j + ',datasets:[{label:"论文数",data:' + td_j + ',backgroundColor:' + tc_j + ',borderRadius:3}]},options:{indexAxis:"y",responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{beginAtZero:true,grid:{color:"rgba(0,0,0,0.04)"}},y:{grid:{display:false}}}}});\n'
